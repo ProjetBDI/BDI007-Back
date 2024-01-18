@@ -36,19 +36,15 @@ public class Panier {
     @Column(name = "datePaiement", nullable = false)
     private Date datePaiement;
 
-    @ElementCollection
     @Column(name = "nomsFestivaliers", nullable = false)
-    private List<String> nomsFestivaliers;
+    private String nomsFestivaliers;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idUtilisateur")
-    private Utilisateur utilisateur;
+    @JoinColumn(name = "proprietaire", referencedColumnName = "email", table = "Utilisateur", insertable = true)
+    private Utilisateur proprietaire;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idEtape")
-    private Etape etape;
-
-    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idPanier", cascade = CascadeType.ALL)
+    @JoinColumn(name = "idPanier", referencedColumnName = "idPanier", table = "PanierEtape", insertable = true)
     private List<PanierEtape> panierEtapes;
     
 }

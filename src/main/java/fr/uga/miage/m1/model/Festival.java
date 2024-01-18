@@ -15,6 +15,8 @@ import lombok.Data;
 import java.util.Date;
 import java.util.List;
 
+import fr.uga.miage.m1.enums.FestivalStatus;
+
 @Entity
 @Data
 public class Festival {
@@ -23,8 +25,8 @@ public class Festival {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idFestival;
 
-    @Column(name = "nomFestival")
-    private String nomFestival;
+    @Column(name = "nom")
+    private String nom;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "dateDebut")
@@ -39,15 +41,28 @@ public class Festival {
 
     @Column(name = "lieuPrincipal")
     private String lieuPrincipal;
+
+    @Column(name = "nbPassTotal")
+    private int nbPassTotal;
+
+    @Column(name = "nbPassDispo")
+    private int nbPassDispo;
+
+    @Column(name = "nbPassIndispo")
+    private int nbPassIndispo;
+
+    @Column(name = "status")
+    private FestivalStatus status;
     
-    @OneToMany(mappedBy = "festival", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name="idFestival", referencedColumnName = "festival", table = "Covoiturage", insertable = true, nullable = false)
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
-    @JoinColumn(name="codeINSEE")
+    @JoinColumn(name="commune", referencedColumnName = "codeINSEE" , table = "Commune" , insertable = true, nullable = false)
     private Commune commune;
 
     @ManyToOne
-    @JoinColumn(name="nom")
+    @JoinColumn(name="sousDomaine", referencedColumnName = "nomSousDomaine", table = "SousDomaine" , insertable = true, nullable = false)
     private SousDomaine sousDomaine;
 }

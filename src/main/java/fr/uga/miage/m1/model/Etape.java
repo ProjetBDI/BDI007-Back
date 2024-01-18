@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -18,20 +19,32 @@ import lombok.Data;
 public class Etape {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEtape;
+    @Column(name="idLieu", nullable = false)
+    private long idLieu;
 
-    @Column(name="prix", nullable = false)
-    private float prix;
+    @Id
+    @Column(name="idCovoiturage", nullable = false)
+    private long idCovoiturage;
 
-    @OneToMany(mappedBy = "idPanier", cascade = CascadeType.ALL)
-    private List<Panier> paniers;
+    @Column(name="prixEtape", nullable = false)
+    private float prixEtape;
+
+    @Column(name="dureeDepuisDepart", nullable = false) 
+    private int dureeDepuisDepart;
 
     @ManyToOne
-    @JoinColumn(name = "idCovoiturage")
+    @JoinColumn(name = "idLieu", referencedColumnName = "idLieu", table = "Lieu", insertable = true, updatable = true)
+    private Lieu lieu;
+
+    @ManyToOne
+    @JoinColumn(name = "idCovoiturage", referencedColumnName = "idCovoiturage", table = "Covoiturage", insertable = true, updatable = true)
     private Covoiturage covoiturage;
 
-    @ManyToMany(mappedBy = "panierEtape")
+    @ManyToMany
+    @JoinColumns({
+        @JoinColumn(name = "idLieu", referencedColumnName = "idEtape", table = "Lieu"),
+        @JoinColumn(name = "idCovoiturage", referencedColumnName = "etapeCovoiturage", table = "Lieu")
+    })
     private List<PanierEtape> paniersEtape;
     
 }

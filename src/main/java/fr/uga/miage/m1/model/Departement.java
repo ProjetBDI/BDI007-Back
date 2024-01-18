@@ -4,7 +4,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.util.List;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -15,16 +14,17 @@ import lombok.Data;
 public class Departement {
 
     @Id
-    @Column(name = "numero")
-    private long idNumero;
+    @Column(name = "departement", nullable = false)
+    private String departement;
 
-    @Column(name = "nom")
-    private String nom;
+    @Column(name = "nomDepartement", nullable = false)
+    private String nomDepartement;
 
-    @OneToMany(mappedBy = "numDepartement", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name = "departement", referencedColumnName = "departement", table = "Commune", updatable = true, insertable = true)
     private List<Commune> communes;
 
     @ManyToOne
-    @JoinColumn(name = "nom")
-    private Region region;
+    @JoinColumn(name = "nomRegion", referencedColumnName = "nom", table = "Region", nullable = false, updatable = true, insertable = true)
+    private Region nomRegion;
 }
