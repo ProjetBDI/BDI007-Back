@@ -1,0 +1,6 @@
+package fr.uga.miage.m1.enums;
+
+public enum TypeLieu {
+    PARKING, PARKING_RELAIS, AUTOSTOP, SORTIE_AUTOROUTE,
+    AIRE_COVOITURAGE, SUPERMARCHE, DELAISSE_ROUTIER
+}
