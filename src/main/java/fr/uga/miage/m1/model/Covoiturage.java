@@ -1,6 +1,6 @@
 package fr.uga.miage.m1.model;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,21 +13,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
 @Data
+@Table (name = "Covoiturage")
 public class Covoiturage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idCovoiturage;
 
     @Column(name = "nbPlace")
-    private long nbPlace;
+    private int nbPlace;
 
     @Column(name = "nbPlaceDispo")
-    private long nbPlaceDispo;
+    private int nbPlaceDispo;
 
     @Column(name = "marque")
     private String marque;
@@ -39,21 +42,22 @@ public class Covoiturage {
     private String couleur;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "heureDepart")
-    private Date heureDepart;
+    @Column(name = "dateDepart")
+    private Date dateDepart;
 
     @Column(name = "emailConducteur", nullable = false)
     private String emailConducteur;
 
-    @OneToMany(mappedBy = "etape", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name = "idCovoiturage", referencedColumnName = "idCovoiturage", table = "Etape", insertable = true, updatable = true)
     private List<Etape> etapes;
     
     @ManyToOne
-    @JoinColumn(name = "idFestival")
+    @JoinColumn(name = "festival", referencedColumnName = "idFestival", table = "Festival", insertable = true, updatable = true)
     private Festival festival;
 
     @ManyToOne
-    @JoinColumn(name = "idUtilisateur")
-    private Utilisateur utilisateur;
+    @JoinColumn(name = "emailConducteur", referencedColumnName = "email", table = "Utilisateur", insertable = true, updatable = true)
+    private Utilisateur conducteur;
 }
 

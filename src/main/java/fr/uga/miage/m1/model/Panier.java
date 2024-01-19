@@ -6,7 +6,7 @@ import java.util.List;
 import fr.uga.miage.m1.enums.PanierStatus;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -16,12 +16,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "Panier")
 public class Panier {
 
     @Id
@@ -36,19 +38,15 @@ public class Panier {
     @Column(name = "datePaiement", nullable = false)
     private Date datePaiement;
 
-    @ElementCollection
     @Column(name = "nomsFestivaliers", nullable = false)
-    private List<String> nomsFestivaliers;
+    private String nomsFestivaliers;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idUtilisateur")
-    private Utilisateur utilisateur;
+    @JoinColumn(name = "proprietaire", referencedColumnName = "email", table = "Utilisateur", insertable = true)
+    private Utilisateur proprietaire;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idEtape")
-    private Etape etape;
-
-    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idPanier", cascade = CascadeType.ALL)
+    @JoinColumn(name = "idPanier", referencedColumnName = "idPanier", table = "PanierEtape", insertable = true)
     private List<PanierEtape> panierEtapes;
     
 }
