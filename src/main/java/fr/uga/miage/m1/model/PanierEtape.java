@@ -10,24 +10,23 @@ import jakarta.persistence.JoinColumns;
 
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name="PanierEtape")
 public class PanierEtape {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idPanierEtape;
 
-    @Column(name="etapeLieu")
+    @Column(name="etapeLieu", nullable = false)
     private long etapeLieu;
 
     @Column(name="etapeCovoiturage", nullable = false)
     private long etapeCovoiturage;
-
-    @Column(name="idPanier", nullable = false)
-    private long idPanier;
 
     @Column(name="nbPlaceOccuppe", nullable = false)
     private long nbPlaceOccuppe;
