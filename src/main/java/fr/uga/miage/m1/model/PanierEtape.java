@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumns;
 
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -37,11 +38,9 @@ public class PanierEtape {
     @JoinColumn(name = "idPanier")
     private Panier panier;
 
-    @ManyToMany
-    @JoinColumns({
-        @JoinColumn(name = "etapeLieu", referencedColumnName = "idLieu"),
-        @JoinColumn(name = "etapeCovoiturage", referencedColumnName = "idCovoiturage")
-    })
-    private List<Etape> etapes;
+    @ManyToOne
+    @JoinColumn(name = "etapeLieu", referencedColumnName = "idLieu", insertable = false, updatable = false)
+    @JoinColumn(name = "etapeCovoiturage", referencedColumnName = "idCovoiturage", insertable = false, updatable = false)
+    private Etape etape;
     
 }

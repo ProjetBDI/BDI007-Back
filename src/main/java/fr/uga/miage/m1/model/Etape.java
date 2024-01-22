@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -33,11 +34,14 @@ public class Etape {
     private int dureeDepuisDepart;
 
     @ManyToOne
-    @JoinColumn(name = "etapeLieu", referencedColumnName = "idLieu")
+    @JoinColumn(name = "idLieu", referencedColumnName = "idLieu", insertable = false, updatable = false)
     private Lieu lieu;
 
     @ManyToOne
-    @JoinColumn(name = "etapeCovoiturage", referencedColumnName = "idCovoiturage")
+    @JoinColumn(name = "idCovoiturage", referencedColumnName = "idCovoiturage", insertable = false, updatable = false)
     private Covoiturage covoiturage;
+
+    @OneToMany(mappedBy = "etape")
+    private List<PanierEtape> panierEtapes;
     
 }
