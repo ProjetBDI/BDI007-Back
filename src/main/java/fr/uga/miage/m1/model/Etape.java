@@ -41,12 +41,5 @@ public class Etape {
     @ManyToOne
     @JoinColumn(name = "etapeCovoiturage", referencedColumnName = "idCovoiturage")
     private Covoiturage covoiturage;
-
-    @ManyToMany
-    @JoinColumns({
-        @JoinColumn(name = "idLieu", referencedColumnName = "idEtape"),
-        @JoinColumn(name = "idCovoiturage", referencedColumnName = "etapeCovoiturage")
-    })
-    private List<PanierEtape> panierEtapes;
     
 }
