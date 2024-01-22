@@ -30,7 +30,7 @@ public class Utilisateur {
     @Column(name="prenom", nullable = false)
     private String prenom;
 
-    @Column(name="mot_de_passe", nullable = false)
+    @Column(name="mot_de_passe", nullable = true)
     private String motDePasse;
 
     @Temporal(TemporalType.TIMESTAMP)

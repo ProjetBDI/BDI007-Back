@@ -42,7 +42,7 @@ public class Covoiturage {
     @Column(name = "couleur")
     private String couleur;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_depart")
     private Date dateDepart;
 
