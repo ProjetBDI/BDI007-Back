@@ -63,6 +63,12 @@
             <version>19.21.0.0</version>
             <scope>runtime</scope>
         </dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>pgjdbc-benchmark</artifactId>
+			<version>42.2.2</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
