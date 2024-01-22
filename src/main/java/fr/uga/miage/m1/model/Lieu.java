@@ -21,19 +21,19 @@ import fr.uga.miage.m1.enums.TypeLieu;
 
 @Entity
 @Data
-@Table(name = "Lieu")
+@Table(name = "lieu")
 public class Lieu {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idLieu", nullable = false)
+    @Column(name="id_lieu", nullable = false)
     private Long idLieu;
 
-    @Column(name="codeINSEELieu", nullable = false)
+    @Column(name="code_insee_lieu", nullable = false)
     private String codeINSEELieu;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="typeLieu", nullable = false)
+    @Column(name="type_lieu", nullable = false)
     private TypeLieu typeLieu;
 
     @Column(name="nom", nullable = false)
@@ -49,7 +49,7 @@ public class Lieu {
     private float latitude;
 
     @ManyToOne
-    @JoinColumn(name="commune", referencedColumnName = "codeINSEE")
+    @JoinColumn(name="commune", referencedColumnName = "code_insee")
     private Commune commune;
 
     @OneToMany(mappedBy = "idLieu")

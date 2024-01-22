@@ -20,37 +20,38 @@ import fr.uga.miage.m1.enums.FestivalStatus;
 
 @Entity
 @Data
-@Table(name = "Festival")
+@Table(name = "festival")
 public class Festival {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_festival", nullable = false)
     private long idFestival;
 
     @Column(name = "nom")
     private String nom;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "dateDebut")
+    @Column(name = "date_debut")
     private Date dateDebut;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "dateFin")
+    @Column(name = "date_fin")
     private Date dateFin;
 
-    @Column(name = "siteWeb")
+    @Column(name = "site_web")
     private String siteWeb;
 
-    @Column(name = "lieuPrincipal")
+    @Column(name = "lieu_principal")
     private String lieuPrincipal;
 
-    @Column(name = "nbPassTotal")
+    @Column(name = "nb_pass_total")
     private int nbPassTotal;
 
-    @Column(name = "nbPassDispo")
+    @Column(name = "nb_pass_dispo")
     private int nbPassDispo;
 
-    @Column(name = "nbPassIndispo")
+    @Column(name = "nb_pas_indispo")
     private int nbPassIndispo;
 
     @Column(name = "status")
@@ -60,10 +61,10 @@ public class Festival {
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
-    @JoinColumn(name="commune", referencedColumnName = "codeINSEE")
+    @JoinColumn(name="commune", referencedColumnName = "code_insee")
     private Commune commune;
 
     @ManyToOne
-    @JoinColumn(name="sousDomaine", referencedColumnName = "nomSousDomaine")
+    @JoinColumn(name="sous_domaine", referencedColumnName = "nom_sous_domaine")
     private SousDomaine sousDomaine;
 }
