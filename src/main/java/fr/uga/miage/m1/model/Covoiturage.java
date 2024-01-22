@@ -19,17 +19,18 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Data
-@Table (name = "Covoiturage")
+@Table (name = "covoiturage")
 public class Covoiturage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_covoiturage", nullable = false)
     private long idCovoiturage;
 
-    @Column(name = "nbPlace")
+    @Column(name = "nb_place")
     private int nbPlace;
 
-    @Column(name = "nbPlaceDispo")
+    @Column(name = "nb_place_dispo")
     private int nbPlaceDispo;
 
     @Column(name = "marque")
@@ -42,22 +43,19 @@ public class Covoiturage {
     private String couleur;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "dateDepart")
+    @Column(name = "date_depart")
     private Date dateDepart;
 
-    @Column(name = "emailConducteur", nullable = false)
-    private String emailConducteur;
-
-    @OneToMany
-    @JoinColumn(name = "idCovoiturage", referencedColumnName = "idCovoiturage", table = "Etape", insertable = true, updatable = true)
+    @OneToMany(mappedBy = "idCovoiturage")
     private List<Etape> etapes;
     
     @ManyToOne
-    @JoinColumn(name = "festival", referencedColumnName = "idFestival", table = "Festival", insertable = true, updatable = true)
-    private Festival festival;
+    @JoinColumn(name = "festival", referencedColumnName = "id_festival")
+    private Festival festival;    
 
     @ManyToOne
-    @JoinColumn(name = "emailConducteur", referencedColumnName = "email", table = "Utilisateur", insertable = true, updatable = true)
+    @JoinColumn(name = "email_conducteur", referencedColumnName = "email", insertable = true, updatable = true)
     private Utilisateur conducteur;
+
 }
 

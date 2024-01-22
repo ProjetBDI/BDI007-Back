@@ -12,17 +12,17 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Commune")
+@Table(name = "commune")
 public class Commune {
 
     @Id
-    @Column(name = "codeINSEE", nullable = false)
+    @Column(name = "code_insee", nullable = false)
     private String codeINSEE;
 
-    @Column(name = "nomCommune", nullable = false)
+    @Column(name = "nom_commune", nullable = false)
     private String nomCommune;
 
-    @Column(name = "codePostal", nullable = false)
+    @Column(name = "code_postal", nullable = false)
     private String codePostal;
 
     @Column(name = "longitude", nullable = false)
@@ -31,15 +31,13 @@ public class Commune {
     @Column(name = "latitude", nullable = false)
     private String latitude;
 
-    @OneToMany
-    @JoinColumn(name = "codeINSEE", referencedColumnName = "commune", table = "Festival", updatable = true, insertable = true)
+    @OneToMany(mappedBy = "commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Festival> festivals;
 
-    @OneToMany
-    @JoinColumn(name = "codeINSEE", referencedColumnName = "commune", table = "Lieu", updatable = true, insertable = true)
+    @OneToMany(mappedBy = "commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Lieu> lieux;
 
     @ManyToOne
-    @JoinColumn(name = "departement",referencedColumnName = "departement", table = "Departement", updatable = true, insertable = true, nullable = false )
+    @JoinColumn(name = "departement", referencedColumnName = "departement", nullable = false) // correction de referencedColumnName
     private Departement departement;
 }

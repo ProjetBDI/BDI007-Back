@@ -23,7 +23,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Panier")
+@Table(name = "panier")
 public class Panier {
 
     @Id
@@ -35,18 +35,17 @@ public class Panier {
     private PanierStatus status;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "datePaiement", nullable = false)
+    @Column(name = "date_paiement", nullable = false)
     private Date datePaiement;
 
-    @Column(name = "nomsFestivaliers", nullable = false)
+    @Column(name = "noms_festivaliers", nullable = false)
     private String nomsFestivaliers;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "proprietaire", referencedColumnName = "email", table = "Utilisateur", insertable = true)
+    @JoinColumn(name = "proprietaire", referencedColumnName = "email")
     private Utilisateur proprietaire;
 
-    @OneToMany(mappedBy = "idPanier", cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPanier", referencedColumnName = "idPanier", table = "PanierEtape", insertable = true)
+    @OneToMany(mappedBy = "idPanierEtape")
     private List<PanierEtape> panierEtapes;
     
 }

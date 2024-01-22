@@ -12,21 +12,21 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Departement")
+@Table(name = "departement")
 public class Departement {
 
     @Id
     @Column(name = "departement", nullable = false)
     private String departement;
 
-    @Column(name = "nomDepartement", nullable = false)
+    @Column(name = "nom_departement", nullable = false)
     private String nomDepartement;
 
-    @OneToMany
-    @JoinColumn(name = "departement", referencedColumnName = "departement", table = "Commune", updatable = true, insertable = true)
+    @OneToMany(mappedBy = "departement") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Commune> communes;
 
     @ManyToOne
-    @JoinColumn(name = "nomRegion", referencedColumnName = "nom", table = "Region", nullable = false, updatable = true, insertable = true)
+    @JoinColumn(name = "nom_region", referencedColumnName = "nom")
     private Region nomRegion;
+
 }

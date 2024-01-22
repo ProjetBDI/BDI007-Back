@@ -13,15 +13,14 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Region")
+@Table(name = "region")
 public class Region {
     
     @Id
     @Column(name = "nom", nullable = false)
     private String nom;
 
-    @OneToMany
-    @JoinColumn(name = "nom", referencedColumnName = "nomRegion", table = "Departement", updatable = true, insertable = true)
+    @OneToMany(mappedBy = "nomRegion")
     private List<Departement> departements;
 
 }
