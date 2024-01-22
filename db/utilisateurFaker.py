@@ -10,9 +10,9 @@ nombre_utilisateurs = 100000
 # Génération des données
 utilisateurs = []
 for _ in range(nombre_utilisateurs):
-    email = fake.email()
     nom = fake.last_name()
     prenom = fake.first_name()
+    email = f"{prenom.lower()}.{nom.lower()}{_}@{fake.free_email_domain()}"
     date_naissance = fake.date_of_birth().strftime('%Y-%m-%d')
     utilisateurs.append([email, nom, prenom, date_naissance])
 
