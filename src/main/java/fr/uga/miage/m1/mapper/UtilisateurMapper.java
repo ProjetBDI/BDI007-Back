@@ -1,6 +1,6 @@
 package fr.uga.miage.m1.mapper;
 
-import fr.uga.miage.m1.entity.UtilisateurDTO;
+import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.model.Utilisateur;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
