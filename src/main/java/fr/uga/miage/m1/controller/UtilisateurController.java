@@ -15,6 +15,4 @@ public class UtilisateurController {
         this.utilisateurService = utilisateurService;
     }
 
-    // Ajouter les OP CRUD ici attention au contrat de l'API REST
-
 }
