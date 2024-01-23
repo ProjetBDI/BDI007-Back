@@ -11,7 +11,7 @@ public interface UtilisateurMapper {
     UtilisateurMapper INSTANCE = Mappers.getMapper(UtilisateurMapper.class);
 
     // @Mapping(target = "motDePasse", ignore = true) // Ignorer le mot de passe lors de la conversion
-    // UtilisateurDTO utilisateurToDTO(Utilisateur utilisateur);
+    UtilisateurDTO utilisateurToDTO(Utilisateur utilisateur);
 
     Utilisateur dtoToUtilisateur(UtilisateurDTO utilisateurDTO);
 }
