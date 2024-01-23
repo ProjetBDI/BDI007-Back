@@ -8,14 +8,25 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "domaine")
+@Table(
+        name = "domaine",
+        uniqueConstraints = @UniqueConstraint(name = "UNQ_NOMDOMAINE_NOMSOUSDOMAINE", columnNames = {"nom_domaine", "nom_sous_domaine"})
+)
+
 public class Domaine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="nom_domaine", nullable = false)
+    @Column(name = "id_domaine", nullable = false)
+    private int id_domaine;
+
+    @Column(name = "nom_domaine", nullable = false)
     private String nomDomaine;
 
-    @OneToMany(mappedBy = "nomSousDomaine")
-    private List<SousDomaine> sousDomaines;
+
+    @Column(name = "nom_sous_domaine", nullable = true)
+    private String sousDomaines;
+
+    @OneToMany(mappedBy = "id_domaine")
+    private List<Festival> festivals;
 }

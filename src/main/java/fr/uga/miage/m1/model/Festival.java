@@ -1,17 +1,7 @@
 package fr.uga.miage.m1.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +16,7 @@ public class Festival {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_festival", nullable = false)
-    private long idFestival;
+    private Long id_festival;
 
     @Column(name = "nom")
     private String nom;
@@ -51,7 +41,7 @@ public class Festival {
     @Column(name = "nb_pass_dispo")
     private int nbPassDispo;
 
-    @Column(name = "nb_pas_indispo")
+    @Column(name = "nb_pass_indispo")
     private int nbPassIndispo;
 
     @Column(name = "tarif_pass")
@@ -60,15 +50,14 @@ public class Festival {
     @Column(name = "status")
     private FestivalStatus status;
     
-    @OneToMany(mappedBy = "festival")
+    @OneToMany(mappedBy = "id_festival")
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
-    @JoinColumn(name="commune", referencedColumnName = "code_insee")
-    private Commune commune;
+    @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
+    private Commune id_commune;
 
     @ManyToOne
-    @JoinColumn(name="sous_domaine", referencedColumnName = "nom_sous_domaine")
-    @JoinColumn(name="domaine", referencedColumnName = "nom_domaine")
-    private SousDomaine sousDomaine;
+    @JoinColumn(name="id_domaine", referencedColumnName = "id_domaine")
+    private Domaine id_domaine;
 }

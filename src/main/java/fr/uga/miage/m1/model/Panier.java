@@ -3,7 +3,6 @@ package fr.uga.miage.m1.model;
 import java.util.Date;
 import java.util.List;
 
-import fr.uga.miage.m1.enums.PanierStatus;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
@@ -28,11 +27,8 @@ public class Panier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPanier;
-
-    @Enumerated(EnumType.STRING)
-    @Column( name = "status", nullable = false)
-    private PanierStatus status;
+    @Column(name="id_panier", nullable = false)
+    private Long id_panier;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_paiement", nullable = false)
@@ -42,10 +38,10 @@ public class Panier {
     private String nomsFestivaliers;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "proprietaire", referencedColumnName = "email")
-    private Utilisateur proprietaire;
+    @JoinColumn(name = "id_proprietaire", referencedColumnName = "id_utilisateur")
+    private Utilisateur id_proprietaire;
 
-    @OneToMany(mappedBy = "idPanierEtape")
+    @OneToMany(mappedBy = "id_panier_etape")
     private List<PanierEtape> panierEtapes;
     
 }
