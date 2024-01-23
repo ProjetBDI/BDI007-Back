@@ -27,7 +27,7 @@ public class Lieu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_lieu", nullable = false)
-    private Long idLieu;
+    private Long id_lieu;
 
     @Column(name="code_insee_lieu", nullable = false)
     private String codeINSEELieu;
@@ -49,10 +49,10 @@ public class Lieu {
     private float latitude;
 
     @ManyToOne
-    @JoinColumn(name="commune", referencedColumnName = "code_insee")
-    private Commune commune;
+    @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
+    private Commune id_commune;
 
-    @OneToMany(mappedBy = "idLieu")
+    @OneToMany(mappedBy = "id_lieu")
     private List<Etape> etapes;
 
 }

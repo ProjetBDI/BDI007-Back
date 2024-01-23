@@ -15,7 +15,7 @@ import lombok.extern.java.Log;
 public class MyApplication{
 	
     @Autowired
-    PersonsRepository persons;
+//    PersonsRepository persons;
     
     @GetMapping(
     		value = "/hello", 
@@ -27,12 +27,12 @@ public class MyApplication{
      */
     public String testDBConnexion(){
     	log.info("testDBConnexion called");
-    	String answer = "No person found";
-    	if(persons.count() != 0) {
-    		Person p = persons.findAll().get(0);
-    		answer = "\"" + p.getFirstName() + " " + p.getLastName() + "\"";
-    	}
-    	return answer;
+//    	String answer = "No person found";
+//    	if(persons.count() != 0) {
+//    		Person p = persons.findAll().get(0);
+//    		answer = "\"" + p.getFirstName() + " " + p.getLastName() + "\"";
+//    	}
+    	return "";
     }
 
     public static void main(String[] args) {

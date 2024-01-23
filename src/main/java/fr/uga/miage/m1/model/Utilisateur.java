@@ -4,15 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Entity
@@ -21,27 +14,34 @@ import lombok.Data;
 public class Utilisateur {
 
     @Id
-    @Column(name="email", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_utilisateur", nullable = false)
+    private Long id_utilisateur;
+
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name="nom", nullable = false)
+    @Column(name = "nom", nullable = false)
     private String nom;
 
-    @Column(name="prenom", nullable = false)
+    @Column(name = "prenom", nullable = false)
     private String prenom;
 
-    @Column(name="mot_de_passe", nullable = false)
+    @Column(name = "mot_de_passe", nullable = true)
     private String motDePasse;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="date_naissance", nullable = false)
+    @Column(name = "date_naissance", nullable = false)
     private Date dateNaissance;
 
-    @OneToMany(mappedBy = "proprietaire")
+    @Column(name = "telephone")
+    private String telephone;
+
+    @OneToMany(mappedBy = "id_proprietaire")
     private List<Panier> paniers;
 
 
-    @OneToMany(mappedBy = "conducteur")
+    @OneToMany(mappedBy = "id_conducteur")
     private List<Covoiturage> covoiturages;
 
 }

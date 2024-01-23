@@ -22,25 +22,20 @@ import lombok.Data;
 public class PanierEtape {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idPanierEtape;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_panier_etape", nullable = false)
+    private Long id_panier_etape;
 
-    @Column(name="etape_lieu", nullable = false)
-    private long etapeLieu;
-
-    @Column(name="etape_covoiturage", nullable = false)
-    private long etapeCovoiturage;
 
     @Column(name="nb_place_occuppe", nullable = false)
     private long nbPlaceOccuppe;
 
     @ManyToOne
-    @JoinColumn(name = "id_panier")
-    private Panier panier;
+    @JoinColumn(name = "id_panier", referencedColumnName = "id_panier")
+    private Panier id_panier;
 
     @ManyToOne
-    @JoinColumn(name = "etape_lieu", referencedColumnName = "id_lieu", insertable = false, updatable = false)
-    @JoinColumn(name = "etape_covoiturage", referencedColumnName = "id_covoiturage", insertable = false, updatable = false)
-    private Etape etape;
+    @JoinColumn(name = "id_etape", referencedColumnName = "id_etape", insertable = false, updatable = false)
+    private Etape id_etape;
     
 }

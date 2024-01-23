@@ -25,7 +25,7 @@ public class Covoiturage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_covoiturage", nullable = false)
-    private long idCovoiturage;
+    private Long id_covoiturage;
 
     @Column(name = "nb_place")
     private int nbPlace;
@@ -42,20 +42,20 @@ public class Covoiturage {
     @Column(name = "couleur")
     private String couleur;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_depart")
     private Date dateDepart;
 
-    @OneToMany(mappedBy = "idCovoiturage")
+    @OneToMany(mappedBy = "id_covoiturage")
     private List<Etape> etapes;
     
     @ManyToOne
-    @JoinColumn(name = "festival", referencedColumnName = "id_festival")
-    private Festival festival;    
+    @JoinColumn(name = "id_festival", referencedColumnName = "id_festival")
+    private Festival id_festival;
 
     @ManyToOne
-    @JoinColumn(name = "email_conducteur", referencedColumnName = "email", insertable = true, updatable = true)
-    private Utilisateur conducteur;
+    @JoinColumn(name = "id_conducteur", referencedColumnName = "id_utilisateur", insertable = true, updatable = true)
+    private Utilisateur id_conducteur;
 
 }
 
