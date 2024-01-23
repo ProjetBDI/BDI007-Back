@@ -1,8 +1,13 @@
 nomSousDomaine,nomDomaine
 Musiques traditionnelles et du monde,Musiques actuelles
+Transdisciplinaire,Transdisciplinaire
+Pluridisciplinaire Spectacle vivant,Pluridisciplinaire Spectacle vivant
 Musiques amplifiées ou électroniques,Musiques actuelles
 Arts de la rue,Cirque et Arts de la rue
+Musiques actuelles,Musiques actuelles
+Pluridisciplinaire Musique,Pluridisciplinaire Musique
 "Jazz, blues et musiques improvisées",Musiques actuelles
+Musiques classiques,Musiques classiques
 Chanson,Musiques actuelles
 Humour,Divers Spectacle vivant
 Baroque et ancien,Musiques classiques
@@ -10,6 +15,7 @@ Bande dessinée,Livre et littérature
 Cultures d'Afrique,Transdisciplinaire
 Arts platiques et musique,Transdisciplinaire
 Musique de chambre,Musiques classiques
+Arts plastiques et visuels,Arts plastiques et visuels
 Danse contemporaine,Danse
 Cinémas étrangers,Cinéma et audiovisuel
 Danse et musique,Pluridisciplinaire Spectacle vivant
@@ -17,6 +23,8 @@ Jeune public,Pluridisciplinaire Spectacle vivant
 Marionnettes,Divers Spectacle vivant
 Musique contemporaine,Musiques classiques
 Traduction,Livre et littérature
+Livre et littérature,Livre et littérature
+Cirque et Arts de la rue,Cirque et Arts de la rue
 Cirque,Cirque et Arts de la rue
 Sciences humaines et sociales,Livre et littérature
 Littératures étrangères,Livre et littérature
@@ -31,7 +39,9 @@ Musique et danse,Pluridisciplinaire Spectacle vivant
 Danses urbaines,Danse
 Documentaire,Cinéma et audiovisuel
 Création numérique,Transdisciplinaire
+Danse,Danse
 Audiovisuel,Cinéma et audiovisuel
+Cinéma et audiovisuel,Cinéma et audiovisuel
 Illustration,Livre et littérature
 Nature et littérature,Transdisciplinaire
 Lyrique et choral,Musiques classiques
@@ -44,6 +54,7 @@ Courts-métrages,Cinéma et audiovisuel
 Danses et musiques urbaines,Pluridisciplinaire Spectacle vivant
 Danses du monde et traditionnelles,Danse
 Cultures électroniques,Transdisciplinaire
+Théâtre,Théâtre
 Musique et bande dessinée,Transdisciplinaire
 "Humour, conte, musique",Pluridisciplinaire Spectacle vivant
 Marionnettes,Divers Spectacle Vivant
@@ -96,6 +107,7 @@ Musiques et danses du monde,Pluridisciplinaire Spectacle vivant
 Livre et vin,Transdisciplinaire
 "Art urbain, art contemporain, musiques actuelles.",Transdisciplinaire
 Cultures urbaines,Transdisciplinaire
+Musiques Actuelles,Musiques Actuelles
 Cinéma et musique,Transdisciplinaire
 "Spectacle vivant, arts visuels, arts plastiques et cinéma",Transdisciplinaire
 Livre et arts visuels,Transdisciplinaire

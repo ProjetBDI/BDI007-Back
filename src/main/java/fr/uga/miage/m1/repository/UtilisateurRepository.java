@@ -162,12 +162,5 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
     default <S extends Utilisateur> boolean exists(Example<S> example) {
         return false;
     }
-
-    @Override
-    default <S extends Utilisateur, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
-        return null;
-    }
-
-    Optional<Utilisateur> findByUsername(String username);
 }
 

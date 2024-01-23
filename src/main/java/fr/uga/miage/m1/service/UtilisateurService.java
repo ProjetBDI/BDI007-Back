@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.repository.UtilisateurRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,15 @@ public class UtilisateurService {
         return utilisateurRepository.findByUsername(username);
     }
 
-    // Ajouter des méthodes spécifiques de service ici si nécessaire
+    public Utilisateur save(Utilisateur utilisateur) {
+        return utilisateurRepository.save(utilisateur);
+    }
+
+    public void deleteById(Long id) {
+        utilisateurRepository.deleteById(id);
+    }
+
+    public List<Utilisateur> getAllUsers() {
+        return utilisateurRepository.findAll();
+    }
 }
