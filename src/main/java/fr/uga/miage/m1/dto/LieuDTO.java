@@ -1,5 +1,7 @@
 package fr.uga.miage.m1.dto;
 
+import java.util.List;
+
 public class LieuDTO {
     
     private Long idLieu;

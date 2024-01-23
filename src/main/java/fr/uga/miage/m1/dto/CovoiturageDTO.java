@@ -10,13 +10,22 @@ import java.util.List;
 public class CovoiturageDTO {
 
     private long idCovoiturage;
+
     private int nbPlace;
+    
     private int nbPlaceDispo;
+    
     private String marque;
+    
     private String modele;
+    
     private String couleur;
+    
     private Date dateDepart;
-    private Collection<EtapeDTO> etapes;
+    
+    private List<EtapeDTO> etapes;
+    
     private FestivalDTO festival;
+    
     private UtilisateurDTO conducteur;
 }
