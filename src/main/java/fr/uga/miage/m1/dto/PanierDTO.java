@@ -12,6 +12,6 @@ public class PanierDTO {
     private Date datePaiement;
     private String nomsFestivaliers;
     private UtilisateurDTO proprietaire;
-    private Collection<PanierEtapeDTO> panierEtapes;
+    private List<PanierEtapeDTO> panierEtapes;
     
 }

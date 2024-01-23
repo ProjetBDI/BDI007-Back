@@ -13,8 +13,8 @@ public class CommuneDTO {
     private String codePostal;
     private String longitude;
     private String latitude;
-    private Collection<FestivalDTO> festivals;
-    private Collection<LieuDTO> lieux;
+    private List<FestivalDTO> festivals;
+    private List<LieuDTO> lieux;
     private DepartementDTO departement;
     
 }

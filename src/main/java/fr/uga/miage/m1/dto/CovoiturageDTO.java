@@ -16,7 +16,7 @@ public class CovoiturageDTO {
     private String modele;
     private String couleur;
     private Date dateDepart;
-    private Collection<EtapeDTO> etapes;
+    private List<EtapeDTO> etapes;
     private FestivalDTO festival;
     private UtilisateurDTO conducteur;
 }
