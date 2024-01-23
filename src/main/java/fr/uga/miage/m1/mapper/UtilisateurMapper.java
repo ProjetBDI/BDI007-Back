@@ -12,12 +12,8 @@ public interface UtilisateurMapper {
 
     Utilisateur dtoToEntity(UtilisateurDTO utilisateurDTO);
 
-<<<<<<< HEAD
     // @Mapping(target = "motDePasse", ignore = true) // Ignorer le mot de passe lors de la conversion
     UtilisateurDTO utilisateurToDTO(Utilisateur utilisateur);
-=======
-    UtilisateurDTO entityToDTO(Utilisateur utilisateur);
->>>>>>> e446994b712c9d95ba25c0819b071f875cb2fa7e
 
     List<Utilisateur> dtoToEntity(List<UtilisateurDTO> utilisateurDTOs);
 
