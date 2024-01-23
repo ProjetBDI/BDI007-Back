@@ -3,7 +3,6 @@ package fr.uga.miage.m1.dto;
 import java.util.Date;
 import java.util.List;
 
-import fr.uga.miage.m1.enums.PanierStatus;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,8 +11,6 @@ import lombok.Data;
 public class PanierDTO {
 
     private Long idPanier;
-    
-    private PanierStatus status;
     
     private Date datePaiement;
     
