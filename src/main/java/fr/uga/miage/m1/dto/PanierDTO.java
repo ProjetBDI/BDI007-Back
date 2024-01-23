@@ -4,7 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import fr.uga.miage.m1.enums.PanierStatus;
+import lombok.Builder;
+import lombok.Data;
 
+@Data
+@Builder
 public class PanierDTO {
 
     private Long idPanier;

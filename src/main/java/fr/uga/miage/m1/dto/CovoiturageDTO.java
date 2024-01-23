@@ -3,10 +3,14 @@ package fr.uga.miage.m1.dto;
 import fr.uga.miage.m1.model.Etape;
 import fr.uga.miage.m1.model.Festival;
 import fr.uga.miage.m1.model.Utilisateur;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
 
+@Data
+@Builder
 public class CovoiturageDTO {
 
     private long idCovoiturage;
