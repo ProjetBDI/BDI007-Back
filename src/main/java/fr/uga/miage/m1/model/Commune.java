@@ -12,17 +12,17 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Commune")
+@Table(name = "commune")
 public class Commune {
 
     @Id
-    @Column(name = "codeINSEE", nullable = false)
+    @Column(name = "code_insee", nullable = false)
     private String codeINSEE;
 
-    @Column(name = "nomCommune", nullable = false)
+    @Column(name = "nom_commune", nullable = false)
     private String nomCommune;
 
-    @Column(name = "codePostal", nullable = false)
+    @Column(name = "code_postal", nullable = false)
     private String codePostal;
 
     @Column(name = "longitude", nullable = false)

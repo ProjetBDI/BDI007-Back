@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Region")
+@Table(name = "region")
 public class Region {
     
     @Id

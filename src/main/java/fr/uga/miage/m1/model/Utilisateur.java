@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Utilisateur")
+@Table(name = "utilisateur")
 public class Utilisateur {
 
     @Id
@@ -29,11 +29,11 @@ public class Utilisateur {
     @Column(name="prenom", nullable = false)
     private String prenom;
 
-    @Column(name="motDePasse", nullable = false)
+    @Column(name="mot_de_passe", nullable = false)
     private String motDePasse;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="dateNaissance", nullable = false)
+    @Column(name="date_naissance", nullable = false)
     private Date dateNaissance;
 
     @OneToMany(mappedBy = "proprietaire")
