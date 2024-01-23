@@ -49,7 +49,7 @@ public class Lieu {
     private float latitude;
 
     @ManyToOne
-    @JoinColumn(name="commune", referencedColumnName = "code_insee")
+    @JoinColumn(name="code_insee_commune", referencedColumnName = "code_insee")
     private Commune commune;
 
     @OneToMany(mappedBy = "idLieu")

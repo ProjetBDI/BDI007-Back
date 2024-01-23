@@ -54,6 +54,9 @@ public class Festival {
     @Column(name = "nb_pas_indispo")
     private int nbPassIndispo;
 
+    @Column(name = "tarif_pass")
+    private float tarifPass;
+
     @Column(name = "status")
     private FestivalStatus status;
     

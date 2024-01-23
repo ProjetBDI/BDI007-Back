@@ -1,0 +1,608 @@
+id_lieu,adresse,code_insee_lieu,latitude,longitude,nom,type_lieu,code_insee_commune
+2,Place De La Fontaine- Anciens Combattants,01024,46.289574,5.158353,Mairie d'Attignat,Parking,01024
+3,Dept. 01 - Autoroute A40 - Diffuseur nÂ°5,01024,46.25978,5.168004,Bourg-Nord,Aire de covoiturage,01024
+7,La Boisse,01049,45.84054,5.048432,Aire de covoiturage Montluel,Aire de covoiturage,01049
+8,Avenue des PrÃ©-seigneurs - La BOISSE ,01049,45.842464,5.049643,Parking de covoiturage des PrÃ©-Seigneurs,Aire de covoiturage,01049
+34,PÃ©rouges,01290,45.860683,5.182171,Aire de covoiturage PÃ©rouges,Sortie d'autoroute,01290
+35,Dept. 01 - Autoroute A42 - Diffuseur nÂ°7,01290,45.859753,5.1840835,Aire de covoiturage A42 Meximieux Perouges,Aire de covoiturage,01290
+56,"5 rue Robert BaltiÃ©, 01600 TRÃVOUX",01427,45.940258,4.768434,TRÃVOUX - Saint Mamet,Aire de covoiturage,01427
+57,Rue de la Montluelde 01600 TrÃ©voux,01427,45.94081,4.780993,TrÃ©voux - Chantegrillet,Aire de covoiturage,01427
+62,A4 Sortie 20 La Planchette 02400 BÃ©zu-Saint-Germain,02168,49.078583,3.4002516,Covoiturage SANEF ChÃ¢teau-Thierry,Sortie d'autoroute,02168
+63,37 Avenue d'EssÃ©mes. 02400 ChÃ©teau-Thierry,02168,49.0407,3.3874748,Carrefour Chateau Thierry,SupermarchÃ©,02168
+64,12 Rue de la Plaine. 02400 ChÃ©teau-Thierry,02168,49.03737,3.389779,Leclerc ChÃ©teau Thierry,SupermarchÃ©,02168
+68,A26 Sortie 13,02408,49.606903,3.663693,Covoiturage SANEF Laon,Sortie d'autoroute,02408
+76,Place de la LIbertÃ© (face garage Renault),03084,46.475586,2.830546,Parking du Bourg,Parking,03084
+81,Les Thomassots,03102,46.517918,3.6884937,Parking Thomassots,Parking,03102
+82,Les Chillins proximitÃ© echangeur A71-A719,03118,46.103115,3.1383781,Aire de covoiturage des Chillins,Aire de covoiturage,03118
+83,Place Saint James,03118,46.096348,3.1990657,Place Saint-James,Parking,03118
+84,ZA les Clos Durs,03118,46.111073,3.2030103,Za Les Clos durs,Parking,03118
+96,Route de NÃ©ris,03185,46.326027,2.6099708,Parking Saint-Jean,Parking,03185
+126,4 AllÃ©e des Pins. 04400 Barcelonnette,04019,44.386475,6.635163,Parking AllÃ©e des Pins,Parking,04019
+132,5 Route de Marseille. 04000 Digne-les-Bains,04070,44.06953,6.17887,Parking DÃ©cathlon Route de Marseille,Parking,04070
+137,A51 Sortie 18 Manosque,04112,43.808712,5.811568,Parking de covoiturage de Manosque,Aire de covoiturage,04112
+140,D460. 04240 Saint-BenoÃ©t,04174,43.96016,6.724074,Parking du Croisement D460 et Rn202 (Au Passage Ã  Niveau),Parking,86214
+155,Zone Industrielle De La CanardiÃ©re. Avenue du MarÃ©chal Lyautey. 06210 Mandelieu-la-Napoule,06079,43.553333,6.946097,Parc Relais La CanardiÃ©re,Parking relais,06079
+156,600 Route de la Roquette. 06370 Mouans-Sartoux,06084,43.61256,6.967739,Parc Relais Giratoire PÃ©nÃ©trante,Parking relais,06084
+158,D263A. 07400 Alba-la-Romaine,07005,44.56277,4.595806,Station de service Alba la Romaine,Parking,07005
+162,5 Chemin d'Aurives. 07160 Le Cheylard,07064,44.911865,4.428552,Plaisance,Parking,07064
+180,D120. 07320 Saint-AgrÃ©ve,07204,45.006687,4.401874,Parking du rond point D120,Parking,07204
+187,1 Place du Jardin Public. 07190 Saint-Sauveur-de-Montagut,07295,44.820194,4.57777,Parking en face l'Eglise ReformÃ©e,Parking,07295
+198,1005-2 Rue RenÃ© Cassin. 07800 La Voulte-sur-RhÃ©ne,07349,44.802727,4.785377,Parking Salle des fÃ©tes,Parking,07349
+459,D0374,10018,48.103123,3.9183815,Parking covoiturage D0374,Parking,10018
+460,D0004B,10033,48.22994,4.7075605,Parking D0004B,Parking,10033
+461,D0013,10033,48.230488,4.715208,Parking D0013,Parking,10033
+477,D0056,10289,48.57174,3.9600325,Parking D0056,Parking,10289
+480,D0041,10333,48.285053,4.051245,Parking D0041,Parking,10333
+484,D6113,11069,43.22703,2.33082,Aire de covoiturage du Rond-Point George Pompidou,Aire de covoiturage,11069
+485,A61 Sortie 21 Castelnaudary,11076,43.292797,1.951646,Parking de covoiturage de Castelnaudary,Aire de covoiturage,11076
+490,D6009,11262,43.16498,2.98888,Aire de covoiturage de Narbonne,Aire de covoiturage,11262
+589,Avenue de Rodiez,12094,44.638424,2.571188,Parking Rodiez D920,Parking,12094
+613,St Germain,12145,44.1334,3.031685,Aire de St Germain,Parking,12145
+651,Croisement 901-568 Ã© cÃ©tÃ© d'Hostellerie de Fontanges,12176,44.378895,2.5636935,Parking route du chÃ©teau D568,Parking,12176
+652,La Croix Blanche,12176,44.385136,2.52149,Aire de la Croix blanche,Parking,12176
+677,Croisement RD 250,12208,43.989918,2.935273,Aire du Dolmen,Parking,12208
+780,D113,13071,43.415104,5.298068,Parking Aire de Stationement Chemin de La Pourranque,Parking,13071
+798,D55B,14762,48.867252,-0.869746,Parking Ã© cÃ©tÃ© du Campanile Vire,Parking,14762
+800,RN122. aprÃ©s station essence,15014,44.907394,2.420675,Aire de covoiturage d'Aurillac cÃ©tÃ© Sansac,Aire de covoiturage,15014
+801,RD120-RD18,15014,44.93095,2.425653,Aire de covoiturage de Lascanaux,Aire de covoiturage,15014
+805,RD120-RD653-RD2,15094,44.975346,2.222572,Aire de covoiturage de l'Ã©changeur du Pont d'Orgon,Aire de covoiturage,15094
+909,D910. 17210 Chevanceaux,17104,45.29498,-0.238894,Aire de covoiturage de Chevanceaux RN,Aire de covoiturage,17104
+945,Route du Viaduc. 17550 Dolus-d'OlÃ©ron,17140,45.901566,-1.252945,Aire de covoiturage de Dolus d'OlÃ©ron DÃ©lidon,Aire de covoiturage,17140
+999,6 Rue des Arts. 17160 Matha,17224,45.866657,-0.305257,Aire de covoiturage de Matha Rond-Point de l'Europe,Aire de covoiturage,17224
+1011,Boulevard de Saintonge. 17130 Montendre,17240,45.290375,-0.410973,Aire de covoiturage de Montendre Centre Commercial,SupermarchÃ©,17240
+1053,ZI de perigny avenue Joliot-Curie. 17180 Perigny,17274,46.155926,-1.110087,Aire de covoiturage de PÃ©rigny Chevaliers,Aire de covoiturage,17274
+1075,1B Rue Hubert Pennevert. 17300 Rochefort,17299,45.959106,-0.958272,Aire de covoiturage de Rochefort Les SÃ©urs,Aire de covoiturage,17299
+1076,D21. 17000 La Rochelle,17300,46.174286,-1.218497,Aire de covoiturage de La Rochelle BelvÃ©dÃ©re,Aire de covoiturage,17300
+1077,Ave. Louis Boucher. 17200 Royan,17306,45.625214,-1.000643,Aire de covoiturage de Royan Belmont,Aire de covoiturage,17306
+1148,12 Boulevard de Vladimir. 17100 Saintes,17415,45.755558,-0.651492,Aire de covoiturage de Saintes BrÃ©lerie,Aire de covoiturage,17415
+1149,17 Avenue de Gemozac. 17100 Saintes,17415,45.72002,-0.644085,Aire de covoiturage de Saintes Charrier,Aire de covoiturage,17415
+1150,1 Rue des Vacherons. 17100 Saintes,17415,45.757095,-0.661153,Aire de covoiturage de Saintes VÃ©cherons,Aire de covoiturage,17415
+1173,14B Avenue Saint-Pierre. 17700 SurgÃ©res,17434,46.10376,-0.753167,Aire de covoiturage de SurgÃ©res Route de Rochefort,Aire de covoiturage,17434
+1186,A71 Sortie 7 Bourges,18033,47.046055,2.342195,Parking de covoiturage de Bourges,Aire de covoiturage,18033
+1191,A71 Sortie 6 Vierzon Est,18279,47.213676,2.117144,Parking de covoiturage de Vierzon Est,Aire de covoiturage,18279
+1222,Rue de la Petite Issue. 21220 Gevrey-Chambertin,21295,47.224663,4.994629,Aire de covoiturage de Gevrey Chambertin,Aire de covoiturage,21295
+1238,22 Rue d'Argentine. 21210 Saulieu,21584,47.281433,4.23087,Aire de covoiturage de Saulieu,Aire de covoiturage,21584
+1240,22 AllÃ©e LÃ©on Soye. 21240 Talant,21617,47.341263,4.995505,Aire de covoiturage de Talant,Aire de covoiturage,21617
+1256,Giratoire du Boutil RD 767 - RD 786,22113,48.724297,-3.4306297,Aire de covoiturage Le Boutil,Aire de covoiturage,22113
+1261,Ã©changeur de Bel Air RD 700-,22155,48.225533,-2.7551236,Aire de covoiturage Bel Air,Aire de covoiturage,83085
+1263,Giratoire de la Lande Blanche RD786-RD7,22162,48.761887,-3.041335,Aire de covoiturage La Lande Blanche,Aire de covoiturage,22162
+1302,Ã©changeur de la CrarÃ©e RD 10 - RD 27 - RD 222,22360,48.477154,-2.7502573,Aire de covoiturage La CrarÃ©e,Aire de covoiturage,22360
+1362,2 Rue Louis Pergaud. 25300 Pontarlier,25462,46.901867,6.345687,Espace Pourny,Parking,25462
+1364,5 Rue Clemenceau. 25210 Le Russey,25512,47.16191,6.73146,Centre-Ville-ClÃ©menceau,Parking,25512
+1365,4 Rue du Stade. 25210 Le Russey,25512,47.15692,6.71983,Stade,Parking,25512
+1384,5 Route de Malissard. 26120 Chabeuil,26064,44.90286,5.008214,Aire de covoiturage de Chabeuil,Aire de covoiturage,26064
+1396,La Croix de Romans .. 26400 Crest,26108,44.740147,5.005335,Aire de covoiturage de La Saleine,Aire de covoiturage,26108
+1397,D164. 26400 Crest,26108,44.720135,5.026365,Aire de covoiturage de St-FerrÃ©ol,Aire de covoiturage,26108
+1398,D104. 26400 Crest,26108,44.720406,4.997832,Aire de covoiturage des Blaches,Aire de covoiturage,26108
+1400,8 Rue de la Distillerie,26114,44.520508,5.070451,Parking de la distillerie,Parking,26114
+1417,8575 Route Route Nationale 7. 26700 Pierrelatte,26235,44.332382,4.686989,Parking de la route nationale 7,Parking,26235
+1418,La Croix d'or. 26700 Pierrelatte,26235,44.361237,4.693903,Parking du Carrefour Market,SupermarchÃ©,26235
+1420,9 Rue Emile Zola. 26800 Portes-lÃ©s-Valence,26252,44.873726,4.879165,Aire de covoiturage de la place de la libÃ©ration,Aire de covoiturage,26252
+1421,Rue Charles de Gaulle. 07800 Charmes-sur-RhÃ©ne,26252,44.85993,4.871997,Aire de covoiturage de l'espace Cristal,Aire de covoiturage,26252
+1438,7 Place de l'Ã©glise. 26400 Saou,26336,44.646408,5.062219,Parking de l'Ã©glise,Parking,26336
+1689,78 ZI de Kroaz Lesneven. 29520 ChÃ©teauneuf-du-Faou,29027,48.202335,-3.822062,Aire de covoiturage Kroas Lesneven,Aire de covoiturage,29027
+1692,Rue de la Forge. 29900 Concarneau,29039,47.9219,-3.9017258,Aire de covoiturage La BoissiÃ©re - Coat Conq,Aire de covoiturage,29039
+1694,1 Route de l'Aber. 29160 Crozon,29042,48.248055,-4.4189596,Aire de covoiturage Tal Ar Groas,Aire de covoiturage,29042
+1710,ZA de Prat Pip. 175 rue Jean Monnet. 29800 Saint-Divy,29103,48.444496,-4.2691875,Aire de covoiturage Jean Monnet,Aire de covoiturage,29103
+1725,4 Rue de la Forge. 29217 Plougonvelin,29190,48.343918,-4.720745,Aire de covoiturage Keraudy,Aire de covoiturage,29190
+1727,2 Rue Jean Guillou. 29780 Plouhinec,29197,48.01363,-4.4845185,Place Jean Guillou,Parking,56169
+1734,279 Route de Douarnenez. 29000 Quimper,29232,47.99976,-4.147026,Aire de covoiturage Kernevez,Aire de covoiturage,29232
+1735,1 D770. 29000 Quimper,29232,48.030754,-4.083468,Aire de covoiturage Park Poullic,Aire de covoiturage,29232
+1736,494 Route de Rosporden. 29000 Quimper,29232,47.979576,-4.015628,Aire de covoiturage Troyalac'H,Aire de covoiturage,29232
+1737,1 PÃ©le d'Act Kervidanou 3. 29300 Mellac,29233,47.86831,-3.5842414,Aire de covoiturage Kervidanou,Aire de covoiturage,29233
+1748,Lieu-dit Stagnacciu (Croisement RT22 - RD31),2A004,41.95237,8.783403,A Confina,SupermarchÃ©,2A004
+1749,Route de Mezzavia,2A004,41.950268,8.774718,Geant,SupermarchÃ©,2A004
+1750,Croisement RT20 - RT21 - RT40,2A004,41.930794,8.801744,Socordis,Aire de covoiturage,2A004
+1751,Route du Ricanto. Croisement RT21 - RD503,2A004,41.9294,8.76164,Station-service BP,SupermarchÃ©,2A004
+1752,Boulevard Charles Bonaparte,2A004,41.933838,8.751108,Halte ferroviaires des Salines,Parking relais,2A004
+1753,Route des Sanguinaires,2A004,41.907997,8.703146,U Cimiteriu - Cimetiere,Parking relais,2A004
+1761,Route de Muratello,2A247,41.59813,9.265822,Gamm Vert,SupermarchÃ©,2A247
+1771,Chemin du Furcone,2B033,42.708088,9.452273,P+R de Toga,Parking relais,2B033
+1772,Avenue Sampiero Corso (croisement RT11 - RD264),2B033,42.67734,9.444916,Sampieru Corsu,Parking,2B033
+1773,Croisement RT11 et av Liberation,2B033,42.677444,9.444278,Monoprix de Lupino,Parking,2B033
+1774,Route du front de mer,2B033,42.68645,9.445919,P+R front de mer,Parking relais,2B033
+1775,Rue Sebastiano d'Alzetto,2B033,42.69724,9.450903,Place du Marche,Parking,2B033
+1776,Port de Toga,2B033,42.70758,9.453768,U Portu di Toga - Port de Toga,Parking,2B033
+1780,Croisement RT30 - RD81,2B050,42.549625,8.783159,Rond-point de l'aeroport,DÃ©laissÃ© routier,2B050
+1790,Croisement RT30 - RD108,2B136,42.57744,9.152214,Tesa,Aire de covoiturage,2B136
+1806,Chemin de la petite CÃ©ze,30028,44.16839,4.620404,Parking de la CÃ©ze,Parking,30028
+1811,A9 Sortie 24 NÃ®mes Est,30189,43.857834,4.418366,Parking de covoiturage de NÃ®mes Est,Aire de covoiturage,30189
+1922,aire de pique-nique en face du garage Citro,32256,43.515507,0.4093713,Aire de covoiturage Etrigny,Aire de covoiturage,32256
+1923,croisement de la D137 et D943,32285,43.577423,0.3331063,Parking D137 - D943,Aire de covoiturage,32285
+1928,parking entre le pont de la Save et de la Sav,32410,43.488358,0.9338142,Parking Place des Halles,Aire de covoiturage,32410
+1931,place Zaccaharie Baquet (parking du collage),32462,43.75948,0.30056962,Parking du CollÃ©ge,Aire de covoiturage,32462
+1936,D215,33005,44.744507,-1.094711,Aire de covoiturage du ChÃ©teau D'Eau,Aire de covoiturage,33005
+1969,D1010,33090,44.751133,-0.641595,Parking Centre Commercial La House,Parking,33090
+1977,D671,33140,44.772167,-0.336403,Parking Carrefour Market CrÃ©on,Parking,33140
+1984,D936,33165,44.823902,-0.448803,Place Docteur dejean,Parking,33165
+1990,A62 Sortie 3 Langon,33227,44.54478,-0.262484,Parking de covoiturage de Langon,Aire de covoiturage,35145
+1992,D3,33236,44.795933,-1.145753,Parking Avenue de La Gare,Parking,33236
+1993,D651,33238,44.748207,-0.590252,Parking E. Leclerc,Parking,33238
+1994,D651,33238,44.72859,-0.599495,Place du MarchÃ©,Parking,33238
+2034,D2089,33393,44.980263,-0.149319,Aire de covoiturage des Chapelles,Aire de covoiturage,33393
+2035,D104,33417,44.965633,-0.88581,Parking du Stade,Parking,33417
+2048,D11,33523,44.73805,-0.265592,Parking CimetiÃ©re,Parking,33523
+2049,N250,33529,44.61875,-1.124253,Aire de covoiturage de La Plaine des Sports,Aire de covoiturage,33529
+2051,D2089,33539,44.882748,-0.31086,Aire de covoiturage de Senau,Aire de covoiturage,33539
+2090,15 Route de Boujan. 34500 BÃ©ziers,34032,43.367096,3.224205,Aire de covoiturage Rond-Point du Capitaine Alfred Dreyfus,Aire de covoiturage,34032
+2091,A9 Sortie 36 BÃ©ziers Ouest,34032,43.304577,3.216445,Parking de covoiturage de BÃ©ziers Ouest,Aire de covoiturage,34032
+2144,D32. 34150 Gignac,34114,43.64683,3.544436,Aire de covoiturage de Gignac,Aire de covoiturage,34114
+2215,Chemin de Castres. 34120 PÃ©zenas,34199,43.47725,3.435665,Aire de covoiturage de Pezenas,Aire de covoiturage,34199
+2382,Rue de la Seine,35012,47.851887,-1.6913207,Parking covoiturage de Bain-De-Bretagne,Parking,35012
+2383,La Croix Blanche,35012,47.853714,-1.680103,Parking La Croix Blanche,Parking,35012
+2401,Les 4 routes,35037,48.06117,-1.8777514,Aire de covoiturage BrÃ©al-Sous-Montfort,Aire de covoiturage,35037
+2413,Rond point pÃ©le sud,35066,48.043133,-1.695399,Aire de covoiturage de Chartres-De-Bretagne,Aire de covoiturage,35066
+2430,Rue des Elfes,35093,48.620167,-2.059937,Parking du CimetiÃ©re,Parking,35093
+2431,Rue des Elfes,35093,48.620167,-2.059937,Rue des Elfes,Aire de covoiturage,35093
+2464,La PlousiÃ©re,35128,48.310917,-1.718396,Aire de covoiturage de La PlousiÃ©re,Aire de covoiturage,35128
+2465,Rue de Rennes,35128,48.29429,-1.7204964,Parking Rue de Rennes,Parking,35128
+2493,Place de Bretagne,35162,48.48131,-1.1250306,Place de Bretagne,Parking,35162
+2494,Place de la Mairie,35162,48.480118,-1.1245229,Place de La Mairie,Parking,35162
+2495,Place du 8 mai 45,35162,48.480072,-1.1214702,Place du 8 Mai 45,Parking,35162
+2499,Bellevue,35168,47.90854,-1.9911113,Parking Bellevue,Parking,35168
+2505,6 Rue Rouviel,35174,48.488422,-1.1879389,Parking de la Rue Rouviel,Aire de covoiturage,79174
+2528,Le Ballon,35220,48.023666,-1.3993915,Parking du Ballon,Parking,35220
+2547,La Brandais,35238,48.154274,-1.6258303,Aire de covoiturage Le Patis Tatelin,Aire de covoiturage,35238
+2586,Rue du pont sec (D17),35323,48.437294,-1.341634,Parking Rue du Pont Sec,Parking,35323
+2612,PA La BaratiÃ©re,35360,48.109497,-1.2160623,Parc D'ActivitÃ©s La BaratiÃ©re,Parking,35360
+2673,Aire de Beauloisir - La forteresse,37072,47.169968,0.241935,Aire de Beauloisir,Aire de covoiturage,37072
+2674,RD751 Giratoire St Louand,37072,47.174706,0.20249167,Aire du Giratoire de St Louand,Aire de covoiturage,37072
+2872,14 chemin des marais A43,38053,45.602524,5.233226,Parking covoiturage La Grive,Parking,38053
+3029,Salle Claire Delage,38399,45.499855,5.144858,Parking Salle Claire delage,Parking,38399
+3030,Salle Claire Delage,38399,45.5,5.144,Parking Saint-Jean de Bournay,Parking,38399
+3215,60 Rue RenÃ© Dalloz. 39260 Moirans-en-Montagne,39333,46.42358,5.7256594,Saint-Claude,Parking,39333
+3229,18 Rue de l'EpicÃ©a. 39370 La Pesse,39413,46.283424,5.846764,Village,Parking,39413
+3250,23 Rue Carnot. 39200 Saint-Claude,39478,46.38225,5.861501,Parking Carnot,Parking,39478
+3325,Route d'Ossens. 40465 Pontonx-sur-l'Adour,40230,43.767693,-0.960611,Parking de Lahitte sud,Parking,40230
+3368,1087 Avenue Pierre BenoÃ©t. Route de Castets. 40990 Saint-Paul-lÃ©s-Dax,40279,43.74517,-1.056509,Aire RD 947,Parking,40279
+3369,1311 Avenue du MarÃ©chal Foch. 40990 Saint-Paul-lÃ©s-Dax,40279,43.734722,-1.050056,Parking avenue MarÃ©chal Foch,Parking,40279
+3408,17 Rue Paul Langevin. 42500 Le Chambon-Feugerolles,42044,45.392242,4.322181,Aire de covoiturage Langevin,Aire de covoiturage,42044
+3417,102 Boulevard Fayol. 42700 Firminy,42095,45.384308,4.300889,Aire de covoiturage Fayol,Aire de covoiturage,42095
+3439,Parking du cimetiÃ©re - rue des Alpes,42168,45.419155,4.684741,Aire de covoiturage du cimetiÃ©re,Aire de covoiturage,42168
+3443,2 Rue Jean Servanton. 42000 Saint-Ã©tienne,42218,45.453217,4.394129,Parc Relais du ZÃ©nith,Parking relais,42218
+3444,3 AllÃ©e des FrÃ©res Gauthier. 42000 Saint-Ã©tienne,42218,45.459873,4.38641,Parc Relais G. Guichard,Parking relais,42218
+3469,A l'intersection rue de Genebret et chemin de Montredon,43041,45.05153,3.90661,Parking Genebret,Parking,43041
+3485,Route de Monistrol,43224,45.24707,4.222118,Aire de covoiturage de Ste SigolÃ©ne,Aire de covoiturage,43224
+3486,Tence,43244,45.11766,4.28845,Parking zone du Fieu,Aire de covoiturage,43268
+3487,Yssingeaux,43268,45.16146,4.13061,Ãchangeur RN88 Alinhac,Parking,43268
+3503,46 Route de Tregate. 44740 Batz-sur-Mer,44010,47.280476,-2.455884,Parking Route de TrÃ©gatÃ©,Parking,44010
+3504,46 Route de Tregate. 44740 Batz-sur-Mer,44010,47.280476,-2.455884,Parking Route de TrÃ©gatÃ©,Parking,44010
+3509,Place Jollan de Clerville. 44130 Blain,44015,47.47527,-1.761498,Champ de Foire (Place Joalland de Clerville),Parking,44015
+3510,4B Route de l'Isac. 44130 Blain,44015,47.475357,-1.7541,E.Leclerc,SupermarchÃ©,44015
+3511,27 Route de l'Isac. 44130 Blain,44015,47.472755,-1.74733,Super U,SupermarchÃ©,44015
+3512,27 Route de l'Isac. 44130 Blain,44015,47.472755,-1.74733,Super U,SupermarchÃ©,44015
+3513,Place Jollan de Clerville. 44130 Blain,44015,47.47527,-1.761498,Champ de Foire (Place Joalland de Clerville),Parking,44015
+3514,4B Route de l'Isac. 44130 Blain,44015,47.475357,-1.7541,E.Leclerc,SupermarchÃ©,44015
+3591,9 Rue du Moulin. 44190 Clisson,44043,47.0968,-1.2806153,E.Leclerc,SupermarchÃ©,44043
+3592,9 Rue du Moulin. 44190 Clisson,44043,47.0968,-1.2806153,E.Leclerc,SupermarchÃ©,44043
+3605,34 Rue Emmanuel Provost. 44490 Le Croisic,44049,47.28377,-2.504454,Parking Chapelle du Crucifix,Parking,44049
+3606,34 Rue Emmanuel Provost. 44490 Le Croisic,44049,47.28377,-2.504454,Parking Chapelle du Crucifix,Parking,44049
+3627,11 Rue de L HÃ©tel de ville. 44290 GuÃ©menÃ©-Penfao,44067,47.627506,-1.834441,Aire de covoiturage de GuÃ©menÃ©-Penfao,Aire de covoiturage,44067
+3629,11 Rue de L HÃ©tel de ville. 44290 GuÃ©menÃ©-Penfao,44067,47.627506,-1.834441,Aire de covoiturage de GuÃ©menÃ©-Penfao,Aire de covoiturage,44067
+3635,Les Salines. 44500 La Baule-Escoublac,44069,47.291454,-2.395706,Carrefour Market La Baule GuÃ©rande,SupermarchÃ©,44069
+3636,Rue de la Fuie Zac de Villejames. 44350 GuÃ©rande,44069,47.328438,-2.413108,Parking E. Leclerc,SupermarchÃ©,44069
+3637,Rue de la Fuie Zac de Villejames. 44350 GuÃ©rande,44069,47.328438,-2.413108,Parking E. Leclerc,SupermarchÃ©,44069
+3638,Les Salines. 44500 La Baule-Escoublac,44069,47.291454,-2.395706,Carrefour Market La Baule GuÃ©rande,SupermarchÃ©,44069
+3651,496 Rue du Bocage. 44440 JouÃ©-sur-Erdre,44077,47.495792,-1.413406,Salle de L'AuviniÃ©re,Parking,44077
+3652,Place AndrÃ© Mazureau. 44440 JouÃ©-sur-Erdre,44077,47.495842,-1.419779,Place AndrÃ© Mazureau,Parking,44077
+3653,496 Rue du Bocage. 44440 JouÃ©-sur-Erdre,44077,47.495792,-1.413406,Salle de L'AuviniÃ©re,Parking,44077
+3654,Place AndrÃ© Mazureau. 44440 JouÃ©-sur-Erdre,44077,47.495842,-1.419779,Place AndrÃ© Mazureau,Parking,44077
+3655,Les Nouelles. 44430 Le Landreau,44079,47.20755,-1.306032,Complexe Polyvalent,Parking,44079
+3656,Les Nouelles. 44430 Le Landreau,44079,47.20755,-1.306032,Complexe Polyvalent,Parking,44079
+3679,Les Loges. 44540 Maumusson,44093,47.50262,-1.1230946,Aire de covoiturage Les Loges,Aire de covoiturage,44093
+3680,130 Rue du Pont Jacquot. 44540 Maumusson,44093,47.483578,-1.1061859,Parking Le Pont Jacquot,Parking,44093
+3681,Les Loges. 44540 Maumusson,44093,47.50262,-1.1230946,Aire de covoiturage Les Loges,Aire de covoiturage,44093
+3682,130 Rue du Pont Jacquot. 44540 Maumusson,44093,47.483578,-1.1061859,Parking Le Pont Jacquot,Parking,44093
+3701,1 Rue Anatole France. 44550 Montoir-de-Bretagne,44103,47.30189,-2.176613,Aire de covoiturage de Montoir-De-Bretagne,Aire de covoiturage,44103
+3702,1 Rue Anatole France. 44550 Montoir-de-Bretagne,44103,47.30189,-2.176613,Aire de covoiturage de Montoir-De-Bretagne,Aire de covoiturage,44103
+3703,Route de Sainte Luce,44109,47.24706,-1.4950686,Aire de covoiturage Bois des Anses,Aire de covoiturage,44109
+3704,1 Avenue Flora Tristan,44109,47.257877,-1.5098321,Aire de covoiturage Carrefour Beaujoire,Aire de covoiturage,44109
+3705,Parvis Neptune,44109,47.214077,-1.5525588,Parking Feydeau,Aire de covoiturage,44109
+3706,Cours John Kennedy,44109,47.21669,-1.5449843,Parking Gare Nord,Aire de covoiturage,44109
+3707,Rue Scribe,44109,47.21431,-1.5625718,Parking Graslin,Aire de covoiturage,44109
+3708,Rue Le NÃ©tre,44109,47.220257,-1.5583574,Parking Talensac,Aire de covoiturage,44109
+3709,4 Place de Bretagne,44109,47.217842,-1.5582501,Parking Tour Bretagne,Aire de covoiturage,44109
+3710,18 Quai Ernest Renaud,44109,47.205513,-1.5747113,Port Autonome de Nantes Saint Nazaire,Aire de covoiturage,44109
+3711,Quai de Versailles,44109,47.225204,-1.5537246,Port de L'Erdre,Aire de covoiturage,44109
+3712,Quai Ferdinand Favre,44109,47.21253,-1.540899,Service Maritime Et Navigation Ecluse Saint FÃ©lix,Aire de covoiturage,44109
+3713,Quai Ernest Renaud,44109,47.205402,-1.5739814,Capitainerie du Port Atlantique Nantes Saint Nazaire,Parking,44109
+3714,Rue des BourdonniÃ©res,44109,47.185974,-1.5213375,P+R Busway BourdonniÃ©res,Parking relais,44109
+3715,Route de Saint SÃ©bastien,44109,47.200138,-1.5333337,P+R Busway GrÃ©neraie,Parking relais,44109
+3716,Route de Gachet,44109,47.281094,-1.5184746,P+R Chronobus Chantrerie - Grandes Ecoles,Parking relais,44109
+3717,Boulevard de la Prairie de Mauves,44109,47.220257,-1.5158514,P+R Chronobus Prairie de Mauves,Parking relais,44109
+3718,Rue du Ranzai,44109,47.24845,-1.5228312,P+R Tram-Train HaluchÃ©re 1,Parking relais,44109
+3719,14 Rue du Ranzai,44109,47.25023,-1.5249752,P+R Tram-Train HaluchÃ©re 2,Parking relais,44109
+3720,Rue Gabriel Goudy,44109,47.1961,-1.5410478,P+R Tramway Goudy,Parking relais,44109
+3721,Rue Colette,44109,47.259495,-1.526681,P+R Tramway La Beaujoire,Parking relais,44109
+3722,Route de Saint Joseph,44109,47.254364,-1.5331366,P+R Tramway Ranzay,Parking relais,44109
+3723,Rue Recteur Schmitt,44109,47.251736,-1.552903,P+R Tramway Recteur Schmitt 1,Parking relais,44109
+3724,Route de la Chapelle Sur Erdre,44109,47.26395,-1.5749979,P+R Tramway RenÃ© Cassin,Parking relais,44109
+3725,Rue des Renards,44109,47.259323,-1.5682272,P+R Tramway Santos dumont,Parking relais,44109
+3726,Place Aristide Briand,44109,47.217094,-1.5629364,Parking Aristide Briand,Parking,44109
+3727,AllÃ©e Baco,44109,47.214333,-1.5489888,Parking Baco-Lu 1 CÃ©tÃ© Gare,Parking,44109
+3728,AllÃ©e Baco,44109,47.21315,-1.5516043,Parking Baco-Lu 2 CÃ©tÃ© Chu,Parking,44109
+3729,Impasse de la Courtine,44109,47.22236,-1.5576937,Parking Bellamy,Parking,44109
+3730,Rue Sully,44109,47.220814,-1.5510561,Parking CathÃ©drale,Parking,44109
+3731,Quai de la Fosse,44109,47.20829,-1.5689156,Parking Chantiers Navals,Parking,44109
+3732,Rue Henri IV,44109,47.21699,-1.5478505,Parking ChÃ©teau,Parking,44109
+3733,Quai de Tourville,44109,47.209362,-1.5572503,Parking Chu 1,Parking,44109
+3734,Quai Moncousu,44109,47.20889,-1.5529139,Parking Chu 2,Parking,44109
+3735,Avenue Jean Claude Bonduelle,44109,47.212902,-1.5439713,Parking CitÃ© des CongrÃ©s,Parking,44109
+3736,Place du Commerce,44109,47.21312,-1.5577133,Parking Commerce,Parking,44109
+3737,18 Rue du Moulin,44109,47.216663,-1.5540047,Parking decrÃ©-Bouffay,Parking,44109
+3738,AllÃ©e de l'Ile Gloriette,44109,47.211178,-1.5584388,Parking Gloriette 1,Parking,44109
+3739,Rue Albert de Mun,44109,47.210274,-1.5602844,Parking Gloriette 2,Parking,44109
+3740,ChaussÃ©e de la Madeleine,44109,47.211056,-1.5519831,Parking HÃ©tel Dieu,Parking,44109
+3741,Rue de la Porte GellÃ©e,44109,47.20497,-1.544333,Parking Les Fonderies,Parking,44109
+3742,Rue Arthur III,44109,47.205902,-1.5627278,Parking Les Machines,Parking,44109
+3743,Rue Neuve des Capucins,44109,47.210873,-1.5623382,Parking MÃ©diathÃ©que,Parking,44109
+3744,Route de Saint SÃ©bastien,44109,47.200138,-1.5333337,P+R Busway GrÃ©neraie,Parking relais,44109
+3745,Rue Gabriel Goudy,44109,47.1961,-1.5410478,P+R Tramway Goudy,Parking relais,44109
+3746,Rue Henri IV,44109,47.21699,-1.5478505,Parking ChÃ©teau,Parking,44109
+3747,ChaussÃ©e de la Madeleine,44109,47.211056,-1.5519831,Parking HÃ©tel Dieu,Parking,44109
+3748,Rue Arthur III,44109,47.205902,-1.5627278,Parking Les Machines,Parking,44109
+3749,Rue Neuve des Capucins,44109,47.210873,-1.5623382,Parking MÃ©diathÃ©que,Parking,44109
+3750,Quai Ferdinand Favre,44109,47.21253,-1.540899,Service Maritime Et Navigation Ecluse Saint FÃ©lix,Aire de covoiturage,44109
+3751,Route de Gachet,44109,47.281094,-1.5184746,P+R Chronobus Chantrerie - Grandes Ecoles,Parking relais,44109
+3752,Rue des Renards,44109,47.259323,-1.5682272,P+R Tramway Santos dumont,Parking relais,44109
+3753,AllÃ©e Baco,44109,47.214333,-1.5489888,Parking Baco-Lu 1 CÃ©tÃ© Gare,Parking,44109
+3754,Rue de la Porte GellÃ©e,44109,47.20497,-1.544333,Parking Les Fonderies,Parking,44109
+3755,Route de Sainte Luce,44109,47.24706,-1.4950686,Aire de covoiturage Bois des Anses,Aire de covoiturage,44109
+3756,Quai Ernest Renaud,44109,47.205402,-1.5739814,Capitainerie du Port Atlantique Nantes Saint Nazaire,Parking,44109
+3757,Rue Colette,44109,47.259495,-1.526681,P+R Tramway La Beaujoire,Parking relais,44109
+3758,Route de la Chapelle Sur Erdre,44109,47.26395,-1.5749979,P+R Tramway RenÃ© Cassin,Parking relais,44109
+3759,18 Rue du Moulin,44109,47.216663,-1.5540047,Parking decrÃ©-Bouffay,Parking,44109
+3760,Parvis Neptune,44109,47.214077,-1.5525588,Parking Feydeau,Aire de covoiturage,44109
+3761,Rue Scribe,44109,47.21431,-1.5625718,Parking Graslin,Aire de covoiturage,44109
+3762,18 Quai Ernest Renaud,44109,47.205513,-1.5747113,Port Autonome de Nantes Saint Nazaire,Aire de covoiturage,44109
+3763,Rue des BourdonniÃ©res,44109,47.185974,-1.5213375,P+R Busway BourdonniÃ©res,Parking relais,44109
+3764,14 Rue du Ranzai,44109,47.25023,-1.5249752,P+R Tram-Train HaluchÃ©re 2,Parking relais,44109
+3765,Rue Recteur Schmitt,44109,47.251736,-1.552903,P+R Tramway Recteur Schmitt 1,Parking relais,44109
+3766,Place Aristide Briand,44109,47.217094,-1.5629364,Parking Aristide Briand,Parking,44109
+3767,Quai de Tourville,44109,47.209362,-1.5572503,Parking Chu 1,Parking,44109
+3768,4 Place de Bretagne,44109,47.217842,-1.5582501,Parking Tour Bretagne,Aire de covoiturage,44109
+3769,Boulevard de la Prairie de Mauves,44109,47.220257,-1.5158514,P+R Chronobus Prairie de Mauves,Parking relais,44109
+3770,Rue Sully,44109,47.220814,-1.5510561,Parking CathÃ©drale,Parking,44109
+3771,Quai de la Fosse,44109,47.20829,-1.5689156,Parking Chantiers Navals,Parking,44109
+3772,Quai Moncousu,44109,47.20889,-1.5529139,Parking Chu 2,Parking,44109
+3773,AllÃ©e de l'Ile Gloriette,44109,47.211178,-1.5584388,Parking Gloriette 1,Parking,44109
+3774,Rue Le NÃ©tre,44109,47.220257,-1.5583574,Parking Talensac,Aire de covoiturage,44109
+3775,Quai de Versailles,44109,47.225204,-1.5537246,Port de L'Erdre,Aire de covoiturage,44109
+3776,Rue du Ranzai,44109,47.24845,-1.5228312,P+R Tram-Train HaluchÃ©re 1,Parking relais,44109
+3777,Route de Saint Joseph,44109,47.254364,-1.5331366,P+R Tramway Ranzay,Parking relais,44109
+3778,AllÃ©e Baco,44109,47.21315,-1.5516043,Parking Baco-Lu 2 CÃ©tÃ© Chu,Parking,44109
+3779,Impasse de la Courtine,44109,47.22236,-1.5576937,Parking Bellamy,Parking,44109
+3780,Place du Commerce,44109,47.21312,-1.5577133,Parking Commerce,Parking,44109
+3781,Rue Albert de Mun,44109,47.210274,-1.5602844,Parking Gloriette 2,Parking,44109
+3782,1 Avenue Flora Tristan,44109,47.257877,-1.5098321,Aire de covoiturage Carrefour Beaujoire,Aire de covoiturage,44109
+3783,Cours John Kennedy,44109,47.21669,-1.5449843,Parking Gare Nord,Aire de covoiturage,44109
+3784,Avenue Jean Claude Bonduelle,44109,47.212902,-1.5439713,Parking CitÃ© des CongrÃ©s,Parking,44109
+3785,14c Place du Champ de Foire. 44390 Nort-sur-Erdre,44110,47.436916,-1.501034,Place du Champ de Foire,Parking,44110
+3786,Rue de Bretagne. 44390 Nort-sur-Erdre,44110,47.439648,-1.480461,IntermarchÃ©,SupermarchÃ©,44110
+3787,14c Place du Champ de Foire. 44390 Nort-sur-Erdre,44110,47.436916,-1.501034,Place du Champ de Foire,Parking,44110
+3788,Rue de Bretagne. 44390 Nort-sur-Erdre,44110,47.439648,-1.480461,IntermarchÃ©,SupermarchÃ©,44110
+3817,16 La Hirtais. 44160 Sainte-Anne-sur-Brivet,44129,47.436504,-2.079436,Aire de covoiturage de La Piscine,Aire de covoiturage,44129
+3818,Route de Beaulieu le Calvaire. 44160 PontchÃ©teau,44129,47.45006,-2.127099,Le Relais de Beaulieu,Parking,44129
+3819,118 Rue Maurice Sambron. 44160 PontchÃ©teau,44129,47.446026,-2.091136,Parking covoiturage PontchÃ©teau,Parking,44129
+3820,16 La Hirtais. 44160 Sainte-Anne-sur-Brivet,44129,47.436504,-2.079436,Aire de covoiturage de La Piscine,Aire de covoiturage,44129
+3821,118 Rue Maurice Sambron. 44160 PontchÃ©teau,44129,47.446026,-2.091136,Parking covoiturage PontchÃ©teau,Parking,44129
+3822,Route de Beaulieu le Calvaire. 44160 PontchÃ©teau,44129,47.45006,-2.127099,Le Relais de Beaulieu,Parking,44129
+3825,Rue Jules Ferry. 44210 Pornic,44131,47.121628,-2.094355,Aire de covoiturage du Val St Martin,Aire de covoiturage,44131
+3826,1 Rue du TraitÃ© de Paris. 44210 Pornic,44131,47.128067,-2.1190953,Parking E.Leclerc Drive,SupermarchÃ©,44131
+3827,1 Rue du TraitÃ© de Paris. 44210 Pornic,44131,47.128067,-2.1190953,Parking E.Leclerc Drive,SupermarchÃ©,44131
+3828,Rue Jules Ferry. 44210 Pornic,44131,47.121628,-2.094355,Aire de covoiturage du Val St Martin,Aire de covoiturage,44131
+3845,AllÃ©e Claude ChoÃ©met,44143,47.195576,-1.5783778,Port de Trentemoult,Aire de covoiturage,44143
+3846,Rue Ordronneau,44143,47.191963,-1.5806876,P+R Navibus Trentemoult-DÃ©pÃ©t,Parking relais,44143
+3847,Quai Surcouf,44143,47.19525,-1.577784,P+R Navibus Trentemoult-Roquios,Parking relais,44143
+3848,Avenue AndrÃ© Malraux,44143,47.190033,-1.5514394,P+R Tramway 8 Mai,Parking relais,44143
+3849,Avenue LÃ©on Blum,44143,47.183292,-1.5710956,P+R Tramway TrocardiÃ©re,Parking relais,44143
+3850,7 Boulevard MendÃ©s France. 44400 RezÃ©,44143,47.17765,-1.529599,Maison de La SÃ©vre,Parking,44143
+3851,AllÃ©e Claude ChoÃ©met,44143,47.195576,-1.5783778,Port de Trentemoult,Aire de covoiturage,44143
+3852,Avenue LÃ©on Blum,44143,47.183292,-1.5710956,P+R Tramway TrocardiÃ©re,Parking relais,44143
+3853,Rue Ordronneau,44143,47.191963,-1.5806876,P+R Navibus Trentemoult-DÃ©pÃ©t,Parking relais,44143
+3854,Quai Surcouf,44143,47.19525,-1.577784,P+R Navibus Trentemoult-Roquios,Parking relais,44143
+3855,Avenue AndrÃ© Malraux,44143,47.190033,-1.5514394,P+R Tramway 8 Mai,Parking relais,44143
+3856,7 Boulevard MendÃ©s France. 44400 RezÃ©,44143,47.17765,-1.529599,Maison de La SÃ©vre,Parking,44143
+3871,5 Rue de la BertiniÃ©re. 44310 Saint-Colomban,44155,47.014065,-1.5693551,Parking La BertiniÃ©re,Parking,44155
+3872,5 Rue de la BertiniÃ©re. 44310 Saint-Colomban,44155,47.014065,-1.5693551,Parking La BertiniÃ©re,Parking,44155
+3881,Boulevard Salvador Allende,44162,47.21848,-1.6215724,Aire de covoiturage Frachon,Aire de covoiturage,44162
+3882,Rue OcÃ©ane,44162,47.225723,-1.6262465,Aire de covoiturage Norauto Atlantis,Aire de covoiturage,44162
+3883,Rue de la Gare,44162,47.204372,-1.6605883,P+R Ter Gare de Basse-Indre Nord,Parking relais,44162
+3884,Rue de la Gare,44162,47.20416,-1.6610382,P+R Ter Gare de Basse-Indre Sud,Parking relais,44162
+3885,Rue Virginia Woolf,44162,47.221706,-1.6394842,P+R Tramway FranÃ©ois Mitterrand,Parking relais,44162
+3886,Boulevard Marcel Paul,44162,47.245903,-1.6180084,P+R Tramway Marcel Paul,Parking relais,44162
+3887,Rue de la Gare,44162,47.204372,-1.6605883,P+R Ter Gare de Basse-Indre Nord,Parking relais,44162
+3888,Boulevard Marcel Paul,44162,47.245903,-1.6180084,P+R Tramway Marcel Paul,Parking relais,44162
+3889,Rue OcÃ©ane,44162,47.225723,-1.6262465,Aire de covoiturage Norauto Atlantis,Aire de covoiturage,44162
+3890,Rue Virginia Woolf,44162,47.221706,-1.6394842,P+R Tramway FranÃ©ois Mitterrand,Parking relais,44162
+3891,Boulevard Salvador Allende,44162,47.21848,-1.6215724,Aire de covoiturage Frachon,Aire de covoiturage,44162
+3892,Rue de la Gare,44162,47.20416,-1.6610382,P+R Ter Gare de Basse-Indre Sud,Parking relais,44162
+3895,12 Route de Rouans. 44680 Saint-Hilaire-de-ChalÃ©ons,44164,47.12976,-1.833816,Aire de covoiturage Le Pont BÃ©ranger,Aire de covoiturage,44164
+3896,12 Route de Rouans. 44680 Saint-Hilaire-de-ChalÃ©ons,44164,47.12976,-1.833816,Aire de covoiturage Le Pont BÃ©ranger,Aire de covoiturage,44164
+3925,45 Route de Fondeline. 44600 Saint-Nazaire,44184,47.286682,-2.29949,Parc D'ActivitÃ© de Brais,Parking,44184
+3926,PrÃ© Hembert. 44600 Saint-Nazaire,44184,47.264496,-2.2600079,Parking Albert Einstein,Parking,44184
+3927,45 Route de Fondeline. 44600 Saint-Nazaire,44184,47.286682,-2.29949,Parc D'ActivitÃ© de Brais,Parking,44184
+3928,PrÃ© Hembert. 44600 Saint-Nazaire,44184,47.264496,-2.2600079,Parking Albert Einstein,Parking,44184
+3963,65 Rue du Pont. 44440 TeillÃ©,44202,47.45997,-1.278491,Parking Rue du Pont,Parking,72349
+3964,65 Rue du Pont. 44440 TeillÃ©,44202,47.45997,-1.278491,Parking Rue du Pont,Parking,72349
+3975,ZI Des Tuileries. BP 39511. Route d'Ancenis. 44195 Vallet,44212,47.218227,-1.2333226,Parking Zi Les Tuilleries,Parking,44212
+3976,D763. 44330 Vallet,44212,47.154705,-1.275787,Aire de covoiturage de Vallet,Aire de covoiturage,44212
+3977,D763. 44330 Vallet,44212,47.154705,-1.275787,Aire de covoiturage de Vallet,Aire de covoiturage,44212
+3978,ZI Des Tuileries. BP 39511. Route d'Ancenis. 44195 Vallet,44212,47.218227,-1.2333226,Parking Zi Les Tuilleries,Parking,44212
+3983,5 Route de Marsac. 44170 Vay,44214,47.555332,-1.7011642,Parking Atelier Municipal,Parking,44214
+3984,5 Route de Marsac. 44170 Vay,44214,47.555332,-1.7011642,Parking Atelier Municipal,Parking,44214
+3985,Rue de la Grand' Maison,44215,47.18517,-1.5106742,P+R Busway MaraÃ©chers,Parking relais,44215
+3986,Boulevard Auguste Priou,44215,47.180176,-1.5051602,P+R Busway Porte de Vertou,Parking relais,44215
+3987,Boulevard Auguste Priou,44215,47.180176,-1.5051602,P+R Busway Porte de Vertou,Parking relais,44215
+3988,Rue de la Grand' Maison,44215,47.18517,-1.5106742,P+R Busway MaraÃ©chers,Parking relais,44215
+4007,D2. 45130 Baule,45024,47.82106,1.6825497,Aire de covoiturage de Baule,Aire de covoiturage,45024
+4116,50 Rue Bernard de la Rochefoucauld. 45450 Fay-aux-Loges,45142,47.909172,2.135969,Aire de covoiturage Zac des Loges,Aire de covoiturage,45142
+4133,141 Rue GÃ©nÃ©ral Leclerc. 45240 La FertÃ©-Saint-Aubin,45146,47.716858,1.9410744,Aire de covoiturage de La Ferte Saint Aubin,Aire de covoiturage,45146
+4141,1 Rue de la Fabrique. 45500 Gien,45155,47.688515,2.6202765,Aire de covoiturage de Gien,Aire de covoiturage,45155
+4246,8 Route de Gien. 45600 Sully-sur-Loire,45315,47.76382,2.3823814,Aire de covoiturage de Sully Sur Loire,Aire de covoiturage,45315
+4260,53 Avenue de la LibÃ©ration. 45700 Villemandeur,45338,47.98959,2.6922271,Aire de covoiturage de covoiturage de Villemandeur,Aire de covoiturage,45338
+4294,Sur Le Parking Entre La D813. Le Rond-Point De L'EntrÃ©e Du Village Et La Voie FerrÃ©e.,47210,44.24983,0.394924,Aire de covoiturage de Port-Sainte-Marie,Aire de covoiturage,47210
+4298,Sur L'Esplanade Ã©ric Faure. En Bordure De La D16 Qui Monte Ã©La Bastide En Venant D'Agen.,47217,44.18691,0.78873,Aire de covoiturage de Puymirol,Aire de covoiturage,47217
+4299,Sur Le Parking Dans Le Bourg En Face De La Salle Des FÃ©tes.,47228,44.33367,0.718697,Aire de covoiturage de Saint-Antoine-de-Ficalba,Aire de covoiturage,47238
+4300,Au Niveau Rond-Point De La Zone De Nombel (D911 - D113).,47252,44.39113,0.581513,Aire de covoiturage de Sainte-Livrade-sur-Lot,Aire de covoiturage,47252
+4315,D901 DANS LE BLEYMARD AU DESSUS DU STADE,48027,44.490566,3.7378247,Aire de covoiturage du Bleymard,Aire de covoiturage,48027
+4328,giratoire Ã©changeur D768-D775 (accÃ©s vers La Croix Cadeau),49015,47.514313,-0.617034,Aire de covoiturage du FlÃ©chet,Aire de covoiturage,85010
+4329,giratoire Ã©changeur D768-D775 (accÃ©s vers La Croix Cadeau),49015,47.514313,-0.617034,Aire de covoiturage du FlÃ©chet,Aire de covoiturage,85010
+4375,Giratoire Ã©changeur D160-N249 (Cholet Ouest),49099,47.03561,-0.905585,Aire de covoiturage de DÃ©nia,Aire de covoiturage,49099
+4376,Giratoire Ã©changeur D160-N249 (Cholet Ouest),49099,47.03561,-0.905585,Aire de covoiturage de DÃ©nia,Aire de covoiturage,49099
+4379,giratoire D960-D761 DÃ©viation de DouÃ© (vers Montreuil-Bellay),49125,47.18297,-0.248529,Aire de covoiturage de La Saulaie,Aire de covoiturage,49125
+4380,giratoire D960-D761 DÃ©viation de DouÃ© (vers Montreuil-Bellay),49125,47.18297,-0.248529,Aire de covoiturage de La Saulaie,Aire de covoiturage,49125
+4394,giratoire nord DÃ©viation de La Membrolle,49200,47.56662,-0.678134,Aire de covoiturage du Tertre,Aire de covoiturage,49200
+4395,giratoire nord DÃ©viation de La Membrolle,49200,47.56662,-0.678134,Aire de covoiturage du Tertre,Aire de covoiturage,49200
+4458,giratoire Nord DÃ©viation SegrÃ© (D775-D923),49331,47.697887,-0.869316,Aire de covoiturage de La Promenade,Aire de covoiturage,49331
+4459,giratoire Est DÃ©viation SegrÃ© (D775-D923) - rue David d'Angers,49331,47.68502,-0.857777,Aire de covoiturage de L'Europe,Aire de covoiturage,49331
+4460,giratoire Est DÃ©viation SegrÃ© (D775-D923) - rue David d'Angers,49331,47.68502,-0.857777,Aire de covoiturage de L'Europe,Aire de covoiturage,49331
+4461,giratoire Nord DÃ©viation SegrÃ© (D775-D923),49331,47.697887,-0.869316,Aire de covoiturage de La Promenade,Aire de covoiturage,49331
+4471,RD 913,50099,49.333652,-1.264369,Aire de Saint-Come du Mont - le Mont,Aire de covoiturage,50099
+4472,Sortie ZI de Carentan sur RN 174,50099,49.32136,-1.241577,Aire de Carentan - Blactot,Parking,50099
+4475,La HastonniÃ©re 50200 Courcy,50145,49.066364,-1.390581,Aire de Cambernon - les NesliÃ©res,Parking,51183
+4476,Le haut de DÃ©lasse,50147,49.054153,-1.46632,Aire de Coutances - la PaletiÃ©re,Aire de covoiturage,50147
+4482,Parking du champ de foire,50267,49.212135,-1.526966,Aire de Lessay - Champ de Foire (IntÃ©rÃ©t local),Parking,50267
+4503,Route de Candol,50502,49.10048,-1.116486,Aire de Saint-LÃ© - la Maison du DÃ©partement,Parking,50502
+4510,avenue de Laon,51454,49.27571,4.017085,Parking relais Belges,Parking relais,51454
+4511,avenue du GÃ©nÃ©ral Koenig,51454,49.225746,4.019744,Parking relais HÃ©pital debrÃ©,Parking relais,51454
+4512,18 Rue Jean XXIII,51454,49.28507,4.0281644,Parking relais NeufchÃ©tel,Parking relais,51454
+4513,Place Lenoncourt,51454,49.242516,4.041732,Basilique St Remi,Parking,51454
+4514,rue de Saint-Brice,51454,49.255795,4.02126,HÃ©tel de Police de Reims,Parking,51454
+4515,2 Rue Gabriel Voisin,51454,49.236084,4.0691757,HÃ©tel Mercure Reims Parc des Expositions,Parking,51454
+4516,10 avenue du GÃ©nÃ©ral Giraud,51454,49.24062,4.0548453,Parc de Champagne,Parking,51454
+4517,rue Anquetil,51454,49.26573,4.023422,Parking Anquetil,Parking,51454
+4518,place Saint Remi,51454,49.242634,4.041739,Parking Basilique Saint Remi,Parking,51454
+4519,Boulevard Wilson,51454,49.242924,4.016435,Parking Bd Wilson,Parking,51454
+4520,place Boulingrin,51454,49.26089,4.0320487,Parking Boulingrin,Parking,51454
+4521,rue Pierre Taittinger,51454,49.237904,4.0006714,Parking Campus UniversitÃ© de Reims,Parking,51454
+4522,rue Gambetta,51454,49.24494,4.040045,Parking Centre administratif Gambetta,Parking,51454
+4523,rue colasse,51454,49.241005,4.037661,Parking Colasse,Parking,51454
+4524,place Pierre Fermat,51454,49.279568,4.019526,Parking de Fermat,Parking,51454
+4525,boulevard Foch,51454,49.25977,4.028589,Parking Foch,Parking,51454
+4526,rue Raymond PoincarÃ©,51454,49.28261,4.019191,Parking Georges HÃ©bert,Parking,51454
+4527,avenue LÃ©on Blum,51454,49.226643,4.011834,Parking LÃ©on Blum,Parking,51454
+4528,rue LÃ©opold Charpentier,51454,49.27591,4.019057,Parking LÃ©opold Charpentier,Parking,51454
+4529,place Luton,51454,49.270454,4.025663,Parking Luton,Parking,51454
+4530,rue martin peller,51454,49.246384,4.013202,Parking Martin peller,Parking,51454
+4531,chaussÃ©e Bocquaine,51454,49.24503,4.027005,Parking Nautilud,Parking,51454
+4532,rue Gabriel Voisin,51454,49.234676,4.062593,Parking Parc des expositions,Parking,51454
+4533,rue Hincmar,51454,49.250256,4.0283594,Parking Poittevin,Parking,51454
+4534,chaussÃ©e Bocquaine,51454,49.248238,4.022933,Parking Stade delaune,Parking,51454
+4535,place Aristide Briand,51454,49.25733,4.039487,Place Aristide Briand,Parking,51454
+4536,Place Brouette,51454,49.26053,4.0467825,Place Brouette,Parking,51454
+4537,41 Route de Witry,51454,49.269276,4.0686865,Magasin Lidl,SupermarchÃ©,51454
+4541,Avenue du ChÃ©ne Saint-Amand,52448,48.6253,4.966997,Parking ChÃ©ne Saint-Amand,Parking,52448
+4542,58 Avenue Roger Salengro,52448,48.640163,4.917967,"Parking privÃ© du ""Relais des Nations""",Parking,52448
+4543,Rue AndrÃ© Chenier,52448,48.626488,4.9478555,Parking Stade Charles Jacquin,Parking,52448
+4544,Avenue Jean-Pierre Timbaud,52448,48.625027,4.990825,Parking Timbaud,Parking,52448
+4549,D22,53014,47.818428,-0.6787278,Aire de covoiturage de la Roche - AzÃ©,Parking,71009
+4550,Rue de Terre Rouge,53014,47.829716,-0.68460184,Aire de covoiturage de Terre Rouge - AzÃ©,Parking,71009
+4551,Rue de Terre Rouge,53014,47.829716,-0.68460184,Aire de covoiturage de Terre Rouge - AzÃ©,Parking,71009
+4552,D22,53014,47.818428,-0.6787278,Aire de covoiturage de la Roche - AzÃ©,Parking,71009
+4559,D31,53054,48.1067,-0.84443194,Aire de covoiturage de La MartiniÃ©re - ChangÃ©,Aire de covoiturage,53054
+4560,Rue Albert Einstein,53054,48.08997,-0.7543102,Parking Relais Technopolis,Parking relais,53054
+4561,D31,53054,48.1067,-0.84443194,Aire de covoiturage de La MartiniÃ©re - ChangÃ©,Aire de covoiturage,53054
+4562,Rue Albert Einstein,53054,48.08997,-0.7543102,Parking Relais Technopolis,Parking relais,53054
+4585,Avenue de l'Atlantique,53130,48.05495,-0.79010487,Parking Relais La Jaunaie,Parking relais,53130
+4586,Route de FougÃ©res,53130,48.08076,-0.797469,Parking Relais Octroi,Parking relais,53130
+4587,25-31 Rue Albert Einstein,53130,48.05437,-0.7415266,Parking Relais Saint Nicolas,Parking relais,53130
+4588,Route de FougÃ©res,53130,48.08076,-0.797469,Parking Relais Octroi,Parking relais,53130
+4589,25-31 Rue Albert Einstein,53130,48.05437,-0.7415266,Parking Relais Saint Nicolas,Parking relais,53130
+4590,Avenue de l'Atlantique,53130,48.05495,-0.79010487,Parking Relais La Jaunaie,Parking relais,53130
+4623,Place de l'Ã©glise,53250,47.96522,-1.0436006,Aire de covoiturage Place de l'Ã©glise,Parking,53250
+4624,Place de l'Ã©glise,53250,47.96522,-1.0436006,Aire de covoiturage Place de l'Ã©glise,Parking,53250
+4659,1 Rue du GÃ©nÃ©ral Leclerc,54222,48.497494,6.51168,Parking du Monument aux morts,Parking,54222
+4672,ZA De Lesmenils. Grand PrÃ©. 54700 Pont-Ã©-Mousson,54431,48.9343,6.109868,Campanile Pont-Ã©-Mousson,Parking,54431
+4677,546 Avenue du GÃ©nÃ©ral Bigeard. 54200 Toul,54528,48.662357,5.887895,Parking Cora,SupermarchÃ©,54528
+4678,19 Avenue du GÃ©nÃ©ral Bigeard. 54200 Toul,54528,48.671246,5.893489,Parking Michonette,Parking,54528
+4683,Parc d'activÃ© Cap Ouest. 56350 Allaire,56001,47.63334,-2.176899,Aire de covoiturage de IntermarchÃ©. Cap Ouest,Aire de covoiturage,56001
+4685,28 Route de Parc Botquelen. 56610 Arradon,56003,47.64101,-2.818309,Aire de covoiturage de Botquelen,Aire de covoiturage,56003
+4702,3 Rue des Cerisiers. 56480 ClÃ©guÃ©rec,56041,48.12505,-3.073162,Parking Salle des FÃ©tes,Parking,56041
+4721,Kernours. 56700 Kervignac,56094,47.759907,-3.286759,Aire de covoiturage de Kergo-Kernous,Aire de covoiturage,56094
+4722,Rohabon. 56700 Kervignac,56094,47.79493,-3.238014,Aire de covoiturage de Le Porzo,Aire de covoiturage,56094
+4735,Le Pont. Boulevard de Bretagne. 56130 Nivillac,56147,47.525974,-2.303977,Pont Suspendu,Aire de covoiturage,56147
+4747,20 Maneguen. 56680 Plouhinec,56169,47.706463,-3.220152,Aire de covoiturage de ManÃ©guen,Aire de covoiturage,56169
+4750,85 Avenue de la LibÃ©ration. 56300 Pontivy,56178,48.069515,-2.945259,Parking E.Leclerc St Niel,SupermarchÃ©,56178
+4751,16 Rue ChÃ©teaubriand. 56620 Pont-Scorff,56179,47.83366,-3.41245,Aire de covoiturage de Ninijo Route de QuimperlÃ©,Aire de covoiturage,56179
+4752,2-4 Rue Kroez Forn. 56620 Pont-Scorff,56179,47.829437,-3.404594,Route de Lorient,Aire de covoiturage,56179
+4764,D775. 56250 Saint-Nolff,56231,47.695576,-2.633671,Aire de covoiturage de Kerboulard,Aire de covoiturage,56231
+4773,2 Rue Aristide Boucicaut. 56000 Vannes,56260,47.67067,-2.789974,Aire de covoiturage de Atlanville,Aire de covoiturage,56260
+4774,21 Rue de Kerbiquette. 56000 Vannes,56260,47.686176,-2.769405,Rond Point des 3 Rois,Aire de covoiturage,56260
+4787,A4 Sortie 43,57540,48.77027,7.2386518,Covoiturage SANEF Phalsbourg,Sortie d'autoroute,57540
+4792,45 Route du Buchel,57672,49.356777,6.110775,Aire de covoiturage du Buchel,Aire de covoiturage,57672
+4793,84 route du Buchel,57672,49.36035,6.1107883,E.Leclerc Drive Thionville Veymerange,SupermarchÃ©,57672
+4809,vers A77,58303,47.03289,3.142779,Botanic,SupermarchÃ©,58303
+4813,"Chemin de la Chapelle Lacroix, 59910 Bondues",59090,50.693478,3.0881946,Le Fort,Parking,59090
+4839,"Route d'Hazebrouck, 59270 MÃ©teren",59270,50.734627,2.699398,Route d'Hazebrouck,Aire de covoiturage,59401
+4840,"Rte d'Hazebrouck, 59270 MÃ©teren",59270,50.734695,2.699539,Aire de covoiturage de MÃ©teren Haeghe Doorne,Aire de covoiturage,59401
+4856,"B'Twin Village, Rue du Professeur Langevin, 59000 Lille",59350,50.62012,3.0833457,Petit Maroc,Parking,59350
+5305,2-8 Avenue du Pays d'Ouche,61214,48.768307,0.633871,Eglise St BarthÃ©lÃ©my,Aire de covoiturage,61214
+5306,Place du Parc,61214,48.76216,0.634393,Parking CommunautÃ© de Communes des Pays de L'Aigle,Aire de covoiturage,61214
+5338,A1 Sortie 15,62041,50.269054,2.863659,Covoiturage SANEF Arras,Sortie d'autoroute,62041
+5739,A26 Sortie 3,62765,50.722977,2.1727362,Covoiturage Saint-Omer,Sortie d'autoroute,62765
+5794,5 Rue Saint-Pierre. 63600 Ambert,63003,45.547394,3.7287228,Parking Rue St Pierre,Parking,63003
+5795,10 Place du Livradois. 63600 Ambert,63003,45.548813,3.7450974,Place du Livradois,Parking,63003
+5796,25 Avenue Georges Clemenceau. 63600 Ambert,63003,45.55201,3.7400253,Place Georges Courtial,Parking,63003
+5805,Avenue de la RÃ©publique. 63160 Billom,63040,45.723385,3.3325415,Parking Salle du Moulin de L'Ã©tang,Parking,63040
+5807,250 Avenue des Ã©tats Unis. 63150 La Bourboule,63047,45.5904,2.7463439,Parking Avenue des Etats-Unis,Parking,63047
+5810,2 Rue du Grillon. 63118 CÃ©bazat,63063,45.82999,3.0986807,Parking du Parc,Parking,63063
+5811,13 Rue d'Aubiat. 63118 CÃ©bazat,63063,45.83361,3.0939667,Parking Ã©cole de Musique,Parking,63063
+5818,72 Rue des Liondards. 63000 Clermont-Ferrand,63113,45.761814,3.0898278,Parking Place Henri dunant,Parking,63113
+5833,4 Avenue du Dr Bienfait. 63500 Issoire,63178,45.551426,3.2705688,Parking Ibis,Parking,63178
+5834,47B Rue du Huit Mai. 63500 Issoire,63178,45.543774,3.2426648,Parking PÃ©le Emploi,Parking,63178
+5835,Rue de l'Union SoviÃ©tique. 63500 Issoire,63178,45.544872,3.2548635,Parking Rue de L'Union SoviÃ©tique,Parking,63178
+5850,6 AllÃ©e George Sand. 63240 Le Mont-Dore,63236,45.574005,2.808437,Parking Casino,Parking,63236
+5857,256 La Gare. 63330 Pionsat,63281,46.11457,2.6901047,Parking du CimetiÃ©re,Parking,63281
+5866,D2009,63327,45.923946,3.141227,Parking Croisement D421 Et D2009,Parking,63327
+5867,3 Rue du Stade. 63200 Saint-Bonnet-prÃ©s-Riom,63327,45.934464,3.1092312,Parking du Stade,Parking,63327
+5879,A89 Sortie 29 Thiers Ouest,63430,45.859467,3.504613,Parking de covoiturage de Thiers Ouest,Aire de covoiturage,63430
+5882,"Rond point D15/D986, Volvic",63470,45.864876,3.039318,Aire de Covoiturage de Volvic,Aire de covoiturage,63470
+5941,Route de la Pierre Saint-Martin RD919,64422,43.18456,-0.627918,Aire de covoiturage de la Plaine Sportive,Aire de covoiturage,64422
+5942,6 Avenue de Lattre de Tassigny,64422,43.192547,-0.619685,Aire de covoiturage de la Salle Palas,Aire de covoiturage,64422
+5960,Avenue Marcel Paul,64430,43.47344,-0.757269,Parking Base de loisirs,Parking,64430
+5961,D933,64430,43.50068,-0.749536,Rond Point FranÃ§ois Mitterand,Parking,64430
+5972,Intersection RD933 - RD430,64499,43.47592,-0.912025,Parking du Jet d'eau (rond point),Parking,64499
+5982,4 Impasse Maurice Dezes. 65100 Lourdes,65286,43.08453,-0.044235,Aire de covoiturage Boulevard Espagne,Aire de covoiturage,65286
+5992,sortie numÃ©ro10 de la 2x2 voies. direction ArgelÃ©s,66008,42.563347,3.004721,Aire Multimodale D'ArgelÃ©s-Sur-Mer,Aire de covoiturage,66008
+5994,Sortie nÂ°10 de la 2x2 voies (RD914) Â direction ArgelÃ¨s,66008,42.563538,3.006297,Aire de covoiturage Christian Bourquin,Aire de covoiturage,66008
+6042,esplanade de la gare,66088,42.668167,2.623839,Aire Multimodale Ille-Sur-TÃ©t,Aire de covoiturage,66088
+6064,Rond Point de la Massane - Avenue de Prades Perpignan,66136,42.69855,2.872377,Aire de Covoiturage de Saint Assiscle,Aire de covoiturage,66136
+6065,1995 Avenue Julien Panchot 66000 Perpignan,66136,42.68326,2.864006,Aire de Covoiturage de Panchot,Aire de covoiturage,66136
+6066,D900A-D612A - Giratoire EuromÃ©diterranÃ©e,66136,42.670593,2.8575041,Parking de covoiturage de Perpignan Sud,Aire de covoiturage,66136
+6997,106 Route de Pouzauges. 85390 Cheffois,85067,46.6715,-0.7929,Parking des Stades,Parking,85067
+6079,Sortie NÂ°41  A9 - PÃ©age Nord de Perpignan,66164,42.78057,2.8986075,Aire de Covoiturage du PÃ©age Nord,Aire de covoiturage,66164
+6111,RD1422-62. 67140 Barr,67021,48.39475,7.471025,Aire de covoiturage Barr-Andlau A35  RD1422-62,Sortie d'autoroute,67021
+6138,1 Route du Rhin. 67500 Haguenau,67180,48.80063,7.838139,Parking Cora,SupermarchÃ©,67180
+6139,59 Route de Strasbourg. 67500 Haguenau,67180,48.80624,7.774206,Parking Parc Bellevue,Parking,67180
+6153,1 Rue du General Mittelhauser. 67630 Lauterbourg,67261,48.977192,8.181941,Parking Allee des Cygnes,Parking,67261
+6159,5 Avenue de l'Europe. 67390 Marckolsheim,67281,48.16346,7.5530267,Parking Centre de Secours,Parking,67281
+6168,RD422. 67210 Obernai,67348,48.45775,7.49172,Parking Stade,Parking,67348
+6172,65 Rue Principale. 67290 La Petite-Pierre,67371,48.86249,7.31925,Parking Centre Culturel,Parking,67371
+6278,Parc de Parilly,69029,45.720924,4.9108157,Hippodrome de Parilly,Parking,69029
+6279,Espace Albert Camus,69029,45.726772,4.916763,Parking Espace Albert Camus,Parking,69029
+6280,Stade Pierre Duboeuf,69029,45.741547,4.9040174,Parking Stade Pierre duboeuf,Parking,69029
+6292,Porte de Lyon,69072,45.823105,4.760944,Parking Porte de Lyon,Aire de covoiturage,69072
+6293,Paillet,69072,45.822456,4.746975,Parking Paillet,Parking,69072
+6299,Chemin des Pins,69089,45.73162,4.748545,Parking du FunÃ©rarium,Parking,27265
+6300,IRIS - MÃ©diathÃ©que,69089,45.73074,4.7629476,Parking MÃ©diathÃ©que,Parking,27265
+6327,Carnot,69143,45.882988,4.8344126,Parking Carnot,Parking,69143
+6328,Gare,69143,45.877758,4.8398023,Parking de La Gare,Parking,69143
+6329,SaÃ©ne,69143,45.878223,4.8355393,Parking Place Verdun,Parking,69143
+6355,CimetiÃ©re,69205,45.757137,4.7358403,Parking du CimetiÃ©re,Parking,69205
+6356,Stade,69205,45.767525,4.729648,Parking du Stade,Parking,69205
+6357,Avenue Marcel MÃ©rieux,69205,45.759747,4.727685,Parking MÃ©rieux,Parking,69205
+6376,Rue des droits de l'homme,69255,45.73861,4.6840777,Parking du Stade,Parking,69255
+6377,Maison Blanche,69255,45.732777,4.6700907,Parking Maison Blanche,Parking,69255
+6378,Stade Jomard,69256,45.774216,4.929895,Parking Stade Jomard,Parking,69256
+6379,Quai du bassin,69260,45.646187,4.81187,Parking de La Poste,Parking,69260
+6387,Espace Joly,69271,45.738132,4.9681044,Parking Espace Joly,Parking,69271
+6409,Les Marches du RhÃ©ne,69288,45.683712,5.0629745,Aire de covoiturage de St Laurent de Mure,Aire de covoiturage,69288
+6417,Route de Saint-Trivier,69293,45.831505,4.8751173,Parking de L'Eglise,Parking,69293
+6444,A28 Sortie 23 Le Mans ZI Sud,72058,48.00552,0.311337,Parking de covoiturage du Mans ZI Sud,Aire de covoiturage,53054
+6655,Zone BocapÃ©le,79049,46.84861,-0.47444445,Aire de covoiturage de BocapÃ©le,Aire de covoiturage,79049
+6656,Giratoire Zone Alphaparc,79049,46.845,-0.53055555,Aire de covoiturage de La Fourchette,Aire de covoiturage,79049
+6657,Croisement D740 D950,79057,46.152725,-0.210812,Parking Mine D'Or Croisement D740 D950,Parking,79057
+6689,Echangeur RN249 RD33,79195,46.898262,-0.63127,Parking de La Croix de Bel Air,Aire de covoiturage,79195
+6702,Place Denfert Rochereau et D611 et D24,79270,46.41528,-0.19861111,Place denfert Rochereau,Parking,79270
+6716,Route du Docteur AndrÃ© Colas,79329,46.97333,-0.18416667,Parking Route AndrÃ© Colas,Parking,79329
+6760,A1 Sortie 12,80685,49.707077,2.770115,Covoiturage SANEF Roye,Sortie d'autoroute,80685
+6768,A 68 Echangeur RD 988 Carmaux La Croix de Mille,81060,44.0801,2.235,Aire de Croix de Mille,Aire de covoiturage,81060
+6772,A68 Echangeur D 968 Gaillac Graulhet,81099,43.8772,1.9046,Aire de Brens,Aire de covoiturage,81099
+6773,A 68 Echangeur RD 12 Rabastens Couffouleux Graulhet,81105,43.7937,1.7596,Aire de Couffouleux,Aire de covoiturage,81105
+6776,A68 Echangeur RD 10 Lisle s- Tarn Montans,81145,43.8433,1.8438,Aire de Montans,Aire de covoiturage,81145
+6783,Giratoire RD 999 Montgaillard (RD 999 X RD 12),81178,43.9152,1.5924,Aire de Montgaillard Salvagnac,Aire de covoiturage,11245
+6791,RD 612 Puygouzon (RD 612 X Avenue de Garban),81218,43.8896,2.1635,Aire de Garban Puygouzon,Aire de covoiturage,81218
+6800,A 68 Echangeur RD 630 St Sulpice Lavaur,81271,43.7593,1.7115,Aire de Saint Sulpice,Aire de covoiturage,81271
+6823,A62 Sortie 9 Castelsarrasin,82033,44.05611,1.097194,Parking de covoiturage de Castelsarrasin,Aire de covoiturage,82033
+6868,Ã©changeur sur l'A50 et Le pont d'Aran,83009,43.142303,5.769544,Aire de covoiturage de Bandol,Aire de covoiturage,83009
+6873,RD4 giratoire des 4 chemins,83055,43.597,6.690902,Aire de covoiturage des 4 chemins,Aire de covoiturage,83055
+6875,La Bouverie giratoire RD12 - RD 29,83069,43.17327,6.117951,Aire de covoiturage de La Bouverie,Aire de covoiturage,83069
+6876,Ã©changeur de Valcros et RD98,83071,43.1473,6.255801,Aire de covoiturage de Valcros,Aire de covoiturage,83071
+6879,Giratoire RD554-RD68,83088,43.31509,6.007159,Aire de covoiturage de NÃ©oules,Aire de covoiturage,83088
+6882,ZA Ste Christine et RD97 et rond point des Andues,83130,43.206306,6.046814,Aire de covoiturage de Sollies-Pont et Ste Christine,Aire de covoiturage,83130
+6883,L'Escaillon,83137,43.12824,5.887513,Aire de covoiturage de L'Escaillon,Aire de covoiturage,83137
+6884,Ste Musse,83137,43.129505,5.983086,Aire de covoiturage de Ste Musse,Aire de covoiturage,83137
+6927,Rue du Stade. 85190 Aizenay,85003,46.7371,-1.6081,Aire de covoiturage de La Caserne des Pompiers,Aire de covoiturage,85003
+6928,Impasse de. L'OrgeriÃ©re. 85190 Aizenay,85003,46.7348,-1.6187,Aire de covoiturage des CentaurÃ©es,Aire de covoiturage,85003
+6929,12 Route du PoirÃ©. 85190 Aizenay,85003,46.7389,-1.6025,Parking de La Gare,Parking,85003
+6930,Rue du Stade. 85190 Aizenay,85003,46.7371,-1.6081,Aire de covoiturage de La Caserne des Pompiers,Aire de covoiturage,85003
+6931,Impasse de. L'OrgeriÃ©re. 85190 Aizenay,85003,46.7348,-1.6187,Aire de covoiturage des CentaurÃ©es,Aire de covoiturage,85003
+6932,12 Route du PoirÃ©. 85190 Aizenay,85003,46.7389,-1.6025,Parking de La Gare,Parking,85003
+6935,D160. 85430 Venansault,85008,46.6492,-1.5128,Aire de covoiturage de La Landette - Rd160-Rd4 (Aubigny),Aire de covoiturage,85008
+6936,D160. 85430 Venansault,85008,46.6492,-1.5128,Aire de covoiturage de La Landette - Rd160-Rd4 (Aubigny),Aire de covoiturage,85008
+6937,14 Avenue de Lattre de Tassigny. 85440 AvrillÃ©,85010,46.4702,-1.492,Parking du Champ de Foire,Parking,85010
+6938,14 Avenue de Lattre de Tassigny. 85440 AvrillÃ©,85010,46.4702,-1.492,Parking du Champ de Foire,Parking,85010
+6998,106 Route de Pouzauges. 85390 Cheffois,85067,46.6715,-0.7929,Parking des Stades,Parking,85067
+7003,15 Rue du PrÃ©sident Auguste Durand. 85610 Cugand,85076,47.0656,-1.2544,Place de La Mairie,Aire de covoiturage,85076
+7004,15 Rue du PrÃ©sident Auguste Durand. 85610 Cugand,85076,47.0656,-1.2544,Place de La Mairie,Aire de covoiturage,85076
+7017,2 La Gite du Moulin. 85280 La FerriÃ©re,85089,46.7079,-1.3255,Aire de covoiturage du Riot du Plessis,Aire de covoiturage,85089
+7018,6 Rue du Bout de ville. 85280 La FerriÃ©re,85089,46.7137,-1.313,Place de La Paix,Aire de covoiturage,85089
+7019,2 La Gite du Moulin. 85280 La FerriÃ©re,85089,46.7079,-1.3255,Aire de covoiturage du Riot du Plessis,Aire de covoiturage,85089
+7020,6 Rue du Bout de ville. 85280 La FerriÃ©re,85089,46.7137,-1.313,Place de La Paix,Aire de covoiturage,85089
+7041,D755B. 85500 Les Herbiers,85109,46.863,-0.9716,Aire de covoiturage de La CossonniÃ©re,Aire de covoiturage,85109
+7042,65 Route de Cholet. 85500 Les Herbiers,85109,46.8826,-1.0104,Aire de covoiturage de La SabliÃ©re,Aire de covoiturage,85109
+7043,A87 Rue des Herbiers. 85500 Les Herbiers,85109,46.903736,-1.046942,Aire de covoiturage des Herbiers,Aire de covoiturage,85109
+7044,D755B. 85500 Les Herbiers,85109,46.863,-0.9716,Aire de covoiturage de La CossonniÃ©re,Aire de covoiturage,85109
+7045,65 Route de Cholet. 85500 Les Herbiers,85109,46.8826,-1.0104,Aire de covoiturage de La SabliÃ©re,Aire de covoiturage,85109
+7046,A87 Rue des Herbiers. 85500 Les Herbiers,85109,46.903736,-1.046942,Aire de covoiturage des Herbiers,Aire de covoiturage,85109
+7047,A87 Sortie 29 Les Herbiers,85109,46.904064,-1.046684,Parking de covoiturage des Herbiers,Aire de covoiturage,85109
+7073,D948. 85000 Mouilleron-le-Captif,85155,46.7002,-1.4957,Aire de covoiturage de La Douve,Aire de covoiturage,85155
+7074,D948. 85000 Mouilleron-le-Captif,85155,46.7002,-1.4957,Aire de covoiturage de La Douve,Aire de covoiturage,85155
+7081,24 D948. 85330 Noirmoutier-en-l'Ã©le,85163,46.9993,-2.248,Aire de covoiturage de L'Etier du Moulin,Aire de covoiturage,85163
+7082,24 D948. 85330 Noirmoutier-en-l'Ã©le,85163,46.9993,-2.248,Aire de covoiturage de L'Etier du Moulin,Aire de covoiturage,85163
+7089,26 Rue de la Martelle. 85170 Le PoirÃ©-sur-Vie,85178,46.7701,-1.5061,Aire de covoiturage de La Martelle,Aire de covoiturage,85178
+7090,1 Place de l'Ã©glise. 85170 Le PoirÃ©-sur-Vie,85178,46.7683,-1.5108,Parking du Roc,Parking,85178
+7091,26 Rue de la Martelle. 85170 Le PoirÃ©-sur-Vie,85178,46.7701,-1.5061,Aire de covoiturage de La Martelle,Aire de covoiturage,85178
+7092,1 Place de l'Ã©glise. 85170 Le PoirÃ©-sur-Vie,85178,46.7683,-1.5108,Parking du Roc,Parking,85178
+7105,D746. 85000 La Roche-sur-Yon,85191,46.6366,-1.396,Aire de covoiturage de Bel Air,Aire de covoiturage,85191
+7106,D948. 85000 La Roche-sur-Yon,85191,46.6716,-1.3583,Aire de covoiturage de La Roche Sur Yon - Est,Aire de covoiturage,85191
+7107,31 Rue de l'Atlantique. 85000 La Roche-sur-Yon,85191,46.6847,-1.4475,Aire de covoiturage de L'Atlantique,Aire de covoiturage,85191
+7108,D746. 85000 La Roche-sur-Yon,85191,46.6366,-1.396,Aire de covoiturage de Bel Air,Aire de covoiturage,85191
+7109,31 Rue de l'Atlantique. 85000 La Roche-sur-Yon,85191,46.6847,-1.4475,Aire de covoiturage de L'Atlantique,Aire de covoiturage,85191
+7110,D948. 85000 La Roche-sur-Yon,85191,46.6716,-1.3583,Aire de covoiturage de La Roche Sur Yon - Est,Aire de covoiturage,85191
+7162,A10 Sortie 29 Poitiers Nord,86194,46.62087,0.343598,Parking de covoiturage de Poitiers Nord,Aire de covoiturage,86194
+7252,2 Rue de Cambrai. 90000 Belfort,90010,47.63683,6.859393,Parking Cambrai,Parking,90010
+7253,LibertÃ© Follereau. 90000 Belfort,90010,47.636368,6.845228,Parking Centre Commercial Rue de Madrid,Parking,90010
+7254,1bis Rue des Capucins. 90000 Belfort,90010,47.63569,6.857971,Parking Centre ThÃ©Ã©tre,Parking,90010
+7255,Multiplexe. 90000 Belfort,90010,47.628887,6.861555,Parking CinÃ©ma des Quais,Parking,90010
+7256,2 Rue PrÃ©sident Roosevelt. 90000 Belfort,90010,47.633995,6.852513,Parking Coinot,Parking,90010
+7257,11 Rue Comte de la Suze. 90000 Belfort,90010,47.63527,6.855877,Parking Comte de La Suze,Parking,90010
+7258,9 Avenue du GÃ©nÃ©ral Sarrail. 90000 Belfort,90010,47.63644,6.861383,Parking Ddt Sarrail,Parking,90010
+7259,7 Avenue du GÃ©nÃ©ral Sarrail. 90000 Belfort,90010,47.63647,6.863244,Parking de L' Arsenal,Parking,90010
+7260,Avenue de la Miotte. 90000 Belfort,90010,47.642235,6.866757,Parking de L' Epide,Parking,90010
+7261,1 Place de la RÃ©sistance. 90000 Belfort,90010,47.641407,6.85199,Parking de La Maison du Peuple,Parking,90010
+7262,5 Boulevard du MarÃ©chal Joffre. 90000 Belfort,90010,47.641598,6.855551,Parking de La RÃ©sistance,Parking,90010
+7263,2 Rue des Boucheries. 90000 Belfort,90010,47.637363,6.862854,Parking de L'Option FranÃ©aise,Parking,90010
+7264,65 Avenue Jean Moulin. 90000 Belfort,90010,47.651367,6.861807,Parking des Forges,Parking,90010
+7265,1 Place RÃ©volution FranÃ©aise. 90000 Belfort,90010,47.637398,6.86181,Parking des ImpÃ©ts,Parking,90010
+7266,1 Rue des Tanneurs. 90000 Belfort,90010,47.635452,6.863281,Parking des Tanneurs,Parking,90010
+7267,2 Rue Paul Koepfler. 90000 Belfort,90010,47.639153,6.848971,Parking du Phare,Parking,90010
+7268,16 Rue du 14 Juillet. 90000 Belfort,90010,47.648827,6.851805,Parking du Quatorze Juillet,Parking,90010
+7269,6 Rue du 4 Septembre. 90000 Belfort,90010,47.646133,6.855941,Parking du Quatre Septembre,Parking,90010
+7270,10 Rue du Rosemont. 90000 Belfort,90010,47.63761,6.864897,Parking du Rosemont,Parking,90010
+7271,5 Avenue du GÃ©nÃ©ral Sarrail. 90000 Belfort,90010,47.63638,6.862116,Parking GÃ©nÃ©ral Sarrail,Parking,90010
+7272,2a Rue de l'Adjoint Houbre. 90000 Belfort,90010,47.647915,6.857244,Parking Houbre - Croix du Tilleul,Parking,90010
+7273,6 Place Jeanine Bazin. 90000 Belfort,90010,47.63118,6.86153,Parking Janine Bazin,Parking,90010
+7274,15 Rue du GÃ©nÃ©ral Strolz. 90000 Belfort,90010,47.639538,6.856694,Parking KlÃ©ber,Parking,90010
+7275,1A Rue de Marseille. 90000 Belfort,90010,47.648964,6.864046,Parking Maison de Quartier des Forges,Parking,90010
+7276,8 Rue de la Cavalerie. 90000 Belfort,90010,47.641106,6.861186,Parking MarchÃ© Frery,Parking,90010
+7277,24 Fbg de France. 90000 Belfort,90010,47.637352,6.855841,Parking Nouvelles Galeries,Parking,90010
+7278,Rue d'Aspach. 90000 Belfort,90010,47.643097,6.849956,Parking Place Albert Charles Meyer,Parking,90010
+7279,2 Rue de Bellevue. 90000 Belfort,90010,47.634342,6.845636,Parking Place de L' Europe,Parking,90010
+7280,2 Avenue Capt de la Laurencie. 90000 Belfort,90010,47.641018,6.864887,Parking PlanÃ©tarium,Parking,90010
+7281,1 AllÃ©e de l'Option FranÃ©aise. 90000 Belfort,90010,47.636814,6.860615,Parking RÃ©volution FranÃ©aise,Parking,90010
+7282,12 Rue Legrand. 90000 Belfort,90010,47.634254,6.859425,Parking Rochereau,Parking,90010
+7283,3 Rue Lucie Aubrac. 90000 Belfort,90010,47.64541,6.861431,Parking Rouget de Lisle,Parking,90010
+7284,1 Rue Paul Koepfler. 90000 Belfort,90010,47.637737,6.849174,Parking Rue Koepfler,Parking,90010
+7285,11 Rue Georges Pompidou. 90000 Belfort,90010,47.63985,6.863349,Parking Site FortifiÃ© Nord,Parking,90010
+7286,4 Rue Jean Pierre Melville. 90000 Belfort,90010,47.640175,6.86632,Parking Site FortifiÃ© Nord CitÃ© des Associations,Parking,90010
+7287,1 Fbg de MontbÃ©liard. 90000 Belfort,90010,47.636208,6.858515,Parking ThÃ©Ã©tre,Parking,90010
+7288,15 Rue Stractman. 90000 Belfort,90010,47.634567,6.855021,Parking Thiers,Parking,90010
+7289,8 Rue de la RÃ©publique. 90000 Belfort,90010,47.63717,6.859637,Parking Monoprix,SupermarchÃ©,90010
+7290,38 Ter Faubourg de MontbÃ©liard. 90001 Belfort,90010,47.63442,6.856395,Parking Janet,Parking,90010
+7365,RN 20,91132,48.525227,2.206646,Leader Price,SupermarchÃ©,91132
+7403,ZAC du plateau de Guinettes. 50 Rue des Lys,91223,48.440727,2.140009,Hyper MarchÃ© Leclerc,SupermarchÃ©,91223
+7424,Impasse des GenÃ©ts,91272,48.700058,2.09889,Parc Relais de Courcelles-Sur-Yvette,Parking relais,91272
+7501,26 Rue EugÃ©ne Moutard Martin,91363,48.64105,2.225626,Parc des CÃ©lestins,Parking,91363
+7502,Rue des Vieux Gagnons,91363,48.63792,2.240682,Parking du Stade de L'Ã©tang Neuf,Parking,91363

@@ -11,10 +11,10 @@ import java.util.List;
 public class SousDomaine {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="nom_sous_domaine", nullable = false)
     private String nomSousDomaine;
 
+    @Id
     @ManyToOne()
     @JoinColumn(name = "nom_domaine", referencedColumnName = "nom_domaine")
     private Domaine nomDomaine;

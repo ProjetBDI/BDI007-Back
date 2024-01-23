@@ -112,6 +112,20 @@ def commune(df_festivals):
     # Enregistrer les résultats dans lun fichier "Commune.csv"
     df_commune_unique.to_csv('Commune.csv', index=False)
     
+def sousDomaine(df_festivals):
+    # Sélectionner les colonnes nécessaires
+    colonnes_necessaires = ['sousDomaine', 'domaine']
+
+    df_festivals[colonnes_necessaires] = df_festivals[colonnes_necessaires].astype(str)
+    
+    df_sousDomaine = df_festivals[colonnes_necessaires]
+    
+    # Supprimer les doublons pour obtenir des valeurs uniques
+    df_sousDomaine_unique = df_sousDomaine.drop_duplicates()
+    
+    # Enregistrer les résultats dans la feuille "sousDomaine"
+    df_sousDomaine_unique.to_csv('sousDomaine.csv', index=False)
+    
 
 
 
@@ -122,7 +136,7 @@ def festival(df_festivals):
     df_festivals['sousDomaine'].fillna(df_festivals['domaine'], inplace=True)
 
     # Sélectionner les colonnes nécessaires
-    colonnes_necessaires = ['nomManifestation', 'dateDebut', 'dateFin', 'siteWEB', 'tarifPass', 'lieuPrincipal', 'codeINSEE', 'sousDomaine']
+    colonnes_necessaires = ['nomManifestation', 'dateDebut', 'dateFin', 'siteWEB', 'tarifPass', 'lieuPrincipal', 'codeINSEE', 'sousDomaine', ]
 
     df_commune = df_festivals[colonnes_necessaires]
 
@@ -148,3 +162,7 @@ def commune(df_festivals):
 
     # Enregistrer les résultats dans lun fichier "Commune.csv"
     df_commune_unique.to_csv('/output/Commune.csv', index=False)
+    
+if __name__ == '__main__':
+    main()
+    
