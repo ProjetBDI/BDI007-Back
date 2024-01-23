@@ -17,6 +17,6 @@ public class PanierDTO {
     
     private UtilisateurDTO proprietaire;
     
-    private Collection<PanierEtapeDTO> panierEtapes;
+    private List<PanierEtapeDTO> panierEtapes;
     
 }
