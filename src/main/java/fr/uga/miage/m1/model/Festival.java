@@ -69,5 +69,6 @@ public class Festival {
 
     @ManyToOne
     @JoinColumn(name="sous_domaine", referencedColumnName = "nom_sous_domaine")
+    @JoinColumn(name="domaine", referencedColumnName = "nom_domaine")
     private SousDomaine sousDomaine;
 }

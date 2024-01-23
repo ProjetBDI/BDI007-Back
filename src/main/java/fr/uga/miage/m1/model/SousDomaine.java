@@ -8,6 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "sous_domaine")
+@IdClass(SousDomaineId.class)
 public class SousDomaine {
 
     @Id
