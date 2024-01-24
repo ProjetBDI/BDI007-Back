@@ -113,10 +113,6 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-<<<<<<< HEAD
-
-
-=======
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
@@ -132,7 +128,6 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>${springDoc.version}</version>
 		</dependency>
->>>>>>> bbe0eb91277963bdf838cfe7193e9c7c5378432b
 	</dependencies>
 
 	<build>
