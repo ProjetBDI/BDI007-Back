@@ -31,10 +31,6 @@ public class PanierService {
         return panierRepository.findById(id);
     }
 
-    public Panier getByProprietaire(String email) {
-        return panierRepository.findByProprietaire(email);
-    }
-
     // DELETE
     public void deleteById(Long id) {
         panierRepository.deleteById(id);

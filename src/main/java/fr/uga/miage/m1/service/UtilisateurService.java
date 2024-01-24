@@ -35,10 +35,6 @@ public class UtilisateurService {
         return utilisateurRepository.findByEmail(email);
     }
 
-    public Utilisateur getByPanier(long idPanier) {
-        return utilisateurRepository.findByIDPanier(idPanier);
-    }
-
     // DELETE
     public void deleteById(Long id) {
         utilisateurRepository.deleteById(id);

@@ -27,18 +27,6 @@ public class PanierEtapeService {
         return panierEtapeRepository.findById(id);
     }
 
-    public PanierEtape getByIDPanier(long idPanier) {
-        return panierEtapeRepository.findByIdPanier(idPanier);
-    }
-
-    public PanierEtape getByIDEtape(long idEtape) {
-        return panierEtapeRepository.findByIdEtape(idEtape);
-    }
-
-    public PanierEtape getByIDs(long idPanier, long idEtape) {
-        return panierEtapeRepository.findByIds(idPanier, idEtape);
-    }
-
     public List<PanierEtape> getAllPaniers() {
         return panierEtapeRepository.findAll();
     }

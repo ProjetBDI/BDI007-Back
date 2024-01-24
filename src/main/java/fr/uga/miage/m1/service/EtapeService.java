@@ -26,8 +26,8 @@ public class EtapeService {
         return etapeRepository.findById(id).get();
     }
 
-    public Etape getByPrix(float prix) {
-        return etapeRepository.findByPrix(prix);
+    public Etape getByPrixEtape(float prix) {
+        return etapeRepository.findByPrixEtape(prix);
     }
 
     public List<Etape> getAllEtapes() {
