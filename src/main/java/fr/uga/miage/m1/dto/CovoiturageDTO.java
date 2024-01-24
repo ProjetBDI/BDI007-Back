@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class CovoiturageDTO {
 
-    private long idCovoiturage;
+    private long id_covoiturage;
 
     private int nbPlace;
     
@@ -29,7 +29,7 @@ public class CovoiturageDTO {
     
     private List<EtapeDTO> etapes;
     
-    private FestivalDTO festival;
+    private FestivalDTO id_festival;
     
-    private UtilisateurDTO conducteur;
+    private UtilisateurDTO id_conducteur;
 }

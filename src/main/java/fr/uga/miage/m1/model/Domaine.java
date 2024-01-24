@@ -23,7 +23,6 @@ public class Domaine {
     @Column(name = "nom_domaine", nullable = false)
     private String nomDomaine;
 
-
     @Column(name = "nom_sous_domaine", nullable = true)
     private String sousDomaines;
 

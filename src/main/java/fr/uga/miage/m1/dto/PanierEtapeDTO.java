@@ -7,15 +7,11 @@ import lombok.Data;
 @Builder
 public class PanierEtapeDTO {
 
-    private long idPanierEtape;
-    
-    private long etapeLieu;
-    
-    private long etapeCovoiturage;
-    
+    private long id_panier_etape;
+
     private long nbPlaceOccuppe;
     
-    private PanierDTO panier;
-    
-    private EtapeDTO etape;
+    private EtapeDTO id_etape;
+
+    private PanierDTO id_panier;
 }

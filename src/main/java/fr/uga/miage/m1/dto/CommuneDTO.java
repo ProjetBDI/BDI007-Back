@@ -9,20 +9,22 @@ import java.util.List;
 @Builder
 public class CommuneDTO {
 
+    private long id_commune;
+
     private String codeINSEE;
-    
-    private String nomCommune;
-    
+
     private String codePostal;
-    
-    private String longitude;
-    
+
     private String latitude;
-    
+
+    private String longitude;
+
+    private String nomCommune;
+
+    private DepartementDTO id_departement;
+
     private List<FestivalDTO> festivals;
     
     private List<LieuDTO> lieux;
-    
-    private DepartementDTO departement;
     
 }

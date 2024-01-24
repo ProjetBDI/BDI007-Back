@@ -14,8 +14,7 @@ public class Etape {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_etape", nullable = false)
-    private Long id_etape;
-
+    private long id_etape;
 
     @Column(name="prix_etape", nullable = false)
     private float prixEtape;

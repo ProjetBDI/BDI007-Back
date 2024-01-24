@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.dto;
 
+import fr.uga.miage.m1.enums.TypeLieu;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,21 +10,21 @@ import java.util.List;
 @Builder
 public class LieuDTO {
     
-    private Long idLieu;
-
-    private String codeINSEELieu;
-
-    private String typeLieu;
-
-    private String nom;
+    private long id_lieu;
 
     private String adresse;
 
-    private float longitude;
+    private String codeINSEELieu;
 
     private float latitude;
 
-    private CommuneDTO commune;
+    private float longitude;
+
+    private String nom;
+
+    private TypeLieu typeLieu;
+
+    private CommuneDTO id_commune;
 
     private List<EtapeDTO> etapes;
 }

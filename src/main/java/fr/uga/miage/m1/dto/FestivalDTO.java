@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.dto;
 
+import fr.uga.miage.m1.enums.FestivalStatus;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,7 +10,7 @@ import java.util.List;
 @Builder
 public class FestivalDTO {
     
-    private long idFestival;
+    private long id_festival;
 
     private String nom;
 
@@ -27,11 +28,13 @@ public class FestivalDTO {
 
     private int nbPassIndispo;
 
-    private String status;
+    private float tarifPass;
+
+    private FestivalStatus status;
 
     private List<CovoiturageDTO> covoiturages;
 
-    private CommuneDTO commune;
+    private CommuneDTO id_commune;
 
-    private SousDomaineDTO sousDomaine;
+    private DomaineDTO id_domaine;
 }

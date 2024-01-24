@@ -12,17 +12,15 @@ import java.util.List;
 @Builder
 public class EtapeDTO {
 
-    private long idLieu;
+    private long id_etape;
 
-    private long idCovoiturage;
-    
     private float prixEtape;
-    
+
     private int dureeDepuisDepart;
-    
-    private LieuDTO lieu;
-    
-    private CovoiturageDTO covoiturage;
+
+    private LieuDTO id_lieu;
+
+    private CovoiturageDTO id_covoiturage;
     
     private List<PanierEtapeDTO> panierEtapes;
 }

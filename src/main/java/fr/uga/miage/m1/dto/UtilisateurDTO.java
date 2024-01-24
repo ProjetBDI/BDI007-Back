@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 @Builder
 public class UtilisateurDTO {
+
+    private long id_utilisateur;
     
     private String email;
 
@@ -19,6 +21,8 @@ public class UtilisateurDTO {
     private String motDePasse;
 
     private Date dateNaissance;
+
+    private String telephone;
 
     private List<PanierDTO> paniers;
 

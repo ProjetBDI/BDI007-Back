@@ -10,13 +10,13 @@ import lombok.Data;
 @Builder
 public class PanierDTO {
 
-    private Long idPanier;
+    private long id_panier;
     
     private Date datePaiement;
     
     private String nomsFestivaliers;
     
-    private UtilisateurDTO proprietaire;
+    private UtilisateurDTO id_proprietaire;
     
     private List<PanierEtapeDTO> panierEtapes;
     

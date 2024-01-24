@@ -9,11 +9,14 @@ import java.util.List;
 @Builder
 public class DepartementDTO {
     
-    private String departement;
+    private int id_departement;
+
+    private String numDepartement;
 
     private String nomDepartement;
 
+    private String nomregion;
+
     private List<CommuneDTO> communes;
 
-    private RegionDTO nomregion;
 }

@@ -8,8 +8,12 @@ import java.util.List;
 @Data
 @Builder
 public class DomaineDTO {
+
+    private int id_domaine;
     
     private String nomDomaine;
 
-    private List<SousDomaineDTO> sousDomaines;
+    private String sousDomaines;
+
+    private List<FestivalDTO> festivals;
 }

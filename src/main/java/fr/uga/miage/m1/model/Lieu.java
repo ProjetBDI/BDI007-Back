@@ -25,26 +25,26 @@ public class Lieu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_lieu", nullable = false)
-    private Long id_lieu;
-
-    @Column(name="code_insee_lieu", nullable = false)
-    private String codeINSEELieu;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name="type_lieu", nullable = false)
-    private TypeLieu typeLieu;
-
-    @Column(name="nom", nullable = false)
-    private String nom;
+    private long id_lieu;
 
     @Column(name="adresse", nullable = false)
     private String adresse;
 
-    @Column(name="longitude", nullable = false)
-    private float longitude;
+    @Column(name="code_insee_lieu", nullable = false)
+    private String codeINSEELieu;
 
     @Column(name="latitude", nullable = false)
     private float latitude;
+
+    @Column(name="longitude", nullable = false)
+    private float longitude;
+
+    @Column(name="nom", nullable = false)
+    private String nom;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name="type_lieu", nullable = false)
+    private TypeLieu typeLieu;
 
     @ManyToOne
     @JoinColumn(name="id_commune", referencedColumnName = "id_commune")

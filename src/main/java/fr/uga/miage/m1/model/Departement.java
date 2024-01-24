@@ -16,7 +16,7 @@ public class Departement {
     private int id_departement;
 
     @Column(name = "num_departement", nullable = false)
-    private String departement;
+    private String numDepartement;
 
     @Column(name = "nom_departement", nullable = false)
     private String nomDepartement;

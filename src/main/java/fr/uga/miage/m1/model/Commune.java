@@ -18,17 +18,21 @@ public class Commune {
     @Column(name = "code_insee", nullable = false)
     private String codeINSEE;
 
-    @Column(name = "nom_commune", nullable = false)
-    private String nomCommune;
-
     @Column(name = "code_postal", nullable = false)
     private String codePostal;
+
+    @Column(name = "latitude", nullable = false)
+    private String latitude;
 
     @Column(name = "longitude", nullable = false)
     private String longitude;
 
-    @Column(name = "latitude", nullable = false)
-    private String latitude;
+    @Column(name = "nom_commune", nullable = false)
+    private String nomCommune;
+
+    @ManyToOne
+    @JoinColumn(name = "id_departement", referencedColumnName = "id_departement", nullable = false) // correction de referencedColumnName
+    private Departement id_departement;
 
     @OneToMany(mappedBy = "id_commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Festival> festivals;
@@ -36,7 +40,5 @@ public class Commune {
     @OneToMany(mappedBy = "id_commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Lieu> lieux;
 
-    @ManyToOne
-    @JoinColumn(name = "id_departement", referencedColumnName = "id_departement", nullable = false) // correction de referencedColumnName
-    private Departement id_departement;
+
 }
