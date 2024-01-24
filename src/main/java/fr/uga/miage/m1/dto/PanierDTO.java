@@ -4,11 +4,27 @@ import java.util.Date;
 import java.util.List;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class PanierDTO {
+
+    public PanierDTO(
+        long id_panier,
+        Date datePaiement,
+        String nomsFestivaliers,
+        UtilisateurDTO id_proprietaire,
+        List<PanierEtapeDTO> panierEtapes
+    ) {
+        this.id_panier = id_panier;
+        this.datePaiement = datePaiement;
+        this.nomsFestivaliers = nomsFestivaliers;
+        this.id_proprietaire = id_proprietaire;
+        this.panierEtapes = panierEtapes;
+    }
 
     private long id_panier;
     

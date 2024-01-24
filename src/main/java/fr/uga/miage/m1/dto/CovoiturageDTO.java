@@ -1,17 +1,40 @@
 package fr.uga.miage.m1.dto;
 
-import fr.uga.miage.m1.model.Etape;
-import fr.uga.miage.m1.model.Festival;
-import fr.uga.miage.m1.model.Utilisateur;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class CovoiturageDTO {
+
+    public CovoiturageDTO(
+        long id_covoiturage,
+        int nbPlace,
+        int nbPlaceDispo,
+        String marque,
+        String modele,
+        String couleur,
+        Date dateDepart,
+        List<EtapeDTO> etapes,
+        FestivalDTO id_festival,
+        UtilisateurDTO id_conducteur
+    ) {
+        this.id_covoiturage = id_covoiturage;
+        this.nbPlace = nbPlace;
+        this.nbPlaceDispo = nbPlaceDispo;
+        this.marque = marque;
+        this.modele = modele;
+        this.couleur = couleur;
+        this.dateDepart = dateDepart;
+        this.etapes = etapes;
+        this.id_festival = id_festival;
+        this.id_conducteur = id_conducteur;
+    }
 
     private long id_covoiturage;
 

@@ -1,7 +1,5 @@
 package fr.uga.miage.m1.service;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.model.Lieu;
@@ -22,8 +20,8 @@ public class LieuService {
     }
 
     // GET
-    public Optional<Lieu> getById(Long id) {
-        return lieuRepository.findById(id);
+    public Lieu getById(Long id) {
+        return lieuRepository.findById(id).get();
     }
 
     public Lieu getByTypeLieu(String typeLieu) {

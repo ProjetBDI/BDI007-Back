@@ -5,6 +5,9 @@ import fr.uga.miage.m1.model.Lieu;
 
 import java.util.List;
 
+import org.mapstruct.Mapper;
+
+@Mapper(componentModel = "spring")
 public interface LieuMapper {
     LieuDTO entityToDTO(Lieu lieu);
 

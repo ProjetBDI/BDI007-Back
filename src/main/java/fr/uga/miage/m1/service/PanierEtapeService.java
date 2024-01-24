@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -23,8 +22,8 @@ public class PanierEtapeService {
     }
 
     // GET
-    public Optional<PanierEtape> getById(Long id) {
-        return panierEtapeRepository.findById(id);
+    public PanierEtape getById(Long id) {
+        return panierEtapeRepository.findById(id).get();
     }
 
     public List<PanierEtape> getAllPaniers() {

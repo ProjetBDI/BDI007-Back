@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -23,8 +22,8 @@ public class FestivalService {
     }
 
     // GET
-    public Optional<Festival> getById(Long id) {
-        return festivalRepository.findById(id);
+    public Festival getById(Long id) {
+        return festivalRepository.findById(id).get();
     }
 
     public List<Festival> getByNom(String nom) {

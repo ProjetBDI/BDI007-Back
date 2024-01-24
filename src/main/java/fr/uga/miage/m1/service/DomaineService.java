@@ -22,8 +22,8 @@ public class DomaineService {
     }
 
     // GET
-    public Domaine get(Long id) {
-        return domaineRepository.findById(id).orElseThrow();
+    public Domaine getById(Long id) {
+        return domaineRepository.findById(id).get();
     }
 
     public Domaine getByDomaine(String nomDomaine) {
