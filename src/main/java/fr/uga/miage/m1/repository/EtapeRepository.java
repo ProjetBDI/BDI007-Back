@@ -2,20 +2,20 @@ package fr.uga.miage.m1.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.uga.miage.m1.dto.EtapeDTO;
+import fr.uga.miage.m1.model.Etape;
 
-public interface EtapeRepository extends JpaRepository<EtapeRepository, Long>{
+public interface EtapeRepository extends JpaRepository<Etape, Long>{
     
     // CREATE
-    void create(EtapeDTO etape);
+    void create(Etape etape);
 
     // READ
-    EtapeDTO findByID(Long idLieu, Long idCovoiturage);
-    EtapeDTO findByPrix(float prixEtape);
+    Etape findByID(long idLieu, long idCovoiturage);
+    Etape findByPrix(float prixEtape);
 
     // UPDATE
-    void update(EtapeDTO etape);
+    void update(Etape etape);
 
     // DELETE
-    void delete(EtapeDTO etape);
+    void delete(Etape etape);
 }

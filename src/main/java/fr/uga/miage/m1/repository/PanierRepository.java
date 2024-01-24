@@ -2,21 +2,20 @@ package fr.uga.miage.m1.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.model.Panier;
 
 public interface PanierRepository extends JpaRepository<Panier, Long> {
     
     // CREATE
-    void create(PanierDTO panier);
+    void create(Panier panier);
 
     // READ
-    PanierDTO findByIDPanier(Long idPanier);
-    PanierDTO findByProprietaire(String email); 
+    Panier findByID(long idPanier);
+    Panier findByProprietaire(String email); 
 
     // UPDATE
-    void update(PanierDTO panier);
+    void update(Panier panier);
 
     // DELETE
-    void delete(PanierDTO panier);
+    void delete(Panier panier);
 }

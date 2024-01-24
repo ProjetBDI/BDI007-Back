@@ -2,23 +2,23 @@ package fr.uga.miage.m1.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.model.Utilisateur;
 
-public interface UtilisateurRepository extends JpaRepository<Utilisateur, String> {
+public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
     
     // CREATE
-    void create(UtilisateurDTO utilisateur);
+    void create(Utilisateur utilisateur);
 
     // READ
-    UtilisateurDTO findByEmail(String email);
-    UtilisateurDTO findByPaniers(Long idPanier);
+    Utilisateur findByID(long id);
+    Utilisateur findByEmail(String email);
+    Utilisateur findByPaniers(long idPanier);
 
     // UPDATE
-    void update(UtilisateurDTO utilisateur);
+    void update(Utilisateur utilisateur);
 
     // DELETE
-    void delete(UtilisateurDTO utilisateur);
+    void delete(Utilisateur utilisateur);
     
 }
 

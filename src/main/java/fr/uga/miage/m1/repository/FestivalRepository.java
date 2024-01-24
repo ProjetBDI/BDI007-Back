@@ -4,21 +4,20 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.model.Festival;
 
 public interface FestivalRepository extends JpaRepository<Festival, Long>{
     
     // CREATE
-    void create(FestivalDTO festival);
+    void create(Festival festival);
 
     // READ
-    FestivalDTO findById(long id);
-    List<FestivalDTO> findByNom();
+    Festival findByID(long id);
+    List<Festival> findByNom(String nomFestival);
 
     // UPDATE
-    void update(FestivalDTO festival);
+    void update(Festival festival);
 
     // DELETE
-    void delete(FestivalDTO festival);
+    void delete(Festival festival);
 }
