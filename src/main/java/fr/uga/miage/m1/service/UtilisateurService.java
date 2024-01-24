@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.model.Utilisateur;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.repository.UtilisateurRepository;
@@ -12,7 +11,6 @@ import java.util.Optional;
 @Service
 public class UtilisateurService {
 
-    @Autowired
     private final UtilisateurRepository utilisateurRepository;
 
     public UtilisateurService(UtilisateurRepository utilisateurRepository) {
@@ -38,11 +36,15 @@ public class UtilisateurService {
     }
 
     public Utilisateur getByPanier(long idPanier) {
-        return utilisateurRepository.findByPanier(idPanier);
+        return utilisateurRepository.findByIDPanier(idPanier);
     }
 
     // DELETE
     public void deleteById(Long id) {
         utilisateurRepository.deleteById(id);
+    }
+
+    public void delete(Utilisateur utilisateur) {
+        utilisateurRepository.delete(utilisateur);
     }
 }

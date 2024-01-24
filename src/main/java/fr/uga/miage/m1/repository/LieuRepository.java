@@ -7,5 +7,5 @@ import fr.uga.miage.m1.model.Lieu;
 public interface LieuRepository extends JpaRepository<Lieu, Long>{
     
     // READ
-    Lieu findByID(long idLieu);
+    Lieu findByTypeLieu(String typeLieu);
 }

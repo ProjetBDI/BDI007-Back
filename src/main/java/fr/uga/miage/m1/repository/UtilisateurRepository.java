@@ -8,9 +8,8 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
 
 
     // READ
-    Utilisateur findByID(long id);
     Utilisateur findByEmail(String email);
-    Utilisateur findByPanier(long idPanier);
+    Utilisateur findByIDPanier(long idPanier);
     
 }
 

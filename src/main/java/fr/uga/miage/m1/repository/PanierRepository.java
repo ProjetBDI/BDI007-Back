@@ -10,7 +10,6 @@ public interface PanierRepository extends JpaRepository<Panier, Long> {
     void create(Panier panier);
 
     // READ
-    Panier findByID(long idPanier);
     Panier findByProprietaire(String email); 
 
     // UPDATE
