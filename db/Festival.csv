@@ -1,4 +1,4 @@
-idFestival,nomManifestation,dateDebut,dateFin,siteWEB,tarifPass,lieuPrincipal,codeINSEE,domaine,sousDomaine,nbPassTotal
+id_festival,nom_manifestation,date_debut,date_fin,site_web,tarif_pass,lieu_principal,codeINSEE,domaine,sous_domaine,nbPassTotal
 0,"¡ RIO LOCO ! GARONNE, LE FESTIVAL",2024-06-13,2024-06-16,www.rio-loco.org,13,TOULOUSE,31555,MUSIQUES ACTUELLES,MUSIQUES TRADITIONNELLES ET DU MONDE,242
 1,¡ Viva Villa !,2024-09-30,2024-10-08,www.vivavilla.info,24,MARSEILLE,13201,TRANSDISCIPLINAIRE,TRANSDISCIPLINAIRE,161
 2,"1, 2, 3, MUSIQUE",2024-03-12,2024-03-23,www.grandpiano.fr,18,TALENCE,33522,PLURIDISCIPLINAIRE SPECTACLE VIVANT,PLURIDISCIPLINAIRE SPECTACLE VIVANT,260
