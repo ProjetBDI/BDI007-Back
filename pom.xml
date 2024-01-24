@@ -14,8 +14,12 @@
 	<name>demo-server</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+		<springBoot.version>3.0.0</springBoot.version>
+		<springFoxSwagger.version>2.6.0</springFoxSwagger.version>
+		<swagger-annotation.version>1.5.9</swagger-annotation.version>
+		<apache-httpclient.version>4.5.14</apache-httpclient.version>
+		<springDoc.version>1.6.14</springDoc.version>
 		<java.version>17</java.version>
-		<sonar.host.url>http://im2ag-sonar.u-ga.fr:9000</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,11 +79,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-		<!-- Swagger -->
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-boot-starter</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
@@ -90,6 +94,9 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+=======
+
+>>>>>>> bbe0eb91277963bdf838cfe7193e9c7c5378432b
 		<!-- JUnit -->
 		<dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -106,8 +113,26 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
+<<<<<<< HEAD
 
 
+=======
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springFoxSwagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>${swagger-annotation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springDoc.version}</version>
+		</dependency>
+>>>>>>> bbe0eb91277963bdf838cfe7193e9c7c5378432b
 	</dependencies>
 
 	<build>
