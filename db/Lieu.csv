@@ -1,4 +1,4 @@
-idLieu,nomLieu,adresseLieu,commune,codeINSEELieu,typeLieu,longitude,latitude
+id_lieu,nom_lieu,adresse_lieu,commune,code_INSEE_Lieu,type_lieu,longitude,latitude
 0,Parking intermodal Gare d'Ambérieu en Bugey,"Rue Emile Bravet, Ambérieu en Bugey",AMBERIEU-EN-BUGEY,01004,Parking,5.34119617,45.956598704
 1,Arrêt covoit'ici Ambérieu en Bugey,Gare d'Ambérieu en Bugey,AMBERIEU-EN-BUGEY,01004,Auto-stop,5.34272020620408,45.954232106707
 2,Mairie d'Attignat,Place De La Fontaine- Anciens Combattants,ATTIGNAT,01024,Parking,5.158352778,46.28957222

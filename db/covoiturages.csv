@@ -1,4 +1,4 @@
-ID,Nombre de Places,Marque,Modèle,Couleur,Date de Départ
+id_covoiturage,nombre_de_places,marque,modele,couleur,date_de_depart
 0,3,Toyota,Yaris,Teal,2024-06-23 06:40:59
 1,4,Ford,F150,LightCoral,2024-04-05 17:51:33
 2,1,Chevrolet,Monte,Chocolate,2024-04-15 14:58:36
