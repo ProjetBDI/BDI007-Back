@@ -1,4 +1,5 @@
 package fr.uga.miage.m1.model;
+
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -7,12 +8,15 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "commune")
+@Table(
+        name = "commune",
+        uniqueConstraints = @UniqueConstraint(name = "UNQ_COMMUNE_CODEINSEE", columnNames = {"code_insee"})
+)
 public class Commune {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_commune", nullable = false)
+    @Column(name = "id_commune", nullable = false)
     private Long id_commune;
 
     @Column(name = "code_insee", nullable = false)
@@ -37,6 +41,7 @@ public class Commune {
     private List<Lieu> lieux;
 
     @ManyToOne
-    @JoinColumn(name = "id_departement", referencedColumnName = "id_departement", nullable = false) // correction de referencedColumnName
+    @JoinColumn(name = "id_departement", referencedColumnName = "id_departement", nullable = false)
+    // correction de referencedColumnName
     private Departement id_departement;
 }

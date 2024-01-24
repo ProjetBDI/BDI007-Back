@@ -4,12 +4,12 @@ from faker import Faker
 
 def main():
 
-    __path__ = '../dev/BDI007-Back/db'
-    __pathDB__ = '../dev/BDI007-Back/db'
+    __path__ = '.'
+    __pathDB__ = '.'
 
-    df_commune = pd.read_csv(__path__+'/commune.csv', encoding='ISO-8859-1')
+    df_commune = pd.read_csv(__path__+'/commune_.csv', encoding='ISO-8859-1')
 
-    df_festival = pd.read_csv(__path__+'/festival.csv', encoding='ISO-8859-1')
+    df_festival = pd.read_csv(__path__+'/festival_.csv', encoding='ISO-8859-1')
     df_festival = df_festival[:-1]
     # mettre tout en str dans festival
     df_festival['date_debut'] = df_festival['date_debut'].astype(str)
@@ -23,7 +23,7 @@ def main():
 
     df_etape = pd.read_csv(__path__+'/Etape2.csv', encoding='ISO-8859-1')
 
-    df_lieu = pd.read_csv(__path__+'/lieu.csv', encoding='ISO-8859-1')
+    df_lieu = pd.read_csv(__path__+'/Lieu.csv', encoding='ISO-8859-1')
 
 
 
@@ -34,14 +34,19 @@ def main():
     df_panier_etape = pd.DataFrame(columns=colonnes_panier_etape)
 
 
+    compteur = -1
+    
+    df_test = df_panier[:1000]
 
     for index,row in df_panier.copy().iterrows():
         nbEtapes = random.randint(1, 5)
         panier = df_panier.at[index, 'id_panier']
+        print(index)
         for i in range(nbEtapes):
             random_index_etape = random.randint(0, len(df_etape) - 1)
             # il faut le nombre de noms dans la liste noms_festivaliers dans panier 
-            nbFestivaliers = len([df_panier.at[index, 'noms_festivaliers']])
+            nbFestivaliers = len(df_panier.at[index, 'noms_festivaliers'].split(','))
+            
             # aller chercher le nb place dans covoiturage à partir de l'id covoiturage dans panier
             idCovoiturage = df_etape.at[index, 'id_covoiturage']
             nbPlace = df_covoiturage.at[idCovoiturage, 'nombre_de_places']
@@ -51,7 +56,9 @@ def main():
                 idCovoiturage = random.randint(0, len(df_covoiturage) - 1)
                 nbPlace = df_covoiturage.at[idCovoiturage, 'nombre_de_places']
 
+            compteur += 1
             new_row = {
+                'id_panier_etape': compteur,
                 'id_etape': df_etape.at[random_index_etape, 'id_etape'],
                 'id_panier': panier,
                 'nbPlaceOccupee': nbFestivaliers
@@ -66,12 +73,13 @@ def main():
 
 
     # fake = Faker('fr_FR')
+    # df_panier = pd.DataFrame(columns=['id_panier', 'date_paiement', 'noms_festivaliers', 'status', 'proprietaire'])
 
     # for i in range(100000):
     #     new_row = {
     #         'id_panier': i,
     #         'date_paiement': fake.date_time_between(start_date = '-1d', end_date='-230d').strftime('%Y-%m-%d %H:%M:%S'),
-    #         'noms_festivaliers' : [fake.name() for _ in range(random.randint(1,5))],
+    #         'noms_festivaliers' : [fake.name() for _ in range(random.randint(1,4))],
     #         'status' : 1,
     #         'proprietaire': df_utilisateur.at[random.randint(0, len(df_utilisateur) - 1), 'id_utilisateur'],
     #     }
