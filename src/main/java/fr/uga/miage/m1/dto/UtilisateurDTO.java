@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.dto;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
