@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.dto;
 
 import fr.uga.miage.m1.enums.FestivalStatus;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@Schema(name = "FestivalDTO", description = "FestivalDTO description")
 public class FestivalDTO {
 
     public FestivalDTO(long id_festival, String nom, String dateDebut, String dateFin, String siteWeb, String lieuPrincipal, int nbPassTotal, int nbPassDispo, int nbPassIndispo, float tarifPass, FestivalStatus status, List<CovoiturageDTO> covoiturages, CommuneDTO id_commune, DomaineDTO id_domaine) {
