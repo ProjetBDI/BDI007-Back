@@ -1,13 +1,8 @@
 package fr.uga.miage.m1.model;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.List;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+
 import lombok.Data;
 
 @Entity
@@ -16,17 +11,20 @@ import lombok.Data;
 public class Departement {
 
     @Id
-    @Column(name = "departement", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id_departement", nullable = false)
+    private int id_departement;
+
+    @Column(name = "num_departement", nullable = false)
     private String departement;
 
     @Column(name = "nom_departement", nullable = false)
     private String nomDepartement;
 
-    @OneToMany(mappedBy = "departement") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
-    private List<Commune> communes;
+    @Column(name = "nom_region")
+    private String nomRegion;
 
-    @ManyToOne
-    @JoinColumn(name = "nom_region", referencedColumnName = "nom")
-    private Region nomRegion;
+    @OneToMany(mappedBy = "id_departement")
+    private List<Commune> communes;
 
 }
