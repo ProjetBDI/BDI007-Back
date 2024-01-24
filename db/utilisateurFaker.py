@@ -22,7 +22,7 @@ nom_fichier_csv = 'utilisateurs.csv'
 with open(nom_fichier_csv, 'w', newline='') as fichier_csv:
     writer = csv.writer(fichier_csv)
     # Écriture de l'en-tête
-    writer.writerow(['Email', 'Nom', 'Prénom', 'Date de Naissance'])
+    writer.writerow(['identifiant','Email', 'Nom', 'Prénom', 'Date de Naissance', 'Téléphone'])
     # Écriture des données des utilisateurs
     writer.writerows(utilisateurs)
 
