@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import fr.uga.miage.m1.repository.UtilisateurRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UtilisateurService {
@@ -27,8 +26,8 @@ public class UtilisateurService {
         return utilisateurRepository.findAll();
     }
 
-    public Optional<Utilisateur> getById(Long id) {
-        return utilisateurRepository.findById(id);
+    public Utilisateur getById(Long id) {
+        return utilisateurRepository.findById(id).get();
     }
 
     public Utilisateur getByEmail(String email) {
