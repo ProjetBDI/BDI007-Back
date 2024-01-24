@@ -3,6 +3,7 @@ package fr.uga.miage.m1.dto;
 import java.util.Date;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
+@Schema(name = "PanierDTO", description = "PanierDTO description")
 public class PanierDTO {
 
     public PanierDTO(

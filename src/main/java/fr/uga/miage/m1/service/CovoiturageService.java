@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import fr.uga.miage.m1.model.Covoiturage;
 import fr.uga.miage.m1.repository.CovoiturageRepository;
 
+import java.util.List;
+
 @Service
 public class CovoiturageService {
     
@@ -32,4 +34,6 @@ public class CovoiturageService {
     public void delete(Covoiturage covoiturage) {
         covoiturageRepository.delete(covoiturage);
     }
+
+    public List<Covoiturage> getAllCovoiturages() {return covoiturageRepository.findAll();}
 }

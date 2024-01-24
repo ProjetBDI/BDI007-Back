@@ -43,4 +43,7 @@ public class DomaineService {
     public void delete(Domaine domaine) {
         domaineRepository.delete(domaine);
     }
+
+    //get All
+    public List<Domaine> getAllDomaines(){return domaineRepository.findAll();}
 }
