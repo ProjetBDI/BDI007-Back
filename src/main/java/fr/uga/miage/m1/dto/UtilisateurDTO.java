@@ -15,15 +15,15 @@ import java.util.List;
 public class UtilisateurDTO {
 
     public UtilisateurDTO(
-        long id_utilisateur,
-        String email,
-        String nom,
-        String prenom,
-        String motDePasse,
-        Date dateNaissance,
-        String telephone,
-        List<PanierDTO> paniers,
-        List<CovoiturageDTO> covoiturages
+            long id_utilisateur,
+            String email,
+            String nom,
+            String prenom,
+            String motDePasse,
+            Date dateNaissance,
+            String telephone,
+            List<PanierDTO> paniers,
+            List<CovoiturageDTO> covoiturages
     ) {
         this.id_utilisateur = id_utilisateur;
         this.email = email;
@@ -37,13 +37,13 @@ public class UtilisateurDTO {
     }
 
     private long id_utilisateur;
-    
+
     private String email;
 
     private String nom;
-    
+
     private String prenom;
-    
+
     private String motDePasse;
 
     private Date dateNaissance;
@@ -54,5 +54,19 @@ public class UtilisateurDTO {
 
     private List<CovoiturageDTO> covoiturages;
 
+    @Override
+    public String toString() {
+        return "UtilisateurDTO{" +
+                "id_utilisateur=" + id_utilisateur +
+                ", email='" + email + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", motDePasse='" + motDePasse + '\'' +
+                ", dateNaissance=" + dateNaissance +
+                ", telephone='" + telephone + '\'' +
+                ", paniers=" + paniers +
+                ", covoiturages=" + covoiturages +
+                '}';
+    }
 }
 

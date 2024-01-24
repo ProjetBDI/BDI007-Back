@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.repository.UtilisateurRepository;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -22,7 +23,7 @@ public class UtilisateurService {
     }
 
     // GET
-    public List<Utilisateur> getAllUsers() {
+    public Collection<Utilisateur> getAllUsers() {
         return utilisateurRepository.findAll();
     }
 

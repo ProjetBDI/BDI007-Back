@@ -23,51 +23,17 @@ public class UtilisateurController {
     @Autowired
     private UtilisateurMapper utilisateurMapper;
 
-    @PostMapping("/utilisateur")
-    @Operation(summary = "Create a new utilisateur")
-    public void createUtilisateur(@RequestBody UtilisateurDTO utilisateurDTO) {
-        Utilisateur utilisateur = utilisateurMapper.dtoToEntity(utilisateurDTO);
-        utilisateurService.save(utilisateur);
+    @GetMapping("/utilisateur/{id}")
+    public UtilisateurDTO getUtilisateurById(Long id) {
+        return utilisateurMapper.entityToDTO(utilisateurService.getById(id));
     }
 
-    @GetMapping("utilisateur/{id}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Utilisateur found"),
-            @ApiResponse(responseCode = "204", description = "Utilisateur not found")
-    })
-    @Operation(summary = "Get utilisateur by ID")
-    public UtilisateurDTO getUtilisateurById(@PathVariable Long id) {
-        Utilisateur utilisateur = utilisateurService.getById(id);
-        return utilisateurMapper.entityToDTO(utilisateur);
+    @GetMapping("/utilisateurs")
+    public Collection<UtilisateurDTO> getUtilisateurs() {
+        Collection<Utilisateur> utilisateurs = (utilisateurService.getAllUsers());
+        List<UtilisateurDTO> user = utilisateurs.stream().map(utilisateurMapper::entityToDTO).toList();
+        System.out.println(user.get(0));
+        return user;
     }
 
-    @GetMapping("utilisateurs")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
-            @ApiResponse(responseCode = "204", description = "No utilisateurs found")
-    })
-    @Operation(summary = "Get all utilisateurs")
-    public List<UtilisateurDTO> getAllUtilisateurs() {
-        List<Utilisateur> utilisateurs = utilisateurService.getAllUsers();
-        return utilisateurs.stream()
-                .map(utilisateurMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
-
-    @GetMapping("utilisateur/email/{email}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Utilisateur found"),
-            @ApiResponse(responseCode = "204", description = "Utilisateur not found")
-    })
-    @Operation(summary = "Get utilisateur by email")
-    public UtilisateurDTO getUtilisateurByEmail(@PathVariable String email) {
-        Utilisateur utilisateur = utilisateurService.getByEmail(email);
-        return utilisateurMapper.entityToDTO(utilisateur);
-    }
-
-    @DeleteMapping("utilisateur/{id}")
-    @Operation(summary = "Delete utilisateur by ID")
-    public void deleteUtilisateurById(@PathVariable Long id) {
-        utilisateurService.deleteById(id);
-    }
 }
