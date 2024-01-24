@@ -1,105 +1,104 @@
-departement,nom_departement,region
-31,Haute-Garonne,Occitanie
-13,Bouches-du-Rhône,Provence-Alpes-Côte d'Azur
-33,Gironde,Nouvelle-Aquitaine
-38,Isère,Auvergne-Rhône-Alpes
-42,Loire,Auvergne-Rhône-Alpes
-22,Côtes-d'Armor,Bretagne
-66,Pyrénées-Orientales,Occitanie
-34,Hérault,Occitanie
-69,Rhône,Auvergne-Rhône-Alpes
-1,Ain,Auvergne-Rhône-Alpes
-86,Vienne,Nouvelle-Aquitaine
-85,Vendée,Pays de la Loire
-49,Maine-et-Loire,Pays de la Loire
-21,Côte-d'Or,Bourgogne-Franche-Comté
-81,Tarn,Occitanie
-64,Pyrénées-Atlantiques,Nouvelle-Aquitaine
-78,Yvelines,Île-de-France
-53,Mayenne,Pays de la Loire
-59,Nord,Hauts-de-France
-26,Drôme,Auvergne-Rhône-Alpes
-6,Alpes-Maritimes,Provence-Alpes-Côte d'Azur
-80,Somme,Hauts-de-France
-29,Finistère,Bretagne
-47,Lot-et-Garonne,Nouvelle-Aquitaine
-76,Seine-Maritime,Normandie
-46,Lot,Occitanie
-93,Seine-Saint-Denis,Île-de-France
-89,Yonne,Bourgogne-Franche-Comté
-75,Paris,Île-de-France
-11,Aude,Occitanie
-91,Essonne,Île-de-France
-73,Savoie,Auvergne-Rhône-Alpes
-56,Morbihan,Bretagne
-5,Hautes-Alpes,Provence-Alpes-Côte d'Azur
-65,Hautes-Pyrénées,Occitanie
-37,Indre-et-Loire,Centre-Val de Loire
-74,Haute-Savoie,Auvergne-Rhône-Alpes
-14,Calvados,Normandie
-40,Landes,Nouvelle-Aquitaine
-43,Haute-Loire,Auvergne-Rhône-Alpes
-35,Ille-et-Vilaine,Bretagne
-84,Vaucluse,Provence-Alpes-Côte d'Azur
-7,Ardèche,Auvergne-Rhône-Alpes
-62,Pas-de-Calais,Hauts-de-France
-54,Meurthe-et-Moselle,Grand Est
-61,Orne,Normandie
-2B,Haute-Corse,Corse
-60,Oise,Hauts-de-France
-30,Gard,Occitanie
-63,Puy-de-Dôme,Auvergne-Rhône-Alpes
-79,Deux-Sèvres,Nouvelle-Aquitaine
-3,Allier,Auvergne-Rhône-Alpes
-67,Bas-Rhin,Grand Est
-55,Meuse,Grand Est
-50,Manche,Normandie
-95,Val-d'Oise,Île-de-France
-44,Loire-Atlantique,Pays de la Loire
-71,Saône-et-Loire,Bourgogne-Franche-Comté
-8,Ardennes,Grand Est
-39,Jura,Bourgogne-Franche-Comté
-18,Cher,Centre-Val de Loire
-45,Loiret,Centre-Val de Loire
-92,Hauts-de-Seine,Île-de-France
-90,Territoire de Belfort,Bourgogne-Franche-Comté
-24,Dordogne,Nouvelle-Aquitaine
-72,Sarthe,Pays de la Loire
-52,Haute-Marne,Grand Est
-2,Aisne,Hauts-de-France
-15,Cantal,Auvergne-Rhône-Alpes
-94,Val-de-Marne,Île-de-France
-68,Haut-Rhin,Grand Est
-36,Indre,Centre-Val de Loire
-25,Doubs,Bourgogne-Franche-Comté
-58,Nièvre,Bourgogne-Franche-Comté
-83,Var,Provence-Alpes-Côte d'Azur
-19,Corrèze,Nouvelle-Aquitaine
-23,Creuse,Nouvelle-Aquitaine
-51,Marne,Grand Est
-2B,Corse-du-Sud,Corse
-27,Eure,Normandie
-77,Seine-et-Marne,Île-de-France
-12,Aveyron,Occitanie
-28,Eure-et-Loir,Centre-Val de Loire
-32,Gers,Occitanie
-976,Mayotte,Mayotte
-17,Charente-Maritime,Nouvelle-Aquitaine
-16,Charente,Nouvelle-Aquitaine
-70,Haute-Saône,Bourgogne-Franche-Comté
-4,Alpes-de-Haute-Provence,Provence-Alpes-Côte d'Azur
-10,Aube,Grand Est
-87,Haute-Vienne,Nouvelle-Aquitaine
-57,Moselle,Grand Est
-41,Loir-et-Cher,Centre-Val de Loire
-48,Lozère,Occitanie
-88,Vosges,Grand Est
-973,Guyane,Guyane
-974,La Réunion,La Réunion
-972,Martinique,Martinique
-971,Guadeloupe,Guadeloupe
-82,Tarn-et-Garonne,Occitanie
-988,Nouvelle-Calédonie,Nouvelle Calédonie
-987,Polynésie française,Polynésie française
-9,Ariège,Occitanie
-nan,nan,nan
+id_departement;departement;nom_departement;region
+1;31;Haute-Garonne;Occitanie
+2;13;Bouches-du-Rhône;Provence-Alpes-Côte d'Azur
+3;33;Gironde;Nouvelle-Aquitaine
+4;38;Isère;Auvergne-Rhône-Alpes
+5;42;Loire;Auvergne-Rhône-Alpes
+6;22;Côtes-d'Armor;Bretagne
+7;66;Pyrénées-Orientales;Occitanie
+8;34;Hérault;Occitanie
+9;69;Rhône;Auvergne-Rhône-Alpes
+10;1;Ain;Auvergne-Rhône-Alpes
+11;86;Vienne;Nouvelle-Aquitaine
+12;85;Vendée;Pays de la Loire
+13;49;Maine-et-Loire;Pays de la Loire
+14;21;Côte-d'Or;Bourgogne-Franche-Comté
+15;81;Tarn;Occitanie
+16;64;Pyrénées-Atlantiques;Nouvelle-Aquitaine
+17;78;Yvelines;Île-de-France
+18;53;Mayenne;Pays de la Loire
+19;59;Nord;Hauts-de-France
+20;26;Drôme;Auvergne-Rhône-Alpes
+21;6;Alpes-Maritimes;Provence-Alpes-Côte d'Azur
+22;80;Somme;Hauts-de-France
+23;29;Finistère;Bretagne
+24;47;Lot-et-Garonne;Nouvelle-Aquitaine
+25;76;Seine-Maritime;Normandie
+26;46;Lot;Occitanie
+27;93;Seine-Saint-Denis;Île-de-France
+28;89;Yonne;Bourgogne-Franche-Comté
+29;75;Paris;Île-de-France
+30;11;Aude;Occitanie
+31;91;Essonne;Île-de-France
+32;73;Savoie;Auvergne-Rhône-Alpes
+33;56;Morbihan;Bretagne
+34;5;Hautes-Alpes;Provence-Alpes-Côte d'Azur
+35;65;Hautes-Pyrénées;Occitanie
+36;37;Indre-et-Loire;Centre-Val de Loire
+37;74;Haute-Savoie;Auvergne-Rhône-Alpes
+38;14;Calvados;Normandie
+39;40;Landes;Nouvelle-Aquitaine
+40;43;Haute-Loire;Auvergne-Rhône-Alpes
+41;35;Ille-et-Vilaine;Bretagne
+42;84;Vaucluse;Provence-Alpes-Côte d'Azur
+43;7;Ardèche;Auvergne-Rhône-Alpes
+44;62;Pas-de-Calais;Hauts-de-France
+45;54;Meurthe-et-Moselle;Grand Est
+46;61;Orne;Normandie
+47;2B;Haute-Corse;Corse
+48;60;Oise;Hauts-de-France
+49;30;Gard;Occitanie
+50;63;Puy-de-Dôme;Auvergne-Rhône-Alpes
+51;79;Deux-Sèvres;Nouvelle-Aquitaine
+52;3;Allier;Auvergne-Rhône-Alpes
+53;67;Bas-Rhin;Grand Est
+54;55;Meuse;Grand Est
+55;50;Manche;Normandie
+56;95;Val-d'Oise;Île-de-France
+57;44;Loire-Atlantique;Pays de la Loire
+58;71;Saône-et-Loire;Bourgogne-Franche-Comté
+59;8;Ardennes;Grand Est
+60;39;Jura;Bourgogne-Franche-Comté
+61;18;Cher;Centre-Val de Loire
+62;45;Loiret;Centre-Val de Loire
+63;92;Hauts-de-Seine;Île-de-France
+64;90;Territoire de Belfort;Bourgogne-Franche-Comté
+65;24;Dordogne;Nouvelle-Aquitaine
+66;72;Sarthe;Pays de la Loire
+67;52;Haute-Marne;Grand Est
+68;2;Aisne;Hauts-de-France
+69;15;Cantal;Auvergne-Rhône-Alpes
+70;94;Val-de-Marne;Île-de-France
+71;68;Haut-Rhin;Grand Est
+72;36;Indre;Centre-Val de Loire
+73;25;Doubs;Bourgogne-Franche-Comté
+74;58;Nièvre;Bourgogne-Franche-Comté
+75;83;Var;Provence-Alpes-Côte d'Azur
+76;19;Corrèze;Nouvelle-Aquitaine
+77;23;Creuse;Nouvelle-Aquitaine
+78;51;Marne;Grand Est
+79;2B;Corse-du-Sud;Corse
+80;27;Eure;Normandie
+81;77;Seine-et-Marne;Île-de-France
+82;12;Aveyron;Occitanie
+83;28;Eure-et-Loir;Centre-Val de Loire
+84;32;Gers;Occitanie
+85;976;Mayotte;Mayotte
+86;17;Charente-Maritime;Nouvelle-Aquitaine
+87;16;Charente;Nouvelle-Aquitaine
+88;70;Haute-Saône;Bourgogne-Franche-Comté
+89;4;Alpes-de-Haute-Provence;Provence-Alpes-Côte d'Azur
+90;10;Aube;Grand Est
+91;87;Haute-Vienne;Nouvelle-Aquitaine
+92;57;Moselle;Grand Est
+93;41;Loir-et-Cher;Centre-Val de Loire
+94;48;Lozère;Occitanie
+95;88;Vosges;Grand Est
+96;973;Guyane;Guyane
+97;974;La Réunion;La Réunion
+98;972;Martinique;Martinique
+99;971;Guadeloupe;Guadeloupe
+100;82;Tarn-et-Garonne;Occitanie
+101;988;Nouvelle-Calédonie;Nouvelle Calédonie
+102;987;Polynésie française;Polynésie française
+103;9;Ariège;Occitanie
