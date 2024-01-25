@@ -15,6 +15,7 @@ import java.util.List;
 public class UtilisateurDTO {
 
     public UtilisateurDTO(
+<<<<<<< HEAD
         long idUtilisateur,
         String email,
         String nom,
@@ -25,6 +26,17 @@ public class UtilisateurDTO {
         List<PanierDTO> paniers,
         List<CovoiturageDTO> covoiturages
     ) {
+=======
+            long idUtilisateur,
+            String email,
+            String nom,
+            String prenom,
+            String motDePasse,
+            Date dateNaissance,
+            String telephone,
+            List<PanierDTO> paniers,
+            List<CovoiturageDTO> covoiturages) {
+>>>>>>> 722b366d66cef9127702ced153041031b46cdebf
         this.idUtilisateur = idUtilisateur;
         this.email = email;
         this.nom = nom;
@@ -69,4 +81,3 @@ public class UtilisateurDTO {
                 '}';
     }
 }
-
