@@ -35,18 +35,18 @@ public class Utilisateur {
     @Column(name = "mot_de_passe", nullable = true)
     private String motDePasse;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "date_naissance", nullable = false)
     private Date dateNaissance;
 
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(mappedBy = "id_proprietaire")
+    @OneToMany(mappedBy = "idProprietaire")
     private List<Panier> paniers;
 
 
-    @OneToMany(mappedBy = "id_conducteur")
+    @OneToMany(mappedBy = "idConducteur")
     private List<Covoiturage> covoiturages;
 
 }

@@ -30,7 +30,7 @@ public class Etape {
     @JoinColumn(name = "id_covoiturage", referencedColumnName = "id_covoiturage", insertable = false, updatable = false)
     private Covoiturage idCovoiturage;
 
-    @OneToMany(mappedBy = "id_etape")
+    @OneToMany(mappedBy = "idEtape")
     private List<PanierEtape> panierEtapes;
     
 }

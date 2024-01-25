@@ -50,7 +50,7 @@ public class Lieu {
     @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
     private Commune idCommune;
 
-    @OneToMany(mappedBy = "id_lieu")
+    @OneToMany(mappedBy = "idLieu")
     private List<Etape> etapes;
 
 }

@@ -34,10 +34,10 @@ public class Commune {
     @JoinColumn(name = "id_departement", referencedColumnName = "id_departement", nullable = false) // correction de referencedColumnName
     private Departement idDepartement;
 
-    @OneToMany(mappedBy = "id_commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
+    @OneToMany(mappedBy = "idCommune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Festival> festivals;
 
-    @OneToMany(mappedBy = "id_commune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
+    @OneToMany(mappedBy = "idCommune") // Utilisation de "mappedBy" pour indiquer le champ dans l'entité liée
     private List<Lieu> lieux;
 
 

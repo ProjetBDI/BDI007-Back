@@ -46,7 +46,7 @@ public class Covoiturage {
     @Column(name = "date_depart")
     private Date dateDepart;
 
-    @OneToMany(mappedBy = "id_covoiturage")
+    @OneToMany(mappedBy = "idCovoiturage")
     private List<Etape> etapes;
     
     @ManyToOne

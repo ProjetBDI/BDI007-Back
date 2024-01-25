@@ -24,7 +24,7 @@ public class Departement {
     @Column(name = "nom_region")
     private String nomRegion;
 
-    @OneToMany(mappedBy = "id_departement")
+    @OneToMany(mappedBy = "idDepartement")
     private List<Commune> communes;
 
 }

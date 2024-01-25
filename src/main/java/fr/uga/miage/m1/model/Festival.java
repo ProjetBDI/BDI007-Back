@@ -50,7 +50,7 @@ public class Festival {
     @Column(name = "status")
     private FestivalStatus status;
     
-    @OneToMany(mappedBy = "id_festival")
+    @OneToMany(mappedBy = "idFestival")
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
@@ -59,5 +59,5 @@ public class Festival {
 
     @ManyToOne
     @JoinColumn(name="id_domaine", referencedColumnName = "id_domaine")
-    private Domaine id_domaine;
+    private Domaine idDomaine;
 }
