@@ -15,6 +15,7 @@ import java.util.List;
 public class UtilisateurDTO {
 
     public UtilisateurDTO(
+<<<<<<< HEAD
         long idUtilisateur,
         String email,
         String nom,
@@ -24,6 +25,17 @@ public class UtilisateurDTO {
         String telephone,
         List<PanierDTO> paniers,
         List<CovoiturageDTO> covoiturages
+=======
+            long id_utilisateur,
+            String email,
+            String nom,
+            String prenom,
+            String motDePasse,
+            Date dateNaissance,
+            String telephone,
+            List<PanierDTO> paniers,
+            List<CovoiturageDTO> covoiturages
+>>>>>>> 034261868b7522390b80b6ae7d170ac926462af1
     ) {
         this.idUtilisateur = idUtilisateur;
         this.email = email;
@@ -36,14 +48,19 @@ public class UtilisateurDTO {
         this.covoiturages = covoiturages;
     }
 
+<<<<<<< HEAD
     private long idUtilisateur;
     
+=======
+    private long id_utilisateur;
+
+>>>>>>> 034261868b7522390b80b6ae7d170ac926462af1
     private String email;
 
     private String nom;
-    
+
     private String prenom;
-    
+
     private String motDePasse;
 
     private Date dateNaissance;
@@ -54,5 +71,19 @@ public class UtilisateurDTO {
 
     private List<CovoiturageDTO> covoiturages;
 
+    @Override
+    public String toString() {
+        return "UtilisateurDTO{" +
+                "id_utilisateur=" + id_utilisateur +
+                ", email='" + email + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", motDePasse='" + motDePasse + '\'' +
+                ", dateNaissance=" + dateNaissance +
+                ", telephone='" + telephone + '\'' +
+                ", paniers=" + paniers +
+                ", covoiturages=" + covoiturages +
+                '}';
+    }
 }
 
