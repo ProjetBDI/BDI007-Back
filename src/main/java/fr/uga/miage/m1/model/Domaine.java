@@ -18,7 +18,7 @@ public class Domaine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_domaine", nullable = false)
-    private int id_domaine;
+    private int idDomaine;
 
     @Column(name = "nom_domaine", nullable = false)
     private String nomDomaine;

@@ -25,7 +25,7 @@ public class Lieu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_lieu", nullable = false)
-    private long id_lieu;
+    private long idLieu;
 
     @Column(name="adresse", nullable = false)
     private String adresse;
@@ -48,7 +48,7 @@ public class Lieu {
 
     @ManyToOne
     @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
-    private Commune id_commune;
+    private Commune idCommune;
 
     @OneToMany(mappedBy = "id_lieu")
     private List<Etape> etapes;

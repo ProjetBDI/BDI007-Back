@@ -25,7 +25,7 @@ public class Covoiturage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_covoiturage", nullable = false)
-    private long id_covoiturage;
+    private long idCovoiturage;
 
     @Column(name = "nb_place")
     private int nbPlace;
@@ -51,11 +51,11 @@ public class Covoiturage {
     
     @ManyToOne
     @JoinColumn(name = "id_festival", referencedColumnName = "id_festival")
-    private Festival id_festival;
+    private Festival idFestival;
 
     @ManyToOne
     @JoinColumn(name = "id_conducteur", referencedColumnName = "id_utilisateur", insertable = true, updatable = true)
-    private Utilisateur id_conducteur;
+    private Utilisateur idConducteur;
 
 }
 

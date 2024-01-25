@@ -16,7 +16,7 @@ public class Festival {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_festival", nullable = false)
-    private long id_festival;
+    private long idFestival;
 
     @Column(name = "nom")
     private String nom;
@@ -55,7 +55,7 @@ public class Festival {
 
     @ManyToOne
     @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
-    private Commune id_commune;
+    private Commune idCommune;
 
     @ManyToOne
     @JoinColumn(name="id_domaine", referencedColumnName = "id_domaine")

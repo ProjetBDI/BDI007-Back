@@ -14,7 +14,7 @@ public class Etape {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_etape", nullable = false)
-    private long id_etape;
+    private long idEtape;
 
     @Column(name="prix_etape", nullable = false)
     private float prixEtape;
@@ -24,11 +24,11 @@ public class Etape {
 
     @ManyToOne
     @JoinColumn(name = "id_lieu", referencedColumnName = "id_lieu", insertable = false, updatable = false)
-    private Lieu id_lieu;
+    private Lieu idLieu;
 
     @ManyToOne
     @JoinColumn(name = "id_covoiturage", referencedColumnName = "id_covoiturage", insertable = false, updatable = false)
-    private Covoiturage id_covoiturage;
+    private Covoiturage idCovoiturage;
 
     @OneToMany(mappedBy = "id_etape")
     private List<PanierEtape> panierEtapes;

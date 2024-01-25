@@ -17,8 +17,7 @@
 		<java.version>17</java.version>
 		<sonar.host.url>http://im2ag-sonar.u-ga.fr:9000</sonar.host.url>
 		<sonar.projectKey>projet-BDI-gp7</sonar.projectKey>
-		<sonar.login>bdi_7</sonar.login>
-		<sonar.password>bd7</sonar.password>
+		<sonar.login>${user.token}</sonar.login>
 		<sonar.qualitygate.wait>true</sonar.qualitygate.wait>
 	</properties>
 	<dependencies>
@@ -104,8 +103,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<source>17</source>
-					<target>17</target>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

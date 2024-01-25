@@ -13,7 +13,7 @@ public class Departement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_departement", nullable = false)
-    private int id_departement;
+    private int idDepartement;
 
     @Column(name = "num_departement", nullable = false)
     private String numDepartement;

@@ -26,7 +26,7 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_panier", nullable = false)
-    private long id_panier;
+    private long idPanier;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_paiement", nullable = false)
@@ -37,7 +37,7 @@ public class Panier {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_proprietaire", referencedColumnName = "id_utilisateur")
-    private Utilisateur id_proprietaire;
+    private Utilisateur idProprietaire;
 
     @OneToMany(mappedBy = "id_panier_etape")
     private List<PanierEtape> panierEtapes;
