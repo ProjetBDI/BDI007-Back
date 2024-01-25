@@ -26,7 +26,7 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_panier", nullable = false)
-    private long idPanier;
+    private Long idPanier;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_paiement", nullable = false)

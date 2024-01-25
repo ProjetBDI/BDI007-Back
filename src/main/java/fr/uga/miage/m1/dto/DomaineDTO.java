@@ -14,18 +14,18 @@ import java.util.List;
 public class DomaineDTO {
 
     public DomaineDTO(
-        int id_domaine,
+        int idDomaine,
         String nomDomaine,
         String sousDomaines,
         List<FestivalDTO> festivals
     ) {
-        this.id_domaine = id_domaine;
+        this.idDomaine = idDomaine;
         this.nomDomaine = nomDomaine;
         this.sousDomaines = sousDomaines;
         this.festivals = festivals;
     }
 
-    private int id_domaine;
+    private int idDomaine;
     
     private String nomDomaine;
 

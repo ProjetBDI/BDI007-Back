@@ -16,7 +16,7 @@ public class Festival {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_festival", nullable = false)
-    private long idFestival;
+    private Long idFestival;
 
     @Column(name = "nom")
     private String nom;

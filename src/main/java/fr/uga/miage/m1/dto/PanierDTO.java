@@ -15,26 +15,26 @@ import lombok.Setter;
 public class PanierDTO {
 
     public PanierDTO(
-        long id_panier,
+        long idPanier,
         Date datePaiement,
         String nomsFestivaliers,
-        UtilisateurDTO id_proprietaire,
+        UtilisateurDTO idProprietaire,
         List<PanierEtapeDTO> panierEtapes
     ) {
-        this.id_panier = id_panier;
+        this.idPanier = idPanier;
         this.datePaiement = datePaiement;
         this.nomsFestivaliers = nomsFestivaliers;
-        this.id_proprietaire = id_proprietaire;
+        this.idProprietaire = idProprietaire;
         this.panierEtapes = panierEtapes;
     }
 
-    private long id_panier;
+    private long idPanier;
     
     private Date datePaiement;
     
     private String nomsFestivaliers;
     
-    private UtilisateurDTO id_proprietaire;
+    private UtilisateurDTO idProprietaire;
     
     private List<PanierEtapeDTO> panierEtapes;
     

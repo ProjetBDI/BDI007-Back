@@ -18,11 +18,11 @@ public class PanierEtape {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_panier_etape", nullable = false)
-    private long idPanierEtape;
+    private Long idPanierEtape;
 
 
     @Column(name="nb_place_occuppe", nullable = false)
-    private long nbPlaceOccuppe;
+    private Long nbPlaceOccuppe;
 
     @ManyToOne
     @JoinColumn(name = "id_etape", referencedColumnName = "id_etape", insertable = false, updatable = false)

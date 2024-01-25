@@ -15,28 +15,28 @@ import java.util.List;
 public class LieuDTO {
 
     public LieuDTO(
-        long id_lieu,
+        long idLieu,
         String adresse,
         String codeINSEELieu,
         float latitude,
         float longitude,
         String nom,
         TypeLieu typeLieu,
-        CommuneDTO id_commune,
+        CommuneDTO idCommune,
         List<EtapeDTO> etapes
     ) {
-        this.id_lieu = id_lieu;
+        this.idLieu = idLieu;
         this.adresse = adresse;
         this.codeINSEELieu = codeINSEELieu;
         this.latitude = latitude;
         this.longitude = longitude;
         this.nom = nom;
         this.typeLieu = typeLieu;
-        this.id_commune = id_commune;
+        this.idCommune = idCommune;
         this.etapes = etapes;
     }
     
-    private long id_lieu;
+    private long idLieu;
 
     private String adresse;
 
@@ -50,7 +50,7 @@ public class LieuDTO {
 
     private TypeLieu typeLieu;
 
-    private CommuneDTO id_commune;
+    private CommuneDTO idCommune;
 
     private List<EtapeDTO> etapes;
 }

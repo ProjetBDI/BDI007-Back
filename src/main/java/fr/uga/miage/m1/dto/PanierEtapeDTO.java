@@ -12,22 +12,22 @@ import lombok.Setter;
 public class PanierEtapeDTO {
 
     public PanierEtapeDTO(
-        long id_panier_etape,
+        long idPanierEtape,
         long nbPlaceOccuppe,
-        EtapeDTO id_etape,
-        PanierDTO id_panier
+        EtapeDTO idEtape,
+        PanierDTO idPanier
     ) {
-        this.id_panier_etape = id_panier_etape;
+        this.idPanierEtape = idPanierEtape;
         this.nbPlaceOccuppe = nbPlaceOccuppe;
-        this.id_etape = id_etape;
-        this.id_panier = id_panier;
+        this.idEtape = idEtape;
+        this.idPanier = idPanier;
     }
 
-    private long id_panier_etape;
+    private long idPanierEtape;
 
     private long nbPlaceOccuppe;
     
-    private EtapeDTO id_etape;
+    private EtapeDTO idEtape;
 
-    private PanierDTO id_panier;
+    private PanierDTO idPanier;
 }

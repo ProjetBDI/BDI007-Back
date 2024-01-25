@@ -14,28 +14,28 @@ import java.util.List;
 public class CommuneDTO {
 
     public CommuneDTO(
-        long id_commune,
+        long idCommune,
         String codeINSEE,
         String codePostal,
         String latitude,
         String longitude,
         String nomCommune,
-        DepartementDTO id_departement,
+        DepartementDTO idDepartement,
         List<FestivalDTO> festivals,
         List<LieuDTO> lieux
     ) {
-        this.id_commune = id_commune;
+        this.idCommune = idCommune;
         this.codeINSEE = codeINSEE;
         this.codePostal = codePostal;
         this.latitude = latitude;
         this.longitude = longitude;
         this.nomCommune = nomCommune;
-        this.id_departement = id_departement;
+        this.idDepartement = idDepartement;
         this.festivals = festivals;
         this.lieux = lieux;
     }
 
-    private long id_commune;
+    private long idCommune;
 
     private String codeINSEE;
 
@@ -47,7 +47,7 @@ public class CommuneDTO {
 
     private String nomCommune;
 
-    private DepartementDTO id_departement;
+    private DepartementDTO idDepartement;
 
     private List<FestivalDTO> festivals;
     

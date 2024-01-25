@@ -13,30 +13,30 @@ import java.util.List;
 public class EtapeDTO {
 
     public EtapeDTO(
-        long id_etape,
+        long idEtape,
         float prixEtape,
         int dureeDepuisDepart,
-        LieuDTO id_lieu,
-        CovoiturageDTO id_covoiturage,
+        LieuDTO idLieu,
+        CovoiturageDTO idCovoiturage,
         List<PanierEtapeDTO> panierEtapes
     ) {
-        this.id_etape = id_etape;
+        this.idEtape = idEtape;
         this.prixEtape = prixEtape;
         this.dureeDepuisDepart = dureeDepuisDepart;
-        this.id_lieu = id_lieu;
-        this.id_covoiturage = id_covoiturage;
+        this.idLieu = idLieu;
+        this.idCovoiturage = idCovoiturage;
         this.panierEtapes = panierEtapes;
     }
 
-    private long id_etape;
+    private long idEtape;
 
     private float prixEtape;
 
     private int dureeDepuisDepart;
 
-    private LieuDTO id_lieu;
+    private LieuDTO idLieu;
 
-    private CovoiturageDTO id_covoiturage;
+    private CovoiturageDTO idCovoiturage;
     
     private List<PanierEtapeDTO> panierEtapes;
 }

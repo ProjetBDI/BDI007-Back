@@ -25,7 +25,7 @@ public class Covoiturage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_covoiturage", nullable = false)
-    private long idCovoiturage;
+    private Long idCovoiturage;
 
     @Column(name = "nb_place")
     private int nbPlace;

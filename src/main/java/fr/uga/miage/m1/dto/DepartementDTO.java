@@ -14,20 +14,20 @@ import java.util.List;
 public class DepartementDTO {
 
     public DepartementDTO(
-        int id_departement,
+        int idDepartement,
         String numDepartement,
         String nomDepartement,
         String nomregion,
         List<CommuneDTO> communes
     ) {
-        this.id_departement = id_departement;
+        this.idDepartement = idDepartement;
         this.numDepartement = numDepartement;
         this.nomDepartement = nomDepartement;
         this.nomregion = nomregion;
         this.communes = communes;
     }
     
-    private int id_departement;
+    private int idDepartement;
 
     private String numDepartement;
 
