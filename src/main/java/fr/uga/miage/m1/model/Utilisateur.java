@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
 @Data
@@ -44,7 +45,6 @@ public class Utilisateur {
 
     @OneToMany(mappedBy = "idProprietaire")
     private List<Panier> paniers;
-
 
     @OneToMany(mappedBy = "idConducteur")
     private List<Covoiturage> covoiturages;

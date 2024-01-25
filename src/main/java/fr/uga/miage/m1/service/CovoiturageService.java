@@ -35,5 +35,5 @@ public class CovoiturageService {
         covoiturageRepository.delete(covoiturage);
     }
 
-    public List<Covoiturage> getAllCovoiturages() {return covoiturageRepository.findAll();}
+    public Iterable<Covoiturage> getAllCovoiturages() {return covoiturageRepository.findAll();}
 }

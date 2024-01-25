@@ -41,38 +41,11 @@ public class DepartementController {
         return departementMapper.entityToDTO(departement);
     }
 
-    @GetMapping("departement/nom/{nomDepartement}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Departement found"),
-            @ApiResponse(responseCode = "204", description = "Departement not found")
-    })
-    @Operation(summary = "Get departement by name")
-    public DepartementDTO getDepartementByNom(@PathVariable String nomDepartement) {
-        Departement departement = departementService.getByNom(nomDepartement);
-        return departementMapper.entityToDTO(departement);
-    }
 
-    @GetMapping("departement/num/{numDepartement}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Departement found"),
-            @ApiResponse(responseCode = "204", description = "Departement not found")
-    })
-    @Operation(summary = "Get departement by number")
-    public DepartementDTO getDepartementByNum(@PathVariable String numDepartement) {
-        Departement departement = departementService.getByNumDepartement(numDepartement);
-        return departementMapper.entityToDTO(departement);
-    }
 
-    @GetMapping("departements")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Departements found"),
-            @ApiResponse(responseCode = "204", description = "No departements found")
-    })
-    @Operation(summary = "Get all departements")
-    public List<DepartementDTO> getAllDepartements() {
-        List<Departement> departements = departementService.getAllDepartements();
-        return departementMapper.entityToDTO(departements);
-    }
+
+
+
 
     @DeleteMapping("departement/{id}")
     @Operation(summary = "Delete departement by ID")

@@ -41,31 +41,9 @@ public class FestivalController {
         return festivalMapper.entityToDTO(festival);
     }
 
-    @GetMapping("festival/nom/{nom}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Festivals found"),
-            @ApiResponse(responseCode = "204", description = "No festivals found")
-    })
-    @Operation(summary = "Get festivals by name")
-    public List<FestivalDTO> getFestivalsByNom(@PathVariable String nom) {
-        List<Festival> festivals = festivalService.getByNom(nom);
-        return festivals.stream()
-                .map(festivalMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
 
-    @GetMapping("festivals")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Festivals found"),
-            @ApiResponse(responseCode = "204", description = "No festivals found")
-    })
-    @Operation(summary = "Get all festivals")
-    public List<FestivalDTO> getAllFestivals() {
-        List<Festival> festivals = festivalService.getAllFestivals();
-        return festivals.stream()
-                .map(festivalMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
+
+
 
     @DeleteMapping("festival/{id}")
     @Operation(summary = "Delete festival by ID")

@@ -42,29 +42,9 @@ public class DomaineController {
         return domaineMapper.entityToDTO(domaine);
     }
 
-    @GetMapping("domaine/nom/{nomDomaine}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Domaine found"),
-            @ApiResponse(responseCode = "204", description = "Domaine not found")
-    })
-    @Operation(summary = "Get domaine by name")
-    public DomaineDTO getDomaineByNom(@PathVariable String nomDomaine) {
-        Domaine domaine = domaineService.getByDomaine(nomDomaine);
-        return domaineMapper.entityToDTO(domaine);
-    }
 
-    @GetMapping("domaine/sousdomaine/{sousDomaine}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Domaines found"),
-            @ApiResponse(responseCode = "204", description = "No domaines found")
-    })
-    @Operation(summary = "Get domaines by sous-domaine")
-    public List<DomaineDTO> getDomainesBySousDomaine(@PathVariable String sousDomaine) {
-        List<Domaine> domaines = domaineService.getBySousDomaine(sousDomaine);
-        return domaines.stream()
-                .map(domaineMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
+
+
 
     @GetMapping("domaines")
     @ApiResponses(value = {
@@ -72,11 +52,9 @@ public class DomaineController {
             @ApiResponse(responseCode = "204", description = "No domaines found")
     })
     @Operation(summary = "Get all domaines")
-    public List<DomaineDTO> getAllDomaines() {
-        List<Domaine> domaines = domaineService.getAllDomaines();
-        return domaines.stream()
-                .map(domaineMapper::entityToDTO)
-                .collect(Collectors.toList());
+    public Iterable<Domaine> getAllDomaines() {
+        Iterable<Domaine> domaines = domaineService.getAllDomaines();
+        return domaines;
     }
 
     @DeleteMapping("domaine/{id}")

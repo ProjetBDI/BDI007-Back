@@ -43,16 +43,7 @@ public class LieuController {
         return lieuMapper.entityToDTO(lieu);
     }
 
-    @GetMapping("lieu/type/{typeLieu}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Lieu found"),
-            @ApiResponse(responseCode = "204", description = "Lieu not found")
-    })
-    @Operation(summary = "Get lieu by type")
-    public LieuDTO getLieuByType(@PathVariable String typeLieu) {
-        Lieu lieu = lieuService.getByTypeLieu(typeLieu);
-        return lieuMapper.entityToDTO(lieu);
-    }
+
 
     @DeleteMapping("lieu/{id}")
     @Operation(summary = "Delete lieu by ID")
@@ -60,16 +51,5 @@ public class LieuController {
         lieuService.deleteById(id);
     }
 
-    @GetMapping("lieux")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Lieu found"),
-            @ApiResponse(responseCode = "204", description = "No Lieu found")
-    })
-    @Operation(summary = "Get all lieux")
-    public List<LieuDTO> getAllLieux() {
-        List<Lieu> lieux = lieuService.getAllLieux();
-        return lieux.stream()
-                .map(lieuMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
+
 }

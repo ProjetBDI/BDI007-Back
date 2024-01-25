@@ -26,14 +26,6 @@ public class DepartementService {
         return departementRepository.findById(id).get();
     }
 
-    public Departement getByNom(String nomDepartement) {
-        return departementRepository.findByNomDepartement(nomDepartement);
-    }
-
-    public Departement getByNumDepartement(String nuDepartement) {
-        return departementRepository.findByNumDepartement(nuDepartement);
-    }
-
     // DELETE
     public void deleteById(Long id) {
         departementRepository.deleteById(id);
@@ -44,5 +36,5 @@ public class DepartementService {
     }
 
     //get All
-    public List<Departement> getAllDepartements(){return departementRepository.findAll();}
+    public Iterable<Departement> getAllDepartements(){return departementRepository.findAll();}
 }

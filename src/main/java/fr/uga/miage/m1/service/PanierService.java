@@ -22,7 +22,7 @@ public class PanierService {
     }
 
     // GET
-    public List<Panier> getAllPaniers() {
+    public Iterable<Panier> getAllPaniers() {
         return panierRepository.findAll();
     }
 

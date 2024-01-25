@@ -42,29 +42,9 @@ public class EtapeController {
         return etapeMapper.entityToDTO(etape);
     }
 
-    @GetMapping("etape/prix/{prix}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Etape found"),
-            @ApiResponse(responseCode = "204", description = "Etape not found")
-    })
-    @Operation(summary = "Get etape by price")
-    public EtapeDTO getEtapeByPrix(@PathVariable float prix) {
-        Etape etape = etapeService.getByPrixEtape(prix);
-        return etapeMapper.entityToDTO(etape);
-    }
 
-    @GetMapping("etapes")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Etapes found"),
-            @ApiResponse(responseCode = "204", description = "No etapes found")
-    })
-    @Operation(summary = "Get all etapes")
-    public List<EtapeDTO> getAllEtapes() {
-        List<Etape> etapes = etapeService.getAllEtapes();
-        return etapes.stream()
-                .map(etapeMapper::entityToDTO)
-                .collect(Collectors.toList());
-    }
+
+
 
     @DeleteMapping("etape/{id}")
     @Operation(summary = "Delete etape by ID")

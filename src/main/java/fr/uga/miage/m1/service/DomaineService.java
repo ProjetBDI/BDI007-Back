@@ -26,15 +26,6 @@ public class DomaineService {
         return domaineRepository.findById(id).get();
     }
 
-    public Domaine getByDomaine(String nomDomaine) {
-        return domaineRepository.findByNomDomaine(nomDomaine);
-    }
-
-    public List<Domaine> getBySousDomaine(String sousDomaine) {
-        return domaineRepository.findBySousDomaines(sousDomaine);
-    }
-
-    // DELETE
 
     public void delete(Long id) {
         domaineRepository.deleteById(id);
@@ -45,5 +36,5 @@ public class DomaineService {
     }
 
     //get All
-    public List<Domaine> getAllDomaines(){return domaineRepository.findAll();}
+    public Iterable<Domaine> getAllDomaines(){return domaineRepository.findAll();}
 }

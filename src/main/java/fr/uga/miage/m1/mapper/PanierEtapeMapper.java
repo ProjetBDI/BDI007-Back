@@ -14,7 +14,7 @@ public interface PanierEtapeMapper {
 
     PanierEtapeDTO entityToDTO(PanierEtape panierEtape);
 
-    List<PanierEtape> dtoToEntity(List<PanierEtapeDTO> panierEtapeDTOs);
+    Iterable<PanierEtape> dtoToEntity(Iterable<PanierEtapeDTO> panierEtapeDTOs);
 
-    List<PanierEtapeDTO> entityToDTO(List<PanierEtape> panierEtapes);
+    Iterable<PanierEtapeDTO> entityToDTO(Iterable<PanierEtape> panierEtapes);
 }

@@ -47,8 +47,8 @@ public class PanierEtapeController {
             @ApiResponse(responseCode = "204", description = "No paniers found")
     })
     @Operation(summary = "Get all paniers")
-    public List<PanierEtapeDTO> getAllPaniers() {
-        List<PanierEtape> paniers = panierEtapeService.getAllPaniers();
+    public Iterable<PanierEtapeDTO> getAllPaniers() {
+        Iterable<PanierEtape> paniers = panierEtapeService.getAllPaniers();
         return panierEtapeMapper.entityToDTO(paniers);
     }
 

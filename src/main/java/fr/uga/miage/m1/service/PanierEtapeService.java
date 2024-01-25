@@ -26,7 +26,7 @@ public class PanierEtapeService {
         return panierEtapeRepository.findById(id).get();
     }
 
-    public List<PanierEtape> getAllPaniers() {
+    public Iterable<PanierEtape> getAllPaniers() {
         return panierEtapeRepository.findAll();
     }
 

@@ -1,11 +1,10 @@
 package fr.uga.miage.m1.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import fr.uga.miage.m1.model.Etape;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface EtapeRepository extends JpaRepository<Etape, Long>{
+@Repository
+public interface EtapeRepository extends CrudRepository<Etape, Long> {
 
-    // READ
-    Etape findByPrixEtape(float prixEtape);
 }

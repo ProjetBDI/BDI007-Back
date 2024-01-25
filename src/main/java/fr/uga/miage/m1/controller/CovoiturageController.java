@@ -41,16 +41,7 @@ public class CovoiturageController {
         return covoiturageMapper.entityToDTO(covoiturage);
     }
 
-    @GetMapping ("covoiturages")// Remove the mapping path to avoid conflicts with /api/v1/covoiturages
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Covoiturages found"),
-            @ApiResponse(responseCode = "204", description = "No covoiturages found")
-    })
-    @Operation(summary = "Get all covoiturages")
-    public List<CovoiturageDTO> getAllCovoiturages() {
-        List<Covoiturage> covoiturages = covoiturageService.getAllCovoiturages();
-        return covoiturageMapper.entityToDTO(covoiturages);
-    }
+
 
     @DeleteMapping("covoiturage/{id}") // Change the mapping path
     @Operation(summary = "Delete covoiturage by ID")

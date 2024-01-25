@@ -41,16 +41,7 @@ public class PanierController {
         return panierMapper.entityToDTO(panier);
     }
 
-    @GetMapping("paniers")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Paniers found"),
-            @ApiResponse(responseCode = "204", description = "No paniers found")
-    })
-    @Operation(summary = "Get all paniers")
-    public List<PanierDTO> getAllPaniers() {
-        List<Panier> paniers = panierService.getAllPaniers();
-        return panierMapper.entityToDTO(paniers);
-    }
+
 
     @DeleteMapping("panier/{id}")
     @Operation(summary = "Delete panier by ID")

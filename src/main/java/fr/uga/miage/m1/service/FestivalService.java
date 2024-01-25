@@ -26,11 +26,8 @@ public class FestivalService {
         return festivalRepository.findById(id).get();
     }
 
-    public List<Festival> getByNom(String nom) {
-        return festivalRepository.findByNom(nom);
-    }
 
-    public List<Festival> getAllFestivals() {
+    public Iterable<Festival> getAllFestivals() {
         return festivalRepository.findAll();
     }
 

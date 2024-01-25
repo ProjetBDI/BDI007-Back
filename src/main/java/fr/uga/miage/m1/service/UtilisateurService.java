@@ -23,7 +23,7 @@ public class UtilisateurService {
     }
 
     // GET
-    public Collection<Utilisateur> getAllUsers() {
+    public Iterable<Utilisateur> getAllUsers() {
         return utilisateurRepository.findAll();
     }
 
@@ -31,9 +31,7 @@ public class UtilisateurService {
         return utilisateurRepository.findById(id).get();
     }
 
-    public Utilisateur getByEmail(String email) {
-        return utilisateurRepository.findByEmail(email);
-    }
+
 
     // DELETE
     public void deleteById(Long id) {

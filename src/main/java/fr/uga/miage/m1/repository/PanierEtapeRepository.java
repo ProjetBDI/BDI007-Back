@@ -1,8 +1,9 @@
 package fr.uga.miage.m1.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import fr.uga.miage.m1.model.PanierEtape;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PanierEtapeRepository extends JpaRepository<PanierEtape, Long>{
+@Repository
+public interface PanierEtapeRepository extends CrudRepository<PanierEtape, Long> {
 }

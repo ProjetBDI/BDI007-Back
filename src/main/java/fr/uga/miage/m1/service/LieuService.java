@@ -26,9 +26,7 @@ public class LieuService {
         return lieuRepository.findById(id).get();
     }
 
-    public Lieu getByTypeLieu(String typeLieu) {
-        return lieuRepository.findByTypeLieu(typeLieu);
-    }
+
 
     // DELETE
     public void deleteById(Long id) {
@@ -40,5 +38,5 @@ public class LieuService {
     }
 
     //get all
-    public List<Lieu> getAllLieux(){return lieuRepository.findAll();}
+    public Iterable<Lieu> getAllLieux(){return lieuRepository.findAll();}
 }
