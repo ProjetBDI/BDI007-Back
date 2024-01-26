@@ -13,5 +13,4 @@ public interface CommuneRepository extends JpaRepository<Commune, Long> {
 
     Collection<Commune> findByCodePostal(String codePostal);
 
-
 }
