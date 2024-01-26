@@ -43,9 +43,6 @@ public class DomaineController {
     }
 
 
-
-
-
     @GetMapping("domaines")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Domaines found"),
