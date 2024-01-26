@@ -34,6 +34,11 @@ public class FestivalController {
     }
 
     @DeleteMapping("festival/{id}")
+    @GetMapping("festival/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festival found"),
+            @ApiResponse(responseCode = "204", description = "Festival not found")
+    })
     @Operation(summary = "Delete festival by ID")
     public void deleteFestivalById(@PathVariable Long id) {
         festivalService.deleteById(id);

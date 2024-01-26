@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import fr.uga.miage.m1.dto.CommuneDTO;
@@ -25,17 +26,20 @@ public class CommuneService {
     return communeMapper.entityToDTO(communeRepository.findById(id).get());
 }
 
-
-    public Iterable<Commune> getCommunes() {
-        return communeRepository.findAll();
+    public List<CommuneDTO> getAllCommunes() {
+        return communeMapper.entityToDTO(communeRepository.findAll());
     }
 
-    public void deleteCommune(final Long id) {
+    public void saveCommune(Commune commune) {
+        communeRepository.save(commune);
+    }
+
+    public void deleteById(Long id) {
         communeRepository.deleteById(id);
     }
 
-    public Commune saveCommune(Commune commune) {
-        Commune savedCommune = communeRepository.save(commune);
-        return savedCommune;
+    public void delete(Commune commune) {
+        communeRepository.delete(commune);
     }
+
 }

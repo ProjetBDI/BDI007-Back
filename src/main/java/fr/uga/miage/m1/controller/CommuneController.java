@@ -37,33 +37,17 @@ public class CommuneController {
         return communeService.getById(id);
     }
 
-
-    @PostMapping("/commune")
-    @Operation(summary = "Create a new commune")
-    public void createCommune(@RequestBody CommuneDTO communeDTO) {
-        Commune commune = communeMapper.dtoToEntity(communeDTO);
-        communeService.saveCommune(commune);
-    }
-
-    @Operation(summary = "Get commune by ID")
-    @ApiResponse(responseCode = "200", description = "Commune found")
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/communeeee/{id}")
-    public CommuneDTO getCommuneById(@PathVariable long id) {
-        long ide = 1;
-        return communeService.getCommuneById(ide);
-    }
-
-
-    @GetMapping("/communes")
+    @GetMapping("communes")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Commune found"),
-            @ApiResponse(responseCode = "204", description = "Commune not found"),
-            @ApiResponse(responseCode = "500", description = "Serveur pas trouvé je crois")
+            @ApiResponse(responseCode = "204", description = "Commune not found")
     })
-    public Iterable<CommuneDTO> communes() {
-        return communeMapper.entityToDTO(communeService.getCommunes());
+    @Operation(summary = "Get all communes")
+    public List<CommuneDTO> getCommunes() {
+        return communeService.getAllCommunes();
     }
+
+
 
 
 //    @GetMapping("/commune")
