@@ -26,4 +26,6 @@ public class Domaine {
     @Column(name = "nom_sous_domaine", nullable = true)
     private String sousDomaines;
 
+    @OneToMany(mappedBy = "idDomaine")
+    private List<Festival> festivals;
 }
