@@ -58,4 +58,3 @@ public class Covoiturage {
     private Utilisateur idConducteur;
 
 }
-

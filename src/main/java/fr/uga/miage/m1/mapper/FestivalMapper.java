@@ -11,7 +11,6 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses={CommuneMapper.class, DomaineMapper.class})
 public interface FestivalMapper {
 
-
     FestivalDTO entityToDTO(Festival festival);
 
     List<FestivalDTO> entityToDTO(Iterable<Festival> festivals);

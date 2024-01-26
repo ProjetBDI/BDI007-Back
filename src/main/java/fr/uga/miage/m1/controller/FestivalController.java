@@ -23,14 +23,7 @@ public class FestivalController {
     @Autowired
     private FestivalMapper festivalMapper;
 
-    @PostMapping("/festival")
-    @Operation(summary = "Create a new festival")
-    public void createFestival(@RequestBody FestivalDTO festivalDTO) {
-        Festival festival = festivalMapper.dtoToEntity(festivalDTO);
-        festivalService.save(festival);
-    }
-
-    @GetMapping("festivales/{id}")
+    @GetMapping("festival/{id}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Festival found"),
             @ApiResponse(responseCode = "204", description = "Festival not found")
@@ -39,10 +32,6 @@ public class FestivalController {
     public FestivalDTO getFestivalById(@PathVariable Long id) {
         return festivalService.getById(id);
     }
-
-
-
-
 
     @DeleteMapping("festival/{id}")
     @Operation(summary = "Delete festival by ID")

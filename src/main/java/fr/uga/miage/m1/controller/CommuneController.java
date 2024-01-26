@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.CommuneDTO;
+import fr.uga.miage.m1.dto.CommuneDTO;
 import fr.uga.miage.m1.mapper.CommuneMapper;
 import fr.uga.miage.m1.model.Commune;
 import fr.uga.miage.m1.model.Utilisateur;
@@ -17,7 +18,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/api/v1", produces = "application/json")
+@RequestMapping( "/api/v1")
 public class CommuneController {
 
     @Autowired
@@ -25,6 +26,17 @@ public class CommuneController {
 
     @Autowired
     private CommuneMapper communeMapper;
+
+    @GetMapping("commune/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Commune found"),
+            @ApiResponse(responseCode = "204", description = "Commune not found")
+    })
+    @Operation(summary = "Get by ID")
+    public CommuneDTO getCommuneById(@PathVariable Long id) {
+        return communeService.getById(id);
+    }
+
 
     @PostMapping("/commune")
     @Operation(summary = "Create a new commune")
