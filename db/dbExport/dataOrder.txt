@@ -1,0 +1,10 @@
+1. Departement  V   V   V   
+2. Commune      V   V   V
+3. Utilisateur  V   V   V
+4. Domaine      V   V   V
+5. Lieu         V   V   V
+6. Festival     V   V   X
+7. Covoiturage  V   V
+8. Etape        V   V 
+9. Panier       V   V
+10. PanierEtape V   V  

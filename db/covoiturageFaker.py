@@ -22,6 +22,7 @@ for _ in range(nombre_covoiturages):
 # Écriture des données dans un fichier CSV
 nom_fichier_csv = 'covoiturages.csv'
 with open(nom_fichier_csv, 'w', newline='') as fichier_csv:
+    
     writer = csv.writer(fichier_csv)
     # Écriture de l'en-tête
     writer.writerow(['ID', 'Nombre de Places', 'Marque', 'Modèle', 'Couleur', 'Date de Départ'])
