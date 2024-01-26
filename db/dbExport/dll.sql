@@ -1,4 +1,4 @@
-create global temporary table CHAZEAUV.HTE_UTILISATEUR
+create global temporary table HTE_UTILISATEUR
 (
     ID_UTILISATEUR NUMBER(19),
     DATE_NAISSANCE DATE,
@@ -13,7 +13,7 @@ create global temporary table CHAZEAUV.HTE_UTILISATEUR
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_DEPARTEMENT
+create global temporary table HTE_DEPARTEMENT
 (
     ID_DEPARTEMENT  NUMBER(10),
     NOM_DEPARTEMENT VARCHAR2(255 char),
@@ -25,7 +25,7 @@ create global temporary table CHAZEAUV.HTE_DEPARTEMENT
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_COVOITURAGE
+create global temporary table HTE_COVOITURAGE
 (
     ID_COVOITURAGE NUMBER(19),
     COULEUR        VARCHAR2(255 char),
@@ -42,7 +42,7 @@ create global temporary table CHAZEAUV.HTE_COVOITURAGE
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_DOMAINE
+create global temporary table HTE_DOMAINE
 (
     ID_DOMAINE       NUMBER(10),
     NOM_DOMAINE      VARCHAR2(255 char),
@@ -53,7 +53,7 @@ create global temporary table CHAZEAUV.HTE_DOMAINE
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_ETAPE
+create global temporary table HTE_ETAPE
 (
     ID_ETAPE            NUMBER(19),
     DUREE_DEPUIS_DEPART NUMBER(10),
@@ -66,7 +66,7 @@ create global temporary table CHAZEAUV.HTE_ETAPE
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_PANIER_ETAPE
+create global temporary table HTE_PANIER_ETAPE
 (
     ID_PANIER_ETAPE  NUMBER(19),
     ID_ETAPE         NUMBER(19),
@@ -78,7 +78,7 @@ create global temporary table CHAZEAUV.HTE_PANIER_ETAPE
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_COMMUNE
+create global temporary table HTE_COMMUNE
 (
     ID_COMMUNE     NUMBER(19),
     CODE_INSEE     VARCHAR2(255 char),
@@ -93,7 +93,7 @@ create global temporary table CHAZEAUV.HTE_COMMUNE
     on commit delete rows
 /
 
-create global temporary table CHAZEAUV.HTE_FESTIVAL
+create global temporary table HTE_FESTIVAL
 (
     ID_FESTIVAL     NUMBER(19),
     DATE_DEBUT      DATE,
@@ -116,7 +116,7 @@ create global temporary table CHAZEAUV.HTE_FESTIVAL
 
 ---------- TABLES ------------
 
-create table CHAZEAUV.DEPARTEMENT
+create table DEPARTEMENT
 (
     ID_DEPARTEMENT  NUMBER(10)         not null primary key,
     NOM_DEPARTEMENT VARCHAR2(255 char) not null,
@@ -125,9 +125,9 @@ create table CHAZEAUV.DEPARTEMENT
 )
 /
 
-create table CHAZEAUV.COMMUNE
+create table COMMUNE
 (
-    ID_COMMUNE     NUMBER(19)         not null  primary key,
+    ID_COMMUNE     NUMBER(19)         not null primary key,
     CODE_INSEE     VARCHAR2(255 char) not null,
     CODE_POSTAL    VARCHAR2(255 char) not null,
     LATITUDE       VARCHAR2(255 char) not null,
@@ -136,13 +136,13 @@ create table CHAZEAUV.COMMUNE
     COORD_COMMUNE  SDO_GEOMETRY,
     ID_DEPARTEMENT NUMBER(10)         not null
         constraint FK_COMMUNE_DEPARTEMENT
-            references CHAZEAUV.DEPARTEMENT
+            references DEPARTEMENT
 )
 /
 
-create table CHAZEAUV.DOMAINE
+create table DOMAINE
 (
-    ID_DOMAINE       NUMBER(10)         not null    primary key,
+    ID_DOMAINE       NUMBER(10)         not null primary key,
     NOM_DOMAINE      VARCHAR2(255 char) not null,
     NOM_SOUS_DOMAINE VARCHAR2(255 char),
     constraint UNQ_NOMDOMAINE_NOMSOUSDOMAINE
@@ -150,7 +150,7 @@ create table CHAZEAUV.DOMAINE
 )
 /
 
-create table CHAZEAUV.FESTIVAL
+create table FESTIVAL
 (
     ID_FESTIVAL     NUMBER(19) not null primary key,
     DATE_DEBUT      DATE,
@@ -165,16 +165,16 @@ create table CHAZEAUV.FESTIVAL
     TARIF_PASS      FLOAT(24),
     ID_COMMUNE      NUMBER(19)
         constraint FK_FESTIVAL_COMMUNE
-            references CHAZEAUV.COMMUNE,
+            references COMMUNE,
     ID_DOMAINE      NUMBER(10)
         constraint FK_FESTIVAL_DOMAINE
-            references CHAZEAUV.DOMAINE
+            references DOMAINE
 )
 /
 
-create table CHAZEAUV.LIEU
+create table LIEU
 (
-    ID_LIEU         NUMBER(19) not null primary key,
+    ID_LIEU         NUMBER(19)         not null primary key,
     ADRESSE         VARCHAR2(255 char) not null,
     CODE_INSEE_LIEU VARCHAR2(255 char) not null,
     LATITUDE        FLOAT(24)          not null,
@@ -184,14 +184,14 @@ create table CHAZEAUV.LIEU
     coord_lieu      SDO_GEOMETRY,
     ID_COMMUNE      NUMBER(19)
         constraint FK_LIEU_COMMUNE
-            references CHAZEAUV.COMMUNE
+            references COMMUNE
 )
 /
 
-create table CHAZEAUV.UTILISATEUR
+create table UTILISATEUR
 (
-    ID_UTILISATEUR NUMBER(19)         not null  primary key,
-    DATE_NAISSANCE DATE       not null,
+    ID_UTILISATEUR NUMBER(19)         not null primary key,
+    DATE_NAISSANCE DATE               not null,
     EMAIL          VARCHAR2(255 char) not null,
     MOT_DE_PASSE   VARCHAR2(255 char),
     NOM            VARCHAR2(255 char) not null,
@@ -200,9 +200,9 @@ create table CHAZEAUV.UTILISATEUR
 )
 /
 
-create table CHAZEAUV.COVOITURAGE
+create table COVOITURAGE
 (
-    ID_COVOITURAGE NUMBER(19) not null  primary key,
+    ID_COVOITURAGE NUMBER(19) not null primary key,
     COULEUR        VARCHAR2(255 char),
     DATE_DEPART    TIMESTAMP(6),
     MARQUE         VARCHAR2(255 char),
@@ -211,47 +211,47 @@ create table CHAZEAUV.COVOITURAGE
     NB_PLACE_DISPO NUMBER(10),
     ID_CONDUCTEUR  NUMBER(19)
         constraint FK_COVOITURAGE_CONDUCTEUR
-            references CHAZEAUV.UTILISATEUR,
+            references UTILISATEUR,
     ID_FESTIVAL    NUMBER(19)
         constraint FK_COVOITURAGE_FESTIVAL
-            references CHAZEAUV.FESTIVAL
+            references FESTIVAL
 )
 /
 
-create table CHAZEAUV.ETAPE
+create table ETAPE
 (
     ID_ETAPE            NUMBER(19) not null primary key,
     DUREE_DEPUIS_DEPART NUMBER(10) not null,
     PRIX_ETAPE          FLOAT(24)  not null,
     ID_COVOITURAGE      NUMBER(19)
         constraint FK_ETAPE_COVOITURAGE
-            references CHAZEAUV.COVOITURAGE,
+            references COVOITURAGE,
     ID_LIEU             NUMBER(19)
         constraint FK_ETAPE_LIEU
-            references CHAZEAUV.LIEU
+            references LIEU
 )
 /
 
-create table CHAZEAUV.PANIER
+create table PANIER
 (
-    ID_PANIER         NUMBER(19) not null primary key,
-    DATE_PAIEMENT     TIMESTAMP(6)       not null,
-    NOMS_FESTIVALIERS TEXT not null,
+    ID_PANIER         NUMBER(19)    not null primary key,
+    DATE_PAIEMENT     TIMESTAMP(6)  not null,
+    NOMS_FESTIVALIERS VARCHAR2(255) not null,
     ID_PROPRIETAIRE   NUMBER(19)
         constraint FK_PANIER_PROPRIETAIRE
-            references CHAZEAUV.UTILISATEUR
+            references UTILISATEUR
 )
 /
 
-create table CHAZEAUV.PANIER_ETAPE
+create table PANIER_ETAPE
 (
-    ID_PANIER_ETAPE  NUMBER(19) not null    primary key,
+    ID_PANIER_ETAPE  NUMBER(19) not null primary key,
     NB_PLACE_OCCUPPE NUMBER(19) not null,
     ID_ETAPE         NUMBER(19)
         constraint FK_PANIER_ETAPE_ETAPE
-            references CHAZEAUV.ETAPE,
+            references ETAPE,
     ID_PANIER        NUMBER(19)
         constraint FK_PANIER_ETAPE_PANIER
-            references CHAZEAUV.PANIER
+            references PANIER
 )
 /
