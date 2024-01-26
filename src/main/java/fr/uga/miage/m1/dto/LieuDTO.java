@@ -22,8 +22,7 @@ public class LieuDTO {
         float longitude,
         String nom,
         TypeLieu typeLieu,
-        CommuneDTO idCommune,
-        List<EtapeDTO> etapes
+        CommuneDTO idCommune
     ) {
         this.idLieu = idLieu;
         this.adresse = adresse;
@@ -33,7 +32,6 @@ public class LieuDTO {
         this.nom = nom;
         this.typeLieu = typeLieu;
         this.idCommune = idCommune;
-        this.etapes = etapes;
     }
     
     private long idLieu;
@@ -52,5 +50,4 @@ public class LieuDTO {
 
     private CommuneDTO idCommune;
 
-    private List<EtapeDTO> etapes;
 }

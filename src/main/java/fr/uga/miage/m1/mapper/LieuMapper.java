@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses={CommuneMapper.class})
 public interface LieuMapper {
     LieuDTO entityToDTO(Lieu lieu);
 

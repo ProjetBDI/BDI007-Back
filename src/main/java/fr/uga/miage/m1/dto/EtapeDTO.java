@@ -17,15 +17,13 @@ public class EtapeDTO {
         float prixEtape,
         int dureeDepuisDepart,
         LieuDTO idLieu,
-        CovoiturageDTO idCovoiturage,
-        List<PanierEtapeDTO> panierEtapes
+        CovoiturageDTO idCovoiturage
     ) {
         this.idEtape = idEtape;
         this.prixEtape = prixEtape;
         this.dureeDepuisDepart = dureeDepuisDepart;
         this.idLieu = idLieu;
         this.idCovoiturage = idCovoiturage;
-        this.panierEtapes = panierEtapes;
     }
 
     private long idEtape;
@@ -37,6 +35,5 @@ public class EtapeDTO {
     private LieuDTO idLieu;
 
     private CovoiturageDTO idCovoiturage;
-    
-    private List<PanierEtapeDTO> panierEtapes;
+
 }

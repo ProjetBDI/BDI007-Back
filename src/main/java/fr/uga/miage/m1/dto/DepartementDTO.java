@@ -17,14 +17,13 @@ public class DepartementDTO {
         int idDepartement,
         String numDepartement,
         String nomDepartement,
-        String nomregion,
-        List<CommuneDTO> communes
+        String nomregion
     ) {
         this.idDepartement = idDepartement;
         this.numDepartement = numDepartement;
         this.nomDepartement = nomDepartement;
         this.nomregion = nomregion;
-        this.communes = communes;
+
     }
     
     private int idDepartement;
@@ -34,7 +33,5 @@ public class DepartementDTO {
     private String nomDepartement;
 
     private String nomregion;
-
-    private List<CommuneDTO> communes;
 
 }

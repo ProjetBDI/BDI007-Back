@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.model.Panier;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PanierEtapeMapper.class, UtilisateurMapper.class})
 public interface PanierMapper {
     
     Panier dtoToEntity(PanierDTO panierDTO);

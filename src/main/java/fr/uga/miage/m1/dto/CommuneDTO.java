@@ -20,9 +20,7 @@ public class CommuneDTO {
         String latitude,
         String longitude,
         String nomCommune,
-        DepartementDTO idDepartement,
-        List<FestivalDTO> festivals,
-        List<LieuDTO> lieux
+        DepartementDTO idDepartement
     ) {
         this.idCommune = idCommune;
         this.codeINSEE = codeINSEE;
@@ -31,8 +29,6 @@ public class CommuneDTO {
         this.longitude = longitude;
         this.nomCommune = nomCommune;
         this.idDepartement = idDepartement;
-        this.festivals = festivals;
-        this.lieux = lieux;
     }
 
     private long idCommune;
@@ -48,9 +44,5 @@ public class CommuneDTO {
     private String nomCommune;
 
     private DepartementDTO idDepartement;
-
-    private List<FestivalDTO> festivals;
-    
-    private List<LieuDTO> lieux;
     
 }

@@ -18,14 +18,12 @@ public class PanierDTO {
         long idPanier,
         Date datePaiement,
         String nomsFestivaliers,
-        UtilisateurDTO idProprietaire,
-        List<PanierEtapeDTO> panierEtapes
+        UtilisateurDTO idProprietaire
     ) {
         this.idPanier = idPanier;
         this.datePaiement = datePaiement;
         this.nomsFestivaliers = nomsFestivaliers;
         this.idProprietaire = idProprietaire;
-        this.panierEtapes = panierEtapes;
     }
 
     private long idPanier;
@@ -35,7 +33,5 @@ public class PanierDTO {
     private String nomsFestivaliers;
     
     private UtilisateurDTO idProprietaire;
-    
-    private List<PanierEtapeDTO> panierEtapes;
     
 }

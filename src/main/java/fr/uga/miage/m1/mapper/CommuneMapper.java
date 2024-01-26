@@ -9,9 +9,8 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
-public interface CommuneMapper {
-
+@Mapper(componentModel = "spring", uses ={DepartementMapper.class, LieuMapper.class})
+public interface CommuneMapper{
     CommuneDTO entityToDTO(Commune entity);
 
     Collection<CommuneDTO> entityToDTO(Iterable<Commune> communes);

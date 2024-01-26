@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PanierMapper.class, CovoiturageMapper.class})
 public interface UtilisateurMapper {
 
     Utilisateur dtoToEntity(UtilisateurDTO utilisateurDTO);
@@ -17,5 +17,6 @@ public interface UtilisateurMapper {
     List<Utilisateur> dtoToEntity(List<UtilisateurDTO> utilisateurDTOs);
 
     List<UtilisateurDTO> entityToDTO(List<Utilisateur> utilisateurs);
+
 }
 

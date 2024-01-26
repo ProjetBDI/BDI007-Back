@@ -1,15 +1,20 @@
+package departement;
+
+import fr.uga.miage.m1.model.Departement;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.uga.miage.m1.repository.DepartementRepository;
 import fr.uga.miage.m1.service.DepartementService;
 
 import org.mockito.Mock;
+import org.springframework.test.util.AssertionErrors;
 
 @SpringBootTest
 public class testService {
-    
+
     @Mock
     DepartementRepository departementRepository;
 
@@ -20,9 +25,9 @@ public class testService {
     public void test() {
 
         Departement departement = new Departement();
-        when(departementRepository.save(departement)).thenReturn(departement);
+        Mockito.when(departementRepository.save(departement)).thenReturn(departement);
 
-        Departement departementSaved = departementService.save(departement);
+        departementService.save(departement);
 
         assertNotNull(departementSaved);
     }

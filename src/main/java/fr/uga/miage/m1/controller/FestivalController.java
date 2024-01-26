@@ -30,15 +30,14 @@ public class FestivalController {
         festivalService.save(festival);
     }
 
-    @GetMapping("festival/{id}")
+    @GetMapping("festivales/{id}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Festival found"),
             @ApiResponse(responseCode = "204", description = "Festival not found")
     })
     @Operation(summary = "Get festival by ID")
     public FestivalDTO getFestivalById(@PathVariable Long id) {
-        Festival festival = festivalService.getById(id);
-        return festivalMapper.entityToDTO(festival);
+        return festivalService.getById(id);
     }
 
 

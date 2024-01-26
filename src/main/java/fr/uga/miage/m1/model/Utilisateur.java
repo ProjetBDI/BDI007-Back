@@ -43,11 +43,9 @@ public class Utilisateur {
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(mappedBy = "idProprietaire")
-    private List<Panier> paniers;
 
-    @OneToMany(mappedBy = "idConducteur")
-    private List<Covoiturage> covoiturages;
+
+
 
 }
 

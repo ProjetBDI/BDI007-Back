@@ -1,20 +1,24 @@
 package fr.uga.miage.m1.service;
 
-import java.util.List;
 
-import org.springframework.stereotype.Service;
-
+import fr.uga.miage.m1.dto.FestivalDTO;
+import fr.uga.miage.m1.mapper.FestivalMapper;
 import fr.uga.miage.m1.model.Festival;
 import fr.uga.miage.m1.repository.FestivalRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class FestivalService {
-    
+
+    @Autowired
     private final FestivalRepository festivalRepository;
 
-    public FestivalService(FestivalRepository festivalRepository) {
-        this.festivalRepository = festivalRepository;
-    }
+    @Autowired
+    private final FestivalMapper festivalMapper;
+
 
     // SAVE
     public void save(Festival festival) {
@@ -22,8 +26,8 @@ public class FestivalService {
     }
 
     // GET
-    public Festival getById(Long id) {
-        return festivalRepository.findById(id).get();
+    public FestivalDTO getById(Long id) {
+        return festivalMapper.entityToDTO(festivalRepository.findById(id).get());
     }
 
 

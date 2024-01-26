@@ -14,7 +14,7 @@ import java.util.List;
 @Schema(name = "FestivalDTO", description = "FestivalDTO description")
 public class FestivalDTO {
 
-    public FestivalDTO(long idFestival, String nom, String dateDebut, String dateFin, String siteWeb, String lieuPrincipal, int nbPassTotal, int nbPassDispo, int nbPassIndispo, float tarifPass, FestivalStatus status, List<CovoiturageDTO> covoiturages, CommuneDTO idCommune, DomaineDTO idDomaine) {
+    public FestivalDTO(long idFestival, String nom, String dateDebut, String dateFin, String siteWeb, String lieuPrincipal, int nbPassTotal, int nbPassDispo, int nbPassIndispo, float tarifPass, FestivalStatus status, CommuneDTO idCommune, DomaineDTO idDomaine) {
         this.idFestival = idFestival;
         this.nom = nom;
         this.dateDebut = dateDebut;
@@ -26,7 +26,6 @@ public class FestivalDTO {
         this.nbPassIndispo = nbPassIndispo;
         this.tarifPass = tarifPass;
         this.status = status;
-        this.covoiturages = covoiturages;
         this.idCommune = idCommune;
         this.idDomaine = idDomaine;
     }
@@ -52,8 +51,6 @@ public class FestivalDTO {
     private float tarifPass;
 
     private FestivalStatus status;
-
-    private List<CovoiturageDTO> covoiturages;
 
     private CommuneDTO idCommune;
 

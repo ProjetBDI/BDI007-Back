@@ -39,7 +39,5 @@ public class Panier {
     @JoinColumn(name = "id_proprietaire", referencedColumnName = "id_utilisateur")
     private Utilisateur idProprietaire;
 
-    @OneToMany(mappedBy = "idPanierEtape")
-    private List<PanierEtape> panierEtapes;
     
 }

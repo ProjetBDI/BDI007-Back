@@ -16,13 +16,11 @@ public class DomaineDTO {
     public DomaineDTO(
         int idDomaine,
         String nomDomaine,
-        String sousDomaines,
-        List<FestivalDTO> festivals
+        String sousDomaines
     ) {
         this.idDomaine = idDomaine;
         this.nomDomaine = nomDomaine;
         this.sousDomaines = sousDomaines;
-        this.festivals = festivals;
     }
 
     private int idDomaine;
@@ -31,5 +29,4 @@ public class DomaineDTO {
 
     private String sousDomaines;
 
-    private List<FestivalDTO> festivals;
 }

@@ -29,8 +29,5 @@ public class Etape {
     @ManyToOne
     @JoinColumn(name = "id_covoiturage", referencedColumnName = "id_covoiturage", insertable = false, updatable = false)
     private Covoiturage idCovoiturage;
-
-    @OneToMany(mappedBy = "idEtape")
-    private List<PanierEtape> panierEtapes;
     
 }

@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,15 +32,14 @@ public class CommuneController {
         Commune commune = communeMapper.dtoToEntity(communeDTO);
         communeService.saveCommune(commune);
     }
+
+    @Operation(summary = "Get commune by ID")
+    @ApiResponse(responseCode = "200", description = "Commune found")
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/communeeee/{id}")
-    public CommuneDTO author(@PathVariable Long id) throws Exception {
-        try{
-            Optional<Commune> commune = this.communeService.getCommune(id);
-            return communeMapper.entityToDTO(commune.get());
-        }
-        catch(Exception e){
-            throw e;
-        }
+    public CommuneDTO getCommuneById(@PathVariable long id) {
+        long ide = 1;
+        return communeService.getCommuneById(ide);
     }
 
 
@@ -54,23 +54,23 @@ public class CommuneController {
     }
 
 
-    @GetMapping("/commune")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Commune found"),
-            @ApiResponse(responseCode = "204", description = "Commune not found")
-    })
-    @Operation(summary = "Get commune by ID")
-    public Commune getCommuneById(@PathVariable Long id) {
-        Optional<Commune> communeOptional = communeService.getCommune(id);
-
-        if (communeOptional.isPresent()) {
-            return communeOptional.get();
-        } else {
-            // Gérer le cas où la commune n'est pas trouvée, par exemple, retourner une réponse appropriée.
-            // Ici, je retourne null, mais vous pouvez également retourner un objet CommuneDTO vide ou une réponse 404.
-            return null;
-        }
-    }
+//    @GetMapping("/commune")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200", description = "Commune found"),
+//            @ApiResponse(responseCode = "204", description = "Commune not found")
+//    })
+//    @Operation(summary = "Get commune by ID")
+//    public Commune getCommuneById(@PathVariable Long id) {
+//        Optional<Commune> communeOptional = communeService.getCommune(id);
+//
+//        if (communeOptional.isPresent()) {
+//            return communeOptional.get();
+//        } else {
+//            // Gérer le cas où la commune n'est pas trouvée, par exemple, retourner une réponse appropriée.
+//            // Ici, je retourne null, mais vous pouvez également retourner un objet CommuneDTO vide ou une réponse 404.
+//            return null;
+//        }
+//    }
 
 
 

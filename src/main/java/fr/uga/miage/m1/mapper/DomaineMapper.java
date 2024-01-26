@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses ={FestivalMapper.class})
 public interface DomaineMapper {
     DomaineDTO entityToDTO(Domaine domaine);
 

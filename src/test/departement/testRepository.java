@@ -1,9 +1,12 @@
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+package departement;
 
 import fr.uga.miage.m1.model.Departement;
-import fr.uga.miage.m1.repository.DepartementRepository;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 
 @SpringBootTest
 public class testRepository {
@@ -17,6 +20,6 @@ public class testRepository {
         Departement departement = new Departement();
         departementRepository.save(departement);
 
-        assertNotNull(departementRepository.findById(departement.getId()));
+        assertNotNull(departementRepository.findById(departement));
     }
 }
