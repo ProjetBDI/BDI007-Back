@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.dto.UtilisateurDTO;
+import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.UtilisateurMapper;
 import fr.uga.miage.m1.model.Utilisateur;
 import fr.uga.miage.m1.repository.UtilisateurRepository;
@@ -44,7 +45,7 @@ public class UtilisateurService {
             return null;
         }
         if (result.size() > 1) {
-            throw new RuntimeException("Plusieurs utilisateurs trouvés avec cet email " + email);
+            throw new NotFoundException("Utilisateur", "email", email);
         }
         return utilisateurMapper.entityToDTO(result.get(0));
     }
