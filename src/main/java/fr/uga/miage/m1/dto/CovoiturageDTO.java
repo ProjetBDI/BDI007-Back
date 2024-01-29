@@ -15,16 +15,15 @@ import java.util.List;
 public class CovoiturageDTO {
 
     public CovoiturageDTO(
-        long idCovoiturage,
-        int nbPlace,
-        int nbPlaceDispo,
-        String marque,
-        String modele,
-        String couleur,
-        Date dateDepart,
-        List<EtapeDTO> etapes,
-        FestivalDTO idFestival,
-        UtilisateurDTO idConducteur
+            long idCovoiturage,
+            int nbPlace,
+            int nbPlaceDispo,
+            String marque,
+            String modele,
+            String couleur,
+            Date dateDepart,
+            FestivalDTO idFestival,
+            UtilisateurDTO idConducteur
     ) {
         this.idCovoiturage = idCovoiturage;
         this.nbPlace = nbPlace;
@@ -33,7 +32,6 @@ public class CovoiturageDTO {
         this.modele = modele;
         this.couleur = couleur;
         this.dateDepart = dateDepart;
-        this.etapes = etapes;
         this.idFestival = idFestival;
         this.idConducteur = idConducteur;
     }
@@ -41,20 +39,19 @@ public class CovoiturageDTO {
     private long idCovoiturage;
 
     private int nbPlace;
-    
+
     private int nbPlaceDispo;
-    
+
     private String marque;
-    
+
     private String modele;
-    
+
     private String couleur;
-    
+
     private Date dateDepart;
-    
-    private List<EtapeDTO> etapes;
-    
+
+
     private FestivalDTO idFestival;
-    
+
     private UtilisateurDTO idConducteur;
 }

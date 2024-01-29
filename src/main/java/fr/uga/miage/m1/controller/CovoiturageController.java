@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
+import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.mapper.CovoiturageMapper;
 import fr.uga.miage.m1.model.Covoiturage;
 import fr.uga.miage.m1.service.CovoiturageService;
@@ -39,6 +40,25 @@ public class CovoiturageController {
 //        return covoiturageMapper.entityToDTO(covoiturage);
 //    }
 
+    @GetMapping("covoiturages/page/{number}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Covoiturages found"),
+            @ApiResponse(responseCode = "204", description = "Covoiturages not found")
+    })
+    @Operation(summary = "Get all covoiturages by pages")
+    public List<CovoiturageDTO> getCovoituragesByPages(@PathVariable int number) {
+        return covoiturageService.getAllCovoituragesByPages(number);
+    }
+
+    @GetMapping("covoiturages/page/{number}/festival/{idFestival}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Covoiturages found"),
+            @ApiResponse(responseCode = "204", description = "Covoiturages not found")
+    })
+    @Operation(summary = "Get all covoiturages by pages")
+    public List<CovoiturageDTO> getCovoituragesByPages(@PathVariable int number, @PathVariable Long idFestival) {
+        return covoiturageService.getAllCovoituragesByFestivalByPages(number, idFestival);
+    }
 
 
     @DeleteMapping("covoiturage/{id}") // Change the mapping path
