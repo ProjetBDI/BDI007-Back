@@ -5,13 +5,21 @@ import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.mapper.FestivalMapper;
 import fr.uga.miage.m1.model.Festival;
 import fr.uga.miage.m1.repository.FestivalRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class FestivalService {
+
+    @PersistenceContext // or even @Autowired
+    private EntityManager entityManager;
 
     @Autowired
     private final FestivalRepository festivalRepository;
@@ -33,6 +41,15 @@ public class FestivalService {
 
     public Iterable<Festival> getAllFestivals() {
         return festivalRepository.findAll();
+    }
+
+    public List<FestivalDTO> getAllFestivalsByPages(int number) {
+        Query query = entityManager.createQuery("From Festival");
+        int pageSize = 10;
+        query.setFirstResult((number - 1) * pageSize);
+        query.setMaxResults(pageSize);
+        List<Festival> festivals = query.getResultList();
+        return festivalMapper.entityToDTO(festivals);
     }
 
     // DELETE
