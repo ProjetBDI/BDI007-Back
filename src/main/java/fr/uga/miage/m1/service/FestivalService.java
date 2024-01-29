@@ -7,7 +7,7 @@ import fr.uga.miage.m1.model.Festival;
 import fr.uga.miage.m1.repository.FestivalRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,23 +46,21 @@ public class FestivalService {
     }
 
     public List<FestivalDTO> getAllFestivalsUsingPages(int number) {
-        Query query = entityManager.createQuery("From Festival");
+        TypedQuery<Festival> query = entityManager.createQuery("From Festival", Festival.class);
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
-        List<Festival> festivals = query.getResultList();
-        return festivalMapper.entityToDTO(festivals);
+        return festivalMapper.entityToDTO(query.getResultList());
     }
 
     public List<FestivalDTO> getAllFestivalsByNameUsingPages(String name, int number) {
-        Query query = entityManager.createQuery("From Festival f where upper(f.nom) like upper(:name)");
+        TypedQuery<Festival> query = entityManager.createQuery("From Festival f where upper(f.nom) like upper(:name)", Festival.class);
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
         query.setParameter("name", "%" + name + "%");
         log.info("Name : " + name);
-        List<Festival> festivals = query.getResultList();
-        return festivalMapper.entityToDTO(festivals);
+        return festivalMapper.entityToDTO(query.getResultList());
     }
 
     // DELETE
