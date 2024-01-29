@@ -41,6 +41,16 @@ public class FestivalController {
         return festivalService.getAllFestivalsUsingPages(number);
     }
 
+    @GetMapping("festivals/page/{number}/name/{name}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
+    })
+    @Operation(summary = "Get all festivals by pages")
+    public List<FestivalDTO> getFestivalsByName(@PathVariable String name, @PathVariable int number) {
+        return festivalService.getAllFestivalsByNameUsingPages(name, number);
+    }
+
     @DeleteMapping("festival/{id}")
     @GetMapping("festival/{id}")
     @ApiResponses(value = {
