@@ -1,33 +1,25 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.DepartementDTO;
-import fr.uga.miage.m1.mapper.DepartementMapper;
-import fr.uga.miage.m1.model.Departement;
 import fr.uga.miage.m1.service.DepartementService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class DepartementController {
 
-    @Autowired
-    private DepartementService departementService;
-
-    @Autowired
-    private DepartementMapper departementMapper;
+    private final DepartementService departementService;
 
     @PostMapping("/departement")
     @Operation(summary = "Create a new departement")
     public void createDepartement(@RequestBody DepartementDTO departementDTO) {
-        Departement departement = departementMapper.dtoToEntity(departementDTO);
-        departementService.save(departement);
+        departementService.save(departementDTO);
     }
 
     @GetMapping("departement/{id}")
@@ -36,15 +28,13 @@ public class DepartementController {
             @ApiResponse(responseCode = "204", description = "Departement not found")
     })
     @Operation(summary = "Get departement by ID")
-    public DepartementDTO getDepartementById(@PathVariable Long id) {
-        Departement departement = departementService.getById(id);
-        return departementMapper.entityToDTO(departement);
+    public ResponseEntity<DepartementDTO> getDepartementById(@PathVariable Long id) {
+        DepartementDTO departement = departementService.getById(id);
+        if (departement == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(departement);
     }
-
-
-
-
-
 
 
     @DeleteMapping("departement/{id}")
