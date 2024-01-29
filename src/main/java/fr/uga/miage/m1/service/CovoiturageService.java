@@ -1,19 +1,28 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.dto.CovoiturageDTO;
+import fr.uga.miage.m1.error.NotFoundException;
+import fr.uga.miage.m1.mapper.CovoiturageMapper;
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.model.Covoiturage;
 import fr.uga.miage.m1.repository.CovoiturageRepository;
 
-import java.util.List;
-
 @Service
+@Data
 public class CovoiturageService {
-    
+
+    @Autowired
     private final CovoiturageRepository covoiturageRepository;
-    
-    public CovoiturageService(CovoiturageRepository covoiturageRepository) {
-        this.covoiturageRepository = covoiturageRepository;
+    @Autowired
+    private final CovoiturageMapper covoiturageMapper;
+
+    public CovoiturageDTO getById(Long id) {
+        return covoiturageRepository.findById(id)
+                .map(covoiturageMapper::entityToDTO)
+                .orElseThrow(() -> new NotFoundException("Covoiturage", "id", id));
     }
 
     // SAVE
@@ -21,10 +30,7 @@ public class CovoiturageService {
         covoiturageRepository.save(covoiturage);
     }
 
-    // GET
-    public Covoiturage getById(Long id) {
-        return covoiturageRepository.findById(id).get();
-    }
+
 
     // DELETE
     public void deleteById(Long id) {

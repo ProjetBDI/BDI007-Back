@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.controller;
 
+
 import fr.uga.miage.m1.dto.CommuneDTO;
 import fr.uga.miage.m1.service.CommuneService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,5 +46,16 @@ public class CommuneController {
     @Operation(summary = "Get commune by name")
     public List<CommuneDTO> getCommuneByNom(@PathVariable String nom) {
         return communeService.getByNom(nom);
+    }
+
+    @DeleteMapping("/commune/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Commune deleted"),
+            @ApiResponse(responseCode = "204", description = "Commune not found"),
+            @ApiResponse(responseCode = "500", description = "Erreur du serveur")
+    })
+    @Operation(summary = "Delete commune by id")
+    public void deleteById(Long id){
+        communeService.deleteById(id);
     }
 }

@@ -19,6 +19,4 @@ public class NotFoundException  extends RuntimeException {
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
     }
-
 }
-

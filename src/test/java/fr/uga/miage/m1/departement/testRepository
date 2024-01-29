@@ -1,0 +1,58 @@
+package fr.uga.miage.m1.test;
+
+
+import org.junit.Test;
+import fr.uga.miage.m1.model.Commune;
+import fr.uga.miage.m1.repository.CommuneRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Collection;
+import static org.junit.Assert.assertEquals;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@AutoConfigureTestDatabase
+public class testRepository {
+
+    @Autowired
+        private CommuneRepository communeRepository;
+
+        @Test
+        public void testFindByNomCommune() {
+            // Créer une commune de test
+            Commune testCommune = new Commune();
+            testCommune.setNomCommune("TestVille");
+            testCommune.setCodePostal("12345");
+            communeRepository.save(testCommune);
+
+            // Appeler la méthode du repository pour trouver la commune par nom
+            Collection<Commune> foundCommunes = communeRepository.findByNomCommune("TestVille");
+
+            // Vérifier si la commune de test est trouvée
+            assertEquals(1, foundCommunes.size());
+            Commune foundCommune = foundCommunes.iterator().next();
+            assertEquals("TestVille", foundCommune.getNomCommune());
+            assertEquals("12345", foundCommune.getCodePostal());
+        }
+
+//        @Test
+//        public void testFindByCodePostal() {
+//            // Créer une commune de test
+//            Commune testCommune = new Commune();
+//            testCommune.setNomCommune("AnotherCity");
+//            testCommune.setCodePostal("67890");
+//            communeRepository.save(testCommune);
+//
+//            // Appeler la méthode du repository pour trouver la commune par code postal
+//            Collection<Commune> foundCommunes = communeRepository.findByCodePostal("67890");
+//
+//            // Vérifier si la commune de test est trouvée
+//            assertEquals(1, foundCommunes.size());
+//            Commune foundCommune = foundCommunes.iterator().next();
+//            assertEquals("AnotherCity", foundCommune.getNomCommune());
+//            assertEquals("67890", foundCommune.getCodePostal());
+//        }
+    }
+
+}

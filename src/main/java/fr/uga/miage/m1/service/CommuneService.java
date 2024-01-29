@@ -20,6 +20,7 @@ public class CommuneService {
     @Autowired
     private final CommuneMapper communeMapper;
     // Version pour Sonar [
+
     public CommuneDTO getById(Long id) {
         return communeRepository.findById(id)
                 .map(communeMapper::entityToDTO)
@@ -36,4 +37,7 @@ public class CommuneService {
         return communeMapper.entityToDTO(communeRepository.findByNomCommune(nom));
     }
 
+    public void deleteById(Long id) {
+        communeRepository.deleteById(id);
+    }
 }
