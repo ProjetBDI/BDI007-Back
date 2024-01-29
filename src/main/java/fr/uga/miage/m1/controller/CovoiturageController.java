@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/api/v1") // Change the mapping path
@@ -31,16 +31,16 @@ public class CovoiturageController {
         covoiturageService.save(covoiturage);
     }
 
-    @GetMapping("covoiturage/{id}") // Change the mapping path
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Covoiturage found"),
-            @ApiResponse(responseCode = "204", description = "Covoiturage not found")
-    })
-    @Operation(summary = "Get covoiturage by ID")
-    public CovoiturageDTO getCovoiturageById(@PathVariable Long id) {
-        Covoiturage covoiturage = covoiturageService.getById(id);
-        return covoiturageMapper.entityToDTO(covoiturage);
-    }
+//    @GetMapping("covoiturage/{id}") // Change the mapping path
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200", description = "Covoiturage found"),
+//            @ApiResponse(responseCode = "204", description = "Covoiturage not found")
+//    })
+//    @Operation(summary = "Get covoiturage by ID")
+//    public CovoiturageDTO getCovoiturageById(@PathVariable Long id) {
+//        Covoiturage covoiturage = covoiturageService.getById(id);
+//        return covoiturageMapper.entityToDTO(covoiturage);
+//    }
 
     @GetMapping("covoiturages/page/{number}")
     @ApiResponses(value = {

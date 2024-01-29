@@ -36,4 +36,7 @@ public class CommuneService {
         return communeMapper.entityToDTO(communeRepository.findByNomCommune(nom));
     }
 
+    public void deleteById(Long id) {
+        communeRepository.deleteById(id);
+    }
 }

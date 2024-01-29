@@ -6,7 +6,6 @@ import fr.uga.miage.m1.model.Festival;
 import java.util.List;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring", uses={CommuneMapper.class, DomaineMapper.class})
 public interface FestivalMapper {
