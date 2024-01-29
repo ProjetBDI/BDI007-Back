@@ -1,21 +1,21 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.dto.UtilisateurDTO;
+import fr.uga.miage.m1.mapper.UtilisateurMapper;
 import fr.uga.miage.m1.model.Utilisateur;
+import fr.uga.miage.m1.repository.UtilisateurRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import fr.uga.miage.m1.repository.UtilisateurRepository;
-
-import java.util.Collection;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UtilisateurService {
 
     private final UtilisateurRepository utilisateurRepository;
+    private final UtilisateurMapper utilisateurMapper;
 
-    public UtilisateurService(UtilisateurRepository utilisateurRepository) {
-        this.utilisateurRepository = utilisateurRepository;
-    }
 
     // SAVE
     public Utilisateur save(Utilisateur utilisateur) {
@@ -23,14 +23,13 @@ public class UtilisateurService {
     }
 
     // GET
-    public Iterable<Utilisateur> getAllUsers() {
-        return utilisateurRepository.findAll();
+    public List<UtilisateurDTO> findAll() {
+        return utilisateurMapper.entityToDTO(utilisateurRepository.findAll());
     }
 
-    public Utilisateur getById(Long id) {
-        return utilisateurRepository.findById(id).get();
+    public UtilisateurDTO getById(Long id) {
+        return utilisateurMapper.entityToDTO(utilisateurRepository.findById(id).orElse(null));
     }
-
 
 
     // DELETE
