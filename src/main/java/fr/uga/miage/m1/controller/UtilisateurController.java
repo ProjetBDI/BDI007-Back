@@ -4,7 +4,7 @@ import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.service.UtilisateurService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,19 +15,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class UtilisateurController {
 
-    @Autowired
-    private UtilisateurService utilisateurService;
-
+    private final UtilisateurService utilisateurService;
 
     @GetMapping("/utilisateurs/")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Festivals found"),
             @ApiResponse(responseCode = "204", description = "Festivals not found")
     })
-    public List<UtilisateurDTO> getAllUtilisateurs() {
-        return utilisateurService.findAll();
+    public ResponseEntity<List<UtilisateurDTO>> getAllUtilisateurs() {
+        List<UtilisateurDTO> utilisateurDTOList = utilisateurService.findAll();
+        if (utilisateurDTOList.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(utilisateurDTOList);
     }
 
     @GetMapping("/utilisateur/{id}")
@@ -35,8 +38,12 @@ public class UtilisateurController {
             @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
             @ApiResponse(responseCode = "204", description = "Utilisateurs not found")
     })
-    public UtilisateurDTO getUtilisateurById(@PathVariable Long id) {
-        return utilisateurService.getById(id);
+    public ResponseEntity<UtilisateurDTO> getUtilisateurById(@PathVariable Long id) {
+        UtilisateurDTO utilisateurDTO = utilisateurService.getById(id);
+        if (utilisateurDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(utilisateurDTO);
     }
 
     @GetMapping("/utilisateur/email/{email}")
