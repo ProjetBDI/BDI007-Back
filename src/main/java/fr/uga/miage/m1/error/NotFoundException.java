@@ -1,14 +1,13 @@
 package fr.uga.miage.m1.error;
 
 import lombok.Getter;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-import java.io.Serializable;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 @Getter
-public class NotFoundException  extends RuntimeException {
+public class NotFoundException extends RuntimeException {
     private final String resourceName;
     private final String fieldName;
     private final Object fieldValue;
