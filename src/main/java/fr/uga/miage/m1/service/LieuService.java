@@ -1,31 +1,30 @@
 package fr.uga.miage.m1.service;
 
-import org.springframework.stereotype.Service;
-
-import fr.uga.miage.m1.model.Lieu;
+import fr.uga.miage.m1.dto.LieuDTO;
+import fr.uga.miage.m1.mapper.LieuMapper;
 import fr.uga.miage.m1.repository.LieuRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class LieuService {
-    
-    private final LieuRepository lieuRepository;
 
-    public LieuService(LieuRepository lieuRepository) {
-        this.lieuRepository = lieuRepository;
-    }
+    private final LieuRepository lieuRepository;
+    private final LieuMapper lieuMapper;
+
 
     // SAVE
-    public Lieu save(Lieu lieu) {
-        return lieuRepository.save(lieu);
+    public LieuDTO save(LieuDTO lieu) {
+        return lieuMapper.entityToDTO(lieuRepository.save(lieuMapper.dtoToEntity(lieu)));
     }
 
     // GET
-    public Lieu getById(Long id) {
-        return lieuRepository.findById(id).get();
+    public LieuDTO getById(Long id) {
+        return lieuMapper.entityToDTO(lieuRepository.findById(id).orElse(null));
     }
-
 
 
     // DELETE
@@ -33,10 +32,12 @@ public class LieuService {
         lieuRepository.deleteById(id);
     }
 
-    public void delete(Lieu lieu) {
-        lieuRepository.delete(lieu);
+    public void delete(LieuDTO lieu) {
+        lieuRepository.delete(lieuMapper.dtoToEntity(lieu));
     }
 
     //get all
-    public Iterable<Lieu> getAllLieux(){return lieuRepository.findAll();}
+    public List<LieuDTO> getAllLieux() {
+        return lieuMapper.entityToDTO(lieuRepository.findAll());
+    }
 }
