@@ -1,23 +1,21 @@
 package fr.uga.miage.m1.service;
 
-import java.util.List;
-
 import fr.uga.miage.m1.dto.CommuneDTO;
 import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.CommuneMapper;
 import fr.uga.miage.m1.repository.CommuneRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import lombok.Data;
+import java.util.List;
 
 @Data
 @Service
+@RequiredArgsConstructor
 public class CommuneService {
 
-    @Autowired
     private final CommuneRepository communeRepository;
-    @Autowired
     private final CommuneMapper communeMapper;
 
     // Version pour Sonar
