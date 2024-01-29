@@ -2,6 +2,8 @@ package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.service.UtilisateurService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,27 +21,30 @@ public class UtilisateurController {
 
 
     @GetMapping("/utilisateurs/")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
+    })
     public List<UtilisateurDTO> getAllUtilisateurs() {
         return utilisateurService.findAll();
     }
 
     @GetMapping("/utilisateur/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
+    })
     public UtilisateurDTO getUtilisateurById(@PathVariable Long id) {
         return utilisateurService.getById(id);
     }
 
-//    @GetMapping("/utilisates")
-//    public Iterable<Utilisateur> getUtilisateurs() {
-//        return utilisateurService.getAllUsers();
-//    }
-
-
-//    @GetMapping("/utilisateurs")
-//    public Collection<UtilisateurDTO> getUtilisateurs() {
-//        Collection<Utilisateur> utilisateurs = (utilisateurService.getAllUsers());
-//        List<UtilisateurDTO> user = utilisateurs.stream().map(utilisateurMapper::entityToDTO).toList();
-//        System.out.println(user.get(0));
-//        return user;
-//    }
+    @GetMapping("/utilisateur/email/{email}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
+    })
+    public UtilisateurDTO getUtilisateurByEmail(@PathVariable String email) {
+        return utilisateurService.getByEmail(email);
+    }
 
 }
