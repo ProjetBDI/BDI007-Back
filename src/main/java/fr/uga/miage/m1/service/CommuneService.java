@@ -19,13 +19,13 @@ public class CommuneService {
     private final CommuneRepository communeRepository;
     @Autowired
     private final CommuneMapper communeMapper;
-    // Version pour Sonar [
+
+    // Version pour Sonar
     public CommuneDTO getById(Long id) {
         return communeRepository.findById(id)
                 .map(communeMapper::entityToDTO)
                 .orElseThrow(() -> new NotFoundException("Commune", "id", id));
     }
-    // Version pour sonar ]
 
 
     public List<CommuneDTO> getAllCommunes() {

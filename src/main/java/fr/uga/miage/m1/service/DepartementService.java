@@ -1,15 +1,12 @@
 package fr.uga.miage.m1.service;
 
-import org.springframework.stereotype.Service;
-
 import fr.uga.miage.m1.model.Departement;
 import fr.uga.miage.m1.repository.DepartementRepository;
-
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public class DepartementService {
-    
+
     private final DepartementRepository departementRepository;
 
     public DepartementService(DepartementRepository departementRepository) {
@@ -23,7 +20,7 @@ public class DepartementService {
 
     // GET
     public Departement getById(Long id) {
-        return departementRepository.findById(id).get();
+        return departementRepository.findById(id).orElse(null);
     }
 
     // DELETE
@@ -36,5 +33,7 @@ public class DepartementService {
     }
 
     //get All
-    public Iterable<Departement> getAllDepartements(){return departementRepository.findAll();}
+    public Iterable<Departement> getAllDepartements() {
+        return departementRepository.findAll();
+    }
 }

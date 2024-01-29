@@ -1,18 +1,15 @@
 package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
-import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.mapper.CovoiturageMapper;
-import fr.uga.miage.m1.model.Festival;
+import fr.uga.miage.m1.model.Covoiturage;
+import fr.uga.miage.m1.repository.CovoiturageRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import fr.uga.miage.m1.model.Covoiturage;
-import fr.uga.miage.m1.repository.CovoiturageRepository;
 
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class CovoiturageService {
 
     // GET
     public Covoiturage getById(Long id) {
-        return covoiturageRepository.findById(id).get();
+        return covoiturageRepository.findById(id).orElse(null);
     }
 
     // DELETE

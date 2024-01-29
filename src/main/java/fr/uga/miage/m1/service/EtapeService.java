@@ -1,15 +1,12 @@
 package fr.uga.miage.m1.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import fr.uga.miage.m1.model.Etape;
 import fr.uga.miage.m1.repository.EtapeRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class EtapeService {
-    
+
     private final EtapeRepository etapeRepository;
 
     public EtapeService(EtapeRepository etapeRepository) {
@@ -23,9 +20,8 @@ public class EtapeService {
 
     // GET
     public Etape getById(Long id) {
-        return etapeRepository.findById(id).get();
+        return etapeRepository.findById(id).orElse(null);
     }
-
 
 
     public Iterable<Etape> getAllEtapes() {
