@@ -36,8 +36,8 @@ public class FestivalController {
 
     @GetMapping("festivals/page/{number}")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Commune found"),
-            @ApiResponse(responseCode = "204", description = "Commune not found")
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
     })
     @Operation(summary = "Get all festivals by pages")
     public List<FestivalDTO> getFestivalsByPages(@PathVariable int number) {

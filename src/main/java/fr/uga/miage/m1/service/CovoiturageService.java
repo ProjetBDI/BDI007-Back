@@ -1,5 +1,14 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.dto.CovoiturageDTO;
+import fr.uga.miage.m1.dto.FestivalDTO;
+import fr.uga.miage.m1.mapper.CovoiturageMapper;
+import fr.uga.miage.m1.model.Festival;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.model.Covoiturage;
@@ -8,13 +17,17 @@ import fr.uga.miage.m1.repository.CovoiturageRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CovoiturageService {
-    
+    @PersistenceContext // or even @Autowired
+    private EntityManager entityManager;
+
+    @Autowired
     private final CovoiturageRepository covoiturageRepository;
-    
-    public CovoiturageService(CovoiturageRepository covoiturageRepository) {
-        this.covoiturageRepository = covoiturageRepository;
-    }
+
+    @Autowired
+    private final CovoiturageMapper covoiturageMapper;
+
 
     // SAVE
     public void save(Covoiturage covoiturage) {
@@ -35,5 +48,26 @@ public class CovoiturageService {
         covoiturageRepository.delete(covoiturage);
     }
 
-    public Iterable<Covoiturage> getAllCovoiturages() {return covoiturageRepository.findAll();}
+    public Iterable<Covoiturage> getAllCovoiturages() {
+        return covoiturageRepository.findAll();
+    }
+
+    public List<CovoiturageDTO> getAllCovoituragesByPages(int number) {
+        Query query = entityManager.createQuery("From Covoiturage");
+        int pageSize = 10;
+        query.setFirstResult((number - 1) * pageSize);
+        query.setMaxResults(pageSize);
+        List<Covoiturage> covoiturages = query.getResultList();
+        return covoiturageMapper.entityToDTO(covoiturages);
+    }
+
+    public List<CovoiturageDTO> getAllCovoituragesByFestivalByPages(int number, Long idFestival) {
+        Query query = entityManager.createQuery("From Covoiturage c Where c.idFestival.idFestival = :idFestival");
+        int pageSize = 10;
+        query.setParameter("idFestival", idFestival);
+        query.setFirstResult((number - 1) * pageSize);
+        query.setMaxResults(pageSize);
+        List<Covoiturage> covoiturages = query.getResultList();
+        return covoiturageMapper.entityToDTO(covoiturages);
+    }
 }
