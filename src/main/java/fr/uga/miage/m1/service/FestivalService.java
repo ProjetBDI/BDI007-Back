@@ -9,7 +9,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Log
 public class FestivalService {
 
     @PersistenceContext // or even @Autowired
@@ -59,7 +57,6 @@ public class FestivalService {
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
         query.setParameter("name", "%" + name + "%");
-        log.info("Name : " + name);
         return festivalMapper.entityToDTO(query.getResultList());
     }
 
