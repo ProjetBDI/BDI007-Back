@@ -39,9 +39,14 @@ public class UtilisateurService {
     public UtilisateurDTO getByEmail(String email) {
         TypedQuery<Utilisateur> query = entityManager.createQuery("From Utilisateur u where u.email = :email ", Utilisateur.class);
         query.setParameter("email", email);
-        
-        return utilisateurMapper.entityToDTO(query.getSingleResult());
-
+        List<Utilisateur> result = query.getResultList();
+        if (result.isEmpty()) {
+            return null;
+        }
+        if (result.size() > 1) {
+            throw new RuntimeException("Plusieurs utilisateurs trouvés avec cet email " + email);
+        }
+        return utilisateurMapper.entityToDTO(result.get(0));
     }
 
 
