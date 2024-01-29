@@ -9,7 +9,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +19,7 @@ public class FestivalService {
 
     @PersistenceContext // or even @Autowired
     private EntityManager entityManager;
-
-    @Autowired
     private final FestivalRepository festivalRepository;
-
-    @Autowired
     private final FestivalMapper festivalMapper;
 
 
