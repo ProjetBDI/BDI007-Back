@@ -37,12 +37,12 @@ public class FestivalService {
 
     // GET
     public FestivalDTO getById(Long id) {
-        return festivalMapper.entityToDTO(festivalRepository.findById(id).get());
+        return festivalMapper.entityToDTO(festivalRepository.findById(id).orElse(null));
     }
 
 
-    public Iterable<Festival> getAllFestivals() {
-        return festivalRepository.findAll();
+    public List<FestivalDTO> getAllFestivals() {
+        return festivalMapper.entityToDTO(festivalRepository.findAll());
     }
 
     public List<FestivalDTO> getAllFestivalsUsingPages(int number) {
