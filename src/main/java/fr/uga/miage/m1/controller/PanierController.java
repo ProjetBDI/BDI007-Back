@@ -10,9 +10,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @RestController
 @RequestMapping("/api/v1")
 public class PanierController {
@@ -41,6 +38,15 @@ public class PanierController {
         return panierMapper.entityToDTO(panier);
     }
 
+    @GetMapping("panier/utilisateur/current/{idUtilisateur}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Panier found"),
+            @ApiResponse(responseCode = "204", description = "Panier not found")
+    })
+    @Operation(summary = "Get current panier for an user")
+    public PanierDTO getCurrentPanierByUtilisateurId(@PathVariable Long idUtilisateur) {
+        return panierService.getCurrentPanierByUtilisateurId(idUtilisateur);
+    }
 
 
     @DeleteMapping("panier/{id}")

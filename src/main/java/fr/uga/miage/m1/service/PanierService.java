@@ -1,21 +1,29 @@
 package fr.uga.miage.m1.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
+import fr.uga.miage.m1.dto.PanierDTO;
+import fr.uga.miage.m1.mapper.PanierMapper;
 import fr.uga.miage.m1.model.Panier;
 import fr.uga.miage.m1.repository.PanierRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PanierService {
 
+    @PersistenceContext
+    private final EntityManager entityManager;
     private final PanierRepository panierRepository;
 
-    public PanierService(PanierRepository panierRepository) {
-        this.panierRepository = panierRepository;
-    }
-    
+    @Autowired
+    private final PanierMapper panierMapper;
+
     // SAVE
     public Panier save(Panier panier) {
         return panierRepository.save(panier);
@@ -28,6 +36,19 @@ public class PanierService {
 
     public Panier getById(Long id) {
         return panierRepository.findById(id).get();
+    }
+
+    public PanierDTO getCurrentPanierByUtilisateurId(Long idUtilisateur) {
+        TypedQuery<Panier> query = entityManager.createQuery("From Panier p Where p.datePaiement = null and p.idProprietaire.idUtilisateur = :idUtilisateur", Panier.class);
+        query.setParameter("idUtilisateur", idUtilisateur);
+        List<Panier> result = query.getResultList();
+        if (result.isEmpty()) {
+            return null;
+        }
+        if (result.size() > 1) {
+            throw new RuntimeException("Plusieurs paniers en cours pour l'utilisateur " + idUtilisateur);
+        }
+        return panierMapper.entityToDTO(result.get(0));
     }
 
     // DELETE
