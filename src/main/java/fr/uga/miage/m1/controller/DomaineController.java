@@ -1,34 +1,32 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.DomaineDTO;
-import fr.uga.miage.m1.mapper.DomaineMapper;
 import fr.uga.miage.m1.model.Domaine;
 import fr.uga.miage.m1.service.DomaineService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class DomaineController {
 
-    @Autowired
-    private DomaineService domaineService;
-
-    @Autowired
-    private DomaineMapper domaineMapper;
+    private final DomaineService domaineService;
 
     @PostMapping("/domaine")
     @Operation(summary = "Create a new domaine")
-    public DomaineDTO createDomaine(@RequestBody DomaineDTO domaineDTO) {
-        Domaine domaine = domaineMapper.dtoToEntity(domaineDTO);
-        Domaine savedDomaine = domaineService.save(domaine);
-        return domaineMapper.entityToDTO(savedDomaine);
+    public ResponseEntity<DomaineDTO> createDomaine(@RequestBody DomaineDTO domaineDTO) {
+        DomaineDTO savedDomaine = domaineService.save(domaineDTO);
+        if (savedDomaine == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(savedDomaine);
     }
 
     @GetMapping("domaine/{id}")
@@ -37,9 +35,12 @@ public class DomaineController {
             @ApiResponse(responseCode = "204", description = "Domaine not found")
     })
     @Operation(summary = "Get domaine by ID")
-    public DomaineDTO getDomaineById(@PathVariable Long id) {
-        Domaine domaine = domaineService.getById(id);
-        return domaineMapper.entityToDTO(domaine);
+    public ResponseEntity<DomaineDTO> getDomaineById(@PathVariable Long id) {
+        DomaineDTO domaine = domaineService.getById(id);
+        if (domaine == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(domaine);
     }
 
 
@@ -49,9 +50,12 @@ public class DomaineController {
             @ApiResponse(responseCode = "204", description = "No domaines found")
     })
     @Operation(summary = "Get all domaines")
-    public Iterable<Domaine> getAllDomaines() {
-        Iterable<Domaine> domaines = domaineService.getAllDomaines();
-        return domaines;
+    public ResponseEntity<List<Domaine>> getAllDomaines() {
+        List<Domaine> domaines = domaineService.getAllDomaines();
+        if (domaines.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(domaines);
     }
 
     @DeleteMapping("domaine/{id}")
