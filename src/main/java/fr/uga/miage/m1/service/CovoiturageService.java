@@ -7,7 +7,7 @@ import fr.uga.miage.m1.model.Covoiturage;
 import fr.uga.miage.m1.repository.CovoiturageRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,21 +55,19 @@ public class CovoiturageService {
     }
 
     public List<CovoiturageDTO> getAllCovoituragesUsingPages(int number) {
-        Query query = entityManager.createQuery("From Covoiturage");
+        TypedQuery<Covoiturage> query = entityManager.createQuery("From Covoiturage", Covoiturage.class);
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
-        List<Covoiturage> covoiturages = query.getResultList();
-        return covoiturageMapper.entityToDTO(covoiturages);
+        return covoiturageMapper.entityToDTO(query.getResultList());
     }
 
     public List<CovoiturageDTO> getAllCovoituragesByFestivalUsingPages(int number, Long idFestival) {
-        Query query = entityManager.createQuery("From Covoiturage c Where c.idFestival.idFestival = :idFestival");
+        TypedQuery<Covoiturage> query = entityManager.createQuery("From Covoiturage c Where c.idFestival.idFestival = :idFestival", Covoiturage.class);
         int pageSize = 10;
         query.setParameter("idFestival", idFestival);
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
-        List<Covoiturage> covoiturages = query.getResultList();
-        return covoiturageMapper.entityToDTO(covoiturages);
+        return covoiturageMapper.entityToDTO(query.getResultList());
     }
 }
