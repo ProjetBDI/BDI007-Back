@@ -1,34 +1,29 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.EtapeDTO;
-import fr.uga.miage.m1.mapper.EtapeMapper;
-import fr.uga.miage.m1.model.Etape;
 import fr.uga.miage.m1.service.EtapeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class EtapeController {
 
-    @Autowired
-    private EtapeService etapeService;
-
-    @Autowired
-    private EtapeMapper etapeMapper;
+    private final EtapeService etapeService;
 
     @PostMapping("/etape")
     @Operation(summary = "Create a new etape")
-    public EtapeDTO createEtape(@RequestBody EtapeDTO etapeDTO) {
-        Etape etape = etapeMapper.dtoToEntity(etapeDTO);
-        Etape savedEtape = etapeService.save(etape);
-        return etapeMapper.entityToDTO(savedEtape);
+    public ResponseEntity<EtapeDTO> createEtape(@RequestBody EtapeDTO etapeDTO) {
+        EtapeDTO savedEtape = etapeService.save(etapeDTO);
+        if (savedEtape == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(savedEtape);
     }
 
     @GetMapping("etape/{id}")
@@ -37,13 +32,13 @@ public class EtapeController {
             @ApiResponse(responseCode = "204", description = "Etape not found")
     })
     @Operation(summary = "Get etape by ID")
-    public EtapeDTO getEtapeById(@PathVariable Long id) {
-        Etape etape = etapeService.getById(id);
-        return etapeMapper.entityToDTO(etape);
+    public ResponseEntity<EtapeDTO> getEtapeById(@PathVariable Long id) {
+        EtapeDTO etape = etapeService.getById(id);
+        if (etape == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(etape);
     }
-
-
-
 
 
     @DeleteMapping("etape/{id}")
