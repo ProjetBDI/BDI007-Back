@@ -43,7 +43,7 @@ public class FestivalService {
         return festivalRepository.findAll();
     }
 
-    public List<FestivalDTO> getAllFestivalsByPages(int number) {
+    public List<FestivalDTO> getAllFestivalsUsingPages(int number) {
         Query query = entityManager.createQuery("From Festival");
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);

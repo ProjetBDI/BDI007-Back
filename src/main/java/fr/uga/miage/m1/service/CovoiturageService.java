@@ -10,12 +10,10 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
@@ -56,7 +54,7 @@ public class CovoiturageService {
         return covoiturageRepository.findAll();
     }
 
-    public List<CovoiturageDTO> getAllCovoituragesByPages(int number) {
+    public List<CovoiturageDTO> getAllCovoituragesUsingPages(int number) {
         Query query = entityManager.createQuery("From Covoiturage");
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
@@ -65,7 +63,7 @@ public class CovoiturageService {
         return covoiturageMapper.entityToDTO(covoiturages);
     }
 
-    public List<CovoiturageDTO> getAllCovoituragesByFestivalByPages(int number, Long idFestival) {
+    public List<CovoiturageDTO> getAllCovoituragesByFestivalUsingPages(int number, Long idFestival) {
         Query query = entityManager.createQuery("From Covoiturage c Where c.idFestival.idFestival = :idFestival");
         int pageSize = 10;
         query.setParameter("idFestival", idFestival);

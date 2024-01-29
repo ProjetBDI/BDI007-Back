@@ -1,6 +1,5 @@
 package fr.uga.miage.m1.controller;
 
-import fr.uga.miage.m1.dto.CommuneDTO;
 import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.mapper.FestivalMapper;
 import fr.uga.miage.m1.service.FestivalService;
@@ -38,8 +37,8 @@ public class FestivalController {
             @ApiResponse(responseCode = "204", description = "Festivals not found")
     })
     @Operation(summary = "Get all festivals by pages")
-    public List<FestivalDTO> getFestivalsByPages(@PathVariable int number) {
-        return festivalService.getAllFestivalsByPages(number);
+    public List<FestivalDTO> getAllFestivalsUsingPages(@PathVariable int number) {
+        return festivalService.getAllFestivalsUsingPages(number);
     }
 
     @DeleteMapping("festival/{id}")
