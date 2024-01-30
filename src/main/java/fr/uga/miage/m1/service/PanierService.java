@@ -1,31 +1,60 @@
 package fr.uga.miage.m1.service;
 
+<<<<<<< HEAD
 import org.springframework.stereotype.Service;
 
 import fr.uga.miage.m1.model.Panier;
 import fr.uga.miage.m1.repository.PanierRepository;
+=======
+import fr.uga.miage.m1.dto.PanierDTO;
+import fr.uga.miage.m1.error.NotFoundException;
+import fr.uga.miage.m1.mapper.PanierMapper;
+import fr.uga.miage.m1.model.Panier;
+import fr.uga.miage.m1.repository.PanierRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+>>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 
 @Service
+@RequiredArgsConstructor
 public class PanierService {
 
+    @PersistenceContext
+    private final EntityManager entityManager;
     private final PanierRepository panierRepository;
+    private final PanierMapper panierMapper;
 
-    public PanierService(PanierRepository panierRepository) {
-        this.panierRepository = panierRepository;
-    }
-    
     // SAVE
-    public Panier save(Panier panier) {
-        return panierRepository.save(panier);
+    public PanierDTO save(PanierDTO panier) {
+        return panierMapper.entityToDTO(panierRepository.save(panierMapper.dtoToEntity(panier)));
     }
 
     // GET
-    public Iterable<Panier> getAllPaniers() {
-        return panierRepository.findAll();
+    public List<PanierDTO> getAllPaniers() {
+        return panierMapper.entityToDTO(panierRepository.findAll());
     }
 
-    public Panier getById(Long id) {
-        return panierRepository.findById(id).get();
+    public PanierDTO getById(Long id) {
+        return panierMapper.entityToDTO(panierRepository.findById(id).orElse(null));
+    }
+
+    public PanierDTO getCurrentPanierByUtilisateurId(Long idUtilisateur) {
+        TypedQuery<Panier> query = entityManager.createQuery("From Panier p Where p.datePaiement = null and p.idProprietaire.idUtilisateur = :idUtilisateur", Panier.class);
+        query.setParameter("idUtilisateur", idUtilisateur);
+        // query.getSingleResult can't handle null return
+        List<Panier> result = query.getResultList();
+        if (result.isEmpty()) {
+            return null;
+        }
+        if (result.size() > 1) {
+            throw new NotFoundException("Panier", "idUtilisateur", idUtilisateur);
+        }
+        return panierMapper.entityToDTO(result.get(0));
     }
 
     // DELETE

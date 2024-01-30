@@ -6,17 +6,18 @@ import fr.uga.miage.m1.service.CommuneService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping( "/api/v1")
+@RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class CommuneController {
 
-    @Autowired
-    private CommuneService communeService;
+    private final CommuneService communeService;
 
     @GetMapping("commune/{id}")
     @ApiResponses(value = {
@@ -24,8 +25,12 @@ public class CommuneController {
             @ApiResponse(responseCode = "204", description = "Commune not found")
     })
     @Operation(summary = "Get by ID")
-    public CommuneDTO getCommuneById(@PathVariable Long id) {
-        return communeService.getById(id);
+    public ResponseEntity<CommuneDTO> getCommuneById(@PathVariable Long id) {
+        CommuneDTO communeDTO = communeService.getById(id);
+        if (communeDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(communeDTO);
     }
 
     @GetMapping("communes")
@@ -34,8 +39,12 @@ public class CommuneController {
             @ApiResponse(responseCode = "204", description = "Commune not found")
     })
     @Operation(summary = "Get all communes")
-    public List<CommuneDTO> getCommunes() {
-        return communeService.getAllCommunes();
+    public ResponseEntity<List<CommuneDTO>> getCommunes() {
+        List<CommuneDTO> communeDTOList = communeService.getAllCommunes();
+        if (communeDTOList.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(communeDTOList);
     }
 
     @GetMapping("commune/nom/{nom}")
@@ -44,18 +53,22 @@ public class CommuneController {
             @ApiResponse(responseCode = "204", description = "Commune not found")
     })
     @Operation(summary = "Get commune by name")
-    public List<CommuneDTO> getCommuneByNom(@PathVariable String nom) {
-        return communeService.getByNom(nom);
+    public ResponseEntity<List<CommuneDTO>> getCommuneByNom(@PathVariable String nom) {
+        List<CommuneDTO> communeDTOList = communeService.getByNom(nom);
+        if (communeDTOList.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(communeDTOList);
     }
 
-    @DeleteMapping("/commune/{id}")
+    @DeleteMapping("commune/{id}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Commune deleted"),
             @ApiResponse(responseCode = "204", description = "Commune not found"),
             @ApiResponse(responseCode = "500", description = "Erreur du serveur")
     })
     @Operation(summary = "Delete commune by id")
-    public void deleteById(Long id){
+    public void deleteById(@PathVariable Long id) {
         communeService.deleteById(id);
     }
 }

@@ -1,45 +1,36 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
+<<<<<<< HEAD
 import fr.uga.miage.m1.mapper.CovoiturageMapper;
 import fr.uga.miage.m1.model.Covoiturage;
+=======
+>>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 import fr.uga.miage.m1.service.CovoiturageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/v1") // Change the mapping path
+@RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class CovoiturageController {
 
-    @Autowired
-    private CovoiturageService covoiturageService;
+    private final CovoiturageService covoiturageService;
 
-    @Autowired
-    private CovoiturageMapper covoiturageMapper;
 
     @PostMapping("/covoiturage") // Change the mapping path
     @Operation(summary = "Create a new covoiturage")
     public void createCovoiturage(@RequestBody CovoiturageDTO covoiturageDTO) {
-        Covoiturage covoiturage = covoiturageMapper.dtoToEntity(covoiturageDTO);
-        covoiturageService.save(covoiturage);
+        covoiturageService.save(covoiturageDTO);
     }
 
-//    @GetMapping("covoiturage/{id}") // Change the mapping path
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Covoiturage found"),
-//            @ApiResponse(responseCode = "204", description = "Covoiturage not found")
-//    })
-//    @Operation(summary = "Get covoiturage by ID")
-//    public CovoiturageDTO getCovoiturageById(@PathVariable Long id) {
-//        Covoiturage covoiturage = covoiturageService.getById(id);
-//        return covoiturageMapper.entityToDTO(covoiturage);
-//    }
 
     @GetMapping("covoiturages/page/{number}")
     @ApiResponses(value = {
@@ -47,8 +38,12 @@ public class CovoiturageController {
             @ApiResponse(responseCode = "204", description = "Covoiturages not found")
     })
     @Operation(summary = "Get all covoiturages by pages")
-    public List<CovoiturageDTO> getCovoituragesByPages(@PathVariable int number) {
-        return covoiturageService.getAllCovoituragesByPages(number);
+    public ResponseEntity<List<CovoiturageDTO>> getCovoituragesByPages(@PathVariable int number) {
+        List<CovoiturageDTO> covoiturages = covoiturageService.getAllCovoituragesUsingPages(number);
+        if (covoiturages.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(covoiturages);
     }
 
     @GetMapping("covoiturages/page/{number}/festival/{idFestival}")
@@ -57,8 +52,12 @@ public class CovoiturageController {
             @ApiResponse(responseCode = "204", description = "Covoiturages not found")
     })
     @Operation(summary = "Get all covoiturages by pages")
-    public List<CovoiturageDTO> getCovoituragesByPages(@PathVariable int number, @PathVariable Long idFestival) {
-        return covoiturageService.getAllCovoituragesByFestivalByPages(number, idFestival);
+    public ResponseEntity<List<CovoiturageDTO>> getCovoituragesByPages(@PathVariable int number, @PathVariable Long idFestival) {
+        List<CovoiturageDTO> covoiturages = covoiturageService.getAllCovoituragesByFestivalUsingPages(number, idFestival);
+        if (covoiturages.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(covoiturages);
     }
 
 

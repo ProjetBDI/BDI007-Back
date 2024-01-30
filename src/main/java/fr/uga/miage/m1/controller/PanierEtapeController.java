@@ -1,30 +1,34 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.PanierEtapeDTO;
-import fr.uga.miage.m1.mapper.PanierEtapeMapper;
-import fr.uga.miage.m1.model.PanierEtape;
 import fr.uga.miage.m1.service.PanierEtapeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< HEAD
+=======
+import java.util.List;
+
+>>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class PanierEtapeController {
 
-    @Autowired
-    private PanierEtapeService panierEtapeService;
-
-    @Autowired
-    private PanierEtapeMapper panierEtapeMapper;
+    private final PanierEtapeService panierEtapeService;
 
     @PostMapping("/panierEtape")
     @Operation(summary = "Create a new panier etape")
-    public void createPanierEtape(@RequestBody PanierEtapeDTO panierEtapeDTO) {
-        PanierEtape panierEtape = panierEtapeMapper.dtoToEntity(panierEtapeDTO);
-        panierEtapeService.save(panierEtape);
+    public ResponseEntity<PanierEtapeDTO> createPanierEtape(@RequestBody PanierEtapeDTO panierEtapeDTO) {
+        PanierEtapeDTO panierEtape = panierEtapeService.save(panierEtapeDTO);
+        if (panierEtape == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(panierEtape);
     }
 
     @GetMapping("panierEtape/{id}")
@@ -33,9 +37,12 @@ public class PanierEtapeController {
             @ApiResponse(responseCode = "204", description = "Panier etape not found")
     })
     @Operation(summary = "Get panier etape by ID")
-    public PanierEtapeDTO getPanierEtapeById(@PathVariable Long id) {
-        PanierEtape panierEtape = panierEtapeService.getById(id);
-        return panierEtapeMapper.entityToDTO(panierEtape);
+    public ResponseEntity<PanierEtapeDTO> getPanierEtapeById(@PathVariable Long id) {
+        PanierEtapeDTO panierEtape = panierEtapeService.getById(id);
+        if (panierEtape == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(panierEtape);
     }
 
     @GetMapping("panierEtapes")
@@ -44,9 +51,12 @@ public class PanierEtapeController {
             @ApiResponse(responseCode = "204", description = "No paniers found")
     })
     @Operation(summary = "Get all paniers")
-    public Iterable<PanierEtapeDTO> getAllPaniers() {
-        Iterable<PanierEtape> paniers = panierEtapeService.getAllPaniers();
-        return panierEtapeMapper.entityToDTO(paniers);
+    public ResponseEntity<List<PanierEtapeDTO>> getAllPaniers() {
+        List<PanierEtapeDTO> panierEtapes = panierEtapeService.getAllPanierEtapes();
+        if (panierEtapes.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(panierEtapes);
     }
 
     @DeleteMapping("panierEtape/{id}")

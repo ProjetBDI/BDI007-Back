@@ -1,31 +1,34 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.dto.EtapeDTO;
+import fr.uga.miage.m1.mapper.EtapeMapper;
 import fr.uga.miage.m1.model.Etape;
 import fr.uga.miage.m1.repository.EtapeRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
 public class EtapeService {
 
     private final EtapeRepository etapeRepository;
-
-    public EtapeService(EtapeRepository etapeRepository) {
-        this.etapeRepository = etapeRepository;
-    }
+    private final EtapeMapper etapeMapper;
 
     // SAVE
-    public Etape save(Etape etape) {
-        return etapeRepository.save(etape);
+    public EtapeDTO save(EtapeDTO etape) {
+        return etapeMapper.entityToDTO(etapeRepository.save(etapeMapper.dtoToEntity(etape)));
     }
 
     // GET
-    public Etape getById(Long id) {
-        return etapeRepository.findById(id).orElse(null);
+    public EtapeDTO getById(Long id) {
+        return etapeMapper.entityToDTO(etapeRepository.findById(id).orElse(null));
     }
 
 
-    public Iterable<Etape> getAllEtapes() {
-        return etapeRepository.findAll();
+    public List<EtapeDTO> getAllEtapes() {
+        return etapeMapper.entityToDTO(etapeRepository.findAll());
     }
 
     // DELETE

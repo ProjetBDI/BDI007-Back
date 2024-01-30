@@ -1,25 +1,23 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.FestivalDTO;
-import fr.uga.miage.m1.mapper.FestivalMapper;
 import fr.uga.miage.m1.service.FestivalService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class FestivalController {
 
-    @Autowired
-    private FestivalService festivalService;
+    private final FestivalService festivalService;
 
-    @Autowired
-    private FestivalMapper festivalMapper;
 
     @GetMapping("festival/{id}")
     @ApiResponses(value = {
@@ -27,8 +25,12 @@ public class FestivalController {
             @ApiResponse(responseCode = "204", description = "Festival not found")
     })
     @Operation(summary = "Get festival by ID")
-    public FestivalDTO getFestivalById(@PathVariable Long id) {
-        return festivalService.getById(id);
+    public ResponseEntity<FestivalDTO> getFestivalById(@PathVariable Long id) {
+        FestivalDTO festival = festivalService.getById(id);
+        if (festival == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(festival);
     }
 
     @GetMapping("festivals/page/{number}")
@@ -37,8 +39,26 @@ public class FestivalController {
             @ApiResponse(responseCode = "204", description = "Festivals not found")
     })
     @Operation(summary = "Get all festivals by pages")
-    public List<FestivalDTO> getFestivalsByPages(@PathVariable int number) {
-        return festivalService.getAllFestivalsByPages(number);
+    public ResponseEntity<List<FestivalDTO>> getAllFestivalsUsingPages(@PathVariable int number) {
+        List<FestivalDTO> festivals = festivalService.getAllFestivalsUsingPages(number);
+        if (festivals == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(festivals);
+    }
+
+    @GetMapping("festivals/page/{number}/name/{name}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festivals found"),
+            @ApiResponse(responseCode = "204", description = "Festivals not found")
+    })
+    @Operation(summary = "Get all festivals by pages")
+    public ResponseEntity<List<FestivalDTO>> getFestivalsByNameUsingPages(@PathVariable String name, @PathVariable int number) {
+        List<FestivalDTO> festivals = festivalService.getAllFestivalsByNameUsingPages(name, number);
+        if (festivals == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(festivals);
     }
 
     @DeleteMapping("festival/{id}")
