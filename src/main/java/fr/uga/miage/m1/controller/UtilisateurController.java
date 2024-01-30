@@ -1,11 +1,13 @@
 package fr.uga.miage.m1.controller;
 
+import fr.uga.miage.m1.controller.create.UtilisateurCreate;
 import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.service.UtilisateurService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
+@Log
 public class UtilisateurController {
 
     private final UtilisateurService utilisateurService;
@@ -60,8 +63,9 @@ public class UtilisateurController {
 
     @PostMapping("/utilisateur/create")
     @Operation(summary = "Update utilisateur")
-    public ResponseEntity<UtilisateurDTO> createUtilisateur(@RequestBody UtilisateurDTO utilisateurDTO) {
-        UtilisateurDTO utilisateur = utilisateurService.save(utilisateurDTO);
+    public ResponseEntity<UtilisateurDTO> createUtilisateur(@RequestBody UtilisateurCreate utilisateurCreate) {
+        UtilisateurDTO utilisateur = utilisateurService.saveCustom(utilisateurCreate);
+        log.info("Utilisateur createdController: " + utilisateur.toString());
         if (utilisateur == null) {
             return ResponseEntity.status(204).body(null);
         }
@@ -71,8 +75,8 @@ public class UtilisateurController {
     @DeleteMapping("/utilisateur/{id}")
     @Operation(summary = "Delete utilisateur by ID")
     @ApiResponses(value = {
-      @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
-      @ApiResponse(responseCode = "204", description = "Utilisateurs not found")
+            @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
+            @ApiResponse(responseCode = "204", description = "Utilisateurs not found")
     })
     public void deleteUtilisateurById(@PathVariable Long id) {
         utilisateurService.deleteById(id);
