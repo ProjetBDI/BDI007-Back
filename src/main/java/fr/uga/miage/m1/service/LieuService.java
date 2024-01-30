@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import fr.uga.miage.m1.model.Lieu;
 import fr.uga.miage.m1.repository.LieuRepository;
 
-import java.util.List;
-
 @Service
 public class LieuService {
     

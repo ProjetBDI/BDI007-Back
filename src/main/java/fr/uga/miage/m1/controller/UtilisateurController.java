@@ -21,26 +21,4 @@ public class UtilisateurController {
         return utilisateurService.getById(id);
     }
 
-//    @GetMapping("/utilisateur/{id}")
-//    public UtilisateurDTO getUtilisateurById(Long id) {
-//        return utilisateurMapper.entityToDTO(utilisateurService.getById(id));
-//    }
-
-//    @GetMapping("/utilisates")
-//    public Iterable<Utilisateur> getUtilisateurs() {
-//        return utilisateurService.getAllUsers();
-//    }
-
-
-
-
-
-//    @GetMapping("/utilisateurs")
-//    public Collection<UtilisateurDTO> getUtilisateurs() {
-//        Collection<Utilisateur> utilisateurs = (utilisateurService.getAllUsers());
-//        List<UtilisateurDTO> user = utilisateurs.stream().map(utilisateurMapper::entityToDTO).toList();
-//        System.out.println(user.get(0));
-//        return user;
-//    }
-
 }

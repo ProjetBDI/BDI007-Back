@@ -1,8 +1,6 @@
 package fr.uga.miage.m1.dto;
 
 import java.util.Date;
-import java.util.List;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;

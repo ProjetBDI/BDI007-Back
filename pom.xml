@@ -158,20 +158,6 @@
 			<version>4.12</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency><groupId>edu.uga.miage.m1</groupId>
-			<artifactId>Persistence_g1_6</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.uga.miage.m1</groupId>
-			<artifactId>edu.uga.singleshape</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.uga.miage.m1</groupId>
-			<artifactId>Persistence_g1_6</artifactId>
-			<version>1.0</version>
-		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -183,8 +169,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-
 
 	</dependencies>
 

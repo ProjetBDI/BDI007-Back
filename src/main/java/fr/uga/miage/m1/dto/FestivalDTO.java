@@ -11,22 +11,6 @@ import lombok.Setter;
 @Builder
 @Schema(name = "FestivalDTO", description = "FestivalDTO description")
 public class FestivalDTO {
-
-    public FestivalDTO(long idFestival, String nom, String dateDebut, String dateFin, String siteWeb, String lieuPrincipal, int nbPassTotal, int nbPassDispo, int nbPassIndispo, float tarifPass, FestivalStatus status, CommuneDTO idCommune, DomaineDTO idDomaine) {
-        this.idFestival = idFestival;
-        this.nom = nom;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.siteWeb = siteWeb;
-        this.lieuPrincipal = lieuPrincipal;
-        this.nbPassTotal = nbPassTotal;
-        this.nbPassDispo = nbPassDispo;
-        this.nbPassIndispo = nbPassIndispo;
-        this.tarifPass = tarifPass;
-        this.status = status;
-        this.idCommune = idCommune;
-        this.idDomaine = idDomaine;
-    }
     
     private long idFestival;
 
