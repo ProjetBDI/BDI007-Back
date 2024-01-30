@@ -10,10 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-<<<<<<< HEAD
-=======
 import java.util.List;
->>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 
 @RestController
 @RequestMapping("/api/v1")

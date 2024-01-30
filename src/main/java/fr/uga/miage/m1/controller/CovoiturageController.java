@@ -1,11 +1,6 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
-<<<<<<< HEAD
-import fr.uga.miage.m1.mapper.CovoiturageMapper;
-import fr.uga.miage.m1.model.Covoiturage;
-=======
->>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 import fr.uga.miage.m1.service.CovoiturageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

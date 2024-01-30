@@ -33,8 +33,6 @@ public class UtilisateurController {
         return ResponseEntity.status(200).body(utilisateurDTOList);
     }
 
-<<<<<<< HEAD
-=======
     @GetMapping("/utilisateur/{id}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
@@ -62,5 +60,4 @@ public class UtilisateurController {
 
     }
 
->>>>>>> 34342eb29f91494e13d2592fe640b7a5eb6de734
 }
