@@ -27,6 +27,11 @@ public class DepartementService {
         return departementMapper.entityToDTO(departementRepository.findById(id).orElse(null));
     }
 
+    //get ALL
+    public List<DepartementDTO> getAllDepartements() {
+        return departementMapper.entityToDTO(departementRepository.findAll());
+    }
+
     // DELETE
     public void deleteById(Long id) {
         departementRepository.deleteById(id);
@@ -36,8 +41,4 @@ public class DepartementService {
         departementRepository.delete(departement);
     }
 
-    //get All
-    public List<Departement> getAllDepartements() {
-        return departementRepository.findAll();
-    }
 }

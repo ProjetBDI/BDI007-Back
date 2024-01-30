@@ -49,6 +49,9 @@ public class UtilisateurService {
         return utilisateurMapper.entityToDTO(result.get(0));
     }
 
+    public UtilisateurDTO save(UtilisateurDTO utilisateurDTO) {
+        return utilisateurMapper.entityToDTO(utilisateurRepository.save(utilisateurMapper.dtoToEntity(utilisateurDTO)));
+    }
 
     // DELETE
     public void deleteById(Long id) {

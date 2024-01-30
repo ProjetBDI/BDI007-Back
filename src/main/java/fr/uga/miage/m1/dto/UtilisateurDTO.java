@@ -14,8 +14,6 @@ import java.util.Date;
 public class UtilisateurDTO {
 
     public UtilisateurDTO(
-
-
             long idUtilisateur,
             String email,
             String nom,

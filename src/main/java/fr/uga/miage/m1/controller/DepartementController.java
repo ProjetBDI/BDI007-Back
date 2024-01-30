@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -34,6 +36,20 @@ public class DepartementController {
             return ResponseEntity.status(204).body(null);
         }
         return ResponseEntity.status(200).body(departement);
+    }
+
+    @GetMapping("departements")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Departements found"),
+            @ApiResponse(responseCode = "204", description = "No departements found")
+    })
+    @Operation(summary = "Get all departements")
+    public ResponseEntity<List<DepartementDTO>> getAllDeparts() {
+        List<DepartementDTO> departements = departementService.getAllDepartements();
+        if (departements.isEmpty()) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(departements);
     }
 
 

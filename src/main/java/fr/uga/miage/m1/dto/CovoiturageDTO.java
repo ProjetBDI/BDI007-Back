@@ -49,7 +49,6 @@ public class CovoiturageDTO {
 
     private Date dateDepart;
 
-
     private FestivalDTO idFestival;
 
     private UtilisateurDTO idConducteur;

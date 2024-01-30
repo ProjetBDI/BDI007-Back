@@ -2,14 +2,12 @@ package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.service.UtilisateurService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -58,6 +56,26 @@ public class UtilisateurController {
         }
         return ResponseEntity.status(200).body(utilisateurDTO);
 
+    }
+
+    @PostMapping("/utilisateur/create")
+    @Operation(summary = "Update utilisateur")
+    public ResponseEntity<UtilisateurDTO> createUtilisateur(@RequestBody UtilisateurDTO utilisateurDTO) {
+        UtilisateurDTO utilisateur = utilisateurService.save(utilisateurDTO);
+        if (utilisateur == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(utilisateur);
+    }
+
+    @DeleteMapping("/utilisateur/{id}")
+    @Operation(summary = "Delete utilisateur by ID")
+    @ApiResponses(value = {
+      @ApiResponse(responseCode = "200", description = "Utilisateurs found"),
+      @ApiResponse(responseCode = "204", description = "Utilisateurs not found")
+    })
+    public void deleteUtilisateurById(@PathVariable Long id) {
+        utilisateurService.deleteById(id);
     }
 
 }

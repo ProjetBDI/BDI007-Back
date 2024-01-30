@@ -61,14 +61,4 @@ public class CommuneController {
         return ResponseEntity.status(200).body(communeDTOList);
     }
 
-    @DeleteMapping("commune/{id}")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Commune deleted"),
-            @ApiResponse(responseCode = "204", description = "Commune not found"),
-            @ApiResponse(responseCode = "500", description = "Erreur du serveur")
-    })
-    @Operation(summary = "Delete commune by id")
-    public void deleteById(@PathVariable Long id) {
-        communeService.deleteById(id);
-    }
 }
