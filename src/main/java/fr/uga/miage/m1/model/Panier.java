@@ -3,6 +3,7 @@ package fr.uga.miage.m1.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import java.util.Date;
 import java.util.List;
@@ -15,16 +16,16 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence-generator")
     @GenericGenerator(
-        name = "sequence-generator",
-        strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-        parameters = {
-            @org.hibernate.annotations.Parameter(name = "sequence_name", value = "panier_id_sequence"),
-            @org.hibernate.annotations.Parameter(name = "initial_value", value = "100000"),
-            @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
-        }
+            name = "sequence-generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "panier_id_sequence"),
+                    @Parameter(name = "initial_value", value = "100000"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
 
     )
-    @Column(name="id_panier", nullable = false)
+    @Column(name = "id_panier", nullable = false)
     private Long idPanier;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -40,5 +41,5 @@ public class Panier {
 
     @OneToMany(mappedBy = "idPanierEtape")
     private List<PanierEtape> panierEtapes;
-    
+
 }

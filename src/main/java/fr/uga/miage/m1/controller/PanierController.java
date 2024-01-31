@@ -41,6 +41,7 @@ public class PanierController {
         return ResponseEntity.status(200).body(panier);
     }
 
+    // TODO:  add panierEtape to return
     @GetMapping("panier/utilisateur/current/{idUtilisateur}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Panier found"),
@@ -55,18 +56,19 @@ public class PanierController {
         return ResponseEntity.status(200).body(panierDTO);
     }
 
-    @PostMapping("panier/{idPanier}/payes")
+    @PostMapping("panier/payer/{idPanier}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Commande payée"),
             @ApiResponse(responseCode = "204", description = "Paiement impossible")
     })
     @Operation(summary = "Payer une commande")
-    public ResponseEntity<Boolean> postPayer(@PathVariable Long idPanier) throws IOException {
-        boolean res = panierService.postPayer(idPanier);
-        if (!res) {
-            return ResponseEntity.status(204).body(false);
+    public ResponseEntity<PanierDTO> postPayer(@PathVariable Long idPanier) throws IOException {
+        PanierDTO panierDTO = panierService.postPayer(idPanier);
+        if (panierDTO == null) {
+            return ResponseEntity.status(204).body(null);
         }
-        return ResponseEntity.status(200).body(true);
+        log.info("PanierDTO payé: " + panierDTO);
+        return ResponseEntity.status(200).body(panierDTO);
     }
 
     @PostMapping("panier/create")
