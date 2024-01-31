@@ -4,8 +4,8 @@ CREATE OR REPLACE PROCEDURE procedure_update_covoiturage_by_panier_etape(
        ID_FESTIVAL OUT NUMBER
 )
 AS
-       id_covoiturage NUMBER :=0;
-       nb_dispo_covoiturage NUMBER :=0;
+       id_covoiturage NUMBER DEFAULT 0;
+       nb_dispo_covoiturage NUMBER DEFAULT 0;
 BEGIN
     SELECT
         SUM(PE.NB_PLACE_OCCUPPE) INTO NB_PRISES,
@@ -15,7 +15,7 @@ BEGIN
     FROM PANIER_ETAPE PE
     JOIN ETAPE E ON E.ID_ETAPE = PE.ID_ETAPE
     JOIN COVOITURAGE C ON C.ID_COVOITURAGE = E.ID_COVOITURAGE
-    WHERE PE.ID_PANIER = ID_PANIER
+    WHERE PE.ID_PANIER = ID_PANIER;
 
     IF NB_DISPO_COVOITURAGE = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'Le covoiturage n a plus de places disponibles');

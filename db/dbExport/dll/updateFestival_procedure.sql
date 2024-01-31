@@ -2,10 +2,10 @@ CREATE OR REPLACE PROCEDURE procedure_update_festival_by_panier_etape(
     id_festival IN NUMBER,
     nb_prises IN NUMBER
 ) AS
-    nb_pass_dispo_festival NUMBER :=0;
-    nb_pass_vendus_festival NUMBER :=0;
-    nb_pass_total_festival NUMBER :=0;
-    nb_pass_indispo_festival NUMBER :=0;
+    nb_pass_dispo_festival NUMBER DEFAULT 0;
+    nb_pass_vendus_festival NUMBER DEFAULT 0;
+    nb_pass_total_festival NUMBER DEFAULT 0;
+    nb_pass_indispo_festival NUMBER DEFAULT 0;
 BEGIN
     SELECT
         F.nb_pass_dispo INTO nb_pass_dispo_festival,
