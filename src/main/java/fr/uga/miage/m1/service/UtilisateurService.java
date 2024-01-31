@@ -8,7 +8,6 @@ import fr.uga.miage.m1.model.Utilisateur;
 import fr.uga.miage.m1.repository.UtilisateurRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -53,7 +52,7 @@ public class UtilisateurService {
 
     @Transactional
     public UtilisateurDTO saveCustom(UtilisateurCreate utilisateurCreate) {
-        Query query = entityManager.createNativeQuery("INSERT INTO utilisateur (id_utilisateur, email, nom, prenom, mot_de_passe, date_naissance, telephone) VALUES (utilisateur_id_sequence.nextval ,:email, :nom, :prenom, :mot_de_passe, :date_naissance, :telephone)");
+        TypedQuery<Void> query = entityManager.createQuery("INSERT INTO utilisateur (id_utilisateur, email, nom, prenom, mot_de_passe, date_naissance, telephone) VALUES (utilisateur_id_sequence.nextval ,:email, :nom, :prenom, :mot_de_passe, :date_naissance, :telephone)", Void.class);
         query.setParameter("email", utilisateurCreate.getEmail());
         query.setParameter("nom", utilisateurCreate.getNom());
         query.setParameter("prenom", utilisateurCreate.getPrenom());
