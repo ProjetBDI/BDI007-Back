@@ -41,6 +41,20 @@ public class CovoiturageController {
         return ResponseEntity.status(200).body(covoiturages);
     }
 
+    @GetMapping("covoiturage/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Covoiturage found"),
+            @ApiResponse(responseCode = "204", description = "Covoiturage not found")
+    })
+    @Operation(summary = "Get covoiturage by ID")
+    public ResponseEntity<CovoiturageDTO> getCovoiturageById(@PathVariable Long id) {
+        CovoiturageDTO covoiturageDTO = covoiturageService.getById(id);
+        if (covoiturageDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(covoiturageDTO);
+    }
+
     @GetMapping("covoiturages/page/{number}/festival/{idFestival}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Covoiturages found"),
