@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
+import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.service.CovoiturageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -39,6 +40,20 @@ public class CovoiturageController {
             return ResponseEntity.status(204).body(null);
         }
         return ResponseEntity.status(200).body(covoiturages);
+    }
+
+    @GetMapping("covoiturage/festival/{idFestival}")
+    @ApiResponses(value = {
+      @ApiResponse(responseCode = "200", description = "Covoiturage found"),
+      @ApiResponse(responseCode = "204", description = "Covoiturage not found")
+    })
+    @Operation(summary = "Get covoiturage pour un festival")
+    public ResponseEntity<List<CovoiturageDTO>> getPanierByPanierEtape(@PathVariable Long idFestival) {
+        List<CovoiturageDTO> covoiturageDTO = covoiturageService.getFestivalById(idFestival);
+        if (covoiturageDTO== null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(covoiturageDTO);
     }
 
     @GetMapping("covoiturage/{id}")

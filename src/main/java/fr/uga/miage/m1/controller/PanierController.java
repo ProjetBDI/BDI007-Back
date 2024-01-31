@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -48,6 +50,20 @@ public class PanierController {
             return ResponseEntity.status(204).body(null);
         }
         return ResponseEntity.status(200).body(panierDTO);
+    }
+
+    @PostMapping("panier/{idPanier}/payes")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "TODO"),
+            @ApiResponse(responseCode = "204", description = "TODO")
+    })
+    @Operation(summary = "TODO")
+    public ResponseEntity<Boolean> postPayer(@PathVariable Long idPanier) throws IOException {
+        boolean res = panierService.postPayer(idPanier);
+        if (!res) {
+            return ResponseEntity.status(204).body(false);
+        }
+        return ResponseEntity.status(200).body(true);
     }
 
 
