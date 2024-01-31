@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -40,6 +42,19 @@ public class EtapeController {
         return ResponseEntity.status(200).body(etape);
     }
 
+    @GetMapping("festival/{idFestival}/covoiturage/etapes")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Festival found"),
+        @ApiResponse(responseCode = "204", description = "Festival not found")
+    })
+    @Operation(summary = "Get etapes for festival by ID")
+    public ResponseEntity<List<EtapeDTO>> getEtapesForFestivalById(@PathVariable Long idFestival) {
+        List<EtapeDTO> etapesDTO = etapeService.getEtapesForFestivalById(idFestival);
+        if (etapesDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(etapesDTO);
+    }
 
     @DeleteMapping("etape/{id}")
     @Operation(summary = "Delete etape by ID")
