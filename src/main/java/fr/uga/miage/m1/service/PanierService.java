@@ -59,13 +59,14 @@ public class PanierService {
     }
 
     //post payer
-    public boolean postPayer(Long idPanier) throws IOException {
-        Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.idPanier = :idPanier");
+    @Transactional
+    public PanierDTO postPayer(Long idPanier) throws IOException {
+        Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.ID_PANIER = :idPanier");
         query.setParameter("idPanier", idPanier);
         // query.getSingleResult can't handle null return
         int result = query.executeUpdate();
         if (result != 1) {
-            return false;
+            return null;
         }
         TypedQuery<String> proprietaireQuery = entityManager.createQuery("SELECT u.email From Panier p join Utilisateur u ON  u.idUtilisateur=p.idProprietaire  Where p.idPanier= :idPanier", String.class);
 
@@ -80,7 +81,7 @@ public class PanierService {
 
         emailService.envoyerEmail(proprio, "Votre panier a été payé", "Votre panier a été payé");
         emailService.envoyerEmail(covoits, "Votre panier a été payé", "Votre panier a été payé");
-        return true;
+        return panierMapper.entityToDTO(panierRepository.findById(idPanier).orElse(null));
     }
 
     //save

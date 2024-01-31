@@ -8,12 +8,14 @@ import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
 import lombok.SneakyThrows;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Log
 @Service
 public class EmailService {
 
@@ -36,11 +38,13 @@ public class EmailService {
         request.setEndpoint("mail/send");
         request.setBody(mail.build());
 
-        try{
-            Response response = sg.api(request);
-        } catch (IOException ex) {
+        Response response = sg.api(request);
+        log.info(response.getStatusCode() + "");
+        if (response.getStatusCode() != 202) {
             throw new IOException("Erreur lors de l'envoi de l'email");
         }
+        log.info("Email envoyé à " + destinataire);
+
     }
 
     public void envoyerEmail(List<String> destinataire, String sujet, String contenu) throws IOException {
