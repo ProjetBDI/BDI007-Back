@@ -8,6 +8,7 @@ import fr.uga.miage.m1.model.Panier;
 import fr.uga.miage.m1.repository.PanierRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -59,11 +60,11 @@ public class PanierService {
 
     //post payer
     public boolean postPayer(Long idPanier) throws IOException {
-        TypedQuery<Void> query = entityManager.createQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.idPanier = :idPanier", Void.class);
+        Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.idPanier = :idPanier");
         query.setParameter("idPanier", idPanier);
         // query.getSingleResult can't handle null return
         int result = query.executeUpdate();
-        if (result !=1 ) {
+        if (result != 1) {
             return false;
         }
         TypedQuery<String> proprietaireQuery = entityManager.createQuery("SELECT u.email From Panier p join Utilisateur u ON  u.idUtilisateur=p.idProprietaire  Where p.idPanier= :idPanier", String.class);
@@ -85,7 +86,7 @@ public class PanierService {
     //save
     @Transactional
     public PanierDTO saveCustom(PanierCreate panierCreate) {
-        TypedQuery<Void> query = entityManager.createQuery("INSERT INTO panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)", Void.class);
+        Query query = entityManager.createNativeQuery("INSERT INTO Panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)");
         query.setParameter("noms_festivaliers", panierCreate.getNomsFestivaliers());
         query.setParameter("id_proprietaire", panierCreate.getIdProprietaire());
         int res = query.executeUpdate();
