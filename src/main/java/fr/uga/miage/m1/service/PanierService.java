@@ -85,7 +85,7 @@ public class PanierService {
     //save
     @Transactional
     public PanierDTO saveCustom(PanierCreate panierCreate) {
-        TypedQuery<Void> query = entityManager.createQuery("INSERT INTO Panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)", Void.class);
+        TypedQuery<Void> query = entityManager.createQuery("INSERT INTO panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)", Void.class);
         query.setParameter("noms_festivaliers", panierCreate.getNomsFestivaliers());
         query.setParameter("id_proprietaire", panierCreate.getIdProprietaire());
         int res = query.executeUpdate();

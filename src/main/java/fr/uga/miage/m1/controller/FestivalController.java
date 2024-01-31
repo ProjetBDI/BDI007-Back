@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.controller;
 
+import fr.uga.miage.m1.dto.EtapeDTO;
 import fr.uga.miage.m1.dto.FestivalDTO;
 import fr.uga.miage.m1.service.FestivalService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -71,4 +72,6 @@ public class FestivalController {
     public void deleteFestivalById(@PathVariable Long id) {
         festivalService.deleteById(id);
     }
+
+
 }

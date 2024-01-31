@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.controller.create;
 
 import lombok.Getter;
-
 import java.util.Date;
 
 @Getter
