@@ -18,7 +18,7 @@ public class EtapeController {
 
     private final EtapeService etapeService;
 
-    @PostMapping("/etape")
+    @PostMapping("etape")
     @Operation(summary = "Create a new etape")
     public ResponseEntity<EtapeDTO> createEtape(@RequestBody EtapeDTO etapeDTO) {
         EtapeDTO savedEtape = etapeService.save(etapeDTO);
@@ -44,8 +44,8 @@ public class EtapeController {
 
     @GetMapping("festival/{idFestival}/covoiturage/etapes")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Festival found"),
-        @ApiResponse(responseCode = "204", description = "Festival not found")
+            @ApiResponse(responseCode = "200", description = "Festival found"),
+            @ApiResponse(responseCode = "204", description = "Festival not found")
     })
     @Operation(summary = "Get etapes for festival by ID")
     public ResponseEntity<List<EtapeDTO>> getEtapesForFestivalById(@PathVariable Long idFestival) {

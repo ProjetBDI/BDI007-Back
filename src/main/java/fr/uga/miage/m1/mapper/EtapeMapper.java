@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses ={LieuMapper.class, CovoiturageMapper.class, PanierEtapeMapper.class})
+@Mapper(componentModel = "spring", uses = {LieuMapper.class, CovoiturageMapper.class, PanierEtapeMapper.class})
 public interface EtapeMapper {
     EtapeDTO entityToDTO(Etape etape);
 
