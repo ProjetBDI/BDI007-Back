@@ -41,7 +41,7 @@ public class PanierController {
         return ResponseEntity.status(200).body(panier);
     }
 
-    // TODO:  add panierEtape to return
+
     @GetMapping("panier/utilisateur/current/{idUtilisateur}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Panier found"),

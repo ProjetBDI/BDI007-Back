@@ -56,6 +56,20 @@ public class EtapeController {
         return ResponseEntity.status(200).body(etapesDTO);
     }
 
+    @GetMapping("festival/{idFestival}/covoiturage/etapes/page/{number}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Festival found"),
+            @ApiResponse(responseCode = "204", description = "Festival not found")
+    })
+    @Operation(summary = "Get etapes for festival by ID")
+    public ResponseEntity<List<EtapeDTO>> getEtapesForFestivalByIdUsingPages(@PathVariable Long idFestival, @PathVariable int number) {
+        List<EtapeDTO> etapesDTO = etapeService.getEtapesForFestivalByIdUsingPages(idFestival, number);
+        if (etapesDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(etapesDTO);
+    }
+
     @DeleteMapping("etape/{id}")
     @Operation(summary = "Delete etape by ID")
     public void deleteEtapeById(@PathVariable Long id) {
