@@ -43,5 +43,17 @@ public class CommuneDTO {
     private String nomCommune;
 
     private DepartementDTO idDepartement;
-    
+
+    @Override
+    public String toString() {
+        return "CommuneDTO{" +
+            "idCommune=" + idCommune +
+            ", codeINSEE='" + codeINSEE + '\'' +
+            ", codePostal='" + codePostal + '\'' +
+            ", latitude='" + latitude + '\'' +
+            ", longitude='" + longitude + '\'' +
+            ", nomCommune='" + nomCommune + '\'' +
+            ", idDepartement=" + idDepartement +
+            '}';
+    }
 }
