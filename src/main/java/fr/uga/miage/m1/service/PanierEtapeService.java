@@ -1,19 +1,24 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.controller.create.PanierEtapeCreate;
 import fr.uga.miage.m1.dto.PanierEtapeDTO;
+import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.PanierEtapeMapper;
 import fr.uga.miage.m1.model.PanierEtape;
 import fr.uga.miage.m1.repository.PanierEtapeRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Log
 public class PanierEtapeService {
 
     @PersistenceContext
@@ -37,7 +42,7 @@ public class PanierEtapeService {
     }
 
 
-    public  List<PanierEtapeDTO> getPanierByPanierEtape(Long idPanier) {
+    public List<PanierEtapeDTO> getPanierByPanierEtape(Long idPanier) {
         TypedQuery<PanierEtape> query = entityManager.createQuery("From PanierEtape p Where p.idPanier.idPanier = :idPanier", PanierEtape.class);
         query.setParameter("idPanier", idPanier);
         // query.getSingleResult can't handle null return
@@ -55,5 +60,30 @@ public class PanierEtapeService {
 
     public void delete(PanierEtape panierEtape) {
         panierEtapeRepository.delete(panierEtape);
+    }
+
+    @Transactional
+    public List<PanierEtapeDTO> saveCustom(List<PanierEtapeCreate> panierEtapeCreate) {
+        for (PanierEtapeCreate panierEtape : panierEtapeCreate) {
+            log.info("panierEtape : " + panierEtape);
+            entityManager.createNativeQuery("INSERT INTO panier_etape (id_panier_etape, id_panier, id_etape, NB_PLACE_OCCUPPE) VALUES (panier_etape_id_sequence.nextval ,:id_panier, :id_etape, :nb_place_occuppe)")
+                    .setParameter("id_panier", panierEtape.getIdPanier())
+                    .setParameter("id_etape", panierEtape.getIdEtape())
+                    .setParameter("nb_place_occuppe", panierEtape.getNbPlaceOccuppe())
+                    .executeUpdate();
+        }
+        TypedQuery<PanierEtape> querySelect = entityManager.createQuery("From PanierEtape ORDER BY idPanierEtape DESC LIMIT :number", PanierEtape.class);
+        querySelect.setParameter("number", panierEtapeCreate.size());
+        List<PanierEtape> result = querySelect.getResultList();
+        if (result.isEmpty()) {
+            return null;
+        }
+        for (PanierEtape panierEtape : result) {
+            if (panierEtapeCreate.stream().noneMatch(
+                    p -> p.getIdPanier().equals(panierEtape.getIdPanier().getIdPanier()) && p.getIdEtape().equals(panierEtape.getIdEtape().getIdEtape()))) {
+                throw new NotFoundException("PanierEtape", "idPanier", panierEtape.getIdPanier().getIdPanier());
+            }
+        }
+        return panierEtapeMapper.entityToDTO(result);
     }
 }
