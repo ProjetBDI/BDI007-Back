@@ -28,6 +28,20 @@ public class PanierEtapeController {
         return ResponseEntity.status(201).body(panierEtape);
     }
 
+    @GetMapping("panierEtapes/{idPanier}/panier")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Panier etapes found"),
+            @ApiResponse(responseCode = "204", description = "Panier etapes not found")
+    })
+    @Operation(summary = "Get panier by panier etape ID")
+    public ResponseEntity<List<PanierEtapeDTO>> getPanierByPanierEtape(@PathVariable Long idPanier) {
+        List<PanierEtapeDTO> panierEtapeDTO = panierEtapeService.getPanierByPanierEtape(idPanier);
+        if (panierEtapeDTO== null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(panierEtapeDTO);
+    }
+
     @GetMapping("panierEtape/{id}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Panier etape found"),
