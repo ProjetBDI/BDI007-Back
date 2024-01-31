@@ -9,6 +9,7 @@ import fr.uga.miage.m1.repository.PanierRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
@@ -82,6 +83,7 @@ public class PanierService {
     }
 
     //save
+    @Transactional
     public PanierDTO saveCustom(PanierCreate panierCreate) {
         TypedQuery<Void> query = entityManager.createQuery("INSERT INTO Panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)", Void.class);
         query.setParameter("noms_festivaliers", panierCreate.getNomsFestivaliers());
