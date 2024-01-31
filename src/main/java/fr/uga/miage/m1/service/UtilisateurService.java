@@ -1,5 +1,6 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.controller.create.UtilisateurCreate;
 import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.UtilisateurMapper;
@@ -7,14 +8,19 @@ import fr.uga.miage.m1.model.Utilisateur;
 import fr.uga.miage.m1.repository.UtilisateurRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
+@Log
 public class UtilisateurService {
 
     @PersistenceContext
@@ -22,10 +28,6 @@ public class UtilisateurService {
     private final UtilisateurRepository utilisateurRepository;
     private final UtilisateurMapper utilisateurMapper;
 
-    // SAVE
-    public Utilisateur save(Utilisateur utilisateur) {
-        return utilisateurRepository.save(utilisateur);
-    }
 
     // GET
     public List<UtilisateurDTO> findAll() {
@@ -49,8 +51,34 @@ public class UtilisateurService {
         return utilisateurMapper.entityToDTO(result.get(0));
     }
 
-    public UtilisateurDTO save(UtilisateurDTO utilisateurDTO) {
-        return utilisateurMapper.entityToDTO(utilisateurRepository.save(utilisateurMapper.dtoToEntity(utilisateurDTO)));
+    @Transactional
+    public UtilisateurDTO saveCustom(UtilisateurCreate utilisateurCreate) {
+        Query query = entityManager.createNativeQuery("INSERT INTO utilisateur (id_utilisateur, email, nom, prenom, mot_de_passe, date_naissance, telephone) VALUES (utilisateur_id_sequence.nextval ,:email, :nom, :prenom, :mot_de_passe, :date_naissance, :telephone)");
+        query.setParameter("email", utilisateurCreate.getEmail());
+        query.setParameter("nom", utilisateurCreate.getNom());
+        query.setParameter("prenom", utilisateurCreate.getPrenom());
+        query.setParameter("mot_de_passe", utilisateurCreate.getMotDePasse());
+        query.setParameter("date_naissance", utilisateurCreate.getDateNaissance());
+        query.setParameter("telephone", utilisateurCreate.getTelephone());
+        int res = query.executeUpdate();
+        log.info("Utilisateur created: " + utilisateurCreate);
+        if (res == 1) {
+            // find last insert
+            TypedQuery<Utilisateur> querySelect = entityManager.createQuery("From Utilisateur ORDER BY idUtilisateur DESC LIMIT 1", Utilisateur.class);
+            List<Utilisateur> result = querySelect.getResultList();
+            if (result.isEmpty()) {
+                return null;
+            }
+            if (result.size() > 1) {
+                throw new NotFoundException("Utilisateur", "email", utilisateurCreate.getEmail());
+            }
+            Utilisateur utilisateur = result.get(0);
+            if (!Objects.equals(utilisateur.getEmail(), utilisateurCreate.getEmail())) {
+                throw new NotFoundException("Utilisateur", "email", utilisateurCreate.getEmail());
+            }
+            return utilisateurMapper.entityToDTO(utilisateur);
+        }
+        return null;
     }
 
     // DELETE
