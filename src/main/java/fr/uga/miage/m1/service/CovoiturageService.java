@@ -1,10 +1,8 @@
 package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.dto.CovoiturageDTO;
-import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.mapper.CovoiturageMapper;
 import fr.uga.miage.m1.model.Covoiturage;
-import fr.uga.miage.m1.model.PanierEtape;
 import fr.uga.miage.m1.repository.CovoiturageRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

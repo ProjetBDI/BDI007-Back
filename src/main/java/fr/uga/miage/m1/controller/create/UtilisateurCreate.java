@@ -23,7 +23,6 @@ public class UtilisateurCreate {
         this.telephone = telephone;
     }
 
-
     private final String email;
 
     private final String nom;
@@ -35,7 +34,6 @@ public class UtilisateurCreate {
     private final Date dateNaissance;
 
     private final String telephone;
-
 
     @Override
     public String toString() {

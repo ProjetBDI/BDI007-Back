@@ -1,10 +1,11 @@
 package fr.uga.miage.m1.dto;
 
-import java.util.Date;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -31,5 +32,4 @@ public class PanierDTO {
     private String nomsFestivaliers;
     
     private UtilisateurDTO idProprietaire;
-    
 }

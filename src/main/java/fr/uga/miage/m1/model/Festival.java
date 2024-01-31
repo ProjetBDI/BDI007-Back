@@ -1,12 +1,12 @@
 package fr.uga.miage.m1.model;
 
 
+import fr.uga.miage.m1.enums.FestivalStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.util.Date;
 import java.util.List;
-
-import fr.uga.miage.m1.enums.FestivalStatus;
 
 @Entity
 @Data

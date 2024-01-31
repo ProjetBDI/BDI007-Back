@@ -2,18 +2,15 @@ package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.controller.create.UtilisateurCreate;
 import fr.uga.miage.m1.dto.UtilisateurDTO;
-import fr.uga.miage.m1.service.EmailService;
 import fr.uga.miage.m1.service.UtilisateurService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -21,9 +18,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Log
 public class UtilisateurController {
-
-    @Autowired
-    private final EmailService emailService;
 
     private final UtilisateurService utilisateurService;
 
@@ -68,7 +62,7 @@ public class UtilisateurController {
     }
 
     @PostMapping("/utilisateur/create")
-    @Operation(summary = "Update utilisateur")
+    @Operation(summary = "Create utilisateur")
     public ResponseEntity<UtilisateurDTO> createUtilisateur(@RequestBody UtilisateurCreate utilisateurCreate) {
         UtilisateurDTO utilisateur = utilisateurService.saveCustom(utilisateurCreate);
         log.info("Utilisateur createdController: " + utilisateur.toString());
@@ -86,19 +80,6 @@ public class UtilisateurController {
     })
     public void deleteUtilisateurById(@PathVariable Long id) {
         utilisateurService.deleteById(id);
-    }
-
-
-
-
-    @GetMapping("/envoyer-email/{email}")
-    public String envoyerEmailTest(@PathVariable String email) {
-        try {
-            emailService.envoyerEmail(email, "Sujet de l'email", "Contenu de l'email");
-            return "Email en cours d'envoi...";
-        } catch (IOException e) {
-            return "Erreur lors de l'envoi de l'email";
-        }
     }
 
 }

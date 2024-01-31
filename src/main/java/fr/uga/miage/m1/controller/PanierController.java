@@ -1,11 +1,13 @@
 package fr.uga.miage.m1.controller;
 
+import fr.uga.miage.m1.controller.create.PanierCreate;
 import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.service.PanierService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
+@Log
 public class PanierController {
 
     private final PanierService panierService;
@@ -54,16 +57,28 @@ public class PanierController {
 
     @PostMapping("panier/{idPanier}/payes")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "TODO"),
-            @ApiResponse(responseCode = "204", description = "TODO")
+            @ApiResponse(responseCode = "200", description = "Commande payée"),
+            @ApiResponse(responseCode = "204", description = "Paiement impossible")
     })
-    @Operation(summary = "TODO")
+    @Operation(summary = "Payer une commande")
     public ResponseEntity<Boolean> postPayer(@PathVariable Long idPanier) throws IOException {
         boolean res = panierService.postPayer(idPanier);
         if (!res) {
             return ResponseEntity.status(204).body(false);
         }
         return ResponseEntity.status(200).body(true);
+    }
+
+    @PostMapping("panier/create")
+    @Operation(summary = "Create a new panier")
+    public ResponseEntity<PanierDTO> createPanier(@RequestBody PanierCreate panierCreate) {
+        log.info("Panier received: " + panierCreate.toString());
+        PanierDTO panier = panierService.saveCustom(panierCreate);
+        log.info("Panier createdController: " + panier.toString());
+        if (panier == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(panier);
     }
 
 

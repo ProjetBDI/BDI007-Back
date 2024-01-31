@@ -1,11 +1,10 @@
 package fr.uga.miage.m1.mapper;
 
-import java.util.List;
-
-import org.mapstruct.Mapper;
-
 import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.model.Panier;
+import org.mapstruct.Mapper;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {PanierEtapeMapper.class, UtilisateurMapper.class})
 public interface PanierMapper {

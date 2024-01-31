@@ -1,9 +1,9 @@
 package fr.uga.miage.m1.model;
+
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
-
-import lombok.Data;
 
 @Entity
 @Data

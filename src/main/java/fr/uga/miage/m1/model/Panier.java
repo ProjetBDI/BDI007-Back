@@ -1,22 +1,11 @@
 package fr.uga.miage.m1.model;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
+
 import java.util.Date;
 import java.util.List;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import lombok.Data;
 
 @Entity
 @Data
@@ -24,7 +13,17 @@ import lombok.Data;
 public class Panier {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence-generator")
+    @GenericGenerator(
+        name = "sequence-generator",
+        strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+        parameters = {
+            @org.hibernate.annotations.Parameter(name = "sequence_name", value = "panier_id_sequence"),
+            @org.hibernate.annotations.Parameter(name = "initial_value", value = "100000"),
+            @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
+        }
+
+    )
     @Column(name="id_panier", nullable = false)
     private Long idPanier;
 

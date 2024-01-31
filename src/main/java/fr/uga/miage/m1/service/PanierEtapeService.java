@@ -1,10 +1,7 @@
 package fr.uga.miage.m1.service;
 
-import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.dto.PanierEtapeDTO;
-import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.PanierEtapeMapper;
-import fr.uga.miage.m1.model.Panier;
 import fr.uga.miage.m1.model.PanierEtape;
 import fr.uga.miage.m1.repository.PanierEtapeRepository;
 import jakarta.persistence.EntityManager;

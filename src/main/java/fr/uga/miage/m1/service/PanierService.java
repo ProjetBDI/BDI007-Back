@@ -1,23 +1,25 @@
 package fr.uga.miage.m1.service;
 
+import fr.uga.miage.m1.controller.create.PanierCreate;
 import fr.uga.miage.m1.dto.PanierDTO;
 import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.PanierMapper;
 import fr.uga.miage.m1.model.Panier;
-import fr.uga.miage.m1.model.PanierEtape;
-import fr.uga.miage.m1.model.Utilisateur;
 import fr.uga.miage.m1.repository.PanierRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
+@Log
 public class PanierService {
 
     @PersistenceContext
@@ -77,6 +79,32 @@ public class PanierService {
         emailService.envoyerEmail(proprio, "Votre panier a été payé", "Votre panier a été payé");
         emailService.envoyerEmail(covoits, "Votre panier a été payé", "Votre panier a été payé");
         return true;
+    }
+
+    //save
+    public PanierDTO saveCustom(PanierCreate panierCreate) {
+        TypedQuery<Void> query = entityManager.createQuery("INSERT INTO Panier (id_panier, noms_festivaliers, id_proprietaire) VALUES (panier_id_sequence.nextval , :noms_festivaliers, :id_proprietaire)", Void.class);
+        query.setParameter("noms_festivaliers", panierCreate.getNomsFestivaliers());
+        query.setParameter("id_proprietaire", panierCreate.getIdProprietaire());
+        int res = query.executeUpdate();
+        log.info("Panier created: " + panierCreate);
+        if (res == 1) {
+            // find last insert
+            TypedQuery<Panier> querySelect = entityManager.createQuery("From Panier ORDER BY idPanier DESC LIMIT 1", Panier.class);
+            List<Panier> result = querySelect.getResultList();
+            if (result.isEmpty()) {
+                return null;
+            }
+            if (result.size() > 1) {
+                throw new NotFoundException("Panier", "idProprietaire", panierCreate.getIdProprietaire());
+            }
+            Panier panier = result.get(0);
+            if (!Objects.equals(panier.getNomsFestivaliers(), panierCreate.getNomsFestivaliers())) {
+                throw new NotFoundException("Panier", "nomsFestivaliers", panierCreate.getNomsFestivaliers());
+            }
+            return panierMapper.entityToDTO(panier);
+        }
+        return null;
     }
 
     // DELETE

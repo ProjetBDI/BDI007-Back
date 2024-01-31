@@ -4,10 +4,9 @@ import fr.uga.miage.m1.dto.LieuDTO;
 import fr.uga.miage.m1.mapper.LieuMapper;
 import fr.uga.miage.m1.repository.LieuRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
