@@ -36,6 +36,8 @@ public class TestRepository {
     @Autowired
     private FestivalRepository festivalRepository;
 
+
+
     private final List<Commune> communes = new ArrayList<>();
 
     private final List<Festival> festivals = new ArrayList<>();
