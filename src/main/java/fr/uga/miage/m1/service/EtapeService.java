@@ -49,7 +49,7 @@ public class EtapeService {
     }
 
     public List<EtapeDTO> getEtapesForFestivalByIdUsingPages(Long idFestival, int number) {
-        TypedQuery<Etape> query = entityManager.createQuery("SELECT e From Festival f join Covoiturage c on c.idFestival=f.idFestival join Etape e on e.idCovoiturage= c.idCovoiturage where f.idFestival = :idFestival", Etape.class);
+        TypedQuery<Etape> query = entityManager.createQuery("SELECT e From Festival f join Covoiturage c on c.idFestival=f.idFestival join Etape e on e.idCovoiturage= c.idCovoiturage where f.idFestival = :idFestival AND  c.dateDepart > current_timestamp ", Etape.class);
         query.setParameter("idFestival", idFestival);
         List<Etape> result = query.getResultList();
         int pageSize = 10;

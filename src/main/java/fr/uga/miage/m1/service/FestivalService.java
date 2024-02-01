@@ -39,7 +39,7 @@ public class FestivalService {
     }
 
     public List<FestivalDTO> getAllFestivalsUsingPages(int number) {
-        TypedQuery<Festival> query = entityManager.createQuery("From Festival", Festival.class);
+        TypedQuery<Festival> query = entityManager.createQuery("From Festival f Where f.dateFin > current_date ORDER BY f.dateDebut asc", Festival.class);
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
