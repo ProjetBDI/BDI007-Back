@@ -28,7 +28,9 @@ public class PanierEtapeService {
     private EntityManager entityManager;
     private final PanierEtapeRepository panierEtapeRepository;
     private final PanierEtapeMapper panierEtapeMapper;
+
     private static final String PANIER_ETAPE = "PanierEtape";
+
 
     // SAVE
     public PanierEtapeDTO save(PanierEtapeDTO panierEtape) {
@@ -51,7 +53,7 @@ public class PanierEtapeService {
         // query.getSingleResult can't handle null return
         List<PanierEtape> result = query.getResultList();
 
-        return result.isEmpty() ? Collections.emptyList() :  panierEtapeMapper.entityToDTO(result);
+        return result.isEmpty() ? Collections.emptyList() : panierEtapeMapper.entityToDTO(result);
     }
 
     // DELETE
