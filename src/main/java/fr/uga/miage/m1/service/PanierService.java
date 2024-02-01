@@ -79,8 +79,8 @@ public class PanierService {
         String proprio = proprietaireQuery.getResultList().get(0);
         List<String> covoits = covoitureursQuery.getResultList();
 
-        emailService.envoyerEmail(proprio, "Votre panier a été payé", "Votre panier a été payé");
-        emailService.envoyerEmail(covoits, "Votre panier a été payé", "Votre panier a été payé");
+        emailService.envoyerEmail(proprio, "Paiement de votre festival", "Voici le récapitulatif de votre commande");
+        emailService.envoyerEmail(covoits, "Place de covoiturage prise", "Vous avez de nouveaux covoitureurs !");
         return panierMapper.entityToDTO(panierRepository.findById(idPanier).orElse(null));
     }
 

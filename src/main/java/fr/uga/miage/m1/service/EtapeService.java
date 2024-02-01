@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -43,10 +44,8 @@ public class EtapeService {
         TypedQuery<Etape> query = entityManager.createQuery("SELECT e From Festival f join Covoiturage c on c.idFestival=f.idFestival join Etape e on e.idCovoiturage= c.idCovoiturage where f.idFestival = :idFestival", Etape.class);
         query.setParameter("idFestival", idFestival);
         List<Etape> result = query.getResultList();
-        if (result.isEmpty()) {
-            return null;
-        }
-        return etapeMapper.entityToDTO(result);
+
+        return result.isEmpty() ? Collections.emptyList() : etapeMapper.entityToDTO(result);
     }
 
     public List<EtapeDTO> getEtapesForFestivalByIdUsingPages(Long idFestival, int number) {
@@ -56,11 +55,10 @@ public class EtapeService {
         int pageSize = 10;
         query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
-        if (result.isEmpty()) {
-            return null;
-        }
-        return etapeMapper.entityToDTO(result);
+
+        return result.isEmpty() ? Collections.emptyList() : etapeMapper.entityToDTO(result);
     }
+
 
     // DELETE
     public void deleteById(Long id) {

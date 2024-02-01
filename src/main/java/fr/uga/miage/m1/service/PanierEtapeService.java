@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -47,10 +48,8 @@ public class PanierEtapeService {
         query.setParameter("idPanier", idPanier);
         // query.getSingleResult can't handle null return
         List<PanierEtape> result = query.getResultList();
-        if (result.isEmpty()) {
-            return null;
-        }
-        return panierEtapeMapper.entityToDTO(result);
+
+        return result.isEmpty() ? Collections.emptyList() :  panierEtapeMapper.entityToDTO(result);
     }
 
     // DELETE
@@ -75,15 +74,14 @@ public class PanierEtapeService {
         TypedQuery<PanierEtape> querySelect = entityManager.createQuery("From PanierEtape ORDER BY idPanierEtape DESC LIMIT :number", PanierEtape.class);
         querySelect.setParameter("number", panierEtapeCreate.size());
         List<PanierEtape> result = querySelect.getResultList();
-        if (result.isEmpty()) {
-            return null;
-        }
+
         for (PanierEtape panierEtape : result) {
             if (panierEtapeCreate.stream().noneMatch(
                     p -> p.getIdPanier().equals(panierEtape.getIdPanier().getIdPanier()) && p.getIdEtape().equals(panierEtape.getIdEtape().getIdEtape()))) {
                 throw new NotFoundException("PanierEtape", "idPanier", panierEtape.getIdPanier().getIdPanier());
             }
         }
-        return panierEtapeMapper.entityToDTO(result);
+
+        return result.isEmpty() ? Collections.emptyList() : panierEtapeMapper.entityToDTO(result);
     }
 }

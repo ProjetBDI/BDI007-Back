@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -42,13 +43,11 @@ public class UtilisateurService {
         TypedQuery<Utilisateur> query = entityManager.createQuery("From Utilisateur u where u.email = :email ", Utilisateur.class);
         query.setParameter("email", email);
         List<Utilisateur> result = query.getResultList();
-        if (result.isEmpty()) {
-            return null;
-        }
+
         if (result.size() > 1) {
             throw new NotFoundException("Utilisateur", "email", email);
         }
-        return utilisateurMapper.entityToDTO(result.get(0));
+        return result.isEmpty() ? Collections.emptyList() : utilisateurMapper.entityToDTO(result.get(0));
     }
 
     @Transactional

@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -52,10 +53,8 @@ public class CovoiturageService {
         TypedQuery<Covoiturage> query = entityManager.createQuery("From Covoiturage c Where c.idFestival.idFestival = :idFestival", Covoiturage.class);
         query.setParameter("idFestival", idFestival);
         List<Covoiturage> result = query.getResultList();
-        if (result.isEmpty()) {
-            return null;
-        }
-        return covoiturageMapper.entityToDTO(result);
+
+        return result.isEmpty() ? Collections.emptyList() :  covoiturageMapper.entityToDTO(result);
     }
 
 

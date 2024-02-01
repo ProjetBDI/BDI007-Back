@@ -2,6 +2,7 @@ package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.controller.create.PanierCreate;
 import fr.uga.miage.m1.dto.PanierDTO;
+import fr.uga.miage.m1.service.EmailService;
 import fr.uga.miage.m1.service.PanierService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -67,7 +68,6 @@ public class PanierController {
         if (panierDTO == null) {
             return ResponseEntity.status(204).body(null);
         }
-        log.info("PanierDTO payé: " + panierDTO);
         return ResponseEntity.status(200).body(panierDTO);
     }
 
@@ -89,4 +89,5 @@ public class PanierController {
     public void deletePanierById(@PathVariable Long id) {
         panierService.deleteById(id);
     }
+
 }
