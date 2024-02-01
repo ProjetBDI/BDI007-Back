@@ -1,6 +1,7 @@
 package fr.uga.miage.m1;
 
 import fr.uga.miage.m1.enums.FestivalStatus;
+import fr.uga.miage.m1.enums.TypeLieu;
 import fr.uga.miage.m1.model.*;
 
 import fr.uga.miage.m1.repository.*;
@@ -41,15 +42,20 @@ class RepositoryTest {
     @Autowired
     private CovoiturageRepository covoiturageRepository;
 
-    private final List<Commune> communes = new ArrayList<>();
+    @Autowired
+    private LieuRepository lieuRepository;
 
-    private final List<Festival> festivals = new ArrayList<>();
+    @Autowired
+    private EtapeRepository etapeRepository;
+
     private final Commune commune = new Commune();
     private final Departement departement = new Departement();
     private final Festival festival = new Festival();
     private final Domaine domaine = new Domaine();
     private final Utilisateur utilisateur = new Utilisateur();
     private final Covoiturage covoiturage = new Covoiturage();
+    private final Lieu lieu = new Lieu();
+    private final Etape etape = new Etape();
 
     @BeforeAll
     void initialisation() {
@@ -115,20 +121,21 @@ class RepositoryTest {
         covoiturageRepository.save(covoiturage);
 
 
-        communes.add(commune);
-
-        departement.setNomDepartement("TestDepartement");
-        departement.setCommunes(communes);
-        departement.setNumDepartement("01");
-        departement.setNomRegion("TestRegion");
-
-        domaine.setNomDomaine("TestDomaine");
-        domaine.setSousDomaines("TestSousDomaine");
+        lieu.setAdresse("TestAdresse");
+        lieu.setNom("TestLieu");
+        lieu.setLatitude(1.0f);
+        lieu.setLongitude(1.0f);
+        lieu.setCodeINSEELieu("123456789");
+        lieu.setTypeLieu(TypeLieu.AUTOSTOP);
+        lieuRepository.save(lieu);
 
 
-
-        festivals.add(festival);
-        domaine.setFestivals(festivals);
+        //etape
+        etape.setPrixEtape(25);
+        etape.setDureeDepuisDepart(25);
+        etape.setIdLieu(lieu);
+        etape.setIdCovoiturage(covoiturage);
+        etapeRepository.save(etape);
 
     }
 
@@ -198,4 +205,25 @@ class RepositoryTest {
 
     }
 
+    @Test
+    void findByIdLieuTest() {
+
+        Lieu foundLieu = lieuRepository.findById(this.lieu.getIdLieu()).orElse(null);
+
+        //then
+        Assertions.assertNotNull(foundLieu);
+        Assertions.assertEquals(this.lieu.getIdLieu(), foundLieu.getIdLieu());
+
+    }
+
+    @Test
+    void findByIdEtapeTest() {
+
+        Etape foundEtape = etapeRepository.findById(this.etape.getIdEtape()).orElse(null);
+
+        //then
+        Assertions.assertNotNull(foundEtape);
+        Assertions.assertEquals(this.etape.getIdEtape(), foundEtape.getIdEtape());
+
+    }
 }
