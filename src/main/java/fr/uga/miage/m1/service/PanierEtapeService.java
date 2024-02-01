@@ -28,7 +28,7 @@ public class PanierEtapeService {
     private EntityManager entityManager;
     private final PanierEtapeRepository panierEtapeRepository;
     private final PanierEtapeMapper panierEtapeMapper;
-    private static final String PANIER_ETAPE = PANIER_ETAPE;
+    private static final String PANIER_ETAPE = "PanierEtape";
 
     // SAVE
     public PanierEtapeDTO save(PanierEtapeDTO panierEtape) {

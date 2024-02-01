@@ -30,7 +30,7 @@ public class PanierService {
     private final PanierMapper panierMapper;
     private final EmailService emailService;
     private static final String PANIER = "Panier";
-    private static final String IDPANIER = IDPANIER;
+    private static final String IDPANIER = "idPanier";
 
     // SAVE
     public PanierDTO save(PanierDTO panier) {
