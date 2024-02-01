@@ -2,6 +2,7 @@ package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.controller.create.PanierCreate;
 import fr.uga.miage.m1.dto.PanierDTO;
+import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.PanierMapper;
 import fr.uga.miage.m1.model.Panier;
@@ -29,13 +30,12 @@ public class PanierService {
     private final PanierRepository panierRepository;
     private final PanierMapper panierMapper;
     private final EmailService emailService;
+    private final CovoiturageService covoiturageService;
+    private final FestivalService festivalService;
+    private final PanierEtapeService panierEtapeService;
     private static final String PANIER = "Panier";
-    private static final String IDPANIER = IDPANIER;
+    private static final String IDPANIER = "idPanier";
 
-    // SAVE
-    public PanierDTO save(PanierDTO panier) {
-        return panierMapper.entityToDTO(panierRepository.save(panierMapper.dtoToEntity(panier)));
-    }
 
     // GET
     public List<PanierDTO> getAllPaniers() {
@@ -63,9 +63,26 @@ public class PanierService {
     //post payer
     @Transactional
     public PanierDTO postPayer(Long idPanier) throws IOException {
+        TypedQuery<Panier> panier = entityManager.createQuery("From Panier p Where p.idPanier = :idPanier and p.datePaiement=NULL ", Panier.class);
+        panier.setParameter(IDPANIER, idPanier);
+        if (panier.getResultList().isEmpty() || panier.getResultList().size() > 1) {
+            return null;
+        }
+        List<PanierEtapeDTO> panierEtapeDTOS = panierEtapeService.getPanierByPanierEtape(idPanier);
+        if (panierEtapeDTOS.isEmpty()) {
+            return null;
+        }
+
+        Long idCovoiturage = panierEtapeDTOS.get(0).getIdEtape().getIdCovoiturage().getIdCovoiturage();
+        int nbPlacesPrises = (int) panierEtapeDTOS.get(0).getNbPlaceOccuppe();
+        Long idFestival = panierEtapeDTOS.get(0).getIdEtape().getIdCovoiturage().getIdFestival().getIdFestival();
+        if (!paymentAuthorized(idCovoiturage, nbPlacesPrises, idFestival)) {
+            return null;
+        }
+
         Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.ID_Panier = :idPanier");
         query.setParameter(IDPANIER, idPanier);
-        // query.getSingleResult can't handle null return
+
         int result = query.executeUpdate();
         if (result != 1) {
             return null;
@@ -119,5 +136,12 @@ public class PanierService {
 
     public void delete(Panier panier) {
         panierRepository.delete(panier);
+    }
+
+    private boolean paymentAuthorized(Long idCovoiturage, int nbPlacesPrises, Long idFestival) {
+        if (!covoiturageService.checkBeforePaymentAndUpdate(idCovoiturage, nbPlacesPrises)) {
+            return false;
+        }
+        return festivalService.checkFetivalBeforePaymentAndUpdate(idFestival, nbPlacesPrises);
     }
 }
