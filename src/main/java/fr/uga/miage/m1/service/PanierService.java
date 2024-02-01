@@ -29,7 +29,7 @@ public class PanierService {
     private final PanierRepository panierRepository;
     private final PanierMapper panierMapper;
     private final EmailService emailService;
-    private final String PANIER = "Panier";
+    private final String Panier = "Panier";
 
     // SAVE
     public PanierDTO save(PanierDTO panier) {
@@ -54,7 +54,7 @@ public class PanierService {
             return null;
         }
         if (result.size() > 1) {
-            throw new NotFoundException(PANIER, "idUtilisateur", idUtilisateur);
+            throw new NotFoundException(Panier, "idUtilisateur", idUtilisateur);
         }
         return panierMapper.entityToDTO(result.get(0));
     }
@@ -62,7 +62,7 @@ public class PanierService {
     //post payer
     @Transactional
     public PanierDTO postPayer(Long idPanier) throws IOException {
-        Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.ID_PANIER = :idPanier");
+        Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.ID_Panier = :idPanier");
         query.setParameter("idPanier", idPanier);
         // query.getSingleResult can't handle null return
         int result = query.executeUpdate();
@@ -101,11 +101,11 @@ public class PanierService {
                 return null;
             }
             if (result.size() > 1) {
-                throw new NotFoundException(PANIER, "idProprietaire", panierCreate.getIdProprietaire());
+                throw new NotFoundException(Panier, "idProprietaire", panierCreate.getIdProprietaire());
             }
             Panier panier = result.get(0);
             if (!Objects.equals(panier.getNomsFestivaliers(), panierCreate.getNomsFestivaliers())) {
-                throw new NotFoundException(PANIER, "nomsFestivaliers", panierCreate.getNomsFestivaliers());
+                throw new NotFoundException(Panier, "nomsFestivaliers", panierCreate.getNomsFestivaliers());
             }
             return panierMapper.entityToDTO(panier);
         }

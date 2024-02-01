@@ -54,6 +54,7 @@ public class UtilisateurController {
     })
     public ResponseEntity<UtilisateurDTO> getUtilisateurByEmail(@PathVariable String email) {
         UtilisateurDTO utilisateurDTO = utilisateurService.getByEmail(email);
+        log.info("Utilisateur foundController: " + utilisateurDTO.toString());
         if (utilisateurDTO == null) {
             return ResponseEntity.status(204).body(null);
         }
