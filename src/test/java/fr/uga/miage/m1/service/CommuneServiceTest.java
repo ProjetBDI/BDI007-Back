@@ -4,7 +4,6 @@ import fr.uga.miage.m1.model.Commune;
 import fr.uga.miage.m1.model.Departement;
 import fr.uga.miage.m1.repository.CommuneRepository;
 import fr.uga.miage.m1.repository.DepartementRepository;
-import lombok.extern.java.Log;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -17,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@Log
 class CommuneServiceTest {
     @Autowired
     private CommuneService communeService;
@@ -29,12 +27,12 @@ class CommuneServiceTest {
     private CommuneRepository communeRepository;
     private Commune communeA;
     private Commune communeB;
-    private final Departement departementA = new Departement();
+    private Departement departementA;
     private Departement departementB;
 
     @BeforeAll
     void setUp() {
-//        departementA = new Departement();
+        departementA = new Departement();
         departementA.setNomDepartement("DepartementA");
         departementA.setNomRegion("RegionA");
         departementA.setNumDepartement("12");
