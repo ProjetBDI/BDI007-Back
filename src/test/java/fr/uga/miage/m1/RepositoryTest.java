@@ -1,40 +1,34 @@
-package fr.uga.miage.m1.departement;
+package fr.uga.miage.m1;
 
 import fr.uga.miage.m1.enums.FestivalStatus;
-import fr.uga.miage.m1.mapper.CommuneMapper;
 import fr.uga.miage.m1.model.*;
+
 import fr.uga.miage.m1.repository.*;
-import org.junit.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
 
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK,  properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
-@RunWith(SpringRunner.class)
-public class TestRepository {
+class RepositoryTest {
 
     @Autowired
     private CommuneRepository communeRepository;
+
+//    @Autowired
+//    DepartementService departementService;
 
     @Autowired
     private DepartementRepository departementRepository;
 
     @Autowired
-    private CovoiturageRepository covoiturageRepository;
-
-    @Autowired
-    private FestivalRepository festivalRepository;
-
-    @Autowired
     private UtilisateurRepository utilisateurRepository;
+
 
     private final List<Commune> communes = new ArrayList<>();
 
@@ -46,7 +40,7 @@ public class TestRepository {
 
     private final Utilisateur utilisateur = new Utilisateur();
 
-    public TestRepository() {
+    RepositoryTest() {
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(2022, Calendar.JANUARY, 1);
@@ -104,7 +98,7 @@ public class TestRepository {
     }
 
     @Test
-    public void testFindByIdCommune() {
+    void findByIdCommuneTest() {
         Commune commune = new Commune();
         commune.setCodeINSEE("123456789");
         commune.setCodePostal("12345");
@@ -120,17 +114,33 @@ public class TestRepository {
         Commune foundCommune = communeRepository.findById(commune.getIdCommune()).orElse(null);
 
         // Then
-        assertNotNull(foundCommune);
-        assertEquals(commune.getIdCommune(), foundCommune.getIdCommune());
+        Assertions.assertNotNull(foundCommune);
+        Assertions.assertEquals(commune.getIdCommune(), foundCommune.getIdCommune());
     }
 
     @Test
-    public void testFindByEmailUtilisateur() {
+    void findByIdUtilisateurTest() {
 
         utilisateurRepository.save(this.utilisateur);
 
-//        Utilisateur
+        Utilisateur foundUtilisateur = utilisateurRepository.findById(this.utilisateur.getIdUtilisateur()).orElse(null);
 
+        //then
+        Assertions.assertNotNull(foundUtilisateur);
+        Assertions.assertEquals(this.utilisateur.getIdUtilisateur(), foundUtilisateur.getIdUtilisateur());
+
+    }
+
+    @Test
+    void findByIdUtilisateurTest() {
+
+        utilisateurRepository.save(this.utilisateur);
+
+        Utilisateur foundUtilisateur = utilisateurRepository.findById(this.utilisateur.getIdUtilisateur()).orElse(null);
+
+        //then
+        Assertions.assertNotNull(foundUtilisateur);
+        Assertions.assertEquals(this.utilisateur.getIdUtilisateur(), foundUtilisateur.getIdUtilisateur());
 
     }
 }
