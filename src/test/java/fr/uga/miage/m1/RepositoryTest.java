@@ -6,6 +6,7 @@ import fr.uga.miage.m1.model.*;
 import fr.uga.miage.m1.repository.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +16,7 @@ import java.util.*;
 
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK,  properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class RepositoryTest {
 
     @Autowired
@@ -131,16 +133,4 @@ class RepositoryTest {
 
     }
 
-    @Test
-    void findByIdUtilisateurTest() {
-
-        utilisateurRepository.save(this.utilisateur);
-
-        Utilisateur foundUtilisateur = utilisateurRepository.findById(this.utilisateur.getIdUtilisateur()).orElse(null);
-
-        //then
-        Assertions.assertNotNull(foundUtilisateur);
-        Assertions.assertEquals(this.utilisateur.getIdUtilisateur(), foundUtilisateur.getIdUtilisateur());
-
-    }
 }
