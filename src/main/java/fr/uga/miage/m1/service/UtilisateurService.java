@@ -28,7 +28,8 @@ public class UtilisateurService {
     private EntityManager entityManager;
     private final UtilisateurRepository utilisateurRepository;
     private final UtilisateurMapper utilisateurMapper;
-
+    private final String UTILISATEUR = "Utilisateur";
+    private final String EMAIL = "email";
 
     // GET
     public List<UtilisateurDTO> findAll() {
@@ -41,11 +42,11 @@ public class UtilisateurService {
 
     public UtilisateurDTO getByEmail(String email) {
         TypedQuery<Utilisateur> query = entityManager.createQuery("From Utilisateur u where u.email = :email ", Utilisateur.class);
-        query.setParameter("email", email);
+        query.setParameter(EMAIL, email);
         List<Utilisateur> result = query.getResultList();
 
         if (result.size() > 1) {
-            throw new NotFoundException("Utilisateur", "email", email);
+            throw new NotFoundException(UTILISATEUR, EMAIL, email);
         }
         return result.isEmpty() ? Collections.emptyList() : utilisateurMapper.entityToDTO(result.get(0));
     }
@@ -53,7 +54,7 @@ public class UtilisateurService {
     @Transactional
     public UtilisateurDTO saveCustom(UtilisateurCreate utilisateurCreate) {
         Query query = entityManager.createNativeQuery("INSERT INTO utilisateur (id_utilisateur, email, nom, prenom, mot_de_passe, date_naissance, telephone) VALUES (utilisateur_id_sequence.nextval ,:email, :nom, :prenom, :mot_de_passe, :date_naissance, :telephone)");
-        query.setParameter("email", utilisateurCreate.getEmail());
+        query.setParameter(EMAIL, utilisateurCreate.getEmail());
         query.setParameter("nom", utilisateurCreate.getNom());
         query.setParameter("prenom", utilisateurCreate.getPrenom());
         query.setParameter("mot_de_passe", utilisateurCreate.getMotDePasse());
@@ -69,11 +70,11 @@ public class UtilisateurService {
                 return null;
             }
             if (result.size() > 1) {
-                throw new NotFoundException("Utilisateur", "email", utilisateurCreate.getEmail());
+                throw new NotFoundException(UTILISATEUR, EMAIL, utilisateurCreate.getEmail());
             }
             Utilisateur utilisateur = result.get(0);
             if (!Objects.equals(utilisateur.getEmail(), utilisateurCreate.getEmail())) {
-                throw new NotFoundException("Utilisateur", "email", utilisateurCreate.getEmail());
+                throw new NotFoundException(UTILISATEUR, EMAIL, utilisateurCreate.getEmail());
             }
             return utilisateurMapper.entityToDTO(utilisateur);
         }
