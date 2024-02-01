@@ -3,10 +3,7 @@ package fr.uga.miage.m1.departement;
 import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.mapper.CommuneMapper;
 import fr.uga.miage.m1.model.*;
-import fr.uga.miage.m1.repository.CommuneRepository;
-import fr.uga.miage.m1.repository.CovoiturageRepository;
-import fr.uga.miage.m1.repository.DepartementRepository;
-import fr.uga.miage.m1.repository.FestivalRepository;
+import fr.uga.miage.m1.repository.*;
 import org.junit.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.runner.RunWith;
@@ -36,7 +33,8 @@ public class TestRepository {
     @Autowired
     private FestivalRepository festivalRepository;
 
-
+    @Autowired
+    private UtilisateurRepository utilisateurRepository;
 
     private final List<Commune> communes = new ArrayList<>();
 
@@ -45,6 +43,9 @@ public class TestRepository {
     private final Departement departement = new Departement();
     private final Festival festival = new Festival();
     private final Domaine domaine = new Domaine();
+
+    private final Utilisateur utilisateur = new Utilisateur();
+
     public TestRepository() {
 
         Calendar calendar = Calendar.getInstance();
@@ -53,6 +54,13 @@ public class TestRepository {
 
         calendar.set(2023, Calendar.AUGUST, 15);
         Date dateFin = calendar.getTime();
+
+        this.utilisateur.setEmail("test@test.com");
+        this.utilisateur.setNom("TestNom");
+        this.utilisateur.setPrenom("TestPrenom");
+        this.utilisateur.setMotDePasse("TestMotDePasse");
+        this.utilisateur.setDateNaissance(dateDebut);
+        this.utilisateur.setTelephone("0123456789");
 
 
         this.commune.setNomCommune("TestVille");
@@ -117,54 +125,12 @@ public class TestRepository {
     }
 
     @Test
-    public void testFindByIdCvoiturage() {
-        // Given
-        Covoiturage covoiturage = new Covoiturage();
-        covoiturage.setCouleur("Rouge");
-        covoiturage.setMarque("Renault");
-        covoiturage.setModele("Clio");
-        covoiturage.setNbPlaceDispo(5);
-        covoiturage.setNbPlace(5);
+    public void testFindByEmailUtilisateur() {
 
-        List<Etape> etapes = new ArrayList<>();
-        Etape etape = new Etape();
-        etape.setPrixEtape(10.0f);
+        utilisateurRepository.save(this.utilisateur);
 
-        List<PanierEtape> panierEtapes = new ArrayList<>();
-        PanierEtape panierEtape = new PanierEtape();
-//        panierEtape.set(etape);
-//        panierEtape.setPanier(covoiturage);
-//        panierEtapes.add(panierEtape);
-//        covoiturage.setPanierEtapes(panierEtapes);
-
-//        etape.setPanierEtapes();
-//        etape.setHeureArrivee("12:00");
-//        etape.setHeureDepart("11:00");
-//        etape.setJour("Lundi");
-//        etape.setNumeroEtape(1);
-//
-//        covoiturage.setEtapes();
-//        covoiturage.setAnnee(2010);
+//        Utilisateur
 
 
-//        Departement departement = new Departement();
-//        departement.setNomDepartement("TestDepartement");
-//        List<Commune> communes = new ArrayList<>();
-//        communes.add(commune);
-//        departement.setCommunes(communes);
-//        departement.setNumDepartement("01");
-//        departement.setNomRegion("TestRegion");
-//        departementRepository.save(departement);
-//        communeRepository.save(commune);
-//
-//        assertNotNull(commune.getIdCommune());
-
-
-        // When
-//        Commune foundCommune = communeRepository.findById(commune.getIdCommune()).orElse(null);
-//
-//        // Then
-//        assertNotNull(foundCommune);
-//        assertEquals(commune.getIdCommune(), foundCommune.getIdCommune());
     }
 }
