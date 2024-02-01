@@ -1,9 +1,9 @@
 package fr.uga.miage.m1.model;
+
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
-
-import lombok.Data;
 
 @Entity
 @Data
@@ -13,10 +13,10 @@ public class Departement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_departement", nullable = false)
-    private int id_departement;
+    private int idDepartement;
 
     @Column(name = "num_departement", nullable = false)
-    private String departement;
+    private String numDepartement;
 
     @Column(name = "nom_departement", nullable = false)
     private String nomDepartement;
@@ -24,7 +24,7 @@ public class Departement {
     @Column(name = "nom_region")
     private String nomRegion;
 
-    @OneToMany(mappedBy = "id_departement")
+    @OneToMany(mappedBy = "idDepartement")
     private List<Commune> communes;
 
 }
