@@ -5,22 +5,18 @@ import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.enums.TypeLieu;
 import fr.uga.miage.m1.mapper.UtilisateurMapper;
 import fr.uga.miage.m1.model.*;
-
 import fr.uga.miage.m1.repository.*;
-import fr.uga.miage.m1.service.UtilisateurService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
 
 
 @AutoConfigureTestDatabase
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK,  properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class RepositoryServiceTest {
 
@@ -162,11 +158,23 @@ class RepositoryServiceTest {
         panierEtapeRepository.save(panierEtape);
     }
 
+    @AfterAll
+    void cleanUp() {
+        etapeRepository.delete(etape);
+        lieuRepository.delete(lieu);
+        covoiturageRepository.delete(covoiturage);
+        utilisateurRepository.delete(utilisateur);
+        festivalRepository.delete(festival);
+        domaineRepository.delete(domaine);
+        communeRepository.delete(commune);
+        departementRepository.delete(departement);
+    }
+
     @Test
     void findByIdDepartementTest() {
 
         // When
-        Departement foundDepartement = departementRepository.findById((long)departement.getIdDepartement()).orElse(null);
+        Departement foundDepartement = departementRepository.findById((long) departement.getIdDepartement()).orElse(null);
 
         // Then
         Assertions.assertNotNull(foundDepartement);
