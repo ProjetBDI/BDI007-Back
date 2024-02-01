@@ -50,7 +50,7 @@ public class PanierController {
         return ResponseEntity.status(200).body(panierDTO);
     }
 
-    @PostMapping("panier/payer/{idPanier}")
+    @PatchMapping("panier/payer/{idPanier}")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Commande payée"),
             @ApiResponse(responseCode = "204", description = "Paiement impossible")
