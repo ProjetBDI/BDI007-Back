@@ -3,7 +3,8 @@ package fr.uga.miage.m1.service;
 import fr.uga.miage.m1.mapper.DepartementMapper;
 import fr.uga.miage.m1.model.Departement;
 import fr.uga.miage.m1.repository.DepartementRepository;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class DepartementServiceTest {
+class DepartementServiceTest {
     @Autowired
     private DepartementService departementService;
 
@@ -29,7 +30,7 @@ public class DepartementServiceTest {
     private Departement departementB;
     private Departement departementC;
 
-    @BeforeAll
+    @BeforeEach
     void setUp() {
         departementA = new Departement();
         departementA.setNomDepartement("DepartementA");
@@ -47,6 +48,11 @@ public class DepartementServiceTest {
         departementC = new Departement();
     }
 
+    @AfterEach
+    void cleanUp() {
+        departementRepository.deleteAll();
+    }
+
     @Test
     void testSave() {
         departementC.setNomDepartement("DepartementC");
@@ -58,25 +64,24 @@ public class DepartementServiceTest {
 
     @Test
     void testGetById() {
-        assertEquals(2, departementService.getById(2L).getIdDepartement());
-        assertEquals("DepartementA", departementService.getById(1L).getNomDepartement());
+        assertEquals("DepartementA", departementService.getById((long) departementA.getIdDepartement()).getNomDepartement());
     }
 
     @Test
     void testGetAllDepartements() {
-        assertEquals(3, departementService.getAllDepartements().size());
+        assertEquals(2, departementService.getAllDepartements().size());
     }
 
     @Test
     void testDeleteById() {
-        departementService.deleteById(1L);
-        assertEquals(2, departementService.getAllDepartements().size());
+        departementService.deleteById((long) departementA.getIdDepartement());
+        assertEquals(1, departementService.getAllDepartements().size());
     }
 
 
     @Test
     void testDelete() {
         departementService.delete(departementA);
-        assertEquals(2, departementService.getAllDepartements().size());
+        assertEquals(1, departementService.getAllDepartements().size());
     }
 }

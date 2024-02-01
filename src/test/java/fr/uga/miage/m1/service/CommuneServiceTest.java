@@ -4,7 +4,8 @@ import fr.uga.miage.m1.model.Commune;
 import fr.uga.miage.m1.model.Departement;
 import fr.uga.miage.m1.repository.CommuneRepository;
 import fr.uga.miage.m1.repository.DepartementRepository;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ class CommuneServiceTest {
     private Departement departementA;
     private Departement departementB;
 
-    @BeforeAll
+    @BeforeEach
     void setUp() {
         departementA = new Departement();
         departementA.setNomDepartement("DepartementA");
@@ -66,10 +67,15 @@ class CommuneServiceTest {
 
     }
 
+    @AfterEach
+    void cleanUp() {
+        communeRepository.deleteAll();
+        departementRepository.deleteAll();
+    }
+
     @Test
     void getById() {
-        assertEquals("CommuneA", communeService.getById(1L).getNomCommune());
-        assertEquals(2, communeService.getById(2L).getIdCommune());
+        assertEquals("CommuneA", communeService.getById(communeA.getIdCommune()).getNomCommune());
     }
 
     @Test
@@ -91,7 +97,7 @@ class CommuneServiceTest {
     void deleteById() {
         assertEquals("CommuneA", communeService.getAllCommunes().get(0).getNomCommune());
         assertEquals(2, communeService.getAllCommunes().size());
-        communeService.deleteById(1L);
+        communeService.deleteById(communeA.getIdCommune());
         assertEquals(1, communeService.getAllCommunes().size());
         assertEquals("CommuneB", communeService.getAllCommunes().get(0).getNomCommune());
     }

@@ -4,10 +4,7 @@ import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.enums.TypeLieu;
 import fr.uga.miage.m1.model.*;
 import fr.uga.miage.m1.repository.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -137,6 +134,18 @@ class RepositoryTest {
         etape.setIdCovoiturage(covoiturage);
         etapeRepository.save(etape);
 
+    }
+
+    @AfterAll
+    void cleanUp() {
+        etapeRepository.delete(etape);
+        lieuRepository.delete(lieu);
+        covoiturageRepository.delete(covoiturage);
+        utilisateurRepository.delete(utilisateur);
+        festivalRepository.delete(festival);
+        domaineRepository.delete(domaine);
+        communeRepository.delete(commune);
+        departementRepository.delete(departement);
     }
 
     @Test
