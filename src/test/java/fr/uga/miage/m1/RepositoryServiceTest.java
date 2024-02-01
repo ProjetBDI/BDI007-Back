@@ -1,10 +1,13 @@
 package fr.uga.miage.m1;
 
+import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.enums.TypeLieu;
+import fr.uga.miage.m1.mapper.UtilisateurMapper;
 import fr.uga.miage.m1.model.*;
 
 import fr.uga.miage.m1.repository.*;
+import fr.uga.miage.m1.service.UtilisateurService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -19,13 +22,16 @@ import java.util.*;
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK,  properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class RepositoryTest {
+class RepositoryServiceTest {
+
+    @Autowired
+    private UtilisateurMapper utilisateurMapper;
+
+    @Autowired
+    private UtilisateurService utilisateurService;
 
     @Autowired
     private CommuneRepository communeRepository;
-
-//    @Autowired
-//    DepartementService departementService;
 
     @Autowired
     private DepartementRepository departementRepository;
@@ -48,6 +54,12 @@ class RepositoryTest {
     @Autowired
     private EtapeRepository etapeRepository;
 
+    @Autowired
+    private PanierRepository panierRepository;
+
+    @Autowired
+    private PanierEtapeRepository panierEtapeRepository;
+
     private final Commune commune = new Commune();
     private final Departement departement = new Departement();
     private final Festival festival = new Festival();
@@ -56,6 +68,8 @@ class RepositoryTest {
     private final Covoiturage covoiturage = new Covoiturage();
     private final Lieu lieu = new Lieu();
     private final Etape etape = new Etape();
+    private final Panier panier = new Panier();
+    private final PanierEtape panierEtape = new PanierEtape();
 
     @BeforeAll
     void initialisation() {
@@ -130,13 +144,22 @@ class RepositoryTest {
         lieuRepository.save(lieu);
 
 
-        //etape
         etape.setPrixEtape(25);
         etape.setDureeDepuisDepart(25);
         etape.setIdLieu(lieu);
         etape.setIdCovoiturage(covoiturage);
         etapeRepository.save(etape);
 
+
+        panier.setDatePaiement(dateDebut);
+        panier.setNomsFestivaliers("TestFestivalier");
+        panierRepository.save(panier);
+
+
+        panierEtape.setNbPlaceOccuppe(25L);
+        panierEtape.setIdEtape(etape);
+        panierEtape.setIdPanier(panier);
+        panierEtapeRepository.save(panierEtape);
     }
 
     @Test
@@ -225,5 +248,36 @@ class RepositoryTest {
         Assertions.assertNotNull(foundEtape);
         Assertions.assertEquals(this.etape.getIdEtape(), foundEtape.getIdEtape());
 
+    }
+
+    @Test
+    void findByIdPanierTest() {
+
+        Panier foundPanier = panierRepository.findById(this.panier.getIdPanier()).orElse(null);
+
+        //then
+        Assertions.assertNotNull(foundPanier);
+        Assertions.assertEquals(this.panier.getIdPanier(), foundPanier.getIdPanier());
+    }
+    @Test
+    void findByIdPanierEtapeTest() {
+
+        PanierEtape foundPanierEtape = panierEtapeRepository.findById(this.panierEtape.getIdPanierEtape()).orElse(null);
+
+        //then
+        Assertions.assertNotNull(foundPanierEtape);
+        Assertions.assertEquals(this.panierEtape.getIdPanierEtape(), foundPanierEtape.getIdPanierEtape());
+    }
+
+    @Test
+    void findByEmailUtilisateur() {
+
+        // When
+        UtilisateurDTO foudUtilisateurDTO = utilisateurService.getByEmail("test@test.com");
+        Utilisateur foudUtilisateur = utilisateurMapper.dtoToEntity(foudUtilisateurDTO);
+
+        // Then
+        Assertions.assertNotNull(foudUtilisateur);
+        Assertions.assertEquals(foudUtilisateur.getEmail(), utilisateur.getEmail());
     }
 }

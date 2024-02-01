@@ -59,7 +59,6 @@ public class UtilisateurService {
         query.setParameter("date_naissance", utilisateurCreate.getDateNaissance());
         query.setParameter("telephone", utilisateurCreate.getTelephone());
         int res = query.executeUpdate();
-        log.info("Utilisateur created: " + utilisateurCreate);
         if (res == 1) {
             // find last insert
             TypedQuery<Utilisateur> querySelect = entityManager.createQuery("From Utilisateur ORDER BY idUtilisateur DESC LIMIT 1", Utilisateur.class);
