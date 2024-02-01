@@ -38,6 +38,8 @@ class RepositoryTest {
     @Autowired
     private FestivalRepository festivalRepository;
 
+    @Autowired
+    private CovoiturageRepository covoiturageRepository;
 
     private final List<Commune> communes = new ArrayList<>();
 
@@ -46,8 +48,8 @@ class RepositoryTest {
     private final Departement departement = new Departement();
     private final Festival festival = new Festival();
     private final Domaine domaine = new Domaine();
-
     private final Utilisateur utilisateur = new Utilisateur();
+    private final Covoiturage covoiturage = new Covoiturage();
 
     @BeforeAll
     void initialisation() {
@@ -59,11 +61,13 @@ class RepositoryTest {
         calendar.set(2023, Calendar.AUGUST, 15);
         Date dateFin = calendar.getTime();
 
+
         departement.setIdDepartement(1);
         departement.setNomDepartement("TestDepartement");
         departement.setNumDepartement("01");
         departement.setNomRegion("TestRegion");
         departementRepository.save(departement);
+
 
         commune.setCodeINSEE("123456789");
         commune.setCodePostal("12345");
@@ -73,8 +77,10 @@ class RepositoryTest {
         commune.setIdDepartement(departement);
         communeRepository.save(commune);
 
+
         domaine.setNomDomaine("TestDomaine");
         domaineRepository.save(domaine);
+
 
         festival.setNom("TestFestival");
         festival.setDateDebut(dateDebut);
@@ -91,15 +97,22 @@ class RepositoryTest {
         festivalRepository.save(festival);
 
 
-
-
         utilisateur.setEmail("test@test.com");
         utilisateur.setNom("TestNom");
         utilisateur.setPrenom("TestPrenom");
         utilisateur.setMotDePasse("TestMotDePasse");
         utilisateur.setDateNaissance(dateDebut);
         utilisateur.setTelephone("0123456789");
+        utilisateurRepository.save(utilisateur);
 
+
+        covoiturage.setNbPlace(4);
+        covoiturage.setNbPlaceDispo(25);
+        covoiturage.setModele("Clio");
+        covoiturage.setMarque("Renault");
+        covoiturage.setCouleur("Rouge");
+        covoiturage.setDateDepart(dateDebut);
+        covoiturageRepository.save(covoiturage);
 
 
         communes.add(commune);
@@ -166,44 +179,23 @@ class RepositoryTest {
     @Test
     void findByIdUtilisateurTest() {
 
-        Utilisateur foundUtilisateur = utilisateurRepository.findById(this.utilisateur.getIdUtilisateur()).orElse(null);
+        // When
+        Utilisateur foundUtilisateur = utilisateurRepository.findById(utilisateur.getIdUtilisateur()).orElse(null);
 
-        //then
+        // Then
         Assertions.assertNotNull(foundUtilisateur);
         Assertions.assertEquals(utilisateur.getIdUtilisateur(), foundUtilisateur.getIdUtilisateur());
-
     }
 
-//    @Test
-//    void findByIdCovoiturageTest() {
-//
-//        Covoiturage foundCovoiturage = covoiturageRepository.findById(this.covoiturage.getIdCovoiturage()).orElse(null);
-//
-//        //then
-//        Assertions.assertNotNull(foundCovoiturage);
-//        Assertions.assertEquals(this.covoiturage.getIdCovoiturage(), foundCovoiturage.getIdCovoiturage());
-//
-//    }
+    @Test
+    void findByIdCovoiturageTest() {
 
-//    @Test
-//    void findByIdDomaineTest() {
-//
-//        Domaine foundDomaine = domaineRepository.findById((long) this.domaine.getIdDomaine()).orElse(null);
-//
-//        //then
-//        Assertions.assertNotNull(foundDomaine);
-//        Assertions.assertEquals(this.domaine.getIdDomaine(), foundDomaine.getIdDomaine());
-//    }
+        Covoiturage foundCovoiturage = covoiturageRepository.findById(this.covoiturage.getIdCovoiturage()).orElse(null);
 
-//    @Test
-//    void findByIdFestivalTest() {
-//
-//        Festival foundFestival = festivalRepository.findById(this.festival.getIdFestival()).orElse(null);
-//
-//        //then
-//        Assertions.assertNotNull(foundFestival);
-//        Assertions.assertEquals(this.festival.getIdFestival(), foundFestival.getIdFestival());
-//
-//    }
+        //then
+        Assertions.assertNotNull(foundCovoiturage);
+        Assertions.assertEquals(this.covoiturage.getIdCovoiturage(), foundCovoiturage.getIdCovoiturage());
+
+    }
 
 }
