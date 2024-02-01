@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.controller.create.PanierEtapeCreateList;
+import fr.uga.miage.m1.controller.create.PanierEtapeUpdate;
 import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.service.PanierEtapeService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -21,15 +22,6 @@ public class PanierEtapeController {
 
     private final PanierEtapeService panierEtapeService;
 
-    @PostMapping("/panierEtape")
-    @Operation(summary = "Create a new panier etape")
-    public ResponseEntity<PanierEtapeDTO> createPanierEtape(@RequestBody PanierEtapeDTO panierEtapeDTO) {
-        PanierEtapeDTO panierEtape = panierEtapeService.save(panierEtapeDTO);
-        if (panierEtape == null) {
-            return ResponseEntity.status(204).body(null);
-        }
-        return ResponseEntity.status(201).body(panierEtape);
-    }
 
     @GetMapping("panierEtapes/{idPanier}/panier")
     @ApiResponses(value = {
@@ -82,15 +74,20 @@ public class PanierEtapeController {
     @PostMapping("panierEtapes/create")
     @Operation(summary = "Create a new panierEtape")
     public ResponseEntity<List<PanierEtapeDTO>> createPanierEtape(@RequestBody PanierEtapeCreateList panierEtapeCreate) {
-        log.info("Panier received: " + panierEtapeCreate.getPanierEtapeCreateList().toString());
         List<PanierEtapeDTO> panierEtape = panierEtapeService.saveCustom(panierEtapeCreate.getPanierEtapeCreateList());
-//        List<PanierEtapeDTO> panierEtape = null;
-        log.info("Panier createdController: " + panierEtape.toString());
         if (panierEtape == null) {
             return ResponseEntity.status(204).body(null);
         }
         return ResponseEntity.status(201).body(panierEtape);
     }
 
-    //TODO : update panierEtape
+    @PatchMapping("panierEtape/update")
+    @Operation(summary = "Update an panierEtape")
+    public ResponseEntity<PanierEtapeDTO> updatePanierEtape(@RequestBody PanierEtapeUpdate panierEtape) {
+        PanierEtapeDTO panierEtapeDTO = panierEtapeService.updateNbPlace(panierEtape);
+        if (panierEtapeDTO == null) {
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(201).body(panierEtapeDTO);
+    }
 }

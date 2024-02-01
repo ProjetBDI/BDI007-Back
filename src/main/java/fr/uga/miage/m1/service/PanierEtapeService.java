@@ -1,6 +1,7 @@
 package fr.uga.miage.m1.service;
 
 import fr.uga.miage.m1.controller.create.PanierEtapeCreate;
+import fr.uga.miage.m1.controller.create.PanierEtapeUpdate;
 import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.error.NotFoundException;
 import fr.uga.miage.m1.mapper.PanierEtapeMapper;
@@ -8,6 +9,7 @@ import fr.uga.miage.m1.model.PanierEtape;
 import fr.uga.miage.m1.repository.PanierEtapeRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -83,5 +85,23 @@ public class PanierEtapeService {
         }
 
         return result.isEmpty() ? Collections.emptyList() : panierEtapeMapper.entityToDTO(result);
+    }
+
+    @Transactional
+    public PanierEtapeDTO updateNbPlace(PanierEtapeUpdate panierEtapeDTO) {
+
+        PanierEtape panierEtape = panierEtapeRepository.findById(panierEtapeDTO.getIdPanierEtape()).orElse(null);
+        if (panierEtape == null) {
+            throw new NotFoundException("PanierEtape", "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
+        }
+        Query query = entityManager.createNativeQuery("UPDATE panier_etape SET NB_PLACE_OCCUPPE = :nb_place_occuppe WHERE id_panier_etape = :id_panier_etape");
+        query.setParameter("nb_place_occuppe", panierEtapeDTO.getNbPlaceOccuppe());
+        query.setParameter("id_panier_etape", panierEtapeDTO.getIdPanierEtape());
+        int result = query.executeUpdate();
+        if (result == 0) {
+            throw new NotFoundException("PanierEtape", "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
+        }
+        return panierEtapeMapper.entityToDTO(panierEtape);
+
     }
 }
