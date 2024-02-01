@@ -21,27 +21,33 @@ import java.util.*;
 class RepositoryTest {
 
     @Autowired
-    CommuneRepository communeRepository;
+    private CommuneRepository communeRepository;
 
 //    @Autowired
 //    DepartementService departementService;
 
     @Autowired
-    DepartementRepository departementRepository;
+    private DepartementRepository departementRepository;
 
     @Autowired
-    private  static UtilisateurRepository utilisateurRepository;
+    private DomaineRepository domaineRepository;
+
+    @Autowired
+    private UtilisateurRepository utilisateurRepository;
+
+    @Autowired
+    private FestivalRepository festivalRepository;
 
 
-    private static List<Commune> communes = new ArrayList<>();
+    private final List<Commune> communes = new ArrayList<>();
 
-    private static List<Festival> festivals = new ArrayList<>();
-    private static Commune commune = new Commune();
-    private Departement departement = new Departement();
-    private static Festival festival = new Festival();
-    private static Domaine domaine = new Domaine();
+    private final List<Festival> festivals = new ArrayList<>();
+    private final Commune commune = new Commune();
+    private final Departement departement = new Departement();
+    private final Festival festival = new Festival();
+    private final Domaine domaine = new Domaine();
 
-    private static Utilisateur utilisateur = new Utilisateur();
+    private final Utilisateur utilisateur = new Utilisateur();
 
     @BeforeAll
     void initialisation() {
@@ -52,12 +58,6 @@ class RepositoryTest {
 
         calendar.set(2023, Calendar.AUGUST, 15);
         Date dateFin = calendar.getTime();
-        utilisateur.setEmail("test@test.com");
-        utilisateur.setNom("TestNom");
-        utilisateur.setPrenom("TestPrenom");
-        utilisateur.setMotDePasse("TestMotDePasse");
-        utilisateur.setDateNaissance(dateDebut);
-        utilisateur.setTelephone("0123456789");
 
         departement.setIdDepartement(1);
         departement.setNomDepartement("TestDepartement");
@@ -73,19 +73,10 @@ class RepositoryTest {
         commune.setIdDepartement(departement);
         communeRepository.save(commune);
 
-        communes.add(commune);
-
-        departement.setNomDepartement("TestDepartement");
-        departement.setCommunes(communes);
-        departement.setNumDepartement("01");
-        departement.setNomRegion("TestRegion");
-
         domaine.setNomDomaine("TestDomaine");
-        domaine.setSousDomaines("TestSousDomaine");
+        domaineRepository.save(domaine);
 
         festival.setNom("TestFestival");
-
-
         festival.setDateDebut(dateDebut);
         festival.setDateFin(dateFin);
         festival.setSiteWeb("www.test.com");
@@ -96,8 +87,32 @@ class RepositoryTest {
         festival.setTarifPass(25);
         festival.setStatus(FestivalStatus.OUVERT);
         festival.setIdCommune(commune);
-
         festival.setIdDomaine(domaine);
+        festivalRepository.save(festival);
+
+
+
+
+        utilisateur.setEmail("test@test.com");
+        utilisateur.setNom("TestNom");
+        utilisateur.setPrenom("TestPrenom");
+        utilisateur.setMotDePasse("TestMotDePasse");
+        utilisateur.setDateNaissance(dateDebut);
+        utilisateur.setTelephone("0123456789");
+
+
+
+        communes.add(commune);
+
+        departement.setNomDepartement("TestDepartement");
+        departement.setCommunes(communes);
+        departement.setNumDepartement("01");
+        departement.setNomRegion("TestRegion");
+
+        domaine.setNomDomaine("TestDomaine");
+        domaine.setSousDomaines("TestSousDomaine");
+
+
 
         festivals.add(festival);
         domaine.setFestivals(festivals);
@@ -126,7 +141,27 @@ class RepositoryTest {
         Assertions.assertEquals(commune.getIdCommune(), foundCommune.getIdCommune());
     }
 
+    @Test
+    void findByIdDomaineTest() {
 
+        // When
+        Domaine foundDomaine = domaineRepository.findById((long) domaine.getIdDomaine()).orElse(null);
+
+        // Then
+        Assertions.assertNotNull(foundDomaine);
+        Assertions.assertEquals(domaine.getIdDomaine(), foundDomaine.getIdDomaine());
+    }
+
+    @Test
+    void findByIdFestivalTest() {
+
+        // When
+        Festival foundFestival = festivalRepository.findById(festival.getIdFestival()).orElse(null);
+
+        // Then
+        Assertions.assertNotNull(foundFestival);
+        Assertions.assertEquals(festival.getIdFestival(), foundFestival.getIdFestival());
+    }
 
     @Test
     void findByIdUtilisateurTest() {
