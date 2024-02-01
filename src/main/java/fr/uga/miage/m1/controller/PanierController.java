@@ -2,7 +2,6 @@ package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.controller.create.PanierCreate;
 import fr.uga.miage.m1.dto.PanierDTO;
-import fr.uga.miage.m1.service.EmailService;
 import fr.uga.miage.m1.service.PanierService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -21,12 +20,6 @@ import java.io.IOException;
 public class PanierController {
 
     private final PanierService panierService;
-
-    @PostMapping("/panier")
-    @Operation(summary = "Create a new panier")
-    public void createPanier(@RequestBody PanierDTO panierDTO) {
-        panierService.save(panierDTO);
-    }
 
     @GetMapping("panier/{id}")
     @ApiResponses(value = {
@@ -74,9 +67,7 @@ public class PanierController {
     @PostMapping("panier/create")
     @Operation(summary = "Create a new panier")
     public ResponseEntity<PanierDTO> createPanier(@RequestBody PanierCreate panierCreate) {
-        log.info("Panier received: " + panierCreate.toString());
         PanierDTO panier = panierService.saveCustom(panierCreate);
-        log.info("Panier createdController: " + panier.toString());
         if (panier == null) {
             return ResponseEntity.status(204).body(null);
         }

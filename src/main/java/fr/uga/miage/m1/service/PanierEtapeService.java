@@ -28,7 +28,7 @@ public class PanierEtapeService {
     private EntityManager entityManager;
     private final PanierEtapeRepository panierEtapeRepository;
     private final PanierEtapeMapper panierEtapeMapper;
-
+    private static final String PANIER_ETAPE = PANIER_ETAPE;
 
     // SAVE
     public PanierEtapeDTO save(PanierEtapeDTO panierEtape) {
@@ -80,7 +80,7 @@ public class PanierEtapeService {
         for (PanierEtape panierEtape : result) {
             if (panierEtapeCreate.stream().noneMatch(
                     p -> p.getIdPanier().equals(panierEtape.getIdPanier().getIdPanier()) && p.getIdEtape().equals(panierEtape.getIdEtape().getIdEtape()))) {
-                throw new NotFoundException("PanierEtape", "idPanier", panierEtape.getIdPanier().getIdPanier());
+                throw new NotFoundException(PANIER_ETAPE, "idPanier", panierEtape.getIdPanier().getIdPanier());
             }
         }
 
@@ -92,14 +92,14 @@ public class PanierEtapeService {
 
         PanierEtape panierEtape = panierEtapeRepository.findById(panierEtapeDTO.getIdPanierEtape()).orElse(null);
         if (panierEtape == null) {
-            throw new NotFoundException("PanierEtape", "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
+            throw new NotFoundException(PANIER_ETAPE, "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
         }
         Query query = entityManager.createNativeQuery("UPDATE panier_etape SET NB_PLACE_OCCUPPE = :nb_place_occuppe WHERE id_panier_etape = :id_panier_etape");
         query.setParameter("nb_place_occuppe", panierEtapeDTO.getNbPlaceOccuppe());
         query.setParameter("id_panier_etape", panierEtapeDTO.getIdPanierEtape());
         int result = query.executeUpdate();
         if (result == 0) {
-            throw new NotFoundException("PanierEtape", "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
+            throw new NotFoundException(PANIER_ETAPE, "idPanierEtape", panierEtapeDTO.getIdPanierEtape());
         }
         return panierEtapeMapper.entityToDTO(panierEtape);
 

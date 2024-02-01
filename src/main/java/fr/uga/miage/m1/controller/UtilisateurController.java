@@ -54,19 +54,16 @@ public class UtilisateurController {
     })
     public ResponseEntity<UtilisateurDTO> getUtilisateurByEmail(@PathVariable String email) {
         UtilisateurDTO utilisateurDTO = utilisateurService.getByEmail(email);
-        log.info("Utilisateur foundController: " + utilisateurDTO.toString());
         if (utilisateurDTO == null) {
             return ResponseEntity.status(204).body(null);
         }
         return ResponseEntity.status(200).body(utilisateurDTO);
-
     }
 
     @PostMapping("/utilisateur/create")
     @Operation(summary = "Create utilisateur")
     public ResponseEntity<UtilisateurDTO> createUtilisateur(@RequestBody UtilisateurCreate utilisateurCreate) {
         UtilisateurDTO utilisateur = utilisateurService.saveCustom(utilisateurCreate);
-        log.info("Utilisateur createdController: " + utilisateur.toString());
         if (utilisateur == null) {
             return ResponseEntity.status(204).body(null);
         }

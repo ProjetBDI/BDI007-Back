@@ -29,7 +29,8 @@ public class PanierService {
     private final PanierRepository panierRepository;
     private final PanierMapper panierMapper;
     private final EmailService emailService;
-    private final String Panier = "Panier";
+    private static final String PANIER = "Panier";
+    private static final String IDPANIER = IDPANIER;
 
     // SAVE
     public PanierDTO save(PanierDTO panier) {
@@ -54,7 +55,7 @@ public class PanierService {
             return null;
         }
         if (result.size() > 1) {
-            throw new NotFoundException(Panier, "idUtilisateur", idUtilisateur);
+            throw new NotFoundException(PANIER, "idUtilisateur", idUtilisateur);
         }
         return panierMapper.entityToDTO(result.get(0));
     }
@@ -63,7 +64,7 @@ public class PanierService {
     @Transactional
     public PanierDTO postPayer(Long idPanier) throws IOException {
         Query query = entityManager.createNativeQuery("Update Panier p set p.date_paiement = CURRENT_TIMESTAMP  Where p.ID_Panier = :idPanier");
-        query.setParameter("idPanier", idPanier);
+        query.setParameter(IDPANIER, idPanier);
         // query.getSingleResult can't handle null return
         int result = query.executeUpdate();
         if (result != 1) {
@@ -71,11 +72,11 @@ public class PanierService {
         }
         TypedQuery<String> proprietaireQuery = entityManager.createQuery("SELECT u.email From Panier p join Utilisateur u ON  u.idUtilisateur=p.idProprietaire  Where p.idPanier= :idPanier", String.class);
 
-        proprietaireQuery.setParameter("idPanier", idPanier);
+        proprietaireQuery.setParameter(IDPANIER, idPanier);
 
         TypedQuery<String> covoitureursQuery = entityManager.createQuery("SELECT u.email From Panier p join PanierEtape pe on pe.idPanier=p.idPanier join Etape e on e.idEtape=pe.idEtape join Covoiturage c on c.idCovoiturage = e.idCovoiturage join Utilisateur u ON  u.idUtilisateur=c.idConducteur  Where p.idPanier= :idPanier", String.class);
 
-        covoitureursQuery.setParameter("idPanier", idPanier);
+        covoitureursQuery.setParameter(IDPANIER, idPanier);
 
         String proprio = proprietaireQuery.getResultList().get(0);
         List<String> covoits = covoitureursQuery.getResultList();
@@ -92,7 +93,6 @@ public class PanierService {
         query.setParameter("noms_festivaliers", panierCreate.getNomsFestivaliers());
         query.setParameter("id_proprietaire", panierCreate.getIdProprietaire());
         int res = query.executeUpdate();
-        log.info("Panier created: " + panierCreate);
         if (res == 1) {
             // find last insert
             TypedQuery<Panier> querySelect = entityManager.createQuery("From Panier ORDER BY idPanier DESC LIMIT 1", Panier.class);
@@ -101,11 +101,11 @@ public class PanierService {
                 return null;
             }
             if (result.size() > 1) {
-                throw new NotFoundException(Panier, "idProprietaire", panierCreate.getIdProprietaire());
+                throw new NotFoundException(PANIER, "idProprietaire", panierCreate.getIdProprietaire());
             }
             Panier panier = result.get(0);
             if (!Objects.equals(panier.getNomsFestivaliers(), panierCreate.getNomsFestivaliers())) {
-                throw new NotFoundException(Panier, "nomsFestivaliers", panierCreate.getNomsFestivaliers());
+                throw new NotFoundException(PANIER, "nomsFestivaliers", panierCreate.getNomsFestivaliers());
             }
             return panierMapper.entityToDTO(panier);
         }
