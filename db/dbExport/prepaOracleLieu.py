@@ -25,7 +25,10 @@ with open(commune_csv_file, 'r', encoding='ISO-8859-1') as csv_file, open(output
             row[key] = re.sub(r"'", "''", row[key])
 
         # Convert empty strings to NULL for numeric columns
-
+        # Convert type_lieu to uppercase and change ' ' to '_' and replace 'é' by 'e'
+        row['type_lieu'] = row['type_lieu'].replace('é', 'e')
+        row['type_lieu'] = row['type_lieu'].replace(' ', '_')
+        row['type_lieu'] = row['type_lieu'].upper()
         sql_festival_file.write(sql_insert_commune_template.format(**row))
 
 print(f"SQL script for Festival table generated successfully. Please check {output_sql_commune_file}.")

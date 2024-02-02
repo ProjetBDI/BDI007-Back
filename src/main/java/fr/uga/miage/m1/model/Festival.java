@@ -1,12 +1,12 @@
 package fr.uga.miage.m1.model;
 
 
+import fr.uga.miage.m1.enums.FestivalStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.util.Date;
 import java.util.List;
-
-import fr.uga.miage.m1.enums.FestivalStatus;
 
 @Entity
 @Data
@@ -15,8 +15,8 @@ public class Festival {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_festival", nullable = false)
-    private Long id_festival;
+    @Column(name = "id_festival", nullable = false)
+    private Long idFestival;
 
     @Column(name = "nom")
     private String nom;
@@ -47,17 +47,20 @@ public class Festival {
     @Column(name = "tarif_pass")
     private float tarifPass;
 
+    @Column(name = "nb_pass_vendus")
+    private int nbPassVendus;
+
     @Column(name = "status")
     private FestivalStatus status;
-    
-    @OneToMany(mappedBy = "id_festival")
+
+    @OneToMany(mappedBy = "idFestival")
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
-    @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
-    private Commune id_commune;
+    @JoinColumn(name = "id_commune", referencedColumnName = "id_commune")
+    private Commune idCommune;
 
     @ManyToOne
-    @JoinColumn(name="id_domaine", referencedColumnName = "id_domaine")
-    private Domaine id_domaine;
+    @JoinColumn(name = "id_domaine", referencedColumnName = "id_domaine")
+    private Domaine idDomaine;
 }
