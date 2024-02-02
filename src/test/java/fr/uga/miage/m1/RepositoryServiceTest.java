@@ -1,11 +1,16 @@
 package fr.uga.miage.m1;
 
+import fr.uga.miage.m1.dto.FestivalDTO;
+import fr.uga.miage.m1.dto.PanierDTO;
+import fr.uga.miage.m1.dto.PanierEtapeDTO;
 import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.enums.TypeLieu;
-import fr.uga.miage.m1.mapper.UtilisateurMapper;
+import fr.uga.miage.m1.mapper.*;
 import fr.uga.miage.m1.model.*;
 import fr.uga.miage.m1.repository.*;
+import fr.uga.miage.m1.service.*;
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -13,18 +18,74 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 
 @AutoConfigureTestDatabase
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@Log
 class RepositoryServiceTest {
+
+    @Autowired
+    private CommuneMapper communeMapper;
+
+    @Autowired
+    private DepartementMapper departementMapper;
+
+    @Autowired
+    private DomaineMapper domaineMapper;
 
     @Autowired
     private UtilisateurMapper utilisateurMapper;
 
     @Autowired
+    private FestivalMapper festivalMapper;
+
+    @Autowired
+    private CovoiturageMapper covoiturageMapper;
+
+    @Autowired
+    private LieuMapper lieuMapper;
+
+    @Autowired
+    private EtapeMapper etapeMapper;
+
+    @Autowired
+    private PanierMapper panierMapper;
+
+    @Autowired
+    private PanierEtapeMapper panierEtapeMapper;
+
+    @Autowired
+    private CommuneService communeService;
+
+    @Autowired
+    private DepartementService departementService;
+
+    @Autowired
+    private DomaineService domaineService;
+
+    @Autowired
     private UtilisateurService utilisateurService;
+
+    @Autowired
+    private FestivalService festivalService;
+
+    @Autowired
+    private CovoiturageService covoiturageService;
+
+    @Autowired
+    private LieuService lieuService;
+
+    @Autowired
+    private EtapeService etapeService;
+
+    @Autowired
+    private PanierService panierService;
+
+    @Autowired
+    private PanierEtapeService panierEtapeService;
 
     @Autowired
     private CommuneRepository communeRepository;
@@ -56,9 +117,11 @@ class RepositoryServiceTest {
     @Autowired
     private PanierEtapeRepository panierEtapeRepository;
 
+
     private final Commune commune = new Commune();
     private final Departement departement = new Departement();
     private final Festival festival = new Festival();
+    private final Festival festival2 = new Festival();
     private final Domaine domaine = new Domaine();
     private final Utilisateur utilisateur = new Utilisateur();
     private final Covoiturage covoiturage = new Covoiturage();
@@ -112,6 +175,20 @@ class RepositoryServiceTest {
         festival.setIdDomaine(domaine);
         festivalRepository.save(festival);
 
+//        festival2.setNom("TestFestival2");
+//        festival2.setDateDebut(dateDebut);
+//        festival2.setDateFin(dateFin);
+//        festival2.setSiteWeb("www.test2.com");
+//        festival2.setLieuPrincipal("TestLieu2");
+//        festival2.setNbPassTotal(1000);
+//        festival2.setNbPassIndispo(250);
+//        festival2.setNbPassDispo(500);
+//        festival2.setTarifPass(205);
+//        festival2.setStatus(FestivalStatus.FERME);
+//        festival2.setIdCommune(commune);
+//        festival2.setIdDomaine(domaine);
+//        festivalRepository.save(festival2);
+
 
         utilisateur.setEmail("test@test.com");
         utilisateur.setNom("TestNom");
@@ -149,6 +226,7 @@ class RepositoryServiceTest {
 
         panier.setDatePaiement(dateDebut);
         panier.setNomsFestivaliers("TestFestivalier");
+//        panier.setIdProprietaire(utilisateur);
         panierRepository.save(panier);
 
 
@@ -288,4 +366,38 @@ class RepositoryServiceTest {
         Assertions.assertNotNull(foudUtilisateur);
         Assertions.assertEquals(foudUtilisateur.getEmail(), utilisateur.getEmail());
     }
+
+    @Test
+    void getAllFestivalsUsingPagesTest() {
+        // When
+        festivalRepository.save(festival2);
+        festivalRepository.save(festival);
+        List<FestivalDTO> festivals = festivalService.getAllFestivalsUsingPages(1);
+        List<Festival> festivals2 = festivalMapper.dtoToEntity(festivals);
+        log.info(festivals2.toString());
+        // Then
+        Assertions.assertNotNull(festivals2);
+        Assertions.assertFalse(festivals2.isEmpty());
+    }
+    @Test
+    void getCurrentPanierByUtilisateurIdTest() {
+        // When
+        PanierDTO currentPanierDTO = panierService.getCurrentPanierByUtilisateurId(utilisateur.getIdUtilisateur());
+        Panier currentPanier = panierMapper.dtoToEntity(currentPanierDTO);
+
+        // Then
+        Assertions.assertNotNull(currentPanier);
+        Assertions.assertEquals(currentPanier.getIdProprietaire().getIdUtilisateur(), utilisateur.getIdUtilisateur());
+    }
+
+    @Test
+    void getPanierByPanierEtapeTest() {
+        // When
+        List<PanierEtapeDTO> panierEtapeDTO = panierEtapeService.getPanierByPanierEtape(panier.getIdPanier());
+
+        // Then
+        Assertions.assertNotNull(panierEtapeDTO);
+        Assertions.assertEquals(panierEtapeDTO.get(0).getIdPanier().getIdPanier(), panier.getIdPanier());
+    }
+
 }
