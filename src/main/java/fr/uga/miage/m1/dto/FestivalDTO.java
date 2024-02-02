@@ -11,7 +11,7 @@ import lombok.Setter;
 @Builder
 @Schema(name = "FestivalDTO", description = "FestivalDTO description")
 public class FestivalDTO {
-    
+
     private long idFestival;
 
     private String nom;
@@ -29,6 +29,9 @@ public class FestivalDTO {
     private int nbPassDispo;
 
     private int nbPassIndispo;
+
+    private int nbPassVendus;
+
 
     private float tarifPass;
 

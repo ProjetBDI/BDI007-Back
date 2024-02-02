@@ -15,7 +15,7 @@ public class Festival {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_festival", nullable = false)
+    @Column(name = "id_festival", nullable = false)
     private Long idFestival;
 
     @Column(name = "nom")
@@ -47,17 +47,20 @@ public class Festival {
     @Column(name = "tarif_pass")
     private float tarifPass;
 
+    @Column(name = "nb_pass_vendus")
+    private int nbPassVendus;
+
     @Column(name = "status")
     private FestivalStatus status;
-    
+
     @OneToMany(mappedBy = "idFestival")
     private List<Covoiturage> covoiturages;
 
     @ManyToOne
-    @JoinColumn(name="id_commune", referencedColumnName = "id_commune")
+    @JoinColumn(name = "id_commune", referencedColumnName = "id_commune")
     private Commune idCommune;
 
     @ManyToOne
-    @JoinColumn(name="id_domaine", referencedColumnName = "id_domaine")
+    @JoinColumn(name = "id_domaine", referencedColumnName = "id_domaine")
     private Domaine idDomaine;
 }
