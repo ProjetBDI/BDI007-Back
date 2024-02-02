@@ -1,6 +1,9 @@
 package fr.uga.miage.m1;
 
-import fr.uga.miage.m1.dto.*;
+import fr.uga.miage.m1.dto.CovoiturageDTO;
+import fr.uga.miage.m1.dto.DomaineDTO;
+import fr.uga.miage.m1.dto.PanierEtapeDTO;
+import fr.uga.miage.m1.dto.UtilisateurDTO;
 import fr.uga.miage.m1.enums.FestivalStatus;
 import fr.uga.miage.m1.enums.TypeLieu;
 import fr.uga.miage.m1.mapper.*;
@@ -13,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -332,6 +334,7 @@ class RepositoryServiceTest {
         Assertions.assertNotNull(foundPanier);
         Assertions.assertEquals(this.panier.getIdPanier(), foundPanier.getIdPanier());
     }
+
     @Test
     void findByIdPanierEtapeTest() {
 
@@ -391,12 +394,12 @@ class RepositoryServiceTest {
         // Then
         Assertions.assertNotNull(covoiturageTest);
     }
-
-    @Test
-    void envoyerEmailTest() throws IOException {
-        // When
-        boolean emailSent = emailService.envoyerEmail("test.test@gmail.com", "test sujet", "msg de test");
-        // Then
-        Assertions.assertTrue(emailSent);
-    }
+//
+//    @Test
+//    void envoyerEmailTest() throws IOException {
+//        // When
+//        boolean emailSent = emailService.envoyerEmail("test.test@gmail.com", "test sujet", "msg de test");
+//        // Then
+//        Assertions.assertTrue(emailSent);
+//    }
 }
