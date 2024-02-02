@@ -36,7 +36,7 @@ public class DomaineService {
     }
 
     //get All
-    public List<Domaine> getAllDomaines() {
-        return domaineRepository.findAll();
+    public List<DomaineDTO> getAllDomaines() {
+        return domaineMapper.entityToDTO(domaineRepository.findAll());
     }
 }
