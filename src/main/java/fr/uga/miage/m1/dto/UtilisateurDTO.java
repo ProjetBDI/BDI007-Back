@@ -45,17 +45,4 @@ public class UtilisateurDTO {
 
     private String telephone;
 
-
-    @Override
-    public String toString() {
-        return "UtilisateurDTO{" +
-                "idUtilisateur=" + idUtilisateur +
-                ", email='" + email + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", motDePasse='" + motDePasse + '\'' +
-                ", dateNaissance=" + dateNaissance +
-                ", telephone='" + telephone + '\'' +
-                '}';
-    }
 }

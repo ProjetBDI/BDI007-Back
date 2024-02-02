@@ -21,7 +21,7 @@ public class EmailService {
     @Value("${sendgrid.api-key}")
     private String sendGridApiKey;
 
-    public void envoyerEmail(String destinataire, String sujet, String contenu) throws IOException {
+    public boolean envoyerEmail(String destinataire, String sujet, String contenu) throws IOException {
 
         Email from = new Email("festicardbi@gmail.com");
         Email to = new Email(destinataire);
@@ -39,12 +39,13 @@ public class EmailService {
 
         if (response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
             log.info("Email envoyé avec succès");
+            return true;
         } else {
             log.warning("Erreur lors de l'envoi de l'email - Code : " + response.getStatusCode());
             log.info(response.getBody());
+            return false;
         }
     }
-
 
     public void envoyerEmail(List<String> destinataire, String sujet, String contenu) throws IOException {
 

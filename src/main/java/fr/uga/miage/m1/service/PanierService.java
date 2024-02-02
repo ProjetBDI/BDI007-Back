@@ -13,7 +13,6 @@ import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -22,7 +21,6 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-@Log
 public class PanierService {
 
     @PersistenceContext

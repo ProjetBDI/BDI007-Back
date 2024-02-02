@@ -1,7 +1,6 @@
 package fr.uga.miage.m1.controller;
 
 import fr.uga.miage.m1.dto.DomaineDTO;
-import fr.uga.miage.m1.model.Domaine;
 import fr.uga.miage.m1.service.DomaineService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -50,8 +49,8 @@ public class DomaineController {
             @ApiResponse(responseCode = "204", description = "No domaines found")
     })
     @Operation(summary = "Get all domaines")
-    public ResponseEntity<List<Domaine>> getAllDomaines() {
-        List<Domaine> domaines = domaineService.getAllDomaines();
+    public ResponseEntity<List<DomaineDTO>> getAllDomaines() {
+        List<DomaineDTO> domaines = domaineService.getAllDomaines();
         if (domaines.isEmpty()) {
             return ResponseEntity.status(204).body(null);
         }

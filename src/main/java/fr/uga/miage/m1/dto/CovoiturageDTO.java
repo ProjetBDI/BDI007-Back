@@ -13,28 +13,6 @@ import java.util.Date;
 @Schema(name = "CovoiturageDTO", description = "CovoiturageDTO description")
 public class CovoiturageDTO {
 
-    public CovoiturageDTO(
-            long idCovoiturage,
-            int nbPlace,
-            int nbPlaceDispo,
-            String marque,
-            String modele,
-            String couleur,
-            Date dateDepart,
-            FestivalDTO idFestival,
-            UtilisateurDTO idConducteur
-    ) {
-        this.idCovoiturage = idCovoiturage;
-        this.nbPlace = nbPlace;
-        this.nbPlaceDispo = nbPlaceDispo;
-        this.marque = marque;
-        this.modele = modele;
-        this.couleur = couleur;
-        this.dateDepart = dateDepart;
-        this.idFestival = idFestival;
-        this.idConducteur = idConducteur;
-    }
-
     private long idCovoiturage;
 
     private int nbPlace;
